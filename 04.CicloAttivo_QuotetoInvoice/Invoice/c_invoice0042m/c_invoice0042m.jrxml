@@ -53,461 +53,457 @@
 	</parameter>
 	<queryString>
 		<![CDATA[-- c_invoice
-SELECT  * from lit_rep_invoice_m     
+SELECT  * from lit_rep_invoice_v     
 WHERE
      (CASE
-    WHEN $P{RECORD_ID} IS NOT NULL THEN lit_rep_invoice_m  ."c_invoice_c_invoice_id" = $P{RECORD_ID} 
+    WHEN $P{RECORD_ID} IS NOT NULL THEN lit_rep_invoice_v  ."c_invoice_c_invoice_id" = $P{RECORD_ID} 
     ELSE 1=1
   END)
   order by c_invoiceline_line]]>
 	</queryString>
 	<field name="c_invoice_withholdingamt" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_withholdingamt"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="ad_image_binarydata" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.label" value="ad_image_binarydata"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="ad_image_a_binarydata" class="java.lang.Object">
 		<property name="com.jaspersoft.studio.field.label" value="ad_image_a_binarydata"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="ad_sysconfig_help" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ad_sysconfig_help"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="ad_orginfo_lit_report_param" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_lit_report_param"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_order_documentno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_order_documentno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_order_nopackages" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_order_nopackages"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_order_shipdate" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="c_order_shipdate"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_documentno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_documentno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_dateacct" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_dateacct"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_docstatus" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_docstatus"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_c_invoice_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_c_invoice_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_ad_client_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_ad_client_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_ad_org_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_ad_org_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_dateinvoiced" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_dateinvoiced"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_ispaid" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_ispaid"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_totallines" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_totallines"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_chargeamt" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_chargeamt"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_grandtotal" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_grandtotal"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_note" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_note"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="totalnetdiscount" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="totalnetdiscount"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="netdiscount" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="netdiscount"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_m_product_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_m_product_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_description" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_description"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_help" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_help"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_linenetamt" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_linenetamt"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_qtyentered" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_qtyentered"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
-	</field>
-	<field name="c_invoiceline_qtyinvoiced" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_qtyinvoiced"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_pricelist" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_pricelist"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_priceentered" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_priceentered"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_priceactual" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_priceactual"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_discount" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_discount"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_line" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_line"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoiceline_isdescription" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_isdescription"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="ad_language" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ad_language"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_taxid" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_taxid"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_value" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_value"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_name2" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_name2"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_lit_taxid" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_lit_taxid"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_lit_bpreportparam" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_lit_bpreportparam"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_lit_nationalidnumber_id" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_lit_nationalidnumber_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_note" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_note"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_address1" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_address1"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_city" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_city"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_postal" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_postal"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_regionname" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_regionname"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_location_isbillto" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_isbillto"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_location_phone" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_phone"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_location_fax" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_fax"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_location_email" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_email"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_location_a_phone" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_phone"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_location_a_fax" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_fax"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_location_a_email" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_email"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_currency_iso_code" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_currency_iso_code"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_paymentrule" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_paymentrule"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="ad_user_repname" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ad_user_repname"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_paymentterm_value" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_paymentterm_value"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_paymentterm_discount" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_paymentterm_discount"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_uom_trl_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_uom_trl_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_uom_trl_uomsymbol" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_uom_trl_uomsymbol"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_country_trl_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_country_trl_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bank_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bank_routingno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_routingno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bank_swiftcode" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_swiftcode"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bankaccount_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bankaccount_description" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_description"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bankaccount_iban" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_iban"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bankaccount_accountno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_accountno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bp_bankaccount_banknamebp" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bp_bankaccount_banknamebp"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bp_bankaccount_iban" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bp_bankaccount_iban"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bp_bankaccount_isach" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bp_bankaccount_isach"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bank_bp_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_bp_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bank_bp_routingno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_bp_routingno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bank_bp_swiftcode" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_bp_swiftcode"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bankaccount_bp_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_bp_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bankaccount_bp_iban" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_bp_iban"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_doctype_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_doctype_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_doctype_trl_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_doctype_trl_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_doctype_trl_printname" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_doctype_trl_printname"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_doctype_trl_documentnote" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_doctype_trl_documentnote"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_poreference" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_poreference"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_description" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_description"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="lit_freightcost" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="lit_freightcost"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="m_shipper_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_shipper_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_order_deliveryviarule" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_order_deliveryviarule"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="m_parttype_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_parttype_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_a_address1" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_a_address1"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_a_city" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_a_city"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_a_postal" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_a_postal"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_a_regionname" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_a_regionname"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_country_trl_a_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_country_trl_a_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_invoice_c_bankaccount_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_c_bankaccount_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="m_product_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="m_product_description" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_description"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="m_product_help" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_help"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="m_product_value" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_value"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_tax_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_tax_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_tax_taxindicator" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_tax_taxindicator"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_address2" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_address2"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_address3" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_address3"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_a_address2" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_a_address2"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_location_a_address3" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_location_a_address3"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_bpartner_location_a_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="lit_intrastat_value" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="lit_intrastat_value"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="lit_intrastat_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="lit_intrastat_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="lit_attribute_v_lot" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="lit_attribute_v_lot"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_order2_documentno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_order2_documentno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="c_order2_poreference" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_order2_poreference"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="bp_letterintentnrletter" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="bp_letterintentnrletter"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<field name="bp_letterintentdateletter" class="java.sql.Timestamp">
 		<property name="com.jaspersoft.studio.field.label" value="bp_letterintentdateletter"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_m"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
 	<variable name="v1" class="java.math.BigDecimal">
 		<variableExpression><![CDATA[new BigDecimal(1)]]></variableExpression>
@@ -533,7 +529,7 @@ WHERE
 	<title>
 		<band height="250" splitType="Stretch">
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
-				<reportElement x="0" y="0" width="555" height="63" uuid="993d5ca8-bc92-4e15-b6b3-8109207e9255"/>
+				<reportElement x="0" y="0" width="440" height="63" uuid="993d5ca8-bc92-4e15-b6b3-8109207e9255"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
 			</image>
 			<frame>
@@ -812,6 +808,16 @@ IBAN: IT 22 E 02008 82620 000103213822]]></text>
 				</textElement>
 				<text><![CDATA[BANCA: UNICREDIT S.p.A.
 IBAN: IT 33 S 02008 82620 000103213759]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="115" height="30" uuid="b403312e-ba2a-4f81-9c12-a3c7bd42cadf"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Dashed"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COPIA DI CORTESIA]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -1102,10 +1108,10 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="16">
+		<band height="17">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<staticText>
-				<reportElement mode="Opaque" x="80" y="0" width="270" height="16" backcolor="#A8EB6E" uuid="0d45999c-f961-4356-9d79-2d80e058a718">
+				<reportElement mode="Opaque" x="80" y="0" width="220" height="17" backcolor="#A8EB6E" uuid="0d45999c-f961-4356-9d79-2d80e058a718">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 				</reportElement>
 				<box>
@@ -1120,7 +1126,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<text><![CDATA[DESCIZIONE DETTAGLIATA DEI BENI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="350" y="0" width="30" height="16" backcolor="#A8EB6E" uuid="366c00f5-22ad-4faf-81bf-f0ef4de840b4">
+				<reportElement mode="Opaque" x="300" y="0" width="30" height="17" backcolor="#A8EB6E" uuid="366c00f5-22ad-4faf-81bf-f0ef4de840b4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 				</reportElement>
 				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
@@ -1135,7 +1141,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<text><![CDATA[U.M.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="380" y="0" width="38" height="16" backcolor="#A8EB6E" uuid="1e45b5eb-3b3c-4edf-863b-59713c3275ed">
+				<reportElement mode="Opaque" x="330" y="0" width="38" height="17" backcolor="#A8EB6E" uuid="1e45b5eb-3b3c-4edf-863b-59713c3275ed">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 				</reportElement>
 				<box>
@@ -1150,7 +1156,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<text><![CDATA[Q.TA']]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="458" y="0" width="60" height="16" backcolor="#A8EB6E" uuid="0070bce4-dcb3-404c-9cb0-a1fd2369f439">
+				<reportElement mode="Opaque" x="450" y="0" width="70" height="17" backcolor="#A8EB6E" uuid="0070bce4-dcb3-404c-9cb0-a1fd2369f439">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
 				</reportElement>
 				<box>
@@ -1165,7 +1171,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<text><![CDATA[TOTALE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="518" y="0" width="37" height="16" backcolor="#A8EB6E" uuid="3f9b3cf5-73ac-4068-b1d8-9d5058e89f21">
+				<reportElement mode="Opaque" x="520" y="0" width="35" height="17" backcolor="#A8EB6E" uuid="3f9b3cf5-73ac-4068-b1d8-9d5058e89f21">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 				</reportElement>
 				<box>
@@ -1180,7 +1186,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<text><![CDATA[C.IVA]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="0" y="0" width="80" height="16" backcolor="#A8EB6E" uuid="afe23ffd-3b9b-4e1e-bb20-3d43a68008a4">
+				<reportElement mode="Opaque" x="0" y="0" width="80" height="17" backcolor="#A8EB6E" uuid="afe23ffd-3b9b-4e1e-bb20-3d43a68008a4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 				</reportElement>
 				<box>
@@ -1195,7 +1201,22 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<text><![CDATA[COD. ART.]]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="418" y="0" width="40" height="16" backcolor="#A8EB6E" uuid="482261af-0579-4d06-9f56-0b24bdc20379">
+				<reportElement mode="Opaque" x="421" y="0" width="29" height="17" backcolor="#A8EB6E" uuid="af994b40-89eb-42ad-983d-ce7fd6ecd2ac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e477dd3-9937-4bbd-aad3-81de4a67bda5"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SC %]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="368" y="0" width="53" height="17" backcolor="#A8EB6E" uuid="482261af-0579-4d06-9f56-0b24bdc20379">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbb90318-0673-4966-beef-2d35743c2496"/>
 				</reportElement>
 				<box>
@@ -1212,24 +1233,24 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="17" splitType="Stretch">
+		<band height="15" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<textField isBlankWhenNull="true">
-				<reportElement x="0" y="0" width="80" height="17" isRemoveLineWhenBlank="true" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
+				<reportElement x="0" y="0" width="80" height="15" isRemoveLineWhenBlank="true" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="80" y="0" width="270" height="17" isRemoveLineWhenBlank="true" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
+				<reportElement x="80" y="0" width="220" height="15" isRemoveLineWhenBlank="true" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 				</reportElement>
 				<textElement verticalAlignment="Middle" markup="html"/>
 				<textFieldExpression><![CDATA[($F{c_invoiceline_name}!=null?$F{m_product_name}:$F{m_product_name}!=null?$F{m_product_name}:"")]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="350" y="0" width="30" height="17" isRemoveLineWhenBlank="true" uuid="771acd34-7ac4-41ae-9f87-691998a08a08">
+				<reportElement x="300" y="0" width="30" height="15" isRemoveLineWhenBlank="true" uuid="771acd34-7ac4-41ae-9f87-691998a08a08">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 				</reportElement>
 				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
@@ -1237,15 +1258,15 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###.###" isBlankWhenNull="true">
-				<reportElement x="380" y="0" width="38" height="17" isRemoveLineWhenBlank="true" uuid="6fa1fa7c-011d-4f88-90f1-36b09c7de943">
+				<reportElement x="330" y="0" width="38" height="15" isRemoveLineWhenBlank="true" uuid="6fa1fa7c-011d-4f88-90f1-36b09c7de943">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_qtyentered}.intValue()!=0]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled"/>
-				<textFieldExpression><![CDATA[$F{c_invoiceline_qtyinvoiced}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{c_invoiceline_qtyentered}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.0000;¤(#,##0.0000-)">
-				<reportElement x="418" y="0" width="40" height="17" uuid="b87ba9a1-a299-401f-8559-d0450409bcec">
+				<reportElement x="368" y="0" width="53" height="15" uuid="b87ba9a1-a299-401f-8559-d0450409bcec">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbb90318-0673-4966-beef-2d35743c2496"/>
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_priceactual}.doubleValue() != 0.0]]></printWhenExpression>
@@ -1253,10 +1274,18 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{c_invoiceline_priceactual}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{c_invoiceline_pricelist}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0##">
+				<reportElement x="421" y="0" width="29" height="15" uuid="2814834e-6ec7-470c-b8dd-a3d187dbd0a7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e477dd3-9937-4bbd-aad3-81de4a67bda5"/>
+					<printWhenExpression><![CDATA[$F{c_invoiceline_discount}.doubleValue() != 0.0]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{c_invoiceline_discount}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-				<reportElement x="458" y="0" width="60" height="17" isRemoveLineWhenBlank="true" uuid="e3dfc067-5ad9-47c7-934a-efbf82f57033">
+				<reportElement x="450" y="0" width="70" height="15" isRemoveLineWhenBlank="true" uuid="e3dfc067-5ad9-47c7-934a-efbf82f57033">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_linenetamt}.intValue()!=0]]></printWhenExpression>
 				</reportElement>
@@ -1264,7 +1293,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_linenetamt}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement x="518" y="0" width="37" height="17" isRemoveLineWhenBlank="true" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
+				<reportElement x="520" y="0" width="35" height="15" isRemoveLineWhenBlank="true" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled"/>
@@ -1273,7 +1302,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 		<band height="14">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="270" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="ea711447-a730-40e5-8065-0c556b2cd38d">
+				<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="220" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="ea711447-a730-40e5-8065-0c556b2cd38d">
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
@@ -1285,7 +1314,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 		<band height="14">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="270" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="bd1231be-2c9e-4933-a8b7-84edc14c244d">
+				<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="220" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="bd1231be-2c9e-4933-a8b7-84edc14c244d">
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
