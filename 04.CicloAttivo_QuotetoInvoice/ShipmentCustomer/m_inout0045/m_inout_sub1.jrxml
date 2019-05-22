@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_inout_sub1" pageWidth="550" pageHeight="810" whenNoDataType="NoDataSection" columnWidth="550" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="c33fbd9b-fd01-4855-baf8-57a853bc8344">
+	<property name="ireport.zoom" value="1.6934217901613329"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="350"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="645"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="334"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="657"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Multiservice 28"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<parameter name="RECORD_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AD_USER_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="AD_ROLE_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="AD_CLIENT_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="AD_LANGUAGE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{AD_LANGUAGE}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
+	<parameter name="lit_bpreport_param" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$F{c_bpartner_lit_bpreportparam}.charAt(1)=='Y']]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[-- lit_rep_m_inout_line_v
+SELECT * FROM lit_rep_m_inout_line_v
+WHERE      m_inoutline_m_inout_id = $P{RECORD_ID}
+ORDER BY m_inoutline_line ASC]]>
+	</queryString>
+	<field name="m_inoutline_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_description"/>
+	</field>
+	<field name="m_inoutline_movementqty" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_movementqty"/>
+	</field>
+	<field name="m_inoutline_m_inout_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_m_inout_id"/>
+	</field>
+	<field name="c_uom_uomsymbol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_uom_uomsymbol"/>
+	</field>
+	<field name="c_bpartner_lit_bpreportparam" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_lit_bpreportparam"/>
+	</field>
+	<field name="m_product_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_name"/>
+	</field>
+	<field name="m_product_producttype" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_producttype"/>
+	</field>
+	<field name="m_inoutline_m_inoutline_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_m_inoutline_id"/>
+	</field>
+	<field name="m_inoutline_line" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_line"/>
+	</field>
+	<field name="m_product_value" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_value"/>
+	</field>
+	<field name="m_product_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_description"/>
+	</field>
+	<field name="m_product_help" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_help"/>
+	</field>
+	<field name="m_inoutline_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_name"/>
+	</field>
+	<field name="m_inoutline_help" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_help"/>
+	</field>
+	<field name="ad_orginfo_lit_report_param" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_lit_report_param"/>
+	</field>
+	<field name="ad_orginfo_lit_report_param1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_lit_report_param1"/>
+	</field>
+	<field name="c_orderline_qtyentered" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_qtyentered"/>
+	</field>
+	<field name="c_orderine_priceactual" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderine_priceactual"/>
+	</field>
+	<field name="c_orderine_pricelist" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderine_pricelist"/>
+	</field>
+	<field name="c_uom_trl_uomsymbol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_uom_trl_uomsymbol"/>
+	</field>
+	<field name="c_uom_trl_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_uom_trl_name"/>
+	</field>
+	<field name="c_order_documentno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_documentno"/>
+	</field>
+	<field name="c_order_poreference" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_poreference"/>
+	</field>
+	<field name="lit_attribute_v_lot" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lit_attribute_v_lot"/>
+	</field>
+	<field name="ad_language" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_language"/>
+	</field>
+	<group name="Gruppo1">
+		<groupExpression><![CDATA[$F{c_order_documentno}]]></groupExpression>
+		<groupHeader>
+			<band height="16">
+				<printWhenExpression><![CDATA[!($F{c_order_documentno}==null)]]></printWhenExpression>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="140" y="3" width="90" height="11" uuid="80701840-2e2a-43d1-861e-52d904cbee34"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_order_documentno}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="334" y="3" width="100" height="11" uuid="b011a9ce-c90c-463c-963b-caf0d1c3fb1a"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_order_poreference}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" mode="Transparent" x="39" y="3" width="91" height="11" forecolor="#333333" backcolor="#E3D3D3" uuid="d6935d6b-c6ad-4177-ba37-d8377c826646"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font size="8" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("rif_documentno_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" mode="Transparent" x="234" y="3" width="91" height="11" forecolor="#333333" backcolor="#E3D3D3" uuid="2f68997e-184b-404c-99a8-516a29739cc0"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font size="8" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("poreference_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band height="6" splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22">
+			<frame>
+				<reportElement x="0" y="1" width="549" height="18" forecolor="#999999" backcolor="#E3D3D3" uuid="20e7e582-1dbf-4019-a9cf-a1f261c62fc9"/>
+				<staticText>
+					<reportElement positionType="Float" mode="Opaque" x="345" y="1" width="43" height="14" forecolor="#333333" backcolor="#E3E3E3" uuid="9cbc4665-01b9-4d06-8c27-b700a6e635e6"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[U.M.]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" mode="Opaque" x="93" y="1" width="252" height="14" forecolor="#333333" backcolor="#E3E3E3" uuid="6794ab7c-0b0b-41f1-b765-7d9f58b315a6"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font size="9" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[' '+$P{RESOURCE}.getString("prodact_description_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" mode="Opaque" x="488" y="1" width="60" height="14" forecolor="#333333" backcolor="#E3E3E3" uuid="9ccf808b-2797-41ce-8578-696d94061513"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font size="9" isBold="false"/>
+						<paragraph lineSpacing="Single" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("price_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" mode="Opaque" x="388" y="1" width="62" height="14" forecolor="#333333" backcolor="#E3E3E3" uuid="7bbd5913-1929-42e4-b186-aade84240410"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font size="9" isBold="false"/>
+						<paragraph lineSpacing="Single" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("qtyentered_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" mode="Opaque" x="450" y="1" width="38" height="14" forecolor="#333333" backcolor="#E3E3E3" uuid="3dfd4d89-c6de-4eb5-9db1-1fe3ea10d25d"/>
+					<box>
+						<topPen lineWidth="0.25"/>
+						<leftPen lineWidth="0.25"/>
+						<bottomPen lineWidth="0.25"/>
+						<rightPen lineWidth="0.25"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[Colli ]]></text>
+				</staticText>
+			</frame>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Opaque" x="0" y="2" width="93" height="14" forecolor="#333333" backcolor="#E3E3E3" uuid="e01aa098-38d8-4543-a7ed-5246dd6b3d38"/>
+				<box>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font size="9" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[' '+$P{RESOURCE}.getString("product_value_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15">
+			<printWhenExpression><![CDATA[!($F{ad_orginfo_lit_report_param}.charAt(16)=='N' && $F{m_product_producttype}.equals("S"))]]></printWhenExpression>
+			<textField isBlankWhenNull="true">
+				<reportElement key="" positionType="Float" x="345" y="0" width="40" height="11" uuid="9ef0daa8-6efd-40b8-9f72-4b2b1d3de728"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="95" y="0" width="250" height="11" isRemoveLineWhenBlank="true" uuid="cabaa264-c2e7-4376-b4d7-a7be02377b1f"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_inoutline_name}!=null?$F{m_inoutline_name}:$F{m_product_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="5" y="0" width="88" height="11" uuid="7f46276f-bfba-4e2c-950a-785d269da53b"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="100" y="11" width="240" height="1" isRemoveLineWhenBlank="true" uuid="3ab079f2-f181-49b7-9ef1-7de24c1bead3">
+					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(6)) == 'Y')]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_inoutline_description}!=null?$F{m_inoutline_description}:$F{m_product_description}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="100" y="12" width="240" height="1" isRemoveLineWhenBlank="true" uuid="5d9106d4-ce93-4095-9025-794077560dda">
+					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(7)) == 'Y')]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Bottom">
+					<font size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_inoutline_help}!=null?$F{m_inoutline_help}:$F{m_product_help}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#;(#,##0.00#-)" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="487" y="0" width="62" height="11" uuid="b026534a-8670-4089-b373-9e6a216d5633">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba33c811-9869-4ad6-a673-aaf9fe0a4c99"/>
+					<printWhenExpression><![CDATA[ $F{ad_orginfo_lit_report_param}.charAt(22) =='Y' ? 1==1 :  $F{ad_orginfo_lit_report_param}.charAt(22) =='N' ? 1==2 :  $F{c_bpartner_lit_bpreportparam}.length()<0 ? 1==2 :$F{c_bpartner_lit_bpreportparam}.charAt(0)=='Y' ? 1==1 :1==2]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph rightIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderine_priceactual}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="385" y="0" width="65" height="11" uuid="584e5436-0d9a-49d3-8724-59440045a474"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_inoutline_movementqty}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="100" y="13" width="240" height="1" uuid="e74a78a8-5825-4e65-b92d-7c03ee301148">
+					<printWhenExpression><![CDATA[ $F{ad_orginfo_lit_report_param}.charAt(13) =='Y' ? 1==1 :  $F{ad_orginfo_lit_report_param}.charAt(13) =='N' ? 1==2 :  $F{c_bpartner_lit_bpreportparam}.length()<1 ? 1==2 :$F{c_bpartner_lit_bpreportparam}.charAt(1)=='Y' ? 1==1 :1==2]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lit_attribute_v_lot}== null || $F{lit_attribute_v_lot}=="---" ? "": "Lotti:" +T($F{lit_attribute_v_lot})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement key="" positionType="Float" x="450" y="0" width="37" height="11" uuid="e1c84d4e-b599-4ea1-8122-67bfa32c7078"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_qtyentered}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

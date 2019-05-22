@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.5.1.final utlizzo versione della libreria JasperReports6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="offerta" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6753fbd-fd71-4b38-a8f0-f778b245f3bf">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="129"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="231"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="764"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Multiservice"/>
+	<style name="a" backcolor="#FF3333"/>
+	<parameter name="AD_CLIENT_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="AD_ROLE_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="AD_USER_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="RECORD_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
+	<parameter name="ad_language" class="java.lang.String">
+		<defaultValueExpression><![CDATA["it_IT"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[-- lit_rep_order_v
+
+SELECT * 
+FROM lit_rep_order_v
+WHERE 
+c_orderline_qtyreserved>0 and 
+c_order_docstatus='CO'
+ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
+	</queryString>
+	<field name="ad_client_ad_client_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ad_client_ad_client_id"/>
+	</field>
+	<field name="ad_client_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_client_name"/>
+	</field>
+	<field name="ad_clientinfo_logo_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ad_clientinfo_logo_id"/>
+	</field>
+	<field name="ad_orginfo_lit_report_param" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_lit_report_param"/>
+	</field>
+	<field name="ad_orginfo_lit_banner_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_lit_banner_id"/>
+	</field>
+	<field name="ad_orginfo_logo_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_logo_id"/>
+	</field>
+	<field name="ad_sysconfig_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_sysconfig_name"/>
+	</field>
+	<field name="ad_image_binarydata" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="ad_image_binarydata"/>
+	</field>
+	<field name="c_order_c_order_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_c_order_id"/>
+	</field>
+	<field name="c_order_dateordered" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_dateordered"/>
+	</field>
+	<field name="c_order_documentno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_documentno"/>
+	</field>
+	<field name="c_order_ad_client_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_ad_client_id"/>
+	</field>
+	<field name="c_order_ad_org_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_ad_org_id"/>
+	</field>
+	<field name="c_order_totallines" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_totallines"/>
+	</field>
+	<field name="c_order_grandtotal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_grandtotal"/>
+	</field>
+	<field name="c_order_dateacct" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_dateacct"/>
+	</field>
+	<field name="c_order_datepromised" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_datepromised"/>
+	</field>
+	<field name="c_order_ad_user_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_ad_user_id"/>
+	</field>
+	<field name="c_order_note" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_note"/>
+	</field>
+	<field name="c_order_poreference" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_poreference"/>
+	</field>
+	<field name="c_order_docstatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_docstatus"/>
+	</field>
+	<field name="c_order_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_description"/>
+	</field>
+	<field name="c_order_lit_revision_date" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_lit_revision_date"/>
+	</field>
+	<field name="c_order_revision" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_revision"/>
+	</field>
+	<field name="c_orderline_c_orderline_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_c_orderline_id"/>
+	</field>
+	<field name="c_orderline_line" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_line"/>
+	</field>
+	<field name="c_orderline_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_name"/>
+	</field>
+	<field name="c_orderline_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_description"/>
+	</field>
+	<field name="c_orderline_help" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_help"/>
+	</field>
+	<field name="c_orderline_pricelist" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_pricelist"/>
+	</field>
+	<field name="c_orderline_qtyordered" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_qtyordered"/>
+	</field>
+	<field name="c_orderline_linenetamt" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_linenetamt"/>
+	</field>
+	<field name="c_orderline_discount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_discount"/>
+	</field>
+	<field name="c_orderline_priceactual" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_priceactual"/>
+	</field>
+	<field name="c_orderline_m_product_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_m_product_id"/>
+	</field>
+	<field name="c_orderline_datepromised" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_datepromised"/>
+	</field>
+	<field name="c_bpartner_c_bpartner_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_c_bpartner_id"/>
+	</field>
+	<field name="c_bpartner_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_name"/>
+	</field>
+	<field name="ad_language" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_language"/>
+	</field>
+	<field name="c_bpartner_taxid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_taxid"/>
+	</field>
+	<field name="c_order_paymentrule" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_paymentrule"/>
+	</field>
+	<field name="ad_user_a_email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_a_email"/>
+	</field>
+	<field name="ad_user_a_phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_a_phone"/>
+	</field>
+	<field name="ad_user_a_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_a_name"/>
+	</field>
+	<field name="m_product_value" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_value"/>
+	</field>
+	<field name="ad_reference_e_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_reference_e_name"/>
+	</field>
+	<field name="c_doctype_printname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_doctype_printname"/>
+	</field>
+	<field name="c_doctype_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_doctype_name"/>
+	</field>
+	<field name="deliveryrule" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="deliveryrule"/>
+	</field>
+	<field name="deliveryviarule" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="deliveryviarule"/>
+	</field>
+	<field name="ad_user_email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_email"/>
+	</field>
+	<field name="ad_user_phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_phone"/>
+	</field>
+	<field name="ad_user_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_name"/>
+	</field>
+	<field name="ad_user_a_value" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_a_value"/>
+	</field>
+	<field name="c_paymentterm_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_paymentterm_name"/>
+	</field>
+	<field name="c_order_lit_offervaliditytime_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_lit_offervaliditytime_name"/>
+	</field>
+	<field name="c_order_lit_deliverytime_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_lit_deliverytime_name"/>
+	</field>
+	<field name="c_order_lit_freightcost_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_lit_freightcost_name"/>
+	</field>
+	<field name="c_tax_taxindicator" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_tax_taxindicator"/>
+	</field>
+	<field name="c_bpartner_location_phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_phone"/>
+	</field>
+	<field name="c_bpartner_location_isbillto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_isbillto"/>
+	</field>
+	<field name="c_bpartner_location_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_name"/>
+	</field>
+	<field name="c_bpartner_location_fax" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_fax"/>
+	</field>
+	<field name="c_bpartner_location_email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_email"/>
+	</field>
+	<field name="c_location_address1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_address1"/>
+	</field>
+	<field name="c_location_city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_city"/>
+	</field>
+	<field name="c_location_postal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_postal"/>
+	</field>
+	<field name="c_location_regionname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_regionname"/>
+	</field>
+	<field name="c_location_address2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_address2"/>
+	</field>
+	<field name="c_country_trl_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_country_trl_name"/>
+	</field>
+	<field name="c_bpartner_location_a_phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_phone"/>
+	</field>
+	<field name="c_bpartner_location_a_fax" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_fax"/>
+	</field>
+	<field name="c_bpartner_location_a_email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_email"/>
+	</field>
+	<field name="c_bpartner_location_a_isbillto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_isbillto"/>
+	</field>
+	<field name="c_bpartner_location_a_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_name"/>
+	</field>
+	<field name="c_location_a_city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_city"/>
+	</field>
+	<field name="c_location_a_address1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_address1"/>
+	</field>
+	<field name="c_location_a_postal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_postal"/>
+	</field>
+	<field name="c_location_a_regionname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_regionname"/>
+	</field>
+	<field name="c_location_a_address2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_address2"/>
+	</field>
+	<field name="c_country_trl_a_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_country_trl_a_name"/>
+	</field>
+	<field name="m_shipper_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_shipper_name"/>
+	</field>
+	<field name="c_project_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_project_name"/>
+	</field>
+	<field name="lit_termsandcondition" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lit_termsandcondition"/>
+	</field>
+	<field name="lit_exclusion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lit_exclusion"/>
+	</field>
+	<field name="c_currency_iso_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_currency_iso_code"/>
+	</field>
+	<field name="c_currency_a_iso_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_currency_a_iso_code"/>
+	</field>
+	<field name="c_uom_trl_uomsymbol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_uom_trl_uomsymbol"/>
+	</field>
+	<field name="c_bank_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bank_name"/>
+	</field>
+	<field name="c_bank_routingno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bank_routingno"/>
+	</field>
+	<field name="c_bank_swiftcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bank_swiftcode"/>
+	</field>
+	<field name="c_bankaccount_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_name"/>
+	</field>
+	<field name="c_bankaccount_iban" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_iban"/>
+	</field>
+	<field name="c_bank_bp_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bank_bp_name"/>
+	</field>
+	<field name="c_bank_bp_swiftcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bank_bp_swiftcode"/>
+	</field>
+	<field name="c_bp_bankaccount_banknamebp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bp_bankaccount_banknamebp"/>
+	</field>
+	<field name="c_bp_bankaccount_iban" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bp_bankaccount_iban"/>
+	</field>
+	<field name="lit_nationalidnumber_nationalidgenerate" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lit_nationalidnumber_nationalidgenerate"/>
+	</field>
+	<field name="ad_user_b_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_b_name"/>
+	</field>
+	<field name="ad_user_b_email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_b_email"/>
+	</field>
+	<group name="Gruppo1" minHeightToStartNewPage="29" keepTogether="true">
+		<groupExpression><![CDATA[$F{c_order_c_order_id}]]></groupExpression>
+		<groupHeader>
+			<band height="95">
+				<rectangle radius="10">
+					<reportElement positionType="Float" mode="Opaque" x="1" y="46" width="555" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="0bcce470-89a1-4f4d-aba3-1fcdbc81e740"/>
+				</rectangle>
+				<rectangle radius="10">
+					<reportElement positionType="Float" mode="Opaque" x="1" y="67" width="555" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="3a97682e-1f76-4d5e-8da7-81614214798a"/>
+				</rectangle>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" mode="Transparent" x="8" y="71" width="70" height="12" forecolor="#333333" uuid="f01574ad-4c66-4768-92f2-9f6c6f7cbd3e"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="Dialog" size="10" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("product_value_"+$P{ad_language})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="80" y="71" width="210" height="12" forecolor="#333333" uuid="2a8d282d-77ba-4e42-bcfa-f5f63b9f870b"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="Dialog" size="10" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("prodact_description_"+$P{ad_language})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="343" y="71" width="27" height="12" forecolor="#333333" uuid="71c65467-3620-4877-87a3-0c4b442400fa"/>
+					<textElement textAlignment="Center" markup="none">
+						<font size="10"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("qtyentered_"+$P{ad_language})]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement positionType="Float" x="314" y="71" width="24" height="12" forecolor="#333333" uuid="478bc823-f626-4618-bd13-468cb207c462"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Dialog" size="10" isBold="false" isItalic="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[U.M.]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="3" y="48" width="210" height="17" uuid="072facd1-1440-4bf0-b217-c5649cfd3862"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="12" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_doctype_name}]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="392" y="50" width="87" height="14" uuid="862859c7-fd79-4c9e-b0e7-2376a2ce8e2d"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_order_dateordered}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="338" y="50" width="55" height="14" forecolor="#333333" uuid="a51a64a3-2c98-4595-baeb-ce34016461e0"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="7" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("dateordered_"+$P{ad_language})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="213" y="50" width="32" height="15" uuid="da8a6068-6334-4c86-834d-33fe2853bc20"/>
+					<textElement verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("documentno_"+$P{ad_language})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="245" y="50" width="94" height="14" uuid="16a17336-321c-4ee9-a786-959ab218eebd"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_order_documentno}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="3" y="5" width="180" height="19" isRemoveLineWhenBlank="true" uuid="6a36479b-3211-400e-a3d4-4b313183f0c7"/>
+					<textElement>
+						<font size="14" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="183" y="5" width="161" height="14" uuid="8ba2cafb-ee69-4b78-a6cb-5708fb377ed0"/>
+					<textElement>
+						<font size="11" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{c_location_address1} == null ? "" : $F{c_location_address1}) + " - " + ($F{c_location_address2} == null ? "" : $F{c_location_address2})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="344" y="5" width="214" height="14" uuid="09595226-737e-477d-b752-023018475543"/>
+					<textElement>
+						<font size="11" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : $F{c_location_regionname})+" " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="183" y="25" width="161" height="14" uuid="f0d911c6-c7a9-4a8e-9295-a48f953dc229"/>
+					<textElement>
+						<font size="11" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{c_location_a_address1} == null ? "" : $F{c_location_a_address1}) + " - " + ($F{c_location_a_address2} == null ? "" : $F{c_location_a_address2})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="344" y="25" width="213" height="14" uuid="28f9bcc7-f77d-420e-a1ca-b0f86cfb05db"/>
+					<textElement>
+						<font size="11" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}) +" "+($F{c_location_a_regionname} == null ? "" : $F{c_location_a_regionname})+" " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name})]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="3" y="25" width="180" height="19" isRemoveLineWhenBlank="true" uuid="769476de-dc4f-41e7-b5d0-89c512f8d07f"/>
+					<textElement>
+						<font size="11" isBold="false"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_name}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="23">
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="0" width="555" height="19" uuid="794ff795-5be6-41fd-82e5-d1a59665afd3"/>
+					<textFieldExpression><![CDATA[$F{c_order_note}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="80">
+			<image scaleImage="FillFrame" isUsingCache="true" onErrorType="Icon">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="79" uuid="d39bf1db-4530-4701-94c0-06254f1360ce"/>
+				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="21">
+			<rectangle>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="1" width="555" height="15" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#EEEEEE" uuid="7f2a4611-e50a-40cd-8f8c-35f44b2ee960">
+					<printWhenExpression><![CDATA[new java.lang.Boolean(($V{REPORT_COUNT}.intValue() % 2)==0)]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="79" y="2" width="230" height="13" isPrintWhenDetailOverflows="true" uuid="330d0132-3a6e-435a-8f17-b11b7e752b7a"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_name}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.0" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="334" y="2" width="41" height="13" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="55c9d0bd-9a48-4b15-bdbf-423f27e76daa"/>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_qtyordered}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="3" y="2" width="75" height="13" uuid="86902817-d727-419e-95cd-46e9f2fb4bfb"/>
+				<textElement>
+					<font size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="310" y="2" width="24" height="13" uuid="0fbbb86a-7ca6-4681-853e-bf90d44678c2"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="11"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="28">
+			<textField>
+				<reportElement x="453" y="5" width="60" height="20" uuid="7b0e7b33-532e-44df-b189-51e400efd5e0"/>
+				<textElement textAlignment="Right">
+					<font fontName="dialog" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="170" y="15" width="283" height="10" forecolor="#333333" uuid="1e31ece2-7d0c-446d-93fd-5b2cb5b2b89c"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("desc_0003_"+$P{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="513" y="5" width="40" height="20" uuid="2c4e5762-96e8-4711-8c5e-93986dcc8d6f"/>
+				<textElement>
+					<font fontName="dialog" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy" isBlankWhenNull="true">
+				<reportElement x="0" y="5" width="170" height="20" uuid="db372ea9-36df-471b-9aaf-2836df54fe88"/>
+				<textElement>
+					<font fontName="dialog" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[CONCATENATE(new java.text.SimpleDateFormat("dd/MM/yyyy").format(new Date()),"-",$P{RESOURCE}.getString("lq_0003_"+$P{ad_language}),"ver_1.80000")]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="36">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="170" height="20" uuid="70bf3086-3dfc-48e1-98ec-d8f2641bb678"/>
+				<textElement>
+					<font fontName="dialog" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[CONCATENATE(new java.text.SimpleDateFormat("dd/MM/yyyy").format(new Date()),"-",$P{RESOURCE}.getString("lq_0003_"+$P{ad_language}),"ver_1.90106")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="453" y="0" width="60" height="20" uuid="b337335d-e84c-40ac-9119-79f6b09246e6"/>
+				<textElement textAlignment="Right">
+					<font fontName="dialog" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="513" y="0" width="40" height="20" uuid="10740ef9-50f6-45de-ad07-13cbfab8bc57"/>
+				<textElement>
+					<font fontName="dialog" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="170" y="10" width="283" height="10" forecolor="#333333" uuid="723aaf0c-add2-4e76-a559-78b872df5802"/>
+				<textElement textAlignment="Center" markup="none">
+					<font fontName="dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("desc_0003_"+$P{ad_language})]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="21"/>
+	</summary>
+</jasperReport>
