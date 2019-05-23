@@ -848,7 +848,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<componentElement>
 					<reportElement x="0" y="0" width="80" height="70" uuid="88bdf900-5b33-4eab-a8a3-a388d60dd7df"/>
 					<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-						<jr:codeExpression><![CDATA["123456789"]]></jr:codeExpression>
+						<jr:codeExpression><![CDATA[$F{m_inout_documentno}]]></jr:codeExpression>
 					</jr:QRCode>
 				</componentElement>
 			</frame>
@@ -1212,7 +1212,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<componentElement>
 					<reportElement x="0" y="0" width="80" height="70" uuid="24fea240-f634-427b-994b-f15f854c17ab"/>
 					<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
-						<jr:codeExpression><![CDATA["123456789"]]></jr:codeExpression>
+						<jr:codeExpression><![CDATA[$F{m_inout_documentno}]]></jr:codeExpression>
 					</jr:QRCode>
 				</componentElement>
 			</frame>
