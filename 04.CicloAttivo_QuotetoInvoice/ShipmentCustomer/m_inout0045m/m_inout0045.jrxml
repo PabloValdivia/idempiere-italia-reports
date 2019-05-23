@@ -2,7 +2,6 @@
 <!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DDT" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75fe2fe9-b984-4ca9-8696-8bc3bc03080e">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="id prod"/>
 	<property name="com.jaspersoft.studio.unit." value="cm"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
@@ -14,6 +13,7 @@
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="266"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="729"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="idempiere_produzione"/>
 	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -1314,7 +1314,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 		</band>
 	</pageFooter>
 	<lastPageFooter>
-		<band height="290">
+		<band height="280">
 			<frame>
 				<reportElement x="0" y="57" width="318" height="51" isRemoveLineWhenBlank="true" uuid="5337f585-0a42-4758-a009-227092f9db40">
 					<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
@@ -1660,14 +1660,12 @@ A RENDERE]]></text>
 				</textField>
 			</frame>
 			<staticText>
-				<reportElement x="0" y="210" width="555" height="80" uuid="212b995e-fe2c-4d05-8d07-782490eecbde"/>
+				<reportElement x="0" y="210" width="555" height="70" uuid="212b995e-fe2c-4d05-8d07-782490eecbde"/>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font size="8"/>
 				</textElement>
 				<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.
-
 CONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO
-
 Assolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27.
 ]]></text>
 			</staticText>
