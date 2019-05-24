@@ -173,6 +173,10 @@ WHERE
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_qtyentered"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
 	</field>
+	<field name="c_invoiceline_qtyinvoiced" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_qtyinvoiced"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
+	</field>
 	<field name="c_invoiceline_pricelist" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoiceline_pricelist"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_invoice_v"/>
@@ -1264,7 +1268,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_qtyentered}.intValue()!=0]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled"/>
-				<textFieldExpression><![CDATA[$F{c_invoiceline_qtyentered}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{c_invoiceline_qtyinvoiced}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.0000;¤(#,##0.0000-)">
 				<reportElement x="368" y="0" width="53" height="15" uuid="b87ba9a1-a299-401f-8559-d0450409bcec">
