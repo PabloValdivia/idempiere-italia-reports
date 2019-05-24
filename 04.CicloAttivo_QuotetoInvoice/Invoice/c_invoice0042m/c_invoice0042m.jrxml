@@ -4,7 +4,7 @@
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="479"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="id prod"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere_Produzione"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="164"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="831"/>
@@ -1339,6 +1339,22 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 	<lastPageFooter>
 		<band height="102">
 			<frame>
+				<reportElement x="0" y="0" width="190" height="60" uuid="98f3862c-37e0-40f2-add9-eb1730f33e7b">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<subreport overflowType="NoStretch">
+					<reportElement x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="29143f8f-31f9-4435-a361-571f8572727f">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_vat.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<frame>
 				<reportElement x="190" y="0" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -1360,35 +1376,6 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_payschedule.jasper"]]></subreportExpression>
 				</subreport>
-			</frame>
-			<frame>
-				<reportElement x="0" y="60" width="555" height="42" uuid="d2602a4f-6043-463e-8bd1-e5dff791a424"/>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<staticText>
-					<reportElement x="0" y="0" width="555" height="42" uuid="66445f83-faee-424d-8113-a7145f7cc32a"/>
-					<textElement verticalAlignment="Bottom">
-						<font size="8"/>
-					</textElement>
-					<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.]]></text>
-				</staticText>
-				<frame>
-					<reportElement x="-1" y="-60" width="191" height="60" uuid="98f3862c-37e0-40f2-add9-eb1730f33e7b">
-						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5"/>
-					</box>
-					<subreport overflowType="Stretch">
-						<reportElement x="0" y="0" width="191" height="60" isRemoveLineWhenBlank="true" uuid="29143f8f-31f9-4435-a361-571f8572727f">
-							<property name="com.jaspersoft.studio.unit.height" value="px"/>
-						</reportElement>
-						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-						<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_vat.jasper"]]></subreportExpression>
-					</subreport>
-				</frame>
 			</frame>
 			<frame>
 				<reportElement x="380" y="0" width="175" height="60" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
@@ -1415,6 +1402,19 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoice_grandtotal}]]></textFieldExpression>
 				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="60" width="555" height="42" uuid="d2602a4f-6043-463e-8bd1-e5dff791a424"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="42" uuid="66445f83-faee-424d-8113-a7145f7cc32a"/>
+					<textElement verticalAlignment="Bottom">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.]]></text>
+				</staticText>
 			</frame>
 		</band>
 	</lastPageFooter>
