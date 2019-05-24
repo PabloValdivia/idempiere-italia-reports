@@ -620,7 +620,7 @@ WHERE
 						<font size="10"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA["P.IVA: "+$F{c_currency_iso_code}+" "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["P.IVA: "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="148" width="295" height="18" isRemoveLineWhenBlank="true" uuid="96a783d4-969f-4187-8968-09940e6f0916"/>
@@ -917,7 +917,7 @@ CORTESIA]]></text>
 						<font size="10"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA["P.IVA: "+$F{c_currency_iso_code}+" "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["P.IVA: "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="148" width="295" height="18" isRemoveLineWhenBlank="true" uuid="029a212f-6049-46ac-a228-5e4be2d46841"/>
