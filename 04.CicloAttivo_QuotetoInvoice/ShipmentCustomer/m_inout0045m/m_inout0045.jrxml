@@ -1327,7 +1327,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement mode="Opaque" x="0" y="0" width="318" height="15" backcolor="#EDEDED" uuid="2d77aad9-b70c-4ecb-9c7a-672bcd7bbf11">
+					<reportElement mode="Transparent" x="0" y="0" width="318" height="15" backcolor="#EDEDED" uuid="2d77aad9-b70c-4ecb-9c7a-672bcd7bbf11">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>

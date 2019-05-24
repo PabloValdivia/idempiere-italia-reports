@@ -810,14 +810,15 @@ IBAN: IT 22 E 02008 82620 000103213822]]></text>
 IBAN: IT 33 S 02008 82620 000103213759]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="440" y="0" width="115" height="30" uuid="b403312e-ba2a-4f81-9c12-a3c7bd42cadf"/>
+				<reportElement x="440" y="7" width="115" height="50" uuid="b403312e-ba2a-4f81-9c12-a3c7bd42cadf"/>
 				<box>
-					<pen lineWidth="1.0" lineStyle="Dashed"/>
+					<pen lineWidth="2.0" lineStyle="Dashed"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
+					<font size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[COPIA DI CORTESIA]]></text>
+				<text><![CDATA[COPIA DI 
+CORTESIA]]></text>
 			</staticText>
 		</band>
 	</title>
@@ -1337,7 +1338,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		<band/>
 	</columnFooter>
 	<lastPageFooter>
-		<band height="100">
+		<band height="130">
 			<frame>
 				<reportElement x="190" y="0" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
@@ -1373,16 +1374,19 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
+					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[TOTALE FATTURA]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9"/>
+					<reportElement x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
 					<box rightPadding="5"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="12" isBold="true"/>
+						<paragraph rightIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoice_grandtotal}]]></textFieldExpression>
 				</textField>
@@ -1410,14 +1414,14 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</subreport>
 			</frame>
 			<frame>
-				<reportElement x="0" y="60" width="555" height="40" uuid="d2602a4f-6043-463e-8bd1-e5dff791a424">
+				<reportElement x="0" y="60" width="555" height="70" uuid="d2602a4f-6043-463e-8bd1-e5dff791a424">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement x="0" y="0" width="555" height="40" uuid="66445f83-faee-424d-8113-a7145f7cc32a">
+					<reportElement x="0" y="0" width="555" height="70" uuid="66445f83-faee-424d-8113-a7145f7cc32a">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					</reportElement>
@@ -1425,7 +1429,10 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 						<font size="8"/>
 						<paragraph leftIndent="3" rightIndent="3"/>
 					</textElement>
-					<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.]]></text>
+					<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.
+CONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO
+Assolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27.
+]]></text>
 				</staticText>
 			</frame>
 		</band>
