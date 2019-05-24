@@ -1302,7 +1302,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 		<band height="14">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="220" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="ea711447-a730-40e5-8065-0c556b2cd38d">
+				<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="475" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="ea711447-a730-40e5-8065-0c556b2cd38d">
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
@@ -1314,7 +1314,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 		<band height="14">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="220" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="bd1231be-2c9e-4933-a8b7-84edc14c244d">
+				<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="475" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="bd1231be-2c9e-4933-a8b7-84edc14c244d">
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
@@ -1337,23 +1337,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		<band/>
 	</columnFooter>
 	<lastPageFooter>
-		<band height="102">
-			<frame>
-				<reportElement x="0" y="0" width="190" height="60" uuid="98f3862c-37e0-40f2-add9-eb1730f33e7b">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<subreport overflowType="NoStretch">
-					<reportElement x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="29143f8f-31f9-4435-a361-571f8572727f">
-						<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					</reportElement>
-					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_vat.jasper"]]></subreportExpression>
-				</subreport>
-			</frame>
+		<band height="100">
 			<frame>
 				<reportElement x="190" y="0" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
@@ -1404,14 +1388,42 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="0" y="60" width="555" height="42" uuid="d2602a4f-6043-463e-8bd1-e5dff791a424"/>
+				<reportElement x="0" y="0" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<subreport>
+					<reportElement x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					</reportElement>
+					<subreportParameter name="AD_LANGUAGE">
+						<subreportParameterExpression><![CDATA[$P{AD_LANGUAGE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="RECORD_ID">
+						<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="RESOURCE">
+						<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_vat.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<frame>
+				<reportElement x="0" y="60" width="555" height="40" uuid="d2602a4f-6043-463e-8bd1-e5dff791a424">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement x="0" y="0" width="555" height="42" uuid="66445f83-faee-424d-8113-a7145f7cc32a"/>
-					<textElement verticalAlignment="Bottom">
+					<reportElement x="0" y="0" width="555" height="40" uuid="66445f83-faee-424d-8113-a7145f7cc32a">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Top">
 						<font size="8"/>
+						<paragraph leftIndent="3" rightIndent="3"/>
 					</textElement>
 					<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.]]></text>
 				</staticText>

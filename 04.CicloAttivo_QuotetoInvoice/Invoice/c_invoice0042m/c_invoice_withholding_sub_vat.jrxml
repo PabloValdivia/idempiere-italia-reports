@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding_sub_vat" pageWidth="190" pageHeight="58" whenNoDataType="AllSectionsNoDetail" columnWidth="190" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="25ddd7c1-15b6-4842-8b87-d5aa5e04d31f">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding_sub_vat" pageWidth="190" pageHeight="60" whenNoDataType="AllSectionsNoDetail" columnWidth="190" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="25ddd7c1-15b6-4842-8b87-d5aa5e04d31f">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere_Produzione"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -14,7 +15,6 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="RECORD_ID" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -71,73 +71,115 @@ WHERE
 	<background>
 		<band splitType="Stretch"/>
 	</background>
+	<title>
+		<band height="11">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+			<staticText>
+				<reportElement x="0" y="0" width="190" height="11" uuid="0e5835da-3706-4fa7-9a45-8b9bc1ec2a02"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RIEPILOGO IVA]]></text>
+			</staticText>
+		</band>
+	</title>
 	<columnHeader>
 		<band height="10" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
-			<staticText>
-				<reportElement x="0" y="0" width="40" height="10" uuid="25199c66-8ec6-4c4c-b730-4f30426fc344">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93abdc11-a30b-46af-9d72-e30ca66f0ca3"/>
-				</reportElement>
-				<box leftPadding="5"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font fontName="SansSerif" size="5" isBold="true"/>
-				</textElement>
-				<text><![CDATA[COD. IVA]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="40" y="0" width="81" height="10" uuid="740063ff-a36d-4b1e-8f7f-3b6a4aa8fe43">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f3b6d0b2-d480-4940-a759-7ff126502f4e"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="SansSerif" size="5" isBold="true"/>
-				</textElement>
-				<text><![CDATA[BASE IMPONIBILE]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="121" y="0" width="69" height="10" uuid="861a692b-03e6-43a2-a3ec-ad6aced8a24c">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="099b8035-ac39-4ad8-be8d-e0ca8b40fdde"/>
-				</reportElement>
-				<box rightPadding="5"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="SansSerif" size="5" isBold="true"/>
-				</textElement>
-				<text><![CDATA[IMPOSTA]]></text>
-			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="190" height="10" backcolor="#BFBFBF" uuid="d77622fe-bf75-40ee-8867-7849e0af2873"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="40" height="10" uuid="56b97948-d25c-46a3-844e-2f1e5c2c8c9a">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="345f4eb1-ce2f-480e-8462-fc1566cd5cee"/>
+					</reportElement>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[IND.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="40" y="0" width="60" height="10" uuid="3b95c19e-c139-4a9a-bff9-c16d9a8db54b">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4730a37e-9827-46ef-a3a2-4be1a74c1457"/>
+					</reportElement>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[IMPONIBILE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="100" y="0" width="52" height="10" uuid="dd78eab7-acd6-41e3-8733-08d51af777a6">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69798bca-668d-4761-8dbb-614747510b22"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[IMPOSTA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="152" y="0" width="38" height="10" uuid="ae1f2657-5863-4d14-863e-baf01d2087a3">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24399cc0-81ae-403c-8c0c-3ec72f308faa"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[DESCR.]]></text>
+				</staticText>
+			</frame>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="11" splitType="Stretch">
+		<band height="10" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
-			<textField>
-				<reportElement x="0" y="0" width="40" height="11" uuid="0513cafa-b75b-455c-867b-043e78cde486">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="93abdc11-a30b-46af-9d72-e30ca66f0ca3"/>
-				</reportElement>
-				<box leftPadding="5"/>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_tax_taxindicator}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="40" y="0" width="81" height="11" uuid="4c5a8d9b-9292-453b-88a5-399d1f2dc84e">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f3b6d0b2-d480-4940-a759-7ff126502f4e"/>
-				</reportElement>
-				<box rightPadding="5"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_invoicetax_taxbaseamt}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="121" y="0" width="69" height="11" uuid="ccc5731b-d771-4ae6-8b8c-e25a2c643363">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="099b8035-ac39-4ad8-be8d-e0ca8b40fdde"/>
-				</reportElement>
-				<box rightPadding="5"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_invoicetax_taxamt}]]></textFieldExpression>
-			</textField>
+			<frame>
+				<reportElement x="0" y="0" width="190" height="10" uuid="a82f73d7-61b6-4909-8eff-6bab3c8d5b44"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="40" height="10" uuid="6b67282d-87c1-4e30-bd23-cb1e6d9b2e98">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="345f4eb1-ce2f-480e-8462-fc1566cd5cee"/>
+					</reportElement>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_tax_taxindicator}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="40" y="0" width="60" height="10" uuid="cc0ed8b5-cecd-4262-9507-7512271f53c0">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4730a37e-9827-46ef-a3a2-4be1a74c1457"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_invoicetax_taxbaseamt}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="0" width="52" height="10" uuid="e49d8247-28e7-456c-bfa1-8066f056a2bd">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69798bca-668d-4761-8dbb-614747510b22"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_invoicetax_taxamt}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="152" y="0" width="38" height="10" uuid="c7f5d4e6-e060-4da9-828d-15703d7e2227">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24399cc0-81ae-403c-8c0c-3ec72f308faa"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_tax_name}]]></textFieldExpression>
+				</textField>
+			</frame>
 		</band>
 	</detail>
 </jasperReport>
