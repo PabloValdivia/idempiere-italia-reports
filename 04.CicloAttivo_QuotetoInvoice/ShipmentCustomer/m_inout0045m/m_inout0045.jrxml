@@ -1514,7 +1514,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[TOTALE IMPONIBILE:]]></text>
 				</staticText>
 				<textField pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement x="126" y="4" width="106" height="18" isRemoveLineWhenBlank="true" uuid="168e971e-c650-4a67-924f-bb17acf9b21e">
+					<reportElement x="126" y="4" width="111" height="18" isRemoveLineWhenBlank="true" uuid="168e971e-c650-4a67-924f-bb17acf9b21e">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -1523,7 +1523,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_order_totallines}]]></textFieldExpression>
 				</textField>
 				<textField pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement x="126" y="22" width="106" height="26" isRemoveLineWhenBlank="true" uuid="8e680544-bbf2-49db-bdfd-76eb988f2a77">
+					<reportElement x="126" y="22" width="111" height="26" isRemoveLineWhenBlank="true" uuid="8e680544-bbf2-49db-bdfd-76eb988f2a77">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Right" verticalAlignment="Middle">

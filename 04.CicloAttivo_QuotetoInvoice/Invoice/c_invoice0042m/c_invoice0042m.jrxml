@@ -540,7 +540,7 @@ WHERE
 		<variableExpression><![CDATA[$F{c_invoiceline_discount}]]></variableExpression>
 	</variable>
 	<title>
-		<band height="249" splitType="Stretch">
+		<band height="280" splitType="Stretch">
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
 				<reportElement x="0" y="0" width="440" height="63" uuid="993d5ca8-bc92-4e15-b6b3-8109207e9255"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
@@ -846,6 +846,28 @@ CORTESIA]]></text>
 					<reportElement x="57" y="0" width="56" height="21" uuid="8a850cc2-2fe4-4365-87ef-3e153cfd29a1"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[" di " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="249" width="555" height="31" isRemoveLineWhenBlank="true" uuid="c2ae36cc-4dfd-48d4-9e3b-4ac83fbbdb32">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<printWhenExpression><![CDATA[$F{c_bpartner_note}!=null]]></printWhenExpression>
+				</reportElement>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="555" height="16" uuid="b206fe67-62cd-4096-bb9b-de929b0d4fd0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="16" width="555" height="15" uuid="6c2a6b60-443b-41cb-a57b-2b863e8fc0d2">
+						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{c_invoice_note}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -1279,12 +1301,6 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[PREZZO]]></text>
 				</staticText>
 			</frame>
-			<staticText>
-				<reportElement x="75" y="0" width="100" height="17" uuid="eff4fdab-982e-4a9f-8f86-b0c84c4d8e24">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3885e6b9-9e2e-471c-be47-ab6450b99885"/>
-				</reportElement>
-				<text><![CDATA[lit_attribute_v_lot]]></text>
-			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
@@ -1426,9 +1442,9 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		<band/>
 	</columnFooter>
 	<lastPageFooter>
-		<band height="129">
+		<band height="144">
 			<frame>
-				<reportElement x="190" y="0" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
+				<reportElement x="190" y="15" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -1451,7 +1467,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</subreport>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="380" y="0" width="175" height="60" backcolor="#B5B5B5" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
+				<reportElement mode="Opaque" x="380" y="15" width="175" height="60" backcolor="#B5B5B5" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
@@ -1480,7 +1496,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="0" y="0" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
+				<reportElement x="0" y="15" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
@@ -1502,7 +1518,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</subreport>
 			</frame>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="60" width="555" height="69" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
+				<reportElement x="0" y="75" width="555" height="69" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
 				<box>
@@ -1514,6 +1530,20 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</textElement>
 				<textFieldExpression><![CDATA["CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.\nCONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO.\nAssolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27."]]></textFieldExpression>
 			</textField>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="15" uuid="615348fa-4721-4fc7-82da-d4516dba1914">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="555" height="15" uuid="df6b01d0-3da8-4f3d-9096-47f8ec37f1d7">
+						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_invoice_note}]]></textFieldExpression>
+				</textField>
+			</frame>
 		</band>
 	</lastPageFooter>
 </jasperReport>
