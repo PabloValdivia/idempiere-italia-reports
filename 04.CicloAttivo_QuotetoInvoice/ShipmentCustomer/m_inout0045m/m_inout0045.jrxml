@@ -13,7 +13,7 @@
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="266"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="729"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="idempiere_produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere_Produzione"/>
 	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -81,6 +81,7 @@ SELECT ad_image.binarydata AS ad_image_binarydata,
     c_bpartner.name AS c_bpartner_name,
     c_bpartner.name2 AS c_bpartner_name2,
     c_bpartner.taxid AS c_bpartner_taxid,
+    c_bpartner.note AS c_bpartner_note,
     c_bpartner.lit_taxid AS c_bpartner_lit_taxid,
     c_bpartner.value AS c_bpartner_value,
     c_location.address1 AS c_location_address1,
@@ -269,6 +270,10 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 	</field>
 	<field name="c_bpartner_taxid" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_taxid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_bpartner"/>
+	</field>
+	<field name="c_bpartner_note" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_note"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="c_bpartner"/>
 	</field>
 	<field name="c_bpartner_lit_taxid" class="java.lang.String">
@@ -498,7 +503,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 		<variableExpression><![CDATA[$F{m_inout_nopackages}]]></variableExpression>
 	</variable>
 	<title>
-		<band height="306">
+		<band height="320">
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
 				<reportElement x="0" y="0" width="453" height="63" isRemoveLineWhenBlank="true" uuid="0bff7c95-2fe9-4751-9ebf-031e18e61230"/>
 				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
@@ -740,18 +745,28 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="0" y="290" width="555" height="16" isRemoveLineWhenBlank="true" uuid="aa7604ac-efa6-4568-b4dd-75096d6eae9c">
+				<reportElement x="0" y="290" width="555" height="30" isRemoveLineWhenBlank="true" uuid="aa7604ac-efa6-4568-b4dd-75096d6eae9c">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="0" width="555" height="16" isRemoveLineWhenBlank="true" uuid="98f0cbce-fd16-430c-83c1-695d759e0049">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					<reportElement positionType="Float" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" uuid="98f0cbce-fd16-430c-83c1-695d759e0049">
+						<printWhenExpression><![CDATA[$F{m_inout_description}!= null]]></printWhenExpression>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
 						<font isBold="true"/>
-						<paragraph leftIndent="8"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{m_inout_description}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{m_inout_description}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="15" width="555" height="15" isRemoveLineWhenBlank="true" uuid="e7afa414-8d03-471f-94cb-79a0bc49d002">
+						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -766,9 +781,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="260" height="26" forecolor="#000066" uuid="5ffbd5f1-df55-42eb-ae5b-25f5f879037c">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
+					<reportElement x="0" y="0" width="260" height="26" forecolor="#000066" uuid="5ffbd5f1-df55-42eb-ae5b-25f5f879037c"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -778,14 +791,12 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="11"/>
-						<paragraph leftIndent="8"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{lit_m_movementtype_name}!= null?"CAUSALE: "+$F{lit_m_movementtype_name}:"CAUSALE: VENDITA")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="26" width="260" height="26" uuid="d66ce903-913e-4e8f-9378-a3ba42190015">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
+					<reportElement x="0" y="26" width="260" height="26" uuid="d66ce903-913e-4e8f-9378-a3ba42190015"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -795,7 +806,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="11"/>
-						<paragraph leftIndent="8"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA["TRASPORTO A MEZZO: "+$F{m_inout_deliveryviarule}.toUpperCase()]]></textFieldExpression>
 				</textField>
@@ -1108,12 +1119,10 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="0" width="555" height="16" isRemoveLineWhenBlank="true" uuid="6689e831-d664-464e-8b52-51b9761d08aa">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
+					<reportElement positionType="Float" x="0" y="0" width="555" height="16" isRemoveLineWhenBlank="true" uuid="6689e831-d664-464e-8b52-51b9761d08aa"/>
 					<textElement verticalAlignment="Middle">
 						<font isBold="true"/>
-						<paragraph leftIndent="8"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inout_description}]]></textFieldExpression>
 				</textField>
@@ -1130,9 +1139,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="260" height="26" forecolor="#000066" uuid="0958bcdf-8798-4e8e-951d-48eeb2f11789">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
+					<reportElement x="0" y="0" width="260" height="26" forecolor="#000066" uuid="0958bcdf-8798-4e8e-951d-48eeb2f11789"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -1142,14 +1149,12 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="11"/>
-						<paragraph leftIndent="8"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{lit_m_movementtype_name}!= null?"CAUSALE: "+$F{lit_m_movementtype_name}:"CAUSALE: VENDITA")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="26" width="260" height="26" uuid="95c94d79-aa05-4e28-8493-79665dba57ad">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
+					<reportElement x="0" y="26" width="260" height="26" uuid="95c94d79-aa05-4e28-8493-79665dba57ad"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -1159,7 +1164,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="11"/>
-						<paragraph leftIndent="8"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA["TRASPORTO A MEZZO: "+$F{m_inout_deliveryviarule}.toUpperCase()]]></textFieldExpression>
 				</textField>
@@ -1459,13 +1464,14 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 			</frame>
 			<frame>
 				<reportElement positionType="Float" x="0" y="57" width="318" height="51" isRemoveLineWhenBlank="true" uuid="5337f585-0a42-4758-a009-227092f9db40">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<box padding="0">
 					<pen lineWidth="0.5"/>
 				</box>
-				<subreport>
-					<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="318" height="51" isRemoveLineWhenBlank="true" uuid="f5da041f-494b-48bb-bf44-43683bd5a675">
+				<subreport isUsingCache="false" runToBottom="false">
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="318" height="51" isRemoveLineWhenBlank="true" uuid="f5da041f-494b-48bb-bf44-43683bd5a675">
 						<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="SUBREPORT_DIR">
@@ -1494,15 +1500,21 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</subreport>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" x="318" y="57" width="237" height="51" isRemoveLineWhenBlank="true" backcolor="#FFCC00" uuid="a448e8c5-dcea-4af4-9250-be68cfb5886b">
+				<reportElement positionType="Float" mode="Opaque" x="318" y="57" width="237" height="51" isRemoveLineWhenBlank="true" backcolor="#FFCC00" uuid="a448e8c5-dcea-4af4-9250-be68cfb5886b">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 					<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
+				<staticText>
+					<reportElement x="0" y="4" width="126" height="18" isRemoveLineWhenBlank="true" uuid="bd7e5a07-4254-49a0-be32-ff245075f173"/>
+					<box padding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<text><![CDATA[TOTALE IMPONIBILE:]]></text>
+				</staticText>
 				<textField pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement x="140" y="7" width="92" height="18" isRemoveLineWhenBlank="true" uuid="168e971e-c650-4a67-924f-bb17acf9b21e">
+					<reportElement x="126" y="4" width="106" height="18" isRemoveLineWhenBlank="true" uuid="168e971e-c650-4a67-924f-bb17acf9b21e">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -1511,28 +1523,22 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_order_totallines}]]></textFieldExpression>
 				</textField>
 				<textField pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement x="140" y="25" width="92" height="20" isRemoveLineWhenBlank="true" uuid="8e680544-bbf2-49db-bdfd-76eb988f2a77">
+					<reportElement x="126" y="22" width="106" height="26" isRemoveLineWhenBlank="true" uuid="8e680544-bbf2-49db-bdfd-76eb988f2a77">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font isBold="true"/>
+						<font size="12" isBold="true"/>
 						<paragraph rightIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_order_grandtotal}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="0" y="7" width="140" height="18" isRemoveLineWhenBlank="true" uuid="bd7e5a07-4254-49a0-be32-ff245075f173"/>
-					<box topPadding="0" leftPadding="15" bottomPadding="0" rightPadding="0"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle"/>
-					<text><![CDATA[TOTALE IMPONIBILE:]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="0" y="25" width="140" height="20" isRemoveLineWhenBlank="true" uuid="5e3f9249-5ba8-441a-bb20-2ff769f76982"/>
-					<box topPadding="0" leftPadding="15" bottomPadding="0" rightPadding="0"/>
+					<reportElement x="0" y="22" width="126" height="26" isRemoveLineWhenBlank="true" uuid="5e3f9249-5ba8-441a-bb20-2ff769f76982"/>
+					<box padding="2"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font isBold="true"/>
+						<font size="12" isBold="true"/>
 					</textElement>
-					<text><![CDATA[TOTALE DOCUMENTO:]]></text>
+					<text><![CDATA[TOTALE FATTURA:]]></text>
 				</staticText>
 			</frame>
 			<frame>
@@ -1577,7 +1583,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" x="0" y="136" width="555" height="34" isRemoveLineWhenBlank="true" uuid="fb6e30e5-ab10-4e0a-b5cd-29d31180b1fb">
+				<reportElement positionType="Float" x="0" y="136" width="555" height="34" uuid="fb6e30e5-ab10-4e0a-b5cd-29d31180b1fb">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<property name="ShowOutOfBoundContent" value="true"/>
 				</reportElement>
@@ -1634,7 +1640,7 @@ A RENDERE]]></text>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" x="0" y="170" width="555" height="40" isRemoveLineWhenBlank="true" uuid="de750590-5575-4092-813e-9fa0b2df3a97">
+				<reportElement positionType="Float" x="0" y="170" width="555" height="40" uuid="de750590-5575-4092-813e-9fa0b2df3a97">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 				</reportElement>
 				<staticText>
@@ -1659,16 +1665,19 @@ A RENDERE]]></text>
 					<text><![CDATA[   FIRMA DEL DESTINATARIO]]></text>
 				</staticText>
 			</frame>
-			<staticText>
-				<reportElement positionType="Float" x="0" y="210" width="555" height="70" isRemoveLineWhenBlank="true" uuid="212b995e-fe2c-4d05-8d07-782490eecbde"/>
-				<textElement textAlignment="Left" verticalAlignment="Top">
-					<font size="8"/>
-				</textElement>
-				<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.
+			<frame>
+				<reportElement positionType="Float" x="0" y="210" width="555" height="70" uuid="6ce32160-b545-4383-b728-8f7e4a677fe0"/>
+				<staticText>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="555" height="70" isRemoveLineWhenBlank="true" uuid="212b995e-fe2c-4d05-8d07-782490eecbde"/>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.
 CONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO
 Assolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27.
 ]]></text>
-			</staticText>
+				</staticText>
+			</frame>
 		</band>
 	</lastPageFooter>
 </jasperReport>
