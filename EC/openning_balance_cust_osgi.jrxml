@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OpenningBalanceCust" pageWidth="535" pageHeight="842" whenNoDataType="NoPages" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="289eeb9a-1c87-40d1-becf-f5011e230f15">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<style name="ob"/>
+	<parameter name="C_BPartner_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer (1000000)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DateAcctFrom" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date(100,0,1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TOTALS" class="java.util.HashMap" isForPrompting="false"/>
+	<parameter name="RESOURCE_DIR" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select (
+           ( Select (
+                (select COALESCE(SUM(iar.GRANDTOTAL),0) as ARInvoices from C_INVOICE iar, C_DOCTYPE doc
+ where doc.NAME IN ('AR Invoice','AR CreditMemo','AR Invoice Indirect')
+                AND iar.DOCSTATUS IN ('CO','CL')
+		AND iar.C_BPARTNER_ID =$P{C_BPartner_ID} AND iar.C_DOCTYPE_ID=doc.C_DOCTYPE_ID
+		AND iar.DATEINVOICED < $P{DateAcctFrom}) ) as Invoices) -
+
+           ( Select (
+              (select COALESCE(SUM(par.PAYAMT) + SUM(par.discountamt),0) as ARPayments
+	      from C_PAYMENT  par, C_DOCTYPE doc  where doc.NAME ='AR Receipt'
+              AND par.DOCSTATUS IN ('CO','CL')
+	      AND  par.C_BPARTNER_ID =$P{C_BPartner_ID} AND par.C_DOCTYPE_ID=doc.C_DOCTYPE_ID
+	      AND par.DATETRX < $P{DateAcctFrom})
+              ) as Payments)
+     ) as OpenningBal]]>
+	</queryString>
+	<field name="OPENNINGBAL" class="java.lang.Double"/>
+	<variable name="TOTALS" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{OPENNINGBAL}]]></variableExpression>
+		<initialValueExpression><![CDATA[new Double(0)]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement key="textField" mode="Opaque" x="312" y="1" width="221" height="18" backcolor="#FFFFFF" uuid="975de3ea-a0ce-4dde-aabf-222492e62ca6"/>
+				<box leftPadding="2" rightPadding="2">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OPENNINGBAL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="element-90" mode="Opaque" x="0" y="1" width="314" height="18" forecolor="#000000" backcolor="#FFFFFF" uuid="c37721d3-4e10-4013-a462-d8e2b38e6385"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Sans" size="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Saldo di apertura]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
