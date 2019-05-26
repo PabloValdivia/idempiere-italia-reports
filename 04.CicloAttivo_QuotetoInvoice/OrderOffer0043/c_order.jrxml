@@ -780,6 +780,14 @@ ORDER BY
 					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="260" height="61" uuid="c90080d3-665c-407f-b7b7-d225dae82d79"/>
+					<text><![CDATA[TERMINI DI PAGAMENTO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="61" width="260" height="60" uuid="4ad6f7b5-e7ca-4358-9ded-d4ee96c7d57a"/>
+					<textFieldExpression><![CDATA[$F{c_order_paymentrule}]]></textFieldExpression>
+				</textField>
 			</frame>
 			<frame>
 				<reportElement x="454" y="50" width="100" height="13" uuid="78f393a5-505c-4360-9962-5a38d586e9f8">
@@ -1085,18 +1093,18 @@ ORDER BY
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box rightPadding="5">
-					<pen lineWidth="1.0"/>
+					<pen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<staticText>
-					<reportElement x="0" y="0" width="207" height="23" uuid="36bfbc66-fef8-42be-905a-725308d0393e"/>
+					<reportElement x="0" y="0" width="207" height="23" forecolor="#FF0000" uuid="36bfbc66-fef8-42be-905a-725308d0393e"/>
 					<box rightPadding="5"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="12" isBold="true"/>
 					</textElement>
-					<text><![CDATA[TOTALE]]></text>
+					<text><![CDATA[TOTALE DOCUMENTO]]></text>
 				</staticText>
 				<textField pattern="¤    #,##0.##;¤-#,##0.##">
-					<reportElement x="0" y="23" width="207" height="23" uuid="3f66e5c0-2282-49ca-bf7f-7d80468d6fdc"/>
+					<reportElement x="0" y="23" width="207" height="23" forecolor="#FF0000" uuid="3f66e5c0-2282-49ca-bf7f-7d80468d6fdc"/>
 					<box rightPadding="5"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="14" isBold="true"/>
