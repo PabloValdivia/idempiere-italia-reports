@@ -581,7 +581,7 @@ ORDER BY
 				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="65" width="260" height="103" backcolor="#CCCCFF" uuid="1f13cb28-81cf-428c-a3b9-d7bc89490343"/>
+				<reportElement mode="Opaque" x="0" y="65" width="260" height="103" backcolor="#CCF7FF" uuid="1f13cb28-81cf-428c-a3b9-d7bc89490343"/>
 				<box padding="0">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -851,7 +851,7 @@ ORDER BY
 		<band height="16">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="554" height="16" backcolor="#CCCCFF" uuid="46463c0d-3217-4599-ac9d-0893d1bbcf7c">
+				<reportElement mode="Opaque" x="0" y="0" width="554" height="16" backcolor="#CCF7FF" uuid="46463c0d-3217-4599-ac9d-0893d1bbcf7c">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 				</reportElement>
 				<box>
@@ -995,7 +995,7 @@ ORDER BY
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_orderline_pricelist}]]></textFieldExpression>
 				</textField>
-				<textField pattern="#,###.0##;(#,###.0##-)">
+				<textField pattern="#,##0.0##">
 					<reportElement x="430" y="0" width="40" height="10" uuid="cf0e3a12-b30c-44ad-84ce-71f27cc0c08c">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e9a5f79a-d0b7-4bf4-acdf-bce819baa3d2"/>
 						<printWhenExpression><![CDATA[$F{c_orderline_discount}.doubleValue() != 0.0]]></printWhenExpression>
@@ -1089,7 +1089,7 @@ ORDER BY
 				</subreport>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="341" y="43" width="212" height="46" backcolor="#CCCCFF" uuid="bd812ab7-df88-463e-8750-45c65f24041b">
+				<reportElement mode="Opaque" x="341" y="43" width="212" height="46" backcolor="#CCF7FF" uuid="bd812ab7-df88-463e-8750-45c65f24041b">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box rightPadding="5">

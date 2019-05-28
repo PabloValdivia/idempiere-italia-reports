@@ -90,7 +90,9 @@ WHERE
 		<band height="10" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="190" height="10" backcolor="#BFBFBF" uuid="d77622fe-bf75-40ee-8867-7849e0af2873"/>
+				<reportElement mode="Opaque" x="0" y="0" width="190" height="10" backcolor="#BFBFBF" uuid="d77622fe-bf75-40ee-8867-7849e0af2873">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
@@ -105,7 +107,7 @@ WHERE
 					<text><![CDATA[IND.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="40" y="0" width="60" height="10" uuid="3b95c19e-c139-4a9a-bff9-c16d9a8db54b">
+					<reportElement x="40" y="0" width="90" height="10" uuid="3b95c19e-c139-4a9a-bff9-c16d9a8db54b">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4730a37e-9827-46ef-a3a2-4be1a74c1457"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -114,22 +116,14 @@ WHERE
 					<text><![CDATA[IMPONIBILE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="100" y="0" width="52" height="10" uuid="dd78eab7-acd6-41e3-8733-08d51af777a6">
+					<reportElement x="130" y="0" width="60" height="10" uuid="dd78eab7-acd6-41e3-8733-08d51af777a6">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69798bca-668d-4761-8dbb-614747510b22"/>
 					</reportElement>
+					<box rightPadding="5"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="6"/>
 					</textElement>
 					<text><![CDATA[IMPOSTA]]></text>
-				</staticText>
-				<staticText>
-					<reportElement x="152" y="0" width="38" height="10" uuid="ae1f2657-5863-4d14-863e-baf01d2087a3">
-						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24399cc0-81ae-403c-8c0c-3ec72f308faa"/>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font size="6"/>
-					</textElement>
-					<text><![CDATA[DESCR.]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -138,7 +132,9 @@ WHERE
 		<band height="10" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<frame>
-				<reportElement x="0" y="0" width="190" height="10" uuid="a82f73d7-61b6-4909-8eff-6bab3c8d5b44"/>
+				<reportElement x="0" y="0" width="190" height="10" uuid="a82f73d7-61b6-4909-8eff-6bab3c8d5b44">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
@@ -153,7 +149,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_tax_taxindicator}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="40" y="0" width="60" height="10" uuid="cc0ed8b5-cecd-4262-9507-7512271f53c0">
+					<reportElement x="40" y="0" width="90" height="10" uuid="cc0ed8b5-cecd-4262-9507-7512271f53c0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4730a37e-9827-46ef-a3a2-4be1a74c1457"/>
 					</reportElement>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -161,23 +157,15 @@ WHERE
 					</textElement>
 					<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_invoicetax_taxbaseamt}]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement x="100" y="0" width="52" height="10" uuid="e49d8247-28e7-456c-bfa1-8066f056a2bd">
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="130" y="0" width="60" height="10" uuid="e49d8247-28e7-456c-bfa1-8066f056a2bd">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="69798bca-668d-4761-8dbb-614747510b22"/>
 					</reportElement>
+					<box rightPadding="5"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="6"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_invoicetax_taxamt}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="152" y="0" width="38" height="10" uuid="c7f5d4e6-e060-4da9-828d-15703d7e2227">
-						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="24399cc0-81ae-403c-8c0c-3ec72f308faa"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font size="6"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{lit_c_invoice_tax_c_tax_name}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
