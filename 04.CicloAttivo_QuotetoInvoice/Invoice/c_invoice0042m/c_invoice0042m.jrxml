@@ -1486,7 +1486,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 	<lastPageFooter>
 		<band height="144">
 			<frame>
-				<reportElement x="190" y="15" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
+				<reportElement stretchType="ElementGroupBottom" x="190" y="15" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -1494,7 +1494,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<pen lineWidth="0.5"/>
 				</box>
 				<subreport isUsingCache="true">
-					<reportElement positionType="Float" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="458aa8da-fce4-4602-a45e-1029d9b19b29"/>
+					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="458aa8da-fce4-4602-a45e-1029d9b19b29"/>
 					<subreportParameter name="AD_LANGUAGE">
 						<subreportParameterExpression><![CDATA[$F{ad_language}]]></subreportParameterExpression>
 					</subreportParameter>
@@ -1509,14 +1509,14 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</subreport>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="380" y="15" width="175" height="60" backcolor="#B5B5B5" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
+				<reportElement stretchType="ElementGroupBottom" mode="Opaque" x="380" y="15" width="175" height="60" backcolor="#B5B5B5" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement x="0" y="0" width="175" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
+					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="175" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
@@ -1526,7 +1526,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[TOTALE FATTURA]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
+					<reportElement stretchType="ElementGroupBottom" x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					</reportElement>
 					<box rightPadding="5"/>
@@ -1538,12 +1538,12 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="0" y="15" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
+				<reportElement stretchType="ElementGroupBottom" x="0" y="15" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<subreport>
-					<reportElement x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
+					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<subreportParameter name="AD_LANGUAGE">
@@ -1560,7 +1560,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</subreport>
 			</frame>
 			<textField isStretchWithOverflow="true">
-				<reportElement x="0" y="75" width="555" height="69" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
+				<reportElement stretchType="ElementGroupBottom" x="0" y="75" width="555" height="69" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
 					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 				</reportElement>
 				<box>
@@ -1573,11 +1573,11 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				<textFieldExpression><![CDATA["CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.\nCONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO.\nAssolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27."]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement x="0" y="0" width="555" height="15" uuid="615348fa-4721-4fc7-82da-d4516dba1914">
+				<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="15" uuid="615348fa-4721-4fc7-82da-d4516dba1914">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField>
-					<reportElement x="0" y="0" width="555" height="15" uuid="df6b01d0-3da8-4f3d-9096-47f8ec37f1d7">
+					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="15" uuid="df6b01d0-3da8-4f3d-9096-47f8ec37f1d7">
 						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">

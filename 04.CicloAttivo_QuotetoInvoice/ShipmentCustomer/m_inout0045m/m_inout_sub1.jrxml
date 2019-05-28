@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_inout_sub1" pageWidth="550" pageHeight="810" whenNoDataType="NoDataSection" columnWidth="550" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="c33fbd9b-fd01-4855-baf8-57a853bc8344">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_inout_sub1" pageWidth="555" pageHeight="810" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="c33fbd9b-fd01-4855-baf8-57a853bc8344">
 	<property name="ireport.zoom" value="1.6934217901613329"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -11,15 +11,6 @@
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="657"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="id prod"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -233,7 +224,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<text><![CDATA[QUANTITA']]></text>
 			</staticText>
 			<staticText>
-				<reportElement mode="Opaque" x="488" y="0" width="62" height="12" backcolor="#E5FF91" uuid="b16680d6-77fe-470c-bd4e-d3952c5cc5dc">
+				<reportElement mode="Opaque" x="488" y="0" width="67" height="12" backcolor="#E5FF91" uuid="b16680d6-77fe-470c-bd4e-d3952c5cc5dc">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f883e7f-cc62-46ec-ae69-e69dd0c98e00"/>
 				</reportElement>
 				<box>
@@ -255,8 +246,9 @@ ORDER BY m_inoutline_line ASC]]>
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<printWhenExpression><![CDATA[!($F{ad_orginfo_lit_report_param}.charAt(16)=='N' && $F{m_product_producttype}.equals("S"))]]></printWhenExpression>
 			<frame>
-				<reportElement x="0" y="0" width="550" height="14" uuid="10432992-0c93-4ddb-b243-3d656d981225">
+				<reportElement x="0" y="0" width="555" height="14" uuid="10432992-0c93-4ddb-b243-3d656d981225">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textField>
 					<reportElement x="0" y="0" width="80" height="14" uuid="4b052802-baaa-417b-9c6e-acc2fa9934ba">
@@ -322,7 +314,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<textFieldExpression><![CDATA[$F{m_inoutline_movementqty}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.###;(#,##0.###-)">
-					<reportElement x="488" y="0" width="62" height="14" uuid="464b5c09-9c8e-40b4-a238-f6adcc7d1ebc">
+					<reportElement x="488" y="0" width="67" height="14" uuid="464b5c09-9c8e-40b4-a238-f6adcc7d1ebc">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f883e7f-cc62-46ec-ae69-e69dd0c98e00"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_uom_trl_uomsymbol}.equals( "Nr" )]]></printWhenExpression>
