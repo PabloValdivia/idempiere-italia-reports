@@ -152,6 +152,7 @@ WHERE
 					<reportElement x="40" y="0" width="90" height="10" uuid="cc0ed8b5-cecd-4262-9507-7512271f53c0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4730a37e-9827-46ef-a3a2-4be1a74c1457"/>
 					</reportElement>
+					<box rightPadding="5"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="6"/>
 					</textElement>

@@ -4,7 +4,7 @@
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="479"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere_Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="164"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="831"/>
@@ -546,7 +546,7 @@ WHERE
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement x="260" y="65" width="295" height="184" isRemoveLineWhenBlank="true" uuid="24b898dc-c5a4-4dc4-8dec-b8e9ed8c2908">
+				<reportElement x="260" y="64" width="295" height="122" isRemoveLineWhenBlank="true" uuid="24b898dc-c5a4-4dc4-8dec-b8e9ed8c2908">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -556,7 +556,7 @@ WHERE
 					<pen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="22" forecolor="#081080" backcolor="#BFBFBF" uuid="bc094150-b3e5-4a42-aad5-faee6705aac2"/>
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="14" forecolor="#081080" backcolor="#BFBFBF" uuid="bc094150-b3e5-4a42-aad5-faee6705aac2"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
@@ -567,7 +567,7 @@ WHERE
 					<text><![CDATA[CLIENTE]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="22" width="295" height="18" isRemoveLineWhenBlank="true" uuid="e7493a2a-c189-4aba-990d-1ccfe6985f23"/>
+					<reportElement positionType="Float" x="0" y="14" width="295" height="12" isRemoveLineWhenBlank="true" uuid="e7493a2a-c189-4aba-990d-1ccfe6985f23"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font size="10" isBold="true"/>
@@ -576,7 +576,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="40" width="295" height="18" isRemoveLineWhenBlank="true" uuid="1572f64c-c9c2-49a2-8a82-5ce911f2fd31">
+					<reportElement positionType="Float" x="0" y="26" width="295" height="12" isRemoveLineWhenBlank="true" uuid="1572f64c-c9c2-49a2-8a82-5ce911f2fd31">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -585,7 +585,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{c_bpartner_name2}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="58" width="295" height="18" isRemoveLineWhenBlank="true" uuid="b8525fff-7077-4de3-9b04-1a399f41aefb"/>
+					<reportElement positionType="Float" x="0" y="38" width="295" height="12" isRemoveLineWhenBlank="true" uuid="b8525fff-7077-4de3-9b04-1a399f41aefb"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font isBold="false"/>
@@ -594,21 +594,21 @@ WHERE
 					<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="76" width="295" height="18" isRemoveLineWhenBlank="true" uuid="2f9bdfea-da26-4579-94a2-2499894466b0"/>
+					<reportElement positionType="Float" x="0" y="50" width="295" height="12" isRemoveLineWhenBlank="true" uuid="2f9bdfea-da26-4579-94a2-2499894466b0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address2}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="94" width="295" height="18" isRemoveLineWhenBlank="true" uuid="fcc811e7-9e12-438a-b64e-3a078be5e499"/>
+					<reportElement positionType="Float" x="0" y="62" width="295" height="12" isRemoveLineWhenBlank="true" uuid="fcc811e7-9e12-438a-b64e-3a078be5e499"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address3}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="112" width="295" height="18" isRemoveLineWhenBlank="true" uuid="c20fe141-70df-4081-9c8b-f3730fec4595"/>
+					<reportElement positionType="Float" x="0" y="74" width="295" height="12" isRemoveLineWhenBlank="true" uuid="c20fe141-70df-4081-9c8b-f3730fec4595"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font isBold="false"/>
@@ -617,7 +617,7 @@ WHERE
 					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname})+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="130" width="295" height="18" isRemoveLineWhenBlank="true" uuid="aadca227-f85b-4325-b53b-0ec795b82943"/>
+					<reportElement positionType="Float" x="0" y="86" width="295" height="12" isRemoveLineWhenBlank="true" uuid="aadca227-f85b-4325-b53b-0ec795b82943"/>
 					<box>
 						<pen lineWidth="0.0"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -632,14 +632,14 @@ WHERE
 					<textFieldExpression><![CDATA["P.IVA: "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="148" width="295" height="18" isRemoveLineWhenBlank="true" uuid="96a783d4-969f-4187-8968-09940e6f0916"/>
+					<reportElement positionType="Float" x="0" y="98" width="295" height="12" isRemoveLineWhenBlank="true" uuid="96a783d4-969f-4187-8968-09940e6f0916"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null ? "TELEFONO: "+$F{c_bpartner_location_a_phone}:""]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="166" width="295" height="18" isRemoveLineWhenBlank="true" uuid="1ef54389-f109-4338-aaf3-abd2e5cb779d"/>
+					<reportElement positionType="Float" x="0" y="110" width="295" height="12" isRemoveLineWhenBlank="true" uuid="1ef54389-f109-4338-aaf3-abd2e5cb779d"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
@@ -647,7 +647,7 @@ WHERE
 				</textField>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="65" width="260" height="124" backcolor="#A1D971" uuid="9c71c8df-3b71-4829-9cf8-dfac4a81ae13"/>
+				<reportElement mode="Opaque" x="0" y="64" width="260" height="78" backcolor="#A1D971" uuid="9c71c8df-3b71-4829-9cf8-dfac4a81ae13"/>
 				<box padding="0">
 					<pen lineWidth="0.5"/>
 				</box>
@@ -700,128 +700,7 @@ WHERE
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<text><![CDATA[DATA DOCUMENTO]]></text>
 				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="78" width="260" height="16" uuid="24db3f73-270c-4bb1-95e0-dfdce8881ddf"/>
-					<box leftPadding="5"/>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="94" width="260" height="16" uuid="7438847a-17d1-4cf4-a44f-ed1473bfd837"/>
-					<box leftPadding="5"/>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA["TERMINE DI PAGAMENTO:"+$F{c_paymentterm_value}]]></textFieldExpression>
-				</textField>
 			</frame>
-			<staticText>
-				<reportElement x="0" y="189" width="260" height="20" isRemoveLineWhenBlank="true" uuid="7a3620b6-2cb9-4cd5-86b9-2ac1c48034b0">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id} != null]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10" isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA PER L'INCASSO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="c1c750a1-7e13-428d-88fc-26560ec51939">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000000]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: MONTE DEI PASCHI DI SIENA S.p.A. 
-IBAN: IT 87 N 01030 82490 000063277929
-BIC: PASCITM1ME4]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a89b8d67-63de-4009-aecd-e4a18dd84fef">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000007]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: BPM
-IBAN: IT 77 S 05034 82670 000000 704704
-BIC: BAPPIT21P66]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="2a1a330d-109c-4a69-8be0-4ee4311b90e0">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000012]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: BANCA IFIS S.p.A.
-IBAN: IT 97 Y 03205 02000 000000000070]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="47ef3aea-9ddb-40d8-8f55-56b4291eea38">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000003]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: BANCA BPER S.p.A.
-IBAN: IT 47 Q 05387 16900 000002397825]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a0742acf-370c-48cc-95d1-81b61c7fb247">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000008]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: BANCA IFIS S.p.A.
-IBAN: IT 81 Y 03205 04600 000002220086]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="e771752b-21e8-493a-a248-2578c7736573">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000011]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: UNICREDIT S.p.A.
-IBAN: IT 22 E 02008 82620 000103213822]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="3bdad98c-3e5c-4215-8083-faed17ed1cbf">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000001]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: UNICREDIT S.p.A.
-IBAN: IT 33 S 02008 82620 000103213759]]></text>
-			</staticText>
 			<staticText>
 				<reportElement x="440" y="0" width="115" height="40" uuid="b403312e-ba2a-4f81-9c12-a3c7bd42cadf"/>
 				<box>
@@ -834,7 +713,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 CORTESIA]]></text>
 			</staticText>
 			<frame>
-				<reportElement x="440" y="43" width="113" height="21" uuid="9ca2a5d2-0984-4881-a5f9-7d04905b8e16">
+				<reportElement x="440" y="42" width="113" height="21" uuid="9ca2a5d2-0984-4881-a5f9-7d04905b8e16">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 				</reportElement>
 				<textField>
@@ -853,7 +732,7 @@ CORTESIA]]></text>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="555" height="21" uuid="b206fe67-62cd-4096-bb9b-de929b0d4fd0">
+					<reportElement x="0" y="0" width="555" height="21" isRemoveLineWhenBlank="true" uuid="b206fe67-62cd-4096-bb9b-de929b0d4fd0">
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -871,7 +750,7 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA["DESCR. DOCUMENTO: "+$F{c_invoice_description}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="41" width="555" height="20" uuid="92f24c61-2e99-4438-9c4d-b57681bdc49c">
+					<reportElement x="0" y="41" width="555" height="20" isRemoveLineWhenBlank="true" uuid="92f24c61-2e99-4438-9c4d-b57681bdc49c">
 						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -880,17 +759,149 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{c_invoice_note}]]></textFieldExpression>
 				</textField>
 			</frame>
+			<frame>
+				<reportElement x="0" y="143" width="260" height="46" uuid="bf3d4f70-9362-4a6b-ba27-24fcab1871c1">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="260" height="23" uuid="f5586c04-5a6e-4a4b-b907-ff77f34e8fd7"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["TERMINE DI PAGAMENTO:"+$F{c_paymentterm_value}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="23" width="260" height="23" uuid="bd0eeee2-8a69-42d9-a150-392d3e6d576a"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="189" width="260" height="60" uuid="604d6531-5a62-45ae-81f1-2852862e02b9"/>
+				<staticText>
+					<reportElement x="0" y="0" width="260" height="20" isRemoveLineWhenBlank="true" uuid="7a3620b6-2cb9-4cd5-86b9-2ac1c48034b0">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id} != null]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA PER L'INCASSO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="c1c750a1-7e13-428d-88fc-26560ec51939">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000000]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: MONTE DEI PASCHI DI SIENA S.p.A. 
+IBAN: IT 87 N 01030 82490 000063277929
+BIC: PASCITM1ME4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a89b8d67-63de-4009-aecd-e4a18dd84fef">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000007]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BPM
+IBAN: IT 77 S 05034 82670 000000 704704
+BIC: BAPPIT21P66]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="2a1a330d-109c-4a69-8be0-4ee4311b90e0">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000012]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
+IBAN: IT 97 Y 03205 02000 000000000070]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="47ef3aea-9ddb-40d8-8f55-56b4291eea38">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000003]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA BPER S.p.A.
+IBAN: IT 47 Q 05387 16900 000002397825]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a0742acf-370c-48cc-95d1-81b61c7fb247">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000008]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
+IBAN: IT 81 Y 03205 04600 000002220086]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="e771752b-21e8-493a-a248-2578c7736573">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000016]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: UNICREDIT S.p.A.
+IBAN: IT 22 E 02008 82620 000103213822]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="3bdad98c-3e5c-4215-8083-faed17ed1cbf">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000001]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: UNICREDIT S.p.A.
+IBAN: IT 33 S 02008 82620 000103213759]]></text>
+				</staticText>
+			</frame>
 		</band>
 	</title>
 	<pageHeader>
 		<band height="310">
 			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > (1)]]></printWhenExpression>
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
-				<reportElement x="0" y="0" width="440" height="63" uuid="f77cb188-feac-4aa3-aa03-08902937a2c6"/>
+				<reportElement x="0" y="0" width="440" height="63" uuid="8066b93c-9f51-4cc4-b521-63cb5345cd9f"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement x="260" y="65" width="295" height="184" isRemoveLineWhenBlank="true" uuid="40f7b6a7-8740-4eae-9848-6585be6a8730">
+				<reportElement x="260" y="64" width="295" height="122" isRemoveLineWhenBlank="true" uuid="a92f866a-69c0-428e-9689-3bb0a26f2ea0">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -900,7 +911,7 @@ CORTESIA]]></text>
 					<pen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="22" forecolor="#081080" backcolor="#BFBFBF" uuid="0ae29097-c52d-4a23-95d9-20b750bb673a"/>
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="14" forecolor="#081080" backcolor="#BFBFBF" uuid="138e4d4b-f32e-40d1-a56b-52c9d66c56f0"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
@@ -911,7 +922,7 @@ CORTESIA]]></text>
 					<text><![CDATA[CLIENTE]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="22" width="295" height="18" isRemoveLineWhenBlank="true" uuid="7db4e94a-b321-4ac5-a9c5-8b8e88223867"/>
+					<reportElement positionType="Float" x="0" y="14" width="295" height="12" isRemoveLineWhenBlank="true" uuid="e826164e-0f04-4377-97cd-5ddd31fab8d3"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font size="10" isBold="true"/>
@@ -920,7 +931,7 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="40" width="295" height="18" isRemoveLineWhenBlank="true" uuid="63a28d6e-ca3e-4da6-9219-4914f5efca3b">
+					<reportElement positionType="Float" x="0" y="26" width="295" height="12" isRemoveLineWhenBlank="true" uuid="482e4ebb-16a6-4667-b551-a58aa8afe856">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -929,7 +940,7 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name2}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="58" width="295" height="18" isRemoveLineWhenBlank="true" uuid="6d799e74-ac27-4274-ab33-c16cf8852ca9"/>
+					<reportElement positionType="Float" x="0" y="38" width="295" height="12" isRemoveLineWhenBlank="true" uuid="71484c09-ae3d-4dfe-baf5-94c9eae3c816"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font isBold="false"/>
@@ -938,21 +949,21 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="76" width="295" height="18" isRemoveLineWhenBlank="true" uuid="a48312a8-b47d-42ed-bbb0-94dcbf8fa9f8"/>
+					<reportElement positionType="Float" x="0" y="50" width="295" height="12" isRemoveLineWhenBlank="true" uuid="33125055-4326-4128-84f9-f15a990e85b1"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address2}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="94" width="295" height="18" isRemoveLineWhenBlank="true" uuid="a0d8831f-39c8-4e30-b054-e88baedd2072"/>
+					<reportElement positionType="Float" x="0" y="62" width="295" height="12" isRemoveLineWhenBlank="true" uuid="ee920524-6402-4b9c-b0ad-c4093dc17bd1"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address3}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="112" width="295" height="18" isRemoveLineWhenBlank="true" uuid="2323ec46-5847-44f8-ba07-16568e76c1e9"/>
+					<reportElement positionType="Float" x="0" y="74" width="295" height="12" isRemoveLineWhenBlank="true" uuid="20832db7-56e3-4390-810c-ad6a195a688d"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font isBold="false"/>
@@ -961,7 +972,7 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname})+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="130" width="295" height="18" isRemoveLineWhenBlank="true" uuid="175a3dc8-101f-4324-97aa-519007e52f62"/>
+					<reportElement positionType="Float" x="0" y="86" width="295" height="12" isRemoveLineWhenBlank="true" uuid="88dd7233-16db-418e-bdfe-d34593fb5555"/>
 					<box>
 						<pen lineWidth="0.0"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -976,14 +987,14 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA["P.IVA: "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="148" width="295" height="18" isRemoveLineWhenBlank="true" uuid="6ab7ea93-75b7-4875-8be0-16769700364d"/>
+					<reportElement positionType="Float" x="0" y="98" width="295" height="12" isRemoveLineWhenBlank="true" uuid="8b0b732a-3590-42e9-841c-14fb0c57c102"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null ? "TELEFONO: "+$F{c_bpartner_location_a_phone}:""]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="166" width="295" height="18" isRemoveLineWhenBlank="true" uuid="fd500cdc-2fef-4a15-9d6c-4344455819ea"/>
+					<reportElement positionType="Float" x="0" y="110" width="295" height="12" isRemoveLineWhenBlank="true" uuid="27d977eb-84ee-4c42-9b03-5cbed8ef918f"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
@@ -991,202 +1002,92 @@ CORTESIA]]></text>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="65" width="260" height="124" backcolor="#A1D971" uuid="c5dd6336-9821-400c-94a5-509762cc0dfd"/>
+				<reportElement mode="Opaque" x="0" y="64" width="260" height="78" backcolor="#A1D971" uuid="553cd854-3c1f-4066-bb41-20f05f1056e7"/>
 				<box padding="0">
 					<pen lineWidth="0.5"/>
 				</box>
 				<rectangle>
-					<reportElement x="0" y="22" width="260" height="56" uuid="89c4caaf-c7db-4db1-be97-c8d3cf090334"/>
+					<reportElement x="0" y="22" width="260" height="56" uuid="a1181f25-2559-4d27-815c-c696e64f0fc1"/>
 					<graphicElement>
 						<pen lineWidth="0.5"/>
 					</graphicElement>
 				</rectangle>
 				<rectangle>
-					<reportElement mode="Transparent" x="0" y="22" width="130" height="56" uuid="acf69e5c-ed20-4c9e-ac44-e5c0254b09e8"/>
+					<reportElement mode="Transparent" x="0" y="22" width="130" height="56" uuid="b7b81f22-99c2-42e3-9cc2-94071545ae8e"/>
 					<graphicElement>
 						<pen lineWidth="0.5"/>
 					</graphicElement>
 				</rectangle>
 				<rectangle>
-					<reportElement mode="Transparent" x="130" y="22" width="130" height="56" uuid="9775f93e-2fd3-406f-9c6c-c451366f9496"/>
+					<reportElement mode="Transparent" x="130" y="22" width="130" height="56" uuid="40c200e4-5641-4101-8156-03d6fff074cc"/>
 					<graphicElement>
 						<pen lineWidth="0.5"/>
 					</graphicElement>
 				</rectangle>
 				<textField>
-					<reportElement x="0" y="0" width="260" height="22" forecolor="#0022FF" uuid="2cca9501-ef0a-4ead-bd5b-c313e27b331a"/>
+					<reportElement x="0" y="0" width="260" height="22" forecolor="#0022FF" uuid="e2d3efc3-d117-4096-9d23-a2e69bb0b8f4"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="13" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_doctype_trl_printname}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="4" y="43" width="124" height="30" forecolor="#0022FF" uuid="836e49d1-8e0f-4544-94c9-9cfbbfe2ee2e"/>
+					<reportElement x="4" y="43" width="124" height="30" forecolor="#0022FF" uuid="eb11fc44-ce13-46fe-82c2-8770f6cd39fd"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoice_documentno}]]></textFieldExpression>
 				</textField>
 				<textField pattern="dd-MM-yyyy">
-					<reportElement x="132" y="43" width="128" height="30" forecolor="#0022FF" uuid="16a3230e-9a84-4566-a2f0-e0f53ede2379"/>
+					<reportElement x="132" y="43" width="128" height="30" forecolor="#0022FF" uuid="61a74ecd-40f5-4c2e-ae28-7f6e6f269c8c"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="14" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoice_dateacct}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="4" y="27" width="124" height="16" uuid="57594811-9500-4352-896b-1a9d35d260eb"/>
+					<reportElement x="4" y="27" width="124" height="16" uuid="a321174d-7f05-4d7c-83be-d4fb1b1c18f0"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<text><![CDATA[NUMERO DOC.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="132" y="27" width="128" height="16" uuid="47c6bd12-1d1d-422b-a721-1d248afd6535"/>
+					<reportElement x="132" y="27" width="128" height="16" uuid="56a42c29-307a-4b12-abbd-3883210a5deb"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
 					<text><![CDATA[DATA DOCUMENTO]]></text>
 				</staticText>
-				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="78" width="260" height="16" uuid="a2f4c9f2-92cd-4c67-ae5b-5d25af9e5e4e"/>
-					<box leftPadding="5"/>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="94" width="260" height="16" uuid="7f8f115f-7721-4f59-9868-b39dab7f2a60"/>
-					<box leftPadding="5"/>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA["TERMINE DI PAGAMENTO:"+$F{c_paymentterm_value}]]></textFieldExpression>
-				</textField>
 			</frame>
 			<staticText>
-				<reportElement x="0" y="189" width="260" height="20" isRemoveLineWhenBlank="true" uuid="aa91c8f5-8840-4f12-b23c-a75f485c4a51">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id} != null]]></printWhenExpression>
-				</reportElement>
+				<reportElement x="440" y="0" width="115" height="40" uuid="1caa26ed-4980-477b-b814-137ffa64ad95"/>
 				<box>
-					<pen lineWidth="0.5"/>
+					<pen lineWidth="2.0" lineStyle="Dashed"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="10" isBold="true"/>
+					<font size="13" isBold="true"/>
 				</textElement>
-				<text><![CDATA[BANCA PER L'INCASSO]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="e6842c16-69cc-4034-b58e-adb8105239d8">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000000]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: MONTE DEI PASCHI DI SIENA S.p.A. 
-IBAN: IT 87 N 01030 82490 000063277929
-BIC: PASCITM1ME4]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="057ef66c-6985-459f-8f7a-314eebc1b96f">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000007]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: BPM
-IBAN: IT 77 S 05034 82670 000000 704704
-BIC: BAPPIT21P66]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="149c5a4f-b388-45ca-b712-ec652115ff03">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000012]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: BANCA IFIS S.p.A.
-IBAN: IT 97 Y 03205 02000 000000000070]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="0d6701a5-3b9b-468f-8aea-1631b2308d97">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000003]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: BANCA BPER S.p.A.
-IBAN: IT 47 Q 05387 16900 000002397825]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="ac8819d9-c72e-4c6c-8016-446906334f58">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000008]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: BANCA IFIS S.p.A.
-IBAN: IT 81 Y 03205 04600 000002220086]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a6d6b48f-f7a3-4baa-8837-9c687bb5d710">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000011]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: UNICREDIT S.p.A.
-IBAN: IT 22 E 02008 82620 000103213822]]></text>
-			</staticText>
-			<staticText>
-				<reportElement style="table" x="0" y="209" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="e19ecf59-8fb0-442c-b782-a64bd6e9f6be">
-					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000001]]></printWhenExpression>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[BANCA: UNICREDIT S.p.A.
-IBAN: IT 33 S 02008 82620 000103213759]]></text>
+				<text><![CDATA[COPIA DI 
+CORTESIA]]></text>
 			</staticText>
 			<frame>
-				<reportElement x="440" y="43" width="113" height="21" uuid="3ed77198-0491-4e0d-8e42-eae0afc5108c">
+				<reportElement x="440" y="42" width="113" height="21" uuid="11ba6525-0ae4-4944-bebd-894a5bdc117c">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 				</reportElement>
 				<textField>
-					<reportElement x="0" y="0" width="57" height="21" uuid="b12da043-f8e1-4207-9c20-8c46a625d6fc"/>
+					<reportElement x="0" y="0" width="57" height="21" uuid="96eed27c-1f90-4a76-b8cb-2c3093204a8a"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 				<textField evaluationTime="Report">
-					<reportElement x="57" y="0" width="56" height="21" uuid="129a0a82-9f65-40f3-bd13-b0692c7fa387"/>
+					<reportElement x="57" y="0" width="56" height="21" uuid="f6aa6225-972f-4bf1-8fa2-38b17b21ae05"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle"/>
 					<textFieldExpression><![CDATA[" di " + $V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="0" y="249" width="555" height="61" isRemoveLineWhenBlank="true" uuid="a2ae7a6a-641a-4223-bbf8-b5af6621c68c">
+				<reportElement x="0" y="249" width="555" height="61" isRemoveLineWhenBlank="true" uuid="b1ec3651-f027-4169-b733-b21d50ef38e3">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="555" height="21" uuid="2761d07b-7497-44cf-83d0-51e510b7a2cc">
+					<reportElement x="0" y="0" width="555" height="21" isRemoveLineWhenBlank="true" uuid="42835b56-d7eb-4220-b594-a410bc2b944f">
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1195,7 +1096,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="21" width="555" height="20" isRemoveLineWhenBlank="true" uuid="7519a124-84c6-4adc-a2d1-db0403e40547">
+					<reportElement x="0" y="21" width="555" height="20" isRemoveLineWhenBlank="true" uuid="5c8950c9-1082-4fb5-a77b-bf72ae6e33e2">
 						<printWhenExpression><![CDATA[$F{c_invoice_description}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1204,7 +1105,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["DESCR. DOCUMENTO: "+$F{c_invoice_description}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="41" width="555" height="20" uuid="a4e2fcdd-9d5d-4579-91f8-3d8134ff8b06">
+					<reportElement x="0" y="41" width="555" height="20" isRemoveLineWhenBlank="true" uuid="27f9ede8-c3ea-4ff5-91fa-1ca97649c0a6">
 						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1212,6 +1113,138 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					</textElement>
 					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{c_invoice_note}]]></textFieldExpression>
 				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="143" width="260" height="46" uuid="d5c7b3c1-11e3-46bb-8af7-d53b26cd7062">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="260" height="23" uuid="8002e6a6-437b-4843-9c44-764bd17c1bbf"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["TERMINE DI PAGAMENTO:"+$F{c_paymentterm_value}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="0" y="23" width="260" height="23" uuid="fbf71d25-158b-45ca-82e8-ecff85f0be58"/>
+					<box leftPadding="5"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="189" width="260" height="60" uuid="ad999ff6-54cb-4fee-91b6-dd963da8f634"/>
+				<staticText>
+					<reportElement x="0" y="0" width="260" height="20" isRemoveLineWhenBlank="true" uuid="dfdbcdb3-9e3d-4cdc-a24c-066aa4ee5708">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id} != null]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA PER L'INCASSO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="882979b9-0f35-4ae9-9e1a-f5542dd0578f">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000000]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: MONTE DEI PASCHI DI SIENA S.p.A. 
+IBAN: IT 87 N 01030 82490 000063277929
+BIC: PASCITM1ME4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="78ce218c-359b-4ef2-a3e8-755a986ab2bd">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000007]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BPM
+IBAN: IT 77 S 05034 82670 000000 704704
+BIC: BAPPIT21P66]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="1f476603-1a48-4f6c-bef6-2cee9ebf1d47">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000012]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
+IBAN: IT 97 Y 03205 02000 000000000070]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="bc585423-6cd9-45be-bbdf-9531b24b52a8">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000003]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA BPER S.p.A.
+IBAN: IT 47 Q 05387 16900 000002397825]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="162063a1-aeb7-4b04-876b-34781253dc7f">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000008]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
+IBAN: IT 81 Y 03205 04600 000002220086]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="c9714cea-99b4-47a8-a964-ef568af789f9">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000011]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: UNICREDIT S.p.A.
+IBAN: IT 22 E 02008 82620 000103213822]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="40" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="f7888dca-ac1b-4825-9062-d04cdb7d628d">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000001]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: UNICREDIT S.p.A.
+IBAN: IT 33 S 02008 82620 000103213759]]></text>
+				</staticText>
 			</frame>
 		</band>
 	</pageHeader>
