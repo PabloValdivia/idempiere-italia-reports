@@ -610,13 +610,16 @@ CORTESIA]]></text>
 						</box>
 						<staticText>
 							<reportElement mode="Transparent" x="0" y="0" width="130" height="32" uuid="f9d1aaa9-dccd-4fa5-83bb-e203315d753e"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font isBold="true"/>
 							</textElement>
 							<text><![CDATA[DATA DOCUMENTO]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
-							<reportElement mode="Transparent" x="0" y="32" width="130" height="31" forecolor="#0022FF" uuid="5b8f55f1-73c1-4673-b33e-c556995c7368"/>
+							<reportElement mode="Opaque" x="0" y="32" width="130" height="31" forecolor="#0022FF" uuid="5b8f55f1-73c1-4673-b33e-c556995c7368"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
 							</textElement>
@@ -632,13 +635,16 @@ CORTESIA]]></text>
 						</box>
 						<staticText>
 							<reportElement mode="Transparent" x="0" y="0" width="130" height="32" uuid="9e30b834-7d76-4f72-a17b-c92b7ff974c5"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font isBold="true"/>
 							</textElement>
 							<text><![CDATA[NUMERO DOC.]]></text>
 						</staticText>
 						<textField>
-							<reportElement mode="Transparent" x="0" y="32" width="130" height="31" forecolor="#0022FF" uuid="fed1cb84-b27a-496d-b679-b2eb2010fb3a"/>
+							<reportElement mode="Opaque" x="0" y="32" width="130" height="31" forecolor="#0022FF" uuid="fed1cb84-b27a-496d-b679-b2eb2010fb3a"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
 							</textElement>
@@ -881,11 +887,11 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement x="0" y="240" width="555" height="61" isRemoveLineWhenBlank="true" uuid="c2ae36cc-4dfd-48d4-9e3b-4ac83fbbdb32">
+				<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="240" width="555" height="61" isRemoveLineWhenBlank="true" uuid="c2ae36cc-4dfd-48d4-9e3b-4ac83fbbdb32">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="555" height="21" isRemoveLineWhenBlank="true" uuid="b206fe67-62cd-4096-bb9b-de929b0d4fd0">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="0" width="555" height="21" isRemoveLineWhenBlank="true" uuid="b206fe67-62cd-4096-bb9b-de929b0d4fd0">
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -894,7 +900,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="21" width="555" height="20" isRemoveLineWhenBlank="true" uuid="6c2a6b60-443b-41cb-a57b-2b863e8fc0d2">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="21" width="555" height="20" isRemoveLineWhenBlank="true" uuid="6c2a6b60-443b-41cb-a57b-2b863e8fc0d2">
 						<printWhenExpression><![CDATA[$F{c_invoice_description}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -903,7 +909,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["DESCR. DOCUMENTO: "+$F{c_invoice_description}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="41" width="555" height="20" isRemoveLineWhenBlank="true" uuid="92f24c61-2e99-4438-9c4d-b57681bdc49c">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="41" width="555" height="20" isRemoveLineWhenBlank="true" uuid="92f24c61-2e99-4438-9c4d-b57681bdc49c">
 						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -986,13 +992,16 @@ CORTESIA]]></text>
 						</box>
 						<staticText>
 							<reportElement mode="Transparent" x="0" y="0" width="130" height="32" uuid="40d9f043-4991-4765-9343-54ace33907e2"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font isBold="true"/>
 							</textElement>
 							<text><![CDATA[DATA DOCUMENTO]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
-							<reportElement mode="Transparent" x="0" y="32" width="130" height="31" forecolor="#0022FF" uuid="aa03b7f3-0592-48ea-b0d2-5739b3fc5ad0"/>
+							<reportElement mode="Opaque" x="0" y="32" width="130" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="aa03b7f3-0592-48ea-b0d2-5739b3fc5ad0"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
 							</textElement>
@@ -1008,13 +1017,16 @@ CORTESIA]]></text>
 						</box>
 						<staticText>
 							<reportElement mode="Transparent" x="0" y="0" width="130" height="32" uuid="093b95f6-d534-4003-8aba-28c3872ff8c2"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font isBold="true"/>
 							</textElement>
 							<text><![CDATA[NUMERO DOC.]]></text>
 						</staticText>
 						<textField>
-							<reportElement mode="Transparent" x="0" y="32" width="130" height="31" forecolor="#0022FF" uuid="01370670-33cd-48ae-aa58-b4573a1f0a69"/>
+							<reportElement mode="Opaque" x="0" y="32" width="130" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="01370670-33cd-48ae-aa58-b4573a1f0a69"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
 							</textElement>
@@ -1289,18 +1301,20 @@ CORTESIA]]></text>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_name}!= null]]></printWhenExpression>
 				</reportElement>
-				<textField isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="80" height="15" isRemoveLineWhenBlank="true" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 					</reportElement>
-					<textElement verticalAlignment="Middle"/>
+					<textElement verticalAlignment="Top"/>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="80" y="0" width="220" height="15" isRemoveLineWhenBlank="true" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 					</reportElement>
-					<textElement verticalAlignment="Middle" markup="html"/>
+					<textElement verticalAlignment="Top" markup="html">
+						<font size="9"/>
+					</textElement>
 					<textFieldExpression><![CDATA[($F{c_invoiceline_name}!=null?$F{m_product_name}:$F{m_product_name}!=null?$F{m_product_name}:"")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
@@ -1308,7 +1322,9 @@ CORTESIA]]></text>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
-					<textElement verticalAlignment="Middle" markup="styled"/>
+					<textElement verticalAlignment="Top" markup="styled">
+						<font size="9"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,###.###" isBlankWhenNull="true">
@@ -1316,7 +1332,9 @@ CORTESIA]]></text>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_qtyentered}.intValue()!=0]]></printWhenExpression>
 					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
+						<font size="9"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_qtyinvoiced}]]></textFieldExpression>
 				</textField>
 				<textField pattern="¤#,##0.0000;¤(#,##0.0000-)">
@@ -1325,7 +1343,8 @@ CORTESIA]]></text>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_priceactual}.doubleValue() != 0.0]]></printWhenExpression>
 					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
+					<textElement textAlignment="Right" verticalAlignment="Top">
+						<font size="9"/>
 						<paragraph rightIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_pricelist}]]></textFieldExpression>
@@ -1335,7 +1354,9 @@ CORTESIA]]></text>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e477dd3-9937-4bbd-aad3-81de4a67bda5"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_discount}.doubleValue() != 0.0]]></printWhenExpression>
 					</reportElement>
-					<textElement textAlignment="Right"/>
+					<textElement textAlignment="Right" verticalAlignment="Top">
+						<font size="9"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_discount}]]></textFieldExpression>
 				</textField>
 				<textField pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
@@ -1343,14 +1364,18 @@ CORTESIA]]></text>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_linenetamt}.intValue()!=0]]></printWhenExpression>
 					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
+						<font size="9"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_linenetamt}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="520" y="0" width="35" height="15" isRemoveLineWhenBlank="true" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle" markup="styled"/>
+					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
+						<font size="9"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{c_tax_taxindicator}]]></textFieldExpression>
 				</textField>
 			</frame>
@@ -1363,8 +1388,8 @@ CORTESIA]]></text>
 					<reportElement x="0" y="0" width="475" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="f864e607-9a1d-4cf0-a9b0-1e23aa88a747">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3885e6b9-9e2e-471c-be47-ab6450b99885"/>
 					</reportElement>
-					<textElement>
-						<font fontName="SansSerif" isBold="false"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="9" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}]]></textFieldExpression>
 				</textField>
@@ -1381,7 +1406,7 @@ CORTESIA]]></text>
 						<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y')]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
@@ -1399,7 +1424,7 @@ CORTESIA]]></text>
 						<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y') || $F{c_invoiceline_help}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-						<font fontName="SansSerif" size="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<textFieldExpression><![CDATA[T($F{c_invoiceline_help}) + ($F{ad_orginfo_lit_report_param}.charAt(17)== 'Y' &&  !($F{c_order2_documentno}==null)?  "Rif.Ordine : " + T($F{c_order2_documentno}) + "Vs Rif :"+T($F{c_order2_poreference}) : "")]]></textFieldExpression>
@@ -1419,7 +1444,7 @@ CORTESIA]]></text>
 		<band/>
 	</columnFooter>
 	<lastPageFooter>
-		<band height="144">
+		<band height="110">
 			<frame>
 				<reportElement stretchType="ElementGroupBottom" x="190" y="15" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
@@ -1494,19 +1519,6 @@ CORTESIA]]></text>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_vat.jasper"]]></subreportExpression>
 				</subreport>
 			</frame>
-			<textField isStretchWithOverflow="true">
-				<reportElement stretchType="ElementGroupBottom" x="0" y="75" width="555" height="69" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
-					<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<textElement textAlignment="Justified" verticalAlignment="Top">
-					<font size="8"/>
-					<paragraph leftIndent="2" rightIndent="2"/>
-				</textElement>
-				<textFieldExpression><![CDATA["CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.\nCONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO.\nAssolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27."]]></textFieldExpression>
-			</textField>
 			<frame>
 				<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="15" uuid="615348fa-4721-4fc7-82da-d4516dba1914">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
@@ -1519,6 +1531,24 @@ CORTESIA]]></text>
 						<font isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoice_note}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="75" width="555" height="35" uuid="b9c1d4b9-6cad-4097-b1f2-64b2d9dc90d4">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<textField isStretchWithOverflow="true">
+					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="35" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					</reportElement>
+					<box leftPadding="3" rightPadding="3">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Justified" verticalAlignment="Top">
+						<font fontName="SansSerif" size="6"/>
+						<paragraph leftIndent="2" rightIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.\nCONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO.\nAssolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27."]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>

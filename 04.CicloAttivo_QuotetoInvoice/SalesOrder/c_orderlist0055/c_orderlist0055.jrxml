@@ -535,21 +535,22 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
-					<textField>
+					<textField isBlankWhenNull="true">
 						<reportElement x="0" y="0" width="822" height="28" uuid="4915a94d-e43f-46e4-b912-832ef2ee4d4d"/>
 						<box leftPadding="3"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="SansSerif" size="14" isBold="true"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$F{c_bpartner_name}
+]]></textFieldExpression>
 					</textField>
-					<textField>
+					<textField isBlankWhenNull="true">
 						<reportElement x="0" y="28" width="822" height="27" uuid="20f1e2c5-5384-430e-aa87-ee6e341f139b"/>
 						<box leftPadding="3"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="SansSerif" size="14" isBold="true"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$F{c_location_a_address1} + " "+ $F{c_location_a_city}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$F{c_location_a_address1}+" "+$F{c_location_a_address2}!= null ? $F{c_location_a_address2}+" "+$F{c_location_a_city} :"" + $F{c_bpartner_location_a_phone}!=null?$F{c_bpartner_location_a_phone}:""]]></textFieldExpression>
 					</textField>
 				</frame>
 				<frame>

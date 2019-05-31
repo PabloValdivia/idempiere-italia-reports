@@ -546,13 +546,9 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<text><![CDATA[NUMERO DOC.]]></text>
 						</staticText>
 						<textField>
-							<reportElement positionType="Float" mode="Transparent" x="0" y="32" width="133" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="92ea3fe9-77a6-4f5f-badc-d4cc521eba9d"/>
+							<reportElement positionType="Float" mode="Opaque" x="0" y="32" width="133" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="92ea3fe9-77a6-4f5f-badc-d4cc521eba9d"/>
 							<box>
-								<pen lineWidth="0.5"/>
-								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<pen lineWidth="0.5" lineColor="#000000"/>
 							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
@@ -582,13 +578,9 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<text><![CDATA[DATA DOCUMENTO]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
-							<reportElement positionType="Float" mode="Transparent" x="0" y="32" width="132" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="ff5cfcee-98c3-40e1-866d-e56249026748"/>
+							<reportElement positionType="Float" mode="Opaque" x="0" y="32" width="132" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="ff5cfcee-98c3-40e1-866d-e56249026748"/>
 							<box>
-								<pen lineWidth="0.5"/>
-								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<pen lineWidth="0.5" lineColor="#000000"/>
 							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
@@ -973,13 +965,9 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<text><![CDATA[NUMERO DOC.]]></text>
 						</staticText>
 						<textField>
-							<reportElement positionType="Float" mode="Transparent" x="0" y="32" width="133" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="67a0f44f-306e-48c8-96a6-df2d7c1102ca"/>
+							<reportElement positionType="Float" mode="Opaque" x="0" y="32" width="133" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="67a0f44f-306e-48c8-96a6-df2d7c1102ca"/>
 							<box>
-								<pen lineWidth="0.5"/>
-								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<pen lineWidth="0.5" lineColor="#000000"/>
 							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
@@ -1009,13 +997,9 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<text><![CDATA[DATA DOCUMENTO]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
-							<reportElement positionType="Float" mode="Transparent" x="0" y="32" width="132" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="314a9ce9-4f3c-4ce2-ad32-900b5e1871f5"/>
+							<reportElement positionType="Float" mode="Opaque" x="0" y="32" width="132" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="314a9ce9-4f3c-4ce2-ad32-900b5e1871f5"/>
 							<box>
-								<pen lineWidth="0.5"/>
-								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<pen lineWidth="0.5" lineColor="#000000"/>
 							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
