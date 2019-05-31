@@ -512,10 +512,6 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<reportElement positionType="Float" mode="Opaque" x="0" y="63" width="265" height="93" backcolor="#FFCC00" uuid="e40150bc-6c63-4211-b9d2-c9ad11cc7fdf"/>
 				<box padding="0">
 					<pen lineWidth="0.5"/>
-					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textField>
 					<reportElement positionType="Float" x="0" y="0" width="265" height="30" forecolor="#0022FF" uuid="4c46011d-6624-4b72-9d8a-c6a9d546d41a"/>
@@ -524,45 +520,179 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_doctype_trl_printname}]]></textFieldExpression>
 				</textField>
+				<frame>
+					<reportElement x="0" y="38" width="265" height="55" uuid="ff7d7e7b-0b5c-48d5-bafc-9a258c40d5f9">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+					</reportElement>
+					<frame>
+						<reportElement x="0" y="0" width="133" height="55" uuid="a47ce758-e3a0-472c-a67e-5cfd3b5cca59">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<staticText>
+							<reportElement positionType="Float" x="0" y="0" width="133" height="28" uuid="d8e5fee5-1cce-4ff6-a350-7b0fef67eb2c"/>
+							<box topPadding="2">
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Top">
+								<font isBold="true"/>
+							</textElement>
+							<text><![CDATA[NUMERO DOC.]]></text>
+						</staticText>
+						<textField>
+							<reportElement positionType="Float" mode="Transparent" x="0" y="28" width="133" height="27" forecolor="#0022FF" backcolor="#FFFFFF" uuid="92ea3fe9-77a6-4f5f-badc-d4cc521eba9d"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="SansSerif" size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{m_inout_documentno}]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="133" y="0" width="132" height="55" uuid="683ff17f-f3a3-4671-bdc7-b083ab5d2aad">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<staticText>
+							<reportElement positionType="Float" x="0" y="0" width="132" height="28" uuid="252802c4-5afe-455b-bb4e-b8f5107d6766"/>
+							<box topPadding="2">
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Top">
+								<font isBold="true"/>
+							</textElement>
+							<text><![CDATA[DATA DOCUMENTO]]></text>
+						</staticText>
+						<textField pattern="dd-MM-yyyy">
+							<reportElement positionType="Float" mode="Transparent" x="0" y="28" width="132" height="27" forecolor="#0022FF" backcolor="#FFFFFF" uuid="ff5cfcee-98c3-40e1-866d-e56249026748"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="SansSerif" size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{m_inout_movementdate}]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="265" y="63" width="290" height="134" uuid="7080a465-d514-42c4-a742-fde455a974e0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box padding="0">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
 				<staticText>
-					<reportElement positionType="Float" x="6" y="37" width="124" height="46" uuid="d8e5fee5-1cce-4ff6-a350-7b0fef67eb2c"/>
-					<box topPadding="2">
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="290" height="22" forecolor="#081080" backcolor="#C7C7C7" uuid="69f6a830-95b7-4fd2-b04f-e1b26c8f50ec"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 						<pen lineWidth="0.5"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Top">
-						<font isBold="true"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="13" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
 					</textElement>
-					<text><![CDATA[NUMERO DOC.]]></text>
+					<text><![CDATA[CLIENTE / CESSIONARIO]]></text>
 				</staticText>
-				<staticText>
-					<reportElement positionType="Float" x="134" y="37" width="124" height="46" uuid="252802c4-5afe-455b-bb4e-b8f5107d6766"/>
-					<box topPadding="2">
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Top">
-						<font isBold="true"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="22" width="290" height="14" isRemoveLineWhenBlank="true" uuid="6ceaa6be-bf14-427e-a094-0f7c3b90acdc"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font size="10" isBold="true"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
-					<text><![CDATA[DATA DOCUMENTO]]></text>
-				</staticText>
-				<textField>
-					<reportElement positionType="Float" mode="Opaque" x="6" y="53" width="124" height="30" forecolor="#0022FF" backcolor="#FFFFFF" uuid="92ea3fe9-77a6-4f5f-badc-d4cc521eba9d"/>
-					<box>
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="14" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{m_inout_documentno}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
 				</textField>
-				<textField pattern="dd-MM-yyyy">
-					<reportElement positionType="Float" mode="Opaque" x="134" y="53" width="124" height="30" forecolor="#0022FF" backcolor="#FFFFFF" uuid="ff5cfcee-98c3-40e1-866d-e56249026748"/>
-					<box>
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="14" isBold="true"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="36" width="290" height="14" isRemoveLineWhenBlank="true" uuid="723ed9a0-5999-4f93-9b2e-178335945856">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+						<printWhenExpression><![CDATA[$F{c_bpartner_name2}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{m_inout_movementdate}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="50" width="290" height="14" isRemoveLineWhenBlank="true" uuid="6f260e5f-da77-47be-9445-515ae853540b"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="64" width="290" height="14" isRemoveLineWhenBlank="true" uuid="bc35eefd-c380-4d9d-aa31-cf5ffb48cc20">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="78" width="290" height="14" isRemoveLineWhenBlank="true" uuid="5f4828ae-cfde-41e6-acd8-e942d176ebe9">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="92" width="290" height="14" isRemoveLineWhenBlank="true" uuid="d8c6e285-cc91-42ac-84d4-0b4a5e08534f"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname})+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="106" width="290" height="14" isRemoveLineWhenBlank="true" uuid="fe83e3ae-2861-41d6-a54e-69931f2144cf">
+						<printWhenExpression><![CDATA[$F{c_bpartner_taxid} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA["P.IVA: " +$F{c_bpartner_taxid}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="120" width="290" height="14" isRemoveLineWhenBlank="true" uuid="ba0498aa-8d60-4b3b-bd58-e79fb0ff2dfe">
+						<printWhenExpression><![CDATA[$F{c_bpartner_location_phone}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_location_phone}!= null?"TELEFONO: "+$F{c_bpartner_location_phone}:""]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -632,111 +762,14 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" x="265" y="63" width="290" height="138" uuid="7080a465-d514-42c4-a742-fde455a974e0">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				</reportElement>
-				<box padding="0">
-					<pen lineWidth="0.5" lineStyle="Solid"/>
-				</box>
-				<staticText>
-					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="290" height="18" forecolor="#081080" backcolor="#C7C7C7" uuid="69f6a830-95b7-4fd2-b04f-e1b26c8f50ec"/>
-					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-						<font fontName="SansSerif" size="13" isBold="true"/>
-						<paragraph lineSpacing="Single"/>
-					</textElement>
-					<text><![CDATA[CLIENTE / CESSIONARIO]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="18" width="290" height="15" isRemoveLineWhenBlank="true" uuid="6ceaa6be-bf14-427e-a094-0f7c3b90acdc"/>
-					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<font size="10" isBold="true"/>
-						<paragraph lineSpacing="Single" leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="33" width="290" height="15" isRemoveLineWhenBlank="true" uuid="723ed9a0-5999-4f93-9b2e-178335945856">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-						<printWhenExpression><![CDATA[$F{c_bpartner_name2}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement verticalAlignment="Middle" markup="styled">
-						<font isBold="true"/>
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_name2}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="48" width="290" height="15" isRemoveLineWhenBlank="true" uuid="6f260e5f-da77-47be-9445-515ae853540b"/>
-					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="63" width="290" height="15" isRemoveLineWhenBlank="true" uuid="bc35eefd-c380-4d9d-aa31-cf5ffb48cc20">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle" markup="styled">
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address2}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="78" width="290" height="15" isRemoveLineWhenBlank="true" uuid="5f4828ae-cfde-41e6-acd8-e942d176ebe9">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle" markup="styled">
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address3}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="93" width="290" height="15" isRemoveLineWhenBlank="true" uuid="d8c6e285-cc91-42ac-84d4-0b4a5e08534f"/>
-					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname})+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="108" width="290" height="15" isRemoveLineWhenBlank="true" uuid="fe83e3ae-2861-41d6-a54e-69931f2144cf">
-						<printWhenExpression><![CDATA[$F{c_bpartner_taxid} != null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA["P.IVA: " +$F{c_bpartner_taxid}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="123" width="290" height="15" isRemoveLineWhenBlank="true" uuid="ba0498aa-8d60-4b3b-bd58-e79fb0ff2dfe">
-						<printWhenExpression><![CDATA[$F{c_bpartner_location_phone}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<font isBold="true"/>
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_location_phone}!= null?"TELEFONO: "+$F{c_bpartner_location_phone}:""]]></textFieldExpression>
-				</textField>
-			</frame>
-			<frame>
-				<reportElement positionType="Float" mode="Transparent" x="265" y="201" width="290" height="116" forecolor="#999999" backcolor="#DFDFDF" uuid="39518268-5ed9-49a4-9354-99d3035ae8f4">
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="265" y="197" width="290" height="119" forecolor="#999999" backcolor="#DFDFDF" uuid="39518268-5ed9-49a4-9354-99d3035ae8f4">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box padding="0">
 					<pen lineWidth="0.5" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="290" height="20" forecolor="#0E1B6E" backcolor="#C7C7C7" uuid="95764ac6-9351-4a73-be14-78f8ed96a91d"/>
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="290" height="17" forecolor="#0E1B6E" backcolor="#C7C7C7" uuid="95764ac6-9351-4a73-be14-78f8ed96a91d"/>
 					<box>
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
@@ -747,7 +780,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[DESTINAZIONE DELLA MERCE]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="20" width="290" height="16" isRemoveLineWhenBlank="true" uuid="fd553690-d393-413b-9233-a7ecf8281cef">
+					<reportElement positionType="Float" x="0" y="17" width="290" height="17" isRemoveLineWhenBlank="true" uuid="fd553690-d393-413b-9233-a7ecf8281cef">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -757,7 +790,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_name}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="36" width="290" height="16" isRemoveLineWhenBlank="true" uuid="26594498-8820-456f-be50-ca2215eb05e9">
+					<reportElement positionType="Float" x="0" y="34" width="290" height="17" isRemoveLineWhenBlank="true" uuid="26594498-8820-456f-be50-ca2215eb05e9">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -767,7 +800,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_location_a_address1}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="52" width="290" height="16" isRemoveLineWhenBlank="true" uuid="cebc1180-f88f-4a3b-8190-a69f1d450c11">
+					<reportElement positionType="Float" x="0" y="51" width="290" height="17" isRemoveLineWhenBlank="true" uuid="cebc1180-f88f-4a3b-8190-a69f1d450c11">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -776,7 +809,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_location_a_address2}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" mode="Transparent" x="0" y="68" width="290" height="16" isRemoveLineWhenBlank="true" uuid="30218ee3-b3e7-4a40-bf20-134a91c766c0">
+					<reportElement positionType="Float" mode="Transparent" x="0" y="68" width="290" height="17" isRemoveLineWhenBlank="true" uuid="30218ee3-b3e7-4a40-bf20-134a91c766c0">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
@@ -785,7 +818,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_location_a_address3}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="84" width="290" height="16" isRemoveLineWhenBlank="true" uuid="bc6902d7-fc53-454a-9f14-83566cbec50f">
+					<reportElement positionType="Float" x="0" y="85" width="290" height="17" isRemoveLineWhenBlank="true" uuid="bc6902d7-fc53-454a-9f14-83566cbec50f">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -795,7 +828,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}) +" "+($F{c_location_a_regionname} == null ? "" : $F{c_location_a_regionname})+" " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name})]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="100" width="290" height="16" isRemoveLineWhenBlank="true" uuid="5dbde002-06b6-439a-ab87-136f73fd55ba">
+					<reportElement positionType="Float" x="0" y="102" width="290" height="17" isRemoveLineWhenBlank="true" uuid="5dbde002-06b6-439a-ab87-136f73fd55ba">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null]]></printWhenExpression>
 					</reportElement>
@@ -807,46 +840,25 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" x="0" y="317" width="555" height="27" isRemoveLineWhenBlank="true" uuid="aa7604ac-efa6-4568-b4dd-75096d6eae9c">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				</reportElement>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="0" width="555" height="14" isRemoveLineWhenBlank="true" uuid="98f0cbce-fd16-430c-83c1-695d759e0049">
-						<printWhenExpression><![CDATA[$F{m_inout_description}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font isBold="true"/>
-						<paragraph leftIndent="2"/>
-					</textElement>
-					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{m_inout_description}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="14" width="555" height="13" isRemoveLineWhenBlank="true" uuid="e7afa414-8d03-471f-94cb-79a0bc49d002">
-						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font isBold="true"/>
-						<paragraph leftIndent="2"/>
-					</textElement>
-					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
-				</textField>
-			</frame>
-			<frame>
-				<reportElement positionType="Float" x="0" y="237" width="91" height="80" uuid="9b80f812-e2a1-417b-9ad6-0ff810114f02">
+				<reportElement positionType="Float" x="0" y="237" width="91" height="79" uuid="9b80f812-e2a1-417b-9ad6-0ff810114f02">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<componentElement>
-					<reportElement positionType="Float" x="0" y="0" width="91" height="80" uuid="88bdf900-5b33-4eab-a8a3-a388d60dd7df"/>
+					<reportElement positionType="Float" x="0" y="0" width="91" height="79" uuid="88bdf900-5b33-4eab-a8a3-a388d60dd7df"/>
 					<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 						<jr:codeExpression><![CDATA[$F{m_inout_documentno}]]></jr:codeExpression>
 					</jr:QRCode>
 				</componentElement>
 			</frame>
 			<frame>
-				<reportElement x="91" y="237" width="174" height="80" uuid="bf378916-c14e-417d-bf2e-7e90b32cd2ae"/>
+				<reportElement x="91" y="237" width="174" height="79" uuid="bf378916-c14e-417d-bf2e-7e90b32cd2ae"/>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
@@ -889,81 +901,236 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textField>
 				</frame>
 			</frame>
+			<frame>
+				<reportElement positionType="Float" x="0" y="316" width="555" height="28" isRemoveLineWhenBlank="true" uuid="aa7604ac-efa6-4568-b4dd-75096d6eae9c">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="0" width="555" height="14" isRemoveLineWhenBlank="true" uuid="98f0cbce-fd16-430c-83c1-695d759e0049">
+						<printWhenExpression><![CDATA[$F{m_inout_description}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{m_inout_description}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="14" width="555" height="14" isRemoveLineWhenBlank="true" uuid="e7afa414-8d03-471f-94cb-79a0bc49d002">
+						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="2"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
+				</textField>
+			</frame>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="344">
+		<band height="316">
 			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > (1)]]></printWhenExpression>
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
-				<reportElement positionType="Float" x="0" y="0" width="380" height="63" isRemoveLineWhenBlank="true" uuid="a4a12c6d-9b4c-4d67-884f-032ec4780aa9"/>
+				<reportElement positionType="Float" x="0" y="0" width="380" height="63" isRemoveLineWhenBlank="true" uuid="7d58cbb8-2fdd-4587-9571-e8787e697153"/>
 				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement positionType="Float" mode="Opaque" x="0" y="63" width="265" height="93" backcolor="#FFCC00" uuid="b16e5b75-95bc-45ce-8c5f-157632d02be8"/>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="63" width="265" height="93" backcolor="#FFCC00" uuid="7f33fc85-1002-43ae-a247-492add344433"/>
 				<box padding="0">
 					<pen lineWidth="0.5"/>
-					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textField>
-					<reportElement positionType="Float" x="0" y="0" width="265" height="30" forecolor="#0022FF" uuid="627145a1-52fa-4908-9c25-857aed644d89"/>
+					<reportElement positionType="Float" x="0" y="0" width="265" height="30" forecolor="#0022FF" uuid="390ff237-ffa6-49d2-a681-11abb5c1b409"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="15" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_doctype_trl_printname}]]></textFieldExpression>
 				</textField>
+				<frame>
+					<reportElement x="0" y="38" width="265" height="55" uuid="d6d915e1-7d34-43f7-968d-624f55df67b3">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+					</reportElement>
+					<frame>
+						<reportElement x="0" y="0" width="133" height="55" uuid="eb318740-41bf-4dc2-b4df-90033847944f">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<staticText>
+							<reportElement positionType="Float" x="0" y="0" width="133" height="28" uuid="48af0c5e-1882-4dd0-8282-011d9ed7701b"/>
+							<box topPadding="2">
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Top">
+								<font isBold="true"/>
+							</textElement>
+							<text><![CDATA[NUMERO DOC.]]></text>
+						</staticText>
+						<textField>
+							<reportElement positionType="Float" mode="Transparent" x="0" y="28" width="133" height="27" forecolor="#0022FF" backcolor="#FFFFFF" uuid="a6607542-17e8-4968-a2bf-86977c8493b8"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="SansSerif" size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{m_inout_documentno}]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="133" y="0" width="132" height="55" uuid="d1ced324-af9d-4c29-99c1-ad558316bc9d">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<staticText>
+							<reportElement positionType="Float" x="0" y="0" width="132" height="28" uuid="5de1e611-5d7b-409e-9f86-7d83b835cc7d"/>
+							<box topPadding="2">
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Top">
+								<font isBold="true"/>
+							</textElement>
+							<text><![CDATA[DATA DOCUMENTO]]></text>
+						</staticText>
+						<textField pattern="dd-MM-yyyy">
+							<reportElement positionType="Float" mode="Transparent" x="0" y="28" width="132" height="27" forecolor="#0022FF" backcolor="#FFFFFF" uuid="fe387af8-bf8f-4a89-8177-e8e88fe59975"/>
+							<box>
+								<pen lineWidth="0.5"/>
+								<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="SansSerif" size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{m_inout_movementdate}]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="265" y="63" width="290" height="134" uuid="a757e534-4ddd-4fab-bbcf-222f78cd9387">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box padding="0">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
 				<staticText>
-					<reportElement positionType="Float" x="6" y="37" width="124" height="46" uuid="c6c90e4b-2aad-404d-adfc-d609395db54e"/>
-					<box topPadding="2">
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="290" height="22" forecolor="#081080" backcolor="#C7C7C7" uuid="c51656cb-2a30-4ace-b6d5-617361c7136c"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 						<pen lineWidth="0.5"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Top">
-						<font isBold="true"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="13" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
 					</textElement>
-					<text><![CDATA[NUMERO DOC.]]></text>
+					<text><![CDATA[CLIENTE / CESSIONARIO]]></text>
 				</staticText>
-				<staticText>
-					<reportElement positionType="Float" x="134" y="37" width="124" height="46" uuid="93116547-a0af-4856-b517-25dc4c41b58e"/>
-					<box topPadding="2">
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Top">
-						<font isBold="true"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="22" width="290" height="14" isRemoveLineWhenBlank="true" uuid="1646c511-d077-4b7b-9360-f59b35080cb0"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font size="10" isBold="true"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
-					<text><![CDATA[DATA DOCUMENTO]]></text>
-				</staticText>
-				<textField>
-					<reportElement positionType="Float" mode="Opaque" x="6" y="53" width="124" height="30" forecolor="#0022FF" backcolor="#FFFFFF" uuid="6d0e906e-7ae7-404f-ad82-81d794371cd7"/>
-					<box>
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="14" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{m_inout_documentno}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
 				</textField>
-				<textField pattern="dd-MM-yyyy">
-					<reportElement positionType="Float" mode="Opaque" x="134" y="53" width="124" height="30" forecolor="#0022FF" backcolor="#FFFFFF" uuid="790e4c17-7485-46cb-b9ce-502b52270b8c"/>
-					<box>
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="14" isBold="true"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="36" width="290" height="14" isRemoveLineWhenBlank="true" uuid="40f595f2-073e-4b6c-a621-bc26ee49cd72">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+						<printWhenExpression><![CDATA[$F{c_bpartner_name2}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{m_inout_movementdate}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="50" width="290" height="14" isRemoveLineWhenBlank="true" uuid="94107c64-f7f6-4519-98d1-83f5898a1d85"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="64" width="290" height="14" isRemoveLineWhenBlank="true" uuid="35f02a36-e628-455e-b48b-19a44ea9dd2d">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="78" width="290" height="14" isRemoveLineWhenBlank="true" uuid="705e4d4d-fbe0-4ad0-a779-5f8a91785a85">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="92" width="290" height="14" isRemoveLineWhenBlank="true" uuid="6bd02fb9-1e97-4e0b-aa70-34ee056164df"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname})+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="106" width="290" height="14" isRemoveLineWhenBlank="true" uuid="a473a64c-a652-46da-83c4-d0f5d16cdcad">
+						<printWhenExpression><![CDATA[$F{c_bpartner_taxid} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA["P.IVA: " +$F{c_bpartner_taxid}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="120" width="290" height="14" isRemoveLineWhenBlank="true" uuid="a564c14d-0ebc-43ef-aa34-01b57429312c">
+						<printWhenExpression><![CDATA[$F{c_bpartner_location_phone}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_location_phone}!= null?"TELEFONO: "+$F{c_bpartner_location_phone}:""]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" x="0" y="156" width="265" height="81" uuid="e3e19f7e-3ca9-4f6b-915b-b3856c5e08b2">
+				<reportElement positionType="Float" x="0" y="156" width="265" height="81" uuid="971b93ce-8350-49ab-9fef-384fd6aaa5f8">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" x="0" y="0" width="265" height="21" uuid="04edf5db-7d58-4892-8ef0-65565cff80dd"/>
+					<reportElement positionType="Float" x="0" y="0" width="265" height="21" uuid="f95c2250-137d-4b1f-bcf9-f891fb4723cf"/>
 					<box leftPadding="5">
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -977,7 +1144,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[CAUSALE]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="21" width="265" height="20" forecolor="#000066" uuid="4113d82d-e651-4f41-8d43-8817e092ad37"/>
+					<reportElement positionType="Float" x="0" y="21" width="265" height="20" forecolor="#000066" uuid="5324172b-9e68-4f84-bd2a-7ecb3f12a76d"/>
 					<box leftPadding="5">
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -992,7 +1159,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[($F{lit_m_movementtype_name}!= null?$F{lit_m_movementtype_name}:"VENDITA")]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement positionType="Float" x="0" y="41" width="265" height="20" uuid="eabffbdd-e131-4f0b-afa8-065d6619a405"/>
+					<reportElement positionType="Float" x="0" y="41" width="265" height="20" uuid="e091fbb7-f845-4864-8dfe-c05c637477fe"/>
 					<box leftPadding="5">
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1006,7 +1173,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[TRASPORTO A MEZZO]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="61" width="265" height="20" uuid="e59aed41-2618-4e8e-8a2a-3a0d137ddcc8"/>
+					<reportElement positionType="Float" x="0" y="61" width="265" height="20" uuid="70e3a639-9794-4813-840f-6446198b453d"/>
 					<box leftPadding="5">
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1022,111 +1189,14 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" x="265" y="63" width="290" height="138" uuid="393fd587-cdf8-49b4-88f1-3970ab4f4869">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				</reportElement>
-				<box padding="0">
-					<pen lineWidth="0.5" lineStyle="Solid"/>
-				</box>
-				<staticText>
-					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="290" height="18" forecolor="#081080" backcolor="#C7C7C7" uuid="071b6efe-1c77-4261-a187-2db6e7326eb9"/>
-					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-						<font fontName="SansSerif" size="13" isBold="true"/>
-						<paragraph lineSpacing="Single"/>
-					</textElement>
-					<text><![CDATA[CLIENTE / CESSIONARIO]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="18" width="290" height="15" isRemoveLineWhenBlank="true" uuid="d835480e-d90e-4038-afc7-1ad8e6fb2dd5"/>
-					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<font size="10" isBold="true"/>
-						<paragraph lineSpacing="Single" leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="33" width="290" height="15" isRemoveLineWhenBlank="true" uuid="102d7d70-4a99-47f0-a28d-3f40c1465c7e">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-						<printWhenExpression><![CDATA[$F{c_bpartner_name2}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement verticalAlignment="Middle" markup="styled">
-						<font isBold="true"/>
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_name2}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="48" width="290" height="15" isRemoveLineWhenBlank="true" uuid="eba53c18-c4a1-4536-97bc-a2cfb901662b"/>
-					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="63" width="290" height="15" isRemoveLineWhenBlank="true" uuid="8524842c-d995-4a00-8fec-512085bf72f7">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle" markup="styled">
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address2}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="78" width="290" height="15" isRemoveLineWhenBlank="true" uuid="006d04da-56fa-4d3f-b2da-295067489e5d">
-						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle" markup="styled">
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address3}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="93" width="290" height="15" isRemoveLineWhenBlank="true" uuid="76b844de-bd6d-421a-b84e-d0a3edc9c2d0"/>
-					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<font isBold="false"/>
-						<paragraph lineSpacing="Single" leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname})+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="108" width="290" height="15" isRemoveLineWhenBlank="true" uuid="701175c2-cc1a-49de-af7b-cec72de6d708">
-						<printWhenExpression><![CDATA[$F{c_bpartner_taxid} != null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA["P.IVA: " +$F{c_bpartner_taxid}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="123" width="290" height="15" isRemoveLineWhenBlank="true" uuid="f83ea7a6-205a-4765-a0be-5c523a74ae17">
-						<printWhenExpression><![CDATA[$F{c_bpartner_location_phone}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-						<font isBold="true"/>
-						<paragraph leftIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_location_phone}!= null?"TELEFONO: "+$F{c_bpartner_location_phone}:""]]></textFieldExpression>
-				</textField>
-			</frame>
-			<frame>
-				<reportElement positionType="Float" mode="Transparent" x="265" y="201" width="290" height="116" forecolor="#999999" backcolor="#DFDFDF" uuid="27bada5d-51b9-4c6d-b8d9-d940f7d6f846">
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="265" y="197" width="290" height="119" forecolor="#999999" backcolor="#DFDFDF" uuid="e6639734-4c11-4400-ad2b-47a633fda39c">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box padding="0">
 					<pen lineWidth="0.5" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="290" height="20" forecolor="#0E1B6E" backcolor="#C7C7C7" uuid="1ca23f6d-a058-40dd-889f-f53396f9b100"/>
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="290" height="17" forecolor="#0E1B6E" backcolor="#C7C7C7" uuid="f61a1ad8-077e-4356-95da-6776a3952574"/>
 					<box>
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
@@ -1137,7 +1207,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[DESTINAZIONE DELLA MERCE]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="20" width="290" height="16" isRemoveLineWhenBlank="true" uuid="ab6832dc-9fe0-4b6c-a0bd-a08fc8ad9dca">
+					<reportElement positionType="Float" x="0" y="17" width="290" height="17" isRemoveLineWhenBlank="true" uuid="3929adcf-151a-405e-908c-c7752c7a3d75">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1147,7 +1217,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_name}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="36" width="290" height="16" isRemoveLineWhenBlank="true" uuid="6196e865-4f9b-4823-8d43-23dc188a90ec">
+					<reportElement positionType="Float" x="0" y="34" width="290" height="17" isRemoveLineWhenBlank="true" uuid="1ca76c33-40b6-4b10-b350-862c160f8fd8">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1157,7 +1227,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_location_a_address1}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="52" width="290" height="16" isRemoveLineWhenBlank="true" uuid="1a81adf9-077b-49b2-bf1a-839a5c9ffe0c">
+					<reportElement positionType="Float" x="0" y="51" width="290" height="17" isRemoveLineWhenBlank="true" uuid="1a8c9696-d48b-4ee5-bc87-2672c6e086da">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1166,7 +1236,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_location_a_address2}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" mode="Transparent" x="0" y="68" width="290" height="16" isRemoveLineWhenBlank="true" uuid="afd37ef1-efa1-428d-b709-8405a482c561">
+					<reportElement positionType="Float" mode="Transparent" x="0" y="68" width="290" height="17" isRemoveLineWhenBlank="true" uuid="06704db0-35a9-44ae-8328-231c21612ccc">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
@@ -1175,7 +1245,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_location_a_address3}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="84" width="290" height="16" isRemoveLineWhenBlank="true" uuid="c219b853-8655-43e2-96e4-bba1bd590fbb">
+					<reportElement positionType="Float" x="0" y="85" width="290" height="17" isRemoveLineWhenBlank="true" uuid="5b647cd7-59af-4f6a-97b1-0d7645dcb867">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1185,7 +1255,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}) +" "+($F{c_location_a_regionname} == null ? "" : $F{c_location_a_regionname})+" " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name})]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="100" width="290" height="16" isRemoveLineWhenBlank="true" uuid="c96a1794-3520-402e-93ac-3b4e36c63539">
+					<reportElement positionType="Float" x="0" y="102" width="290" height="17" isRemoveLineWhenBlank="true" uuid="dc7fcab9-6a9e-46b7-9812-eb78d9f7a647">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null]]></printWhenExpression>
 					</reportElement>
@@ -1197,51 +1267,30 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" x="0" y="317" width="555" height="27" isRemoveLineWhenBlank="true" uuid="9ada3871-dfc3-481a-9d0c-12eebf4523ee">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				</reportElement>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="0" width="555" height="14" isRemoveLineWhenBlank="true" uuid="1a22e8ee-f657-4d5b-a50f-128f85fee1d1">
-						<printWhenExpression><![CDATA[$F{m_inout_description}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font isBold="true"/>
-						<paragraph leftIndent="2"/>
-					</textElement>
-					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{m_inout_description}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="14" width="555" height="13" isRemoveLineWhenBlank="true" uuid="25d5ad84-2981-4821-8c64-3db9de56e25a">
-						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font isBold="true"/>
-						<paragraph leftIndent="2"/>
-					</textElement>
-					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
-				</textField>
-			</frame>
-			<frame>
-				<reportElement positionType="Float" x="0" y="237" width="91" height="80" uuid="df9e16ba-287a-4560-8915-fe805b1ff532">
+				<reportElement positionType="Float" x="0" y="237" width="91" height="79" uuid="859db730-9437-4508-8827-226fe9ff544e">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<componentElement>
-					<reportElement positionType="Float" x="0" y="0" width="91" height="80" uuid="821afbcd-340a-46f3-87e5-02a3e9237776"/>
+					<reportElement positionType="Float" x="0" y="0" width="91" height="79" uuid="05e33a7d-1957-4999-9a54-a10a249bdd64"/>
 					<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
 						<jr:codeExpression><![CDATA[$F{m_inout_documentno}]]></jr:codeExpression>
 					</jr:QRCode>
 				</componentElement>
 			</frame>
 			<frame>
-				<reportElement x="91" y="237" width="174" height="80" uuid="68892197-bc61-4453-a2c2-17b26889d28d"/>
+				<reportElement x="91" y="237" width="174" height="79" uuid="8833c2c4-303d-4fc6-b727-1cc9e8796354"/>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<frame>
-					<reportElement positionType="Float" x="23" y="33" width="132" height="22" uuid="05f11446-8103-47e8-9d76-9cf70c1fbf61">
+					<reportElement positionType="Float" x="23" y="33" width="132" height="22" uuid="bd533541-4063-4df3-980f-ca53e3162909">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					</reportElement>
 					<box>
@@ -1252,7 +1301,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textField isStretchWithOverflow="true">
-						<reportElement positionType="Float" x="0" y="0" width="66" height="22" uuid="4a75501a-f901-46d6-b3e2-3912b059a91e"/>
+						<reportElement positionType="Float" x="0" y="0" width="66" height="22" uuid="c61b4b70-43d4-4092-9c54-c65255ea751b"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1265,7 +1314,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
 					</textField>
 					<textField isStretchWithOverflow="true" evaluationTime="Report">
-						<reportElement positionType="Float" x="66" y="0" width="66" height="22" uuid="dc867b3c-1b80-4933-af31-896adc0ff08f"/>
+						<reportElement positionType="Float" x="66" y="0" width="66" height="22" uuid="9d8dcdf8-88b6-465e-886d-93085a0d8885"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1415,45 +1464,55 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 			</frame>
 			<frame>
 				<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="318" y="0" width="237" height="51" isRemoveLineWhenBlank="true" backcolor="#FFCC00" uuid="77f60ee5-7b5a-40ba-acf2-c8c6c7b4a16f">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
-				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="3" width="130" height="18" isRemoveLineWhenBlank="true" uuid="cf0c14e5-52d0-4afb-9196-dd264b34336c"/>
-					<box padding="2"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle"/>
-					<text><![CDATA[TOTALE IMPONIBILE:]]></text>
-				</staticText>
-				<textField pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="130" y="3" width="106" height="18" isRemoveLineWhenBlank="true" uuid="d19bc82c-5d2a-482f-9d1d-8566fa4aa47e">
-						<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
+				<frame>
+					<reportElement x="0" y="0" width="119" height="51" uuid="1cca9d6d-e903-4dac-83d8-8042809a0b6e">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<paragraph rightIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_order_totallines}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="21" width="130" height="26" isRemoveLineWhenBlank="true" uuid="90a19b4c-97b6-4994-8a7c-294a1509fd29"/>
-					<box padding="2"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font size="10" isBold="true"/>
-					</textElement>
-					<text><![CDATA[TOTALE DOCUMENTO:]]></text>
-				</staticText>
-				<textField pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="130" y="21" width="106" height="26" isRemoveLineWhenBlank="true" uuid="b4b07b6d-dbfa-435a-a41f-8ae66e17143e">
-						<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
+					<staticText>
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="119" height="26" isRemoveLineWhenBlank="true" uuid="cf0c14e5-52d0-4afb-9196-dd264b34336c"/>
+						<box padding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle"/>
+						<text><![CDATA[TOTALE IMPONIBILE:]]></text>
+					</staticText>
+					<staticText>
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="26" width="119" height="25" isRemoveLineWhenBlank="true" uuid="90a19b4c-97b6-4994-8a7c-294a1509fd29"/>
+						<box padding="2"/>
+						<textElement textAlignment="Left" verticalAlignment="Middle">
+							<font size="10" isBold="true"/>
+						</textElement>
+						<text><![CDATA[TOTALE DOCUMENTO:]]></text>
+					</staticText>
+				</frame>
+				<frame>
+					<reportElement x="119" y="0" width="118" height="51" uuid="f1ee1594-94a4-4f7a-80a3-e354ecbc8dcc">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="12" isBold="true"/>
-						<paragraph rightIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_order_grandtotal}]]></textFieldExpression>
-				</textField>
+					<textField pattern="¤#,##0.00;¤-#,##0.00">
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="118" height="26" isRemoveLineWhenBlank="true" uuid="d19bc82c-5d2a-482f-9d1d-8566fa4aa47e">
+							<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
+						</reportElement>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<paragraph rightIndent="5"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{c_order_totallines}]]></textFieldExpression>
+					</textField>
+					<textField pattern="¤#,##0.00;¤-#,##0.00">
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="26" width="118" height="25" isRemoveLineWhenBlank="true" uuid="b4b07b6d-dbfa-435a-a41f-8ae66e17143e">
+							<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
+						</reportElement>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="12" isBold="true"/>
+							<paragraph rightIndent="5"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{c_order_grandtotal}]]></textFieldExpression>
+					</textField>
+				</frame>
 			</frame>
 			<frame>
 				<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="51" width="318" height="57" isRemoveLineWhenBlank="true" uuid="b97059c9-6448-4748-afd3-bb8a5acda5f2">
