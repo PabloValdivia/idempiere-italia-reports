@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CustomerStatement" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="3f9a3fdd-695b-4142-9a11-97cd12201c0d">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="197"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="alge idempiere"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="Title"/>
+	<style name="SubTitle"/>
+	<style name="Address"/>
+	<style name="Telephone"/>
+	<style name="Fax"/>
+	<style name="Style6"/>
+	<parameter name="C_BPartner_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DateAcctFrom" class="java.util.Date"/>
+	<parameter name="DateAcctTo" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TOTALS" class="java.util.HashMap" isForPrompting="false"/>
+	<parameter name="AD_CLIENT_ID" class="java.lang.Integer"/>
+	<parameter name="AD_Org_ID" class="java.lang.Integer"/>
+	<parameter name="image_file_name" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="RESOURCE_DIR" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select bp.NAME as "BPARTNER",
+bpl.phone,
+bpl.phone2,
+bpl.fax,
+l.address1,
+l.address2,
+l.city,
+l.postal,
+l.postal_add
+
+
+from C_BPartner bp
+
+LEFT OUTER JOIN C_BPARTNER_LOCATION bpl ON bp.C_BPARTNER_ID  = bpl.C_BPARTNER_ID AND bpl.isbillto='Y'
+LEFT OUTER JOIN C_LOCATION l ON bpl.C_LOCATION_ID = l.C_LOCATION_ID
+Where bp.C_BPartner_ID=$P{C_BPartner_ID}]]>
+	</queryString>
+	<field name="BPARTNER" class="java.lang.String"/>
+	<field name="phone" class="java.lang.String"/>
+	<field name="phone2" class="java.lang.String"/>
+	<field name="fax" class="java.lang.String"/>
+	<field name="address1" class="java.lang.String"/>
+	<field name="address2" class="java.lang.String"/>
+	<field name="city" class="java.lang.String"/>
+	<field name="postal" class="java.lang.String"/>
+	<field name="postal_add" class="java.lang.String"/>
+	<variable name="TOTALS" class="java.lang.Double">
+		<variableExpression><![CDATA[$V{TOTALS}]]></variableExpression>
+	</variable>
+	<group name="group1">
+		<groupExpression><![CDATA[null]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<group name="group2">
+		<groupExpression><![CDATA[null]]></groupExpression>
+		<groupHeader>
+			<band height="19" splitType="Stretch">
+				<subreport isUsingCache="true">
+					<reportElement key="subreport-10" x="0" y="5" width="535" height="14" uuid="95697ed0-b1b4-4987-907f-f9989b5bf0d5"/>
+					<subreportParameter name="DateAcctFrom">
+						<subreportParameterExpression><![CDATA[$P{DateAcctFrom}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="DateAcctTo">
+						<subreportParameterExpression><![CDATA[$P{DateAcctTo}]]></subreportParameterExpression>
+					</subreportParameter>
+					<subreportParameter name="C_BPartner_ID">
+						<subreportParameterExpression><![CDATA[$P{C_BPartner_ID}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<subreportExpression><![CDATA[$P{SUBREPORT_DIR}+"customer_statement_sub1.jasper"]]></subreportExpression>
+				</subreport>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<group name="group3">
+		<groupExpression><![CDATA[null]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<group name="group4">
+		<groupExpression><![CDATA[null]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<group name="group5">
+		<groupExpression><![CDATA[null]]></groupExpression>
+		<groupHeader>
+			<band height="19" splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<group name="group6">
+		<groupExpression><![CDATA[null]]></groupExpression>
+		<groupHeader>
+			<band splitType="Stretch"/>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="22" splitType="Stretch">
+			<line>
+				<reportElement key="line-2" positionType="Float" x="0" y="21" width="531" height="1" uuid="3a860a59-4efc-4920-9828-6bb8a71a9a16"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="153" splitType="Stretch">
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement key="textField-1" x="0" y="3" width="535" height="24" forecolor="#000000" uuid="92c7c01a-1f5c-44db-8e1f-2e733a2895d5"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="12" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Business Partner : " + $F{BPARTNER}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement key="textField-2" style="SubTitle" x="0" y="29" width="535" height="15" forecolor="#000000" uuid="2c750ffc-9757-4bd2-af10-cb38f6db8cd1"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="11" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($P{DateAcctFrom}) + " To " + new SimpleDateFormat("dd/MM/yyyy").format($P{DateAcctTo})]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement key="line-1" x="1" y="135" width="533" height="1" forecolor="#000000" backcolor="#FFFFFF" uuid="efbd2bc3-3c6e-4d1e-b8d2-44f3e67d3ec9"/>
+				<graphicElement>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</graphicElement>
+			</line>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-3" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="69" width="304" height="15" uuid="33397a79-c2a7-43bc-9e9f-984fa4695e3f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address1}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-4" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="84" width="304" height="15" isRemoveLineWhenBlank="true" uuid="f79423a8-c13e-4e99-9ea0-840771ed7a6d">
+					<printWhenExpression><![CDATA[new Boolean($F{address2}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{address2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-6" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="114" width="304" height="15" uuid="8358cbef-94de-4d3c-af08-a99da22342ac"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{postal}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-7" positionType="Float" stretchType="RelativeToTallestObject" x="384" y="69" width="150" height="15" uuid="1524e70e-eaa6-4a75-9668-f69badecb83f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-8" positionType="Float" stretchType="RelativeToTallestObject" x="384" y="84" width="150" height="15" isRemoveLineWhenBlank="true" uuid="9abfd44a-3f65-43ac-b9c8-2606fc1178f1">
+					<printWhenExpression><![CDATA[new Boolean($F{phone2}!=null)]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{phone2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-9" positionType="Float" stretchType="RelativeToTallestObject" x="384" y="99" width="150" height="15" uuid="b83aa34e-b43e-46c6-bcca-fa64a1eb854a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fax}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement key="textField-5" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="103" width="304" height="15" uuid="c6cae448-e0d8-4170-956a-4a68af3fe176"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="" mode="Transparent" x="0" y="53" width="214" height="16" forecolor="#000000" backcolor="#FFFFFF" uuid="8ca952ec-45fa-4dda-9f35-e17edc52c2f8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Sans" size="12" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Indirizzo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-2" style="Telephone" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="304" y="69" width="80" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="f33bc64d-d228-4513-9c39-270d3645e63f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Telefono]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText-3" style="Fax" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="304" y="99" width="80" height="15" forecolor="#000000" backcolor="#FFFFFF" uuid="36ff0ed7-3d6d-4c04-808a-f3b9319eb65d"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+					<font fontName="DejaVu Sans" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fax]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="407" y="118" width="80" height="20" uuid="1b9017fe-1d2e-4969-977d-02f5bf7f0767"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pag "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="491" y="115" width="40" height="20" uuid="20291d77-a3f7-4e0e-933c-580826ec6ee8"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Prevent"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="10">
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="-20" y="0" width="555" height="9" forecolor="#999999" uuid="1062c208-165a-4226-b5a7-9883438de3d3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Dialog" size="5" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[printed using iDempiere Erp info@idempiereitalia.com ver 1.70804 - rep.0312]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
