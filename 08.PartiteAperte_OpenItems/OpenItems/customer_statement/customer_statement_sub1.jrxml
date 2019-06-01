@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.5.1.final utlizzo versione della libreria JasperReports6.5.1  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customer_statement_sub1" pageWidth="535" pageHeight="842" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Error" uuid="83d6d6e0-882a-49bf-bb2f-39115d487b43">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Multiservice"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mutliservice Test"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -113,7 +114,6 @@ ORDER BY DateTrx]]>
 			<staticText>
 				<reportElement key="element-90" mode="Opaque" x="0" y="1" width="77" height="18" forecolor="#003333" backcolor="#FFFFFF" uuid="0ff1d9fe-be09-4fe8-ac7e-5e6014953407"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[Data]]></text>
@@ -121,7 +121,6 @@ ORDER BY DateTrx]]>
 			<staticText>
 				<reportElement key="element-90" mode="Opaque" x="77" y="1" width="66" height="18" forecolor="#003333" backcolor="#FFFFFF" uuid="2d330258-8cea-4ef4-a43d-d8be715b8d4a"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[Doc.ID]]></text>
@@ -129,7 +128,6 @@ ORDER BY DateTrx]]>
 			<staticText>
 				<reportElement key="element-90" mode="Opaque" x="143" y="1" width="64" height="18" forecolor="#003333" backcolor="#FFFFFF" uuid="e5a68c42-c183-42f4-a2e6-7ee6e22062fc"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[Tipo Documento]]></text>
@@ -137,7 +135,6 @@ ORDER BY DateTrx]]>
 			<staticText>
 				<reportElement key="element-90" mode="Opaque" x="207" y="1" width="165" height="18" forecolor="#003333" backcolor="#FFFFFF" uuid="d1fcd211-7237-4d33-8751-f53f65949ebd"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[Descrizione]]></text>
@@ -145,7 +142,6 @@ ORDER BY DateTrx]]>
 			<staticText>
 				<reportElement key="element-90" mode="Opaque" x="372" y="1" width="81" height="18" forecolor="#003333" backcolor="#FFFFFF" uuid="9da9d58f-85b5-4baa-b9c2-326bf80386d0"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[Importo]]></text>
@@ -153,7 +149,6 @@ ORDER BY DateTrx]]>
 			<staticText>
 				<reportElement key="element-91" mode="Opaque" x="453" y="1" width="82" height="18" forecolor="#003333" backcolor="#FFFFFF" uuid="a8f045ba-7238-4f7d-871e-59f30a24a1db"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
-					<font fontName="DejaVu Sans" size="7" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<text><![CDATA[Saldo Progressivo	]]></text>
