@@ -546,36 +546,6 @@ WHERE
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement x="260" y="190" width="295" height="50" uuid="e652e253-d861-4f91-a6ed-3d06a14051a4">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<staticText>
-					<reportElement x="0" y="0" width="295" height="16" forecolor="#0000FF" uuid="8c249249-121f-4c8b-bd17-7af8b08dda55"/>
-					<box>
-						<pen lineWidth="2.0" lineStyle="Dashed" lineColor="#FF9900"/>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="13" isBold="true"/>
-					</textElement>
-					<text><![CDATA[COPIA DI CORTESIA]]></text>
-				</staticText>
-				<textField>
-					<reportElement x="0" y="16" width="295" height="34" forecolor="#0000FF" uuid="10f927f7-49ee-4755-bb11-ab05f635649a"/>
-					<box padding="2"/>
-					<textElement textAlignment="Justified" verticalAlignment="Middle">
-						<font fontName="DejaVu Serif Condensed" size="7"/>
-					</textElement>
-					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
-				</textField>
-			</frame>
-			<frame>
 				<reportElement mode="Opaque" x="0" y="64" width="260" height="80" backcolor="#A8EB6E" uuid="90ae2723-1ca6-4fa4-9277-96f6a37054de">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
@@ -776,7 +746,7 @@ WHERE
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}.toUpperCase()]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -889,6 +859,36 @@ IBAN: IT 22 E 02008 82620 000103213822]]></text>
 					<text><![CDATA[BANCA: UNICREDIT S.p.A.
 IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="260" y="190" width="295" height="50" uuid="e652e253-d861-4f91-a6ed-3d06a14051a4">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="295" height="16" forecolor="#0000FF" uuid="8c249249-121f-4c8b-bd17-7af8b08dda55"/>
+					<box>
+						<pen lineWidth="2.0" lineStyle="Dashed" lineColor="#FF9900"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[COPIA DI CORTESIA]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="16" width="295" height="34" forecolor="#0000FF" uuid="10f927f7-49ee-4755-bb11-ab05f635649a"/>
+					<box padding="2"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="DejaVu Serif Condensed" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
+				</textField>
 			</frame>
 			<frame>
 				<reportElement x="450" y="240" width="105" height="13" uuid="9ca2a5d2-0984-4881-a5f9-7d04905b8e16">
@@ -1175,7 +1175,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}]]></textFieldExpression>
+					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}.toUpperCase()]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
