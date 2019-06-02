@@ -540,38 +540,39 @@ WHERE
 		<variableExpression><![CDATA[$F{c_invoiceline_discount}]]></variableExpression>
 	</variable>
 	<title>
-		<band height="301" splitType="Stretch">
+		<band height="305" splitType="Stretch">
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
-				<reportElement x="0" y="0" width="440" height="63" uuid="993d5ca8-bc92-4e15-b6b3-8109207e9255"/>
+				<reportElement x="0" y="0" width="555" height="63" uuid="993d5ca8-bc92-4e15-b6b3-8109207e9255"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
 			</image>
-			<staticText>
-				<reportElement x="440" y="0" width="115" height="40" uuid="b403312e-ba2a-4f81-9c12-a3c7bd42cadf"/>
-				<box>
-					<pen lineWidth="2.0" lineStyle="Dashed"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="13" isBold="true"/>
-				</textElement>
-				<text><![CDATA[COPIA DI 
-CORTESIA]]></text>
-			</staticText>
 			<frame>
-				<reportElement x="442" y="43" width="113" height="19" uuid="9ca2a5d2-0984-4881-a5f9-7d04905b8e16">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				<reportElement x="260" y="190" width="295" height="50" uuid="e652e253-d861-4f91-a6ed-3d06a14051a4">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="295" height="16" forecolor="#0000FF" uuid="8c249249-121f-4c8b-bd17-7af8b08dda55"/>
+					<box>
+						<pen lineWidth="2.0" lineStyle="Dashed" lineColor="#FF9900"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[COPIA DI CORTESIA]]></text>
+				</staticText>
 				<textField>
-					<reportElement x="0" y="0" width="57" height="19" uuid="d10034d7-b308-46ce-b2a9-20122f041246"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
-				</textField>
-				<textField evaluationTime="Report">
-					<reportElement x="57" y="0" width="56" height="19" uuid="8a850cc2-2fe4-4365-87ef-3e153cfd29a1"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[" di " + $V{PAGE_NUMBER}]]></textFieldExpression>
+					<reportElement x="0" y="16" width="295" height="34" forecolor="#0000FF" uuid="10f927f7-49ee-4755-bb11-ab05f635649a"/>
+					<box padding="2"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="DejaVu Serif Condensed" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -681,7 +682,7 @@ CORTESIA]]></text>
 						<font size="10" isBold="true"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="30" width="295" height="12" isRemoveLineWhenBlank="true" uuid="1572f64c-c9c2-49a2-8a82-5ce911f2fd31">
@@ -690,7 +691,7 @@ CORTESIA]]></text>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_name2}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="42" width="295" height="12" isRemoveLineWhenBlank="true" uuid="b8525fff-7077-4de3-9b04-1a399f41aefb"/>
@@ -699,21 +700,21 @@ CORTESIA]]></text>
 						<font isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="54" width="295" height="12" isRemoveLineWhenBlank="true" uuid="2f9bdfea-da26-4579-94a2-2499894466b0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address2}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="66" width="295" height="12" isRemoveLineWhenBlank="true" uuid="fcc811e7-9e12-438a-b64e-3a078be5e499"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address3}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="78" width="295" height="12" isRemoveLineWhenBlank="true" uuid="c20fe141-70df-4081-9c8b-f3730fec4595"/>
@@ -722,7 +723,7 @@ CORTESIA]]></text>
 						<font isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname})+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="90" width="295" height="12" isRemoveLineWhenBlank="true" uuid="aadca227-f85b-4325-b53b-0ec795b82943"/>
@@ -780,8 +781,11 @@ CORTESIA]]></text>
 			</frame>
 			<frame>
 				<reportElement x="0" y="190" width="260" height="50" isRemoveLineWhenBlank="true" uuid="604d6531-5a62-45ae-81f1-2852862e02b9"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
 				<staticText>
-					<reportElement x="0" y="0" width="260" height="20" isRemoveLineWhenBlank="true" uuid="7a3620b6-2cb9-4cd5-86b9-2ac1c48034b0">
+					<reportElement mode="Opaque" x="0" y="0" width="260" height="20" isRemoveLineWhenBlank="true" backcolor="#C9C9C9" uuid="7a3620b6-2cb9-4cd5-86b9-2ac1c48034b0">
 						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id} != null]]></printWhenExpression>
 					</reportElement>
 					<box>
@@ -790,7 +794,7 @@ CORTESIA]]></text>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="10" isBold="true"/>
 					</textElement>
-					<text><![CDATA[BANCA PER L'INCASSO]]></text>
+					<text><![CDATA[COORDINATE BANCARIE]]></text>
 				</staticText>
 				<staticText>
 					<reportElement style="table" x="0" y="20" width="260" height="30" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="c1c750a1-7e13-428d-88fc-26560ec51939">
@@ -887,20 +891,24 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="240" width="555" height="61" isRemoveLineWhenBlank="true" uuid="c2ae36cc-4dfd-48d4-9e3b-4ac83fbbdb32">
+				<reportElement x="450" y="240" width="105" height="13" uuid="9ca2a5d2-0984-4881-a5f9-7d04905b8e16">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="105" height="13" uuid="d10034d7-b308-46ce-b2a9-20122f041246"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["PAGINA " + $V{PAGE_NUMBER}+" / " +$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="253" width="555" height="52" isRemoveLineWhenBlank="true" uuid="c2ae36cc-4dfd-48d4-9e3b-4ac83fbbdb32">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="0" width="555" height="21" isRemoveLineWhenBlank="true" uuid="b206fe67-62cd-4096-bb9b-de929b0d4fd0">
-						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="21" width="555" height="20" isRemoveLineWhenBlank="true" uuid="6c2a6b60-443b-41cb-a57b-2b863e8fc0d2">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="0" width="555" height="18" isRemoveLineWhenBlank="true" uuid="6c2a6b60-443b-41cb-a57b-2b863e8fc0d2">
 						<printWhenExpression><![CDATA[$F{c_invoice_description}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -909,7 +917,16 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["DESCR. DOCUMENTO: "+$F{c_invoice_description}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="41" width="555" height="20" isRemoveLineWhenBlank="true" uuid="92f24c61-2e99-4438-9c4d-b57681bdc49c">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="18" width="555" height="17" isRemoveLineWhenBlank="true" uuid="b206fe67-62cd-4096-bb9b-de929b0d4fd0">
+						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="35" width="555" height="17" isRemoveLineWhenBlank="true" uuid="92f24c61-2e99-4438-9c4d-b57681bdc49c">
 						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -921,50 +938,51 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="190">
+		<band height="253">
 			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > (1)]]></printWhenExpression>
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
-				<reportElement x="0" y="0" width="440" height="63" uuid="47029ab9-dab5-4eec-b72d-4c80b8010f74"/>
+				<reportElement x="0" y="0" width="555" height="63" uuid="6e9aa137-6ec5-423c-bd1c-68ed93f5600f"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
 			</image>
-			<staticText>
-				<reportElement x="440" y="0" width="115" height="40" uuid="45ae5924-2a8c-4875-82d6-e3904965935e"/>
-				<box>
-					<pen lineWidth="2.0" lineStyle="Dashed"/>
-				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font size="13" isBold="true"/>
-				</textElement>
-				<text><![CDATA[COPIA DI 
-CORTESIA]]></text>
-			</staticText>
 			<frame>
-				<reportElement x="442" y="43" width="113" height="19" uuid="b25b630c-bb92-494e-bebd-a4f41a6de82f">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				<reportElement x="260" y="190" width="295" height="50" uuid="9dd52791-d8b2-4306-91df-1f142e4cc69e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="295" height="16" forecolor="#0000FF" uuid="657316eb-6365-4169-b0a4-a40435215038"/>
+					<box>
+						<pen lineWidth="2.0" lineStyle="Dashed" lineColor="#FF9900"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="13" isBold="true"/>
+					</textElement>
+					<text><![CDATA[COPIA DI CORTESIA]]></text>
+				</staticText>
 				<textField>
-					<reportElement x="0" y="0" width="57" height="19" uuid="49b1fca7-64ce-42d4-a4c5-0998adee759a"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Pagina " + $V{PAGE_NUMBER}]]></textFieldExpression>
-				</textField>
-				<textField evaluationTime="Report">
-					<reportElement x="57" y="0" width="56" height="19" uuid="16d0e66e-4f32-4a37-876f-21fa6007e3c0"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA[" di " + $V{PAGE_NUMBER}]]></textFieldExpression>
+					<reportElement x="0" y="16" width="295" height="34" forecolor="#0000FF" uuid="60239821-c70b-4c33-8c7c-c37e2b3e148b"/>
+					<box padding="2"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font fontName="DejaVu Serif Condensed" size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="64" width="260" height="80" backcolor="#A8EB6E" uuid="36e7b82f-e368-41be-9835-9a62bde96a75">
+				<reportElement mode="Opaque" x="0" y="64" width="260" height="80" backcolor="#A8EB6E" uuid="16778dea-8478-48de-8848-ad14e0e427ed">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<textField>
-					<reportElement x="0" y="0" width="260" height="16" forecolor="#0022FF" uuid="4bbbabbc-a420-4f4e-97e7-d7daaab88adb"/>
+					<reportElement x="0" y="0" width="260" height="16" forecolor="#0022FF" uuid="20379058-da9b-42fc-b32e-8aeb53420691"/>
 					<box>
 						<pen lineWidth="0.5" lineColor="#000000"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -978,20 +996,20 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA[$F{c_doctype_trl_printname}]]></textFieldExpression>
 				</textField>
 				<frame>
-					<reportElement mode="Transparent" x="0" y="17" width="260" height="63" uuid="99f17b19-900a-40c0-b50b-67dab4003ec8">
+					<reportElement mode="Transparent" x="0" y="17" width="260" height="63" uuid="3752a261-914e-4358-8cb7-a8f5f829b1ea">
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<frame>
-						<reportElement x="0" y="0" width="130" height="63" uuid="112dde96-f539-400d-92fc-94b8620643f7">
+						<reportElement x="0" y="0" width="130" height="63" uuid="4520efb7-ba76-474d-8e42-5b22b45e174d">
 							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 						</reportElement>
 						<box>
 							<pen lineWidth="0.5"/>
 						</box>
 						<staticText>
-							<reportElement mode="Transparent" x="0" y="0" width="130" height="32" uuid="40d9f043-4991-4765-9343-54ace33907e2"/>
+							<reportElement mode="Transparent" x="0" y="0" width="130" height="32" uuid="3adadc95-94c8-4d97-b2d8-197855ec9e78"/>
 							<box>
 								<pen lineWidth="0.5"/>
 							</box>
@@ -1001,7 +1019,7 @@ CORTESIA]]></text>
 							<text><![CDATA[DATA DOCUMENTO]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
-							<reportElement mode="Opaque" x="0" y="32" width="130" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="aa03b7f3-0592-48ea-b0d2-5739b3fc5ad0"/>
+							<reportElement mode="Opaque" x="0" y="32" width="130" height="31" forecolor="#0022FF" uuid="9feaa177-dd3f-4242-b1aa-c8c55d33e2b4"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
 							</textElement>
@@ -1009,14 +1027,14 @@ CORTESIA]]></text>
 						</textField>
 					</frame>
 					<frame>
-						<reportElement x="130" y="0" width="130" height="63" uuid="6d126498-977a-48f8-a77c-89e8f012ca4f">
+						<reportElement x="130" y="0" width="130" height="63" uuid="16fde240-e669-4043-ae1d-d13868ac2af6">
 							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 						</reportElement>
 						<box>
 							<pen lineWidth="0.5"/>
 						</box>
 						<staticText>
-							<reportElement mode="Transparent" x="0" y="0" width="130" height="32" uuid="093b95f6-d534-4003-8aba-28c3872ff8c2"/>
+							<reportElement mode="Transparent" x="0" y="0" width="130" height="32" uuid="23b85e05-eb30-4141-8caa-7a8a6811e957"/>
 							<box>
 								<pen lineWidth="0.5"/>
 							</box>
@@ -1026,7 +1044,7 @@ CORTESIA]]></text>
 							<text><![CDATA[NUMERO DOC.]]></text>
 						</staticText>
 						<textField>
-							<reportElement mode="Opaque" x="0" y="32" width="130" height="31" forecolor="#0022FF" backcolor="#FFFFFF" uuid="01370670-33cd-48ae-aa58-b4573a1f0a69"/>
+							<reportElement mode="Opaque" x="0" y="32" width="130" height="31" forecolor="#0022FF" uuid="ae414f05-a36b-4f6a-9816-ce3a4ce6736f"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
 								<font fontName="SansSerif" size="14" isBold="true"/>
 							</textElement>
@@ -1036,7 +1054,7 @@ CORTESIA]]></text>
 				</frame>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="64" width="295" height="126" isRemoveLineWhenBlank="true" uuid="5bee4734-464b-42ea-950e-47d326ef2cf6">
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="64" width="295" height="126" isRemoveLineWhenBlank="true" uuid="b77bdfad-4a1f-4acb-a58c-f72975533be0">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -1046,7 +1064,7 @@ CORTESIA]]></text>
 					<pen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="18" forecolor="#081080" backcolor="#BFBFBF" uuid="99c31701-bfa9-45f0-a34a-ee8b2df90377"/>
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="18" forecolor="#081080" backcolor="#BFBFBF" uuid="5ee8ca5c-6a9e-463f-8e36-1aae9b7ec46d"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
@@ -1057,57 +1075,57 @@ CORTESIA]]></text>
 					<text><![CDATA[CLIENTE]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="18" width="295" height="12" isRemoveLineWhenBlank="true" uuid="32e2e9c8-9488-48c4-beb4-d4c1138f08d3"/>
+					<reportElement x="0" y="18" width="295" height="12" isRemoveLineWhenBlank="true" uuid="87eb690f-a2c0-4743-ac4c-022f0f84e26b"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font size="10" isBold="true"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="30" width="295" height="12" isRemoveLineWhenBlank="true" uuid="59bde861-f7c0-4ccc-bcfc-7df10c599ba3">
+					<reportElement x="0" y="30" width="295" height="12" isRemoveLineWhenBlank="true" uuid="6eff9416-6c7d-4fdd-86b8-1a2341769dff">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_bpartner_name2}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="42" width="295" height="12" isRemoveLineWhenBlank="true" uuid="11666b49-2d89-420d-a7b0-82fe3a970b34"/>
+					<reportElement x="0" y="42" width="295" height="12" isRemoveLineWhenBlank="true" uuid="37e13b0d-5fa8-4049-b526-be8b9ef99da6"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="54" width="295" height="12" isRemoveLineWhenBlank="true" uuid="13dea947-0207-4bf4-a070-49b5e30356b8"/>
+					<reportElement x="0" y="54" width="295" height="12" isRemoveLineWhenBlank="true" uuid="87303a1d-deb4-4b37-904b-d711d7920002"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address2}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="66" width="295" height="12" isRemoveLineWhenBlank="true" uuid="d6b4ee55-364f-4a45-939a-f537b1a85e65"/>
+					<reportElement x="0" y="66" width="295" height="12" isRemoveLineWhenBlank="true" uuid="14abe0aa-97f9-4751-b3ac-79a79a03801d"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_location_address3}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="78" width="295" height="12" isRemoveLineWhenBlank="true" uuid="bd385ac3-286e-4320-831a-5216342efc21"/>
+					<reportElement x="0" y="78" width="295" height="12" isRemoveLineWhenBlank="true" uuid="401c6a29-b50e-4837-99f0-07b575e3f4ab"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<font isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname})+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="90" width="295" height="12" isRemoveLineWhenBlank="true" uuid="c2dc35e0-1acc-409a-bd6c-147592f341e4"/>
+					<reportElement x="0" y="90" width="295" height="12" isRemoveLineWhenBlank="true" uuid="2c1bd53c-5b32-490d-b7d4-36d84104fdbe"/>
 					<box>
 						<pen lineWidth="0.0"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1122,14 +1140,14 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA["P.IVA: "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="102" width="295" height="12" isRemoveLineWhenBlank="true" uuid="368fb23b-661b-4066-94c7-d2c4b6f29fee"/>
+					<reportElement x="0" y="102" width="295" height="12" isRemoveLineWhenBlank="true" uuid="72854f0b-32ee-43b8-8f82-3a691143c87a"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null ? "TELEFONO: "+$F{c_bpartner_location_a_phone}:""]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="114" width="295" height="12" isRemoveLineWhenBlank="true" uuid="84dfb89e-68b6-4516-9af1-f308ba933d35"/>
+					<reportElement x="0" y="114" width="295" height="12" isRemoveLineWhenBlank="true" uuid="705aa740-0677-4209-ba62-55f07701a42f"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
 						<paragraph leftIndent="5"/>
 					</textElement>
@@ -1137,14 +1155,14 @@ CORTESIA]]></text>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="0" y="144" width="260" height="46" uuid="26e7ac6c-6071-4aba-b609-d5cfcf34f9e3">
+				<reportElement x="0" y="144" width="260" height="46" uuid="6b99ba53-8724-4337-897f-6dd5426fab40">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="260" height="23" uuid="259d2a49-2d4d-4cdd-a460-152da0dced97"/>
+					<reportElement x="0" y="0" width="260" height="23" uuid="374448c3-cb0c-4049-a95d-3992178fc16c"/>
 					<box leftPadding="5"/>
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
@@ -1152,12 +1170,136 @@ CORTESIA]]></text>
 					<textFieldExpression><![CDATA["TERMINE DI PAGAM.:"+$F{c_paymentterm_value}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="23" width="260" height="23" uuid="0fc12822-0e60-4358-a020-1bb7c264e80d"/>
+					<reportElement x="0" y="23" width="260" height="23" uuid="0a00cb2d-a793-4315-b4ed-6668d0e22f5c"/>
 					<box leftPadding="5"/>
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="190" width="260" height="50" isRemoveLineWhenBlank="true" uuid="e41d41fe-7579-4f7f-a026-ced90d3ada8d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="260" height="20" isRemoveLineWhenBlank="true" backcolor="#C9C9C9" uuid="182e1d64-59ca-4f20-a921-0b459d5317a6">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id} != null]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+					</textElement>
+					<text><![CDATA[COORDINATE BANCARIE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="30" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="b016a2d1-fb2b-4a47-ac0c-da11071575cf">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000000]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: MONTE DEI PASCHI DI SIENA S.p.A. 
+IBAN: IT 87 N 01030 82490 000063277929
+BIC: PASCITM1ME4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="30" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="31a467ed-15fa-4dc7-b5e9-537b5665c5a0">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000007]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BPM
+IBAN: IT 77 S 05034 82670 000000 704704
+BIC: BAPPIT21P66]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="30" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="6597a609-e32d-463e-95b4-4ce31dddc880">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000012]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
+IBAN: IT 97 Y 03205 02000 000000000070]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="30" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="b5427a98-dd7a-4d0b-a6b0-04dd15054926">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000003]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA BPER S.p.A.
+IBAN: IT 47 Q 05387 16900 000002397825]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="30" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="6d8388f7-55bc-457d-a302-7b9cddf992e8">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000008]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
+IBAN: IT 81 Y 03205 04600 000002220086]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="30" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="0c1950e8-692e-4e8a-bc4e-fcb9801d27e7">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000016]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: UNICREDIT S.p.A.
+IBAN: IT 22 E 02008 82620 000103213822]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="table" x="0" y="20" width="260" height="30" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="c0d53e7e-a9dd-43a0-93cf-37202e123344">
+						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000001]]></printWhenExpression>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[BANCA: UNICREDIT S.p.A.
+IBAN: IT 33 S 02008 82620 000103213759]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement x="450" y="240" width="105" height="13" uuid="f4a0c180-cdd1-4830-9eab-1f5c0b275a6c">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField>
+					<reportElement x="0" y="0" width="105" height="13" uuid="6f5be47a-dc68-4aec-b936-52c7d42909f8"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["PAGINA " + $V{PAGE_NUMBER}+" / " +$V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -1169,14 +1311,21 @@ CORTESIA]]></text>
 				<reportElement x="0" y="0" width="555" height="17" uuid="154db630-4e85-4eb6-9140-83349c7649b2">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<staticText>
 					<reportElement mode="Opaque" x="80" y="0" width="220" height="17" backcolor="#A8EB6E" uuid="0d45999c-f961-4356-9d79-2d80e058a718">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 					</reportElement>
 					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
@@ -1189,9 +1338,9 @@ CORTESIA]]></text>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1204,9 +1353,9 @@ CORTESIA]]></text>
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 					</reportElement>
 					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -1215,13 +1364,14 @@ CORTESIA]]></text>
 					<text><![CDATA[Q.TA']]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="450" y="0" width="70" height="17" backcolor="#A8EB6E" uuid="0070bce4-dcb3-404c-9cb0-a1fd2369f439">
+					<reportElement mode="Opaque" x="462" y="0" width="70" height="17" backcolor="#A8EB6E" uuid="0070bce4-dcb3-404c-9cb0-a1fd2369f439">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -1230,28 +1380,28 @@ CORTESIA]]></text>
 					<text><![CDATA[TOTALE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="520" y="0" width="35" height="17" backcolor="#A8EB6E" uuid="3f9b3cf5-73ac-4068-b1d8-9d5058e89f21">
+					<reportElement mode="Opaque" x="532" y="0" width="23" height="17" backcolor="#A8EB6E" uuid="3f9b3cf5-73ac-4068-b1d8-9d5058e89f21">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 					</reportElement>
 					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8" isBold="true"/>
 					</textElement>
-					<text><![CDATA[C.IVA]]></text>
+					<text><![CDATA[C.I.]]></text>
 				</staticText>
 				<staticText>
 					<reportElement mode="Opaque" x="0" y="0" width="80" height="17" backcolor="#A8EB6E" uuid="afe23ffd-3b9b-4e1e-bb20-3d43a68008a4">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 					</reportElement>
 					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
@@ -1260,13 +1410,13 @@ CORTESIA]]></text>
 					<text><![CDATA[COD. ART.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="421" y="0" width="29" height="17" backcolor="#A8EB6E" uuid="af994b40-89eb-42ad-983d-ce7fd6ecd2ac">
+					<reportElement mode="Opaque" x="438" y="0" width="24" height="17" backcolor="#A8EB6E" uuid="af994b40-89eb-42ad-983d-ce7fd6ecd2ac">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e477dd3-9937-4bbd-aad3-81de4a67bda5"/>
 					</reportElement>
 					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -1275,13 +1425,14 @@ CORTESIA]]></text>
 					<text><![CDATA[SC %]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="368" y="0" width="53" height="17" backcolor="#A8EB6E" uuid="482261af-0579-4d06-9f56-0b24bdc20379">
+					<reportElement mode="Opaque" x="368" y="0" width="70" height="17" backcolor="#A8EB6E" uuid="482261af-0579-4d06-9f56-0b24bdc20379">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbb90318-0673-4966-beef-2d35743c2496"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -1293,86 +1444,142 @@ CORTESIA]]></text>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="15" splitType="Stretch">
+		<band height="11" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<printWhenExpression><![CDATA[$F{c_invoiceline_name}!=null]]></printWhenExpression>
 			<frame>
-				<reportElement x="0" y="0" width="555" height="15" uuid="229edee9-8f18-4bd5-972e-940a17784bb9">
+				<reportElement x="0" y="0" width="555" height="11" uuid="229edee9-8f18-4bd5-972e-940a17784bb9">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_name}!= null]]></printWhenExpression>
 				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="80" height="15" isRemoveLineWhenBlank="true" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
+					<reportElement x="0" y="0" width="80" height="11" isRemoveLineWhenBlank="true" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 					</reportElement>
-					<textElement verticalAlignment="Top"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Top">
+						<font size="9"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="80" y="0" width="220" height="15" isRemoveLineWhenBlank="true" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
+					<reportElement x="80" y="0" width="220" height="11" isRemoveLineWhenBlank="true" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement verticalAlignment="Top" markup="html">
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_invoiceline_name}!=null?$F{m_product_name}:$F{m_product_name}!=null?$F{m_product_name}:"")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="300" y="0" width="30" height="15" isRemoveLineWhenBlank="true" uuid="771acd34-7ac4-41ae-9f87-691998a08a08">
+					<reportElement x="300" y="0" width="30" height="11" isRemoveLineWhenBlank="true" uuid="771acd34-7ac4-41ae-9f87-691998a08a08">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 					</reportElement>
-					<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+					<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement verticalAlignment="Top" markup="styled">
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,###.###" isBlankWhenNull="true">
-					<reportElement x="330" y="0" width="38" height="15" isRemoveLineWhenBlank="true" uuid="6fa1fa7c-011d-4f88-90f1-36b09c7de943">
+					<reportElement x="330" y="0" width="38" height="11" isRemoveLineWhenBlank="true" uuid="6fa1fa7c-011d-4f88-90f1-36b09c7de943">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_qtyentered}.intValue()!=0]]></printWhenExpression>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_qtyinvoiced}]]></textFieldExpression>
 				</textField>
-				<textField pattern="¤#,##0.0000;¤(#,##0.0000-)">
-					<reportElement x="368" y="0" width="53" height="15" uuid="b87ba9a1-a299-401f-8559-d0450409bcec">
+				<textField pattern="¤#,##0.000;¤-#,##0.000">
+					<reportElement x="368" y="0" width="70" height="11" uuid="b87ba9a1-a299-401f-8559-d0450409bcec">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbb90318-0673-4966-beef-2d35743c2496"/>
-						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_priceactual}.doubleValue() != 0.0]]></printWhenExpression>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top">
 						<font size="9"/>
-						<paragraph rightIndent="5"/>
+						<paragraph rightIndent="0"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_invoiceline_pricelist}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{c_invoiceline_pricelist}.doubleValue()==0?$F{c_invoiceline_priceactual}:$F{c_invoiceline_pricelist}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.0##">
-					<reportElement x="421" y="0" width="29" height="15" uuid="2814834e-6ec7-470c-b8dd-a3d187dbd0a7">
+					<reportElement x="438" y="0" width="24" height="11" uuid="2814834e-6ec7-470c-b8dd-a3d187dbd0a7">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e477dd3-9937-4bbd-aad3-81de4a67bda5"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_discount}.doubleValue() != 0.0]]></printWhenExpression>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top">
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_discount}]]></textFieldExpression>
 				</textField>
 				<textField pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement x="450" y="0" width="70" height="15" isRemoveLineWhenBlank="true" uuid="e3dfc067-5ad9-47c7-934a-efbf82f57033">
+					<reportElement x="462" y="0" width="70" height="11" isRemoveLineWhenBlank="true" uuid="e3dfc067-5ad9-47c7-934a-efbf82f57033">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
+						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_linenetamt}.intValue()!=0]]></printWhenExpression>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
 						<font size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_linenetamt}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="520" y="0" width="35" height="15" isRemoveLineWhenBlank="true" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
+					<reportElement x="532" y="0" width="23" height="11" isRemoveLineWhenBlank="true" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
 						<font size="9"/>
 					</textElement>
@@ -1384,10 +1591,22 @@ CORTESIA]]></text>
 			<printWhenExpression><![CDATA[$F{lit_attribute_v_lot}!=null]]></printWhenExpression>
 			<frame>
 				<reportElement x="80" y="0" width="475" height="14" uuid="526286a5-c257-4032-a2fe-96e668853634"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="475" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="f864e607-9a1d-4cf0-a9b0-1e23aa88a747">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3885e6b9-9e2e-471c-be47-ab6450b99885"/>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif" size="9" isBold="false"/>
 					</textElement>
@@ -1401,10 +1620,22 @@ CORTESIA]]></text>
 				<reportElement x="80" y="0" width="475" height="14" isRemoveLineWhenBlank="true" uuid="95bfe3e5-9849-43bc-b863-5bc9730cb1d2">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="475" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="ea711447-a730-40e5-8065-0c556b2cd38d">
 						<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y')]]></printWhenExpression>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
 						<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
@@ -1419,10 +1650,22 @@ CORTESIA]]></text>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null]]></printWhenExpression>
 				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 					<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="475" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="bd1231be-2c9e-4933-a8b7-84edc14c244d">
 						<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y') || $F{c_invoiceline_help}!=null]]></printWhenExpression>
 					</reportElement>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
 						<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
@@ -1444,112 +1687,102 @@ CORTESIA]]></text>
 		<band/>
 	</columnFooter>
 	<lastPageFooter>
-		<band height="110">
+		<band height="95">
 			<frame>
-				<reportElement stretchType="ElementGroupBottom" x="190" y="15" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				<reportElement x="0" y="0" width="555" height="95" uuid="fb784cbd-846f-4a76-8484-621d35fba5e3">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<subreport isUsingCache="true">
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="458aa8da-fce4-4602-a45e-1029d9b19b29"/>
-					<subreportParameter name="AD_LANGUAGE">
-						<subreportParameterExpression><![CDATA[$F{ad_language}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="RECORD_ID">
-						<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="RESOURCE">
-						<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
-					</subreportParameter>
-					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_payschedule.jasper"]]></subreportExpression>
-				</subreport>
-			</frame>
-			<frame>
-				<reportElement stretchType="ElementGroupBottom" mode="Opaque" x="380" y="15" width="175" height="60" backcolor="#A8EB6E" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<staticText>
-					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="175" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
+				<frame>
+					<reportElement stretchType="ElementGroupBottom" x="190" y="0" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="12" isBold="true"/>
-					</textElement>
-					<text><![CDATA[TOTALE FATTURA]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement stretchType="ElementGroupBottom" x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
-						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+					<subreport isUsingCache="true">
+						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="458aa8da-fce4-4602-a45e-1029d9b19b29"/>
+						<subreportParameter name="AD_LANGUAGE">
+							<subreportParameterExpression><![CDATA[$F{ad_language}]]></subreportParameterExpression>
+						</subreportParameter>
+						<subreportParameter name="RECORD_ID">
+							<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
+						</subreportParameter>
+						<subreportParameter name="RESOURCE">
+							<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
+						</subreportParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_payschedule.jasper"]]></subreportExpression>
+					</subreport>
+				</frame>
+				<frame>
+					<reportElement stretchType="ElementGroupBottom" mode="Opaque" x="380" y="0" width="175" height="60" backcolor="#A8EB6E" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
-					<box rightPadding="5"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="14" isBold="true"/>
-						<paragraph rightIndent="5"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_invoice_grandtotal}]]></textFieldExpression>
-				</textField>
-			</frame>
-			<frame>
-				<reportElement stretchType="ElementGroupBottom" x="0" y="15" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<subreport>
-					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
-						<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					</reportElement>
-					<subreportParameter name="AD_LANGUAGE">
-						<subreportParameterExpression><![CDATA[$P{AD_LANGUAGE}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="RECORD_ID">
-						<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
-					</subreportParameter>
-					<subreportParameter name="RESOURCE">
-						<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
-					</subreportParameter>
-					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_vat.jasper"]]></subreportExpression>
-				</subreport>
-			</frame>
-			<frame>
-				<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="15" uuid="615348fa-4721-4fc7-82da-d4516dba1914">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				</reportElement>
-				<textField>
-					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="15" uuid="df6b01d0-3da8-4f3d-9096-47f8ec37f1d7">
-						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_invoice_note}]]></textFieldExpression>
-				</textField>
-			</frame>
-			<frame>
-				<reportElement x="0" y="75" width="555" height="35" uuid="b9c1d4b9-6cad-4097-b1f2-64b2d9dc90d4">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				</reportElement>
-				<textField isStretchWithOverflow="true">
-					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="35" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
-						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
-					</reportElement>
-					<box leftPadding="3" rightPadding="3">
+					<box>
 						<pen lineWidth="0.5"/>
 					</box>
-					<textElement textAlignment="Justified" verticalAlignment="Top">
-						<font fontName="SansSerif" size="6"/>
-						<paragraph leftIndent="2" rightIndent="2"/>
-					</textElement>
-					<textFieldExpression><![CDATA["CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.\nCONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO.\nAssolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27."]]></textFieldExpression>
-				</textField>
+					<staticText>
+						<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="175" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
+						<box>
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="12" isBold="true"/>
+						</textElement>
+						<text><![CDATA[TOTALE FATTURA]]></text>
+					</staticText>
+					<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+						<reportElement stretchType="ElementGroupBottom" x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
+							<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+						</reportElement>
+						<box rightPadding="5"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle">
+							<font size="14" isBold="true"/>
+							<paragraph rightIndent="5"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{c_invoice_grandtotal}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<subreport>
+						<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+						</reportElement>
+						<subreportParameter name="AD_LANGUAGE">
+							<subreportParameterExpression><![CDATA[$P{AD_LANGUAGE}]]></subreportParameterExpression>
+						</subreportParameter>
+						<subreportParameter name="RECORD_ID">
+							<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
+						</subreportParameter>
+						<subreportParameter name="RESOURCE">
+							<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
+						</subreportParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+						<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_invoice_withholding_sub_vat.jasper"]]></subreportExpression>
+					</subreport>
+				</frame>
+				<frame>
+					<reportElement x="0" y="60" width="555" height="35" uuid="b9c1d4b9-6cad-4097-b1f2-64b2d9dc90d4">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					</reportElement>
+					<textField isStretchWithOverflow="true">
+						<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="35" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
+							<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
+						</reportElement>
+						<box padding="2">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Justified" verticalAlignment="Top">
+							<font fontName="SansSerif" size="6"/>
+						</textElement>
+						<textFieldExpression><![CDATA["CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.\nCONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO.\nAssolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27."]]></textFieldExpression>
+					</textField>
+				</frame>
 			</frame>
 		</band>
 	</lastPageFooter>

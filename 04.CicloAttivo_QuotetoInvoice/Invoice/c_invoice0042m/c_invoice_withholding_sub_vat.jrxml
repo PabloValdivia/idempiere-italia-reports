@@ -188,7 +188,7 @@ WHERE
 			<frame>
 				<reportElement x="0" y="0" width="190" height="9" isRemoveLineWhenBlank="true" uuid="28483c2c-216c-4ab3-adc0-35ea832be5f5"/>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="190" height="9" uuid="73b4392b-320f-42e8-8ba1-5252f41e0063">
+					<reportElement x="0" y="0" width="190" height="9" isRemoveLineWhenBlank="true" uuid="73b4392b-320f-42e8-8ba1-5252f41e0063">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a42e339-3cca-4032-94d6-c0d24d9732b4"/>
 					</reportElement>
 					<box leftPadding="5"/>
