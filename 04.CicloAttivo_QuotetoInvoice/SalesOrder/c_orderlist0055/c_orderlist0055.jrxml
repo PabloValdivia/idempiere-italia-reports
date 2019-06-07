@@ -38,7 +38,7 @@ SELECT *
 FROM lit_rep_order_v
 WHERE 
 c_orderline_qtyreserved>0 and 
-c_order_docstatus='CO' and c_order_issotrx = 'Y'
+c_order_docstatus='CO' and c_order_issotrx = 'Y' and c_doctype_name='ORDINE STANDARD'
 ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 	</queryString>
 	<field name="ad_client_ad_client_id" class="java.math.BigDecimal">
@@ -459,6 +459,9 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 	</field>
 	<sortField name="c_order_c_order_id" order="Descending"/>
 	<sortField name="c_order_dateordered" order="Descending"/>
+	<variable name="Variable_1" class="java.lang.String"/>
+	<variable name="Variable_2" class="java.lang.String"/>
+	<variable name="Variable_3" class="java.lang.String"/>
 	<group name="Gruppo1" minHeightToStartNewPage="29" keepTogether="true">
 		<groupExpression><![CDATA[$F{c_order_c_order_id}]]></groupExpression>
 		<groupHeader>
@@ -544,7 +547,7 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 						<pen lineWidth="2.0"/>
 					</box>
 					<textField isBlankWhenNull="true">
-						<reportElement x="0" y="0" width="822" height="24" uuid="4915a94d-e43f-46e4-b912-832ef2ee4d4d"/>
+						<reportElement x="0" y="0" width="822" height="24" forecolor="#0000FF" uuid="4915a94d-e43f-46e4-b912-832ef2ee4d4d"/>
 						<box leftPadding="3"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="SansSerif" size="14" isBold="true"/>
@@ -552,7 +555,7 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 						<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
 					</textField>
 					<textField isBlankWhenNull="true">
-						<reportElement x="0" y="24" width="822" height="23" uuid="20f1e2c5-5384-430e-aa87-ee6e341f139b"/>
+						<reportElement x="0" y="24" width="822" height="23" forecolor="#0000FF" uuid="20f1e2c5-5384-430e-aa87-ee6e341f139b"/>
 						<box leftPadding="3"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="SansSerif" size="14" isBold="true"/>
@@ -671,27 +674,26 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_orderline_qtyentered}]]></textFieldExpression>
 				</textField>
+				<textField pattern="#,###.###;(#,###.###-)" isBlankWhenNull="true">
+					<reportElement x="734" y="0" width="88" height="18" uuid="becc5c6f-2cc1-4bb4-a9ee-b734a99ffd8f"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="13" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_orderline_qtyordered}.doubleValue()/$F{m_product_unitsperpallet}.doubleValue()>=1?$F{c_orderline_qtyordered}.doubleValue()/$F{m_product_unitsperpallet}.doubleValue():""]]></textFieldExpression>
+				</textField>
 			</frame>
 		</band>
-		<band height="41">
+		<band height="19">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 			<frame>
-				<reportElement x="0" y="0" width="822" height="41" isRemoveLineWhenBlank="true" uuid="b535d9dc-d0a7-4739-bd7b-f85ea51f330c">
+				<reportElement x="0" y="0" width="822" height="19" isRemoveLineWhenBlank="true" uuid="b535d9dc-d0a7-4739-bd7b-f85ea51f330c">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="822" height="21" isRemoveLineWhenBlank="true" forecolor="#000099" uuid="7059b9f8-0cac-4bdc-9cc1-408e0f64cc0e"/>
-					<box leftPadding="10"/>
-					<textElement verticalAlignment="Middle">
-						<font size="14" isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{c_orderline_description}]]></textFieldExpression>
-				</textField>
-				<textField isBlankWhenNull="true">
-					<reportElement x="0" y="21" width="822" height="20" isRemoveLineWhenBlank="true" forecolor="#CC0300" uuid="c3525867-ac81-4e3c-954e-897429e64266"/>
+					<reportElement x="0" y="0" width="822" height="19" isRemoveLineWhenBlank="true" forecolor="#CC0300" uuid="c3525867-ac81-4e3c-954e-897429e64266"/>
 					<box leftPadding="10"/>
 					<textElement verticalAlignment="Middle">
 						<font size="14" isBold="true"/>

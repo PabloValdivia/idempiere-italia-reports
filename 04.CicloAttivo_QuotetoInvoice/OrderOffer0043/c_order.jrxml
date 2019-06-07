@@ -1056,6 +1056,358 @@ ORDER BY
 	<pageHeader>
 		<band height="345">
 			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}!=1]]></printWhenExpression>
+			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
+				<reportElement x="0" y="0" width="555" height="63" isRemoveLineWhenBlank="true" uuid="ceb9858a-b3c4-4e62-a248-dccd43564049"/>
+				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="65" width="260" height="103" backcolor="#CCFFFF" uuid="9ba54740-db71-427b-b2f9-a611af70bb87">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<frame>
+					<reportElement x="0" y="0" width="260" height="52" uuid="e1ba9378-7079-4643-80b2-67a5215cd899">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					</reportElement>
+					<textField>
+						<reportElement x="0" y="0" width="260" height="52" forecolor="#0022FF" uuid="48d47dad-c2dd-47c3-a128-fada7e39b6aa"/>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font size="15" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{c_doctype_printname}]]></textFieldExpression>
+					</textField>
+				</frame>
+				<frame>
+					<reportElement x="0" y="52" width="260" height="51" uuid="be880c31-fbdf-4958-af20-05640ff7c18c">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+					</reportElement>
+					<frame>
+						<reportElement x="0" y="0" width="130" height="51" uuid="08ed908b-cd57-4e1a-b862-e5f6bcdcf7fa">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<staticText>
+							<reportElement x="0" y="0" width="130" height="26" uuid="dd9a54ff-fb75-4002-950e-627b4e4c9f53"/>
+							<box topPadding="2">
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<text><![CDATA[NUMERO DOC.]]></text>
+						</staticText>
+						<textField>
+							<reportElement mode="Opaque" x="0" y="26" width="130" height="25" forecolor="#0022FF" backcolor="#FFFFFF" uuid="4b5e13ec-eade-4499-8f63-b981ebaa4df1"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="SansSerif" size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{c_order_documentno}]]></textFieldExpression>
+						</textField>
+					</frame>
+					<frame>
+						<reportElement x="130" y="0" width="130" height="51" uuid="f977d3de-c461-4cf7-980d-4fb2b4648855">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+						</reportElement>
+						<staticText>
+							<reportElement x="0" y="0" width="130" height="26" uuid="fa1ff02c-ad32-44b4-81a7-79a61f43f209"/>
+							<box topPadding="2">
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font isBold="true"/>
+							</textElement>
+							<text><![CDATA[DATA DOCUMENTO]]></text>
+						</staticText>
+						<textField pattern="dd-MM-yyyy">
+							<reportElement mode="Opaque" x="0" y="26" width="130" height="25" forecolor="#0022FF" backcolor="#FFFFFF" uuid="4895bf9a-d4ef-4d3c-845f-44d0aeb24e1e"/>
+							<box>
+								<pen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="SansSerif" size="14" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{c_order_dateordered}]]></textFieldExpression>
+						</textField>
+					</frame>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement x="0" y="168" width="260" height="54" uuid="2c28348e-4126-4909-ad41-d837b32ac87c">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="260" height="18" uuid="a91c2164-aefb-40bb-ac98-53859748b576">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<text><![CDATA[TERMINI DI PAGAMENTO]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="18" width="260" height="18" uuid="6130f3a4-78cf-4348-b40f-1cb98b23e2c3">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_order_paymentrule}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="36" width="260" height="18" uuid="6bdb2c86-a3e8-4230-9388-9e9b88873de0">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_paymentterm_name}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="69" y="237" width="190" height="27" uuid="f3410965-85fd-4ac9-b643-53f6bf4871da">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="0" y="0" width="190" height="27" uuid="f02f5c20-2a3a-4446-80c8-1bc33b0486d5"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="15"/>
+					</textElement>
+					<textFieldExpression><![CDATA["PAGINA " + $V{PAGE_NUMBER}+"DI "+ $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="330" width="555" height="15" uuid="f2547cba-b003-4e39-bc56-150fb27d0050">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="15" uuid="ccec7885-42c4-4df3-92b2-e974fc1e7226"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_order_description}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="65" width="295" height="133" uuid="2820be37-cdb9-4490-9356-0ab1f94fa4a1">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box padding="0">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="21" forecolor="#081080" backcolor="#C7C7C7" uuid="a6758ace-f721-46f6-8781-5c03d36aaba4"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+						<pen lineWidth="0.5"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="13" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[CLIENTE / CESSIONARIO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="21" width="295" height="14" isRemoveLineWhenBlank="true" uuid="4bbc602e-4c38-4612-86fa-c07d53852ebf"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font size="10" isBold="true"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="35" width="295" height="14" isRemoveLineWhenBlank="true" uuid="e482d8b9-5566-4ecc-9711-75db1f31f9b3">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+						<printWhenExpression><![CDATA[$F{c_bpartner_name2}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="49" width="295" height="14" isRemoveLineWhenBlank="true" uuid="2b723307-942f-4b49-9036-d26bdf87f9a1"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="63" width="295" height="14" isRemoveLineWhenBlank="true" uuid="d0463a64-4369-4f55-9995-ab9b440a921a">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="77" width="295" height="14" isRemoveLineWhenBlank="true" uuid="17f2dec7-eaff-4b50-9516-bcf4645da853">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="91" width="295" height="14" isRemoveLineWhenBlank="true" uuid="54dc9498-b930-4746-bee8-ba96011991a1"/>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="105" width="295" height="14" isRemoveLineWhenBlank="true" uuid="6ce46fa8-bba4-4cd0-b836-d4830a2826f9">
+						<printWhenExpression><![CDATA[$F{c_bpartner_taxid} != null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA["P.IVA: " +$F{c_bpartner_taxid}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="119" width="295" height="14" isRemoveLineWhenBlank="true" uuid="ef5818eb-89cb-4a1d-8d48-1d27a85aec82">
+						<printWhenExpression><![CDATA[$F{c_bpartner_location_phone}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_location_phone}!= null?"TELEFONO: "+$F{c_bpartner_location_phone}:""]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="260" y="198" width="295" height="132" forecolor="#999999" backcolor="#DFDFDF" uuid="171ce0e3-c990-4f4c-b7fc-209e3059d13e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<box padding="0">
+					<pen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<staticText>
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="24" forecolor="#0E1B6E" backcolor="#C7C7C7" uuid="064f3ea8-294a-43a5-aaa7-f841646522e5"/>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+						<font fontName="SansSerif" size="13" isBold="true"/>
+						<paragraph lineSpacing="Single"/>
+					</textElement>
+					<text><![CDATA[DESTINAZIONE DELLA MERCE]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="24" width="295" height="18" isRemoveLineWhenBlank="true" uuid="28cb4855-d895-4d16-acee-bad645641ac6">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10" isBold="true"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="42" width="295" height="18" isRemoveLineWhenBlank="true" uuid="b5b114c2-2427-4645-a963-eb358e4fcfb7">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_a_address1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="60" width="295" height="18" isRemoveLineWhenBlank="true" uuid="130119ca-c3e5-4208-aa37-49f57302d382">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_a_address2}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" mode="Transparent" x="0" y="78" width="295" height="18" isRemoveLineWhenBlank="true" uuid="572f0226-f4a1-4271-bfdf-3d5d2705403f">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_location_a_address3}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="96" width="295" height="18" isRemoveLineWhenBlank="true" uuid="ae45ae91-9475-44a1-9f98-6d37c31ec023">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="false"/>
+						<paragraph lineSpacing="Single" leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}.toUpperCase()) +" "+($F{c_location_a_regionname} == null ? "" : $F{c_location_a_regionname}.toUpperCase())+" " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name}.toUpperCase())]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="114" width="295" height="18" isRemoveLineWhenBlank="true" uuid="6c02d955-aca5-49ab-8391-f70fc0bf4ca9">
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
+						<printWhenExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null]]></printWhenExpression>
+					</reportElement>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font isBold="true"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null?"TELEFONO: "+$F{c_bpartner_location_a_phone}:""]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="222" width="69" height="56" uuid="d1cebfa6-e912-4746-9d7e-b5195315ce41">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<componentElement>
+					<reportElement x="0" y="0" width="69" height="56" uuid="7cbb8021-effd-4474-9d09-9f9a99c6bb4f"/>
+					<jr:QRCode xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<jr:codeExpression><![CDATA[$F{c_order_documentno}]]></jr:codeExpression>
+					</jr:QRCode>
+				</componentElement>
+			</frame>
 		</band>
 	</pageHeader>
 	<columnHeader>
@@ -1170,7 +1522,7 @@ ORDER BY
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true">
 					<reportElement x="60" y="0" width="220" height="10" uuid="11afaf87-983c-4f07-8fbe-b7b28e884e11">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="22952df3-d261-4e81-a86c-ba2f66f69fdd"/>
 					</reportElement>
@@ -1244,7 +1596,7 @@ ORDER BY
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textField isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="494" height="10" isRemoveLineWhenBlank="true" uuid="7f0100c9-2b8e-4075-9957-930f53022682">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b2156f4-5dc2-4eaa-887e-35b8897f2a71"/>
 					</reportElement>
@@ -1263,7 +1615,7 @@ ORDER BY
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
-				<textField isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="494" height="10" isRemoveLineWhenBlank="true" uuid="be0dd8c9-11c2-49c0-b8ad-05969b37db25">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7b8a6035-6158-48ad-a632-1c79a657a69b"/>
 					</reportElement>
