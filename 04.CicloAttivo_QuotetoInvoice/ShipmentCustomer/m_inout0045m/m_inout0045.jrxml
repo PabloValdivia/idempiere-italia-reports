@@ -1784,9 +1784,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<font size="8"/>
 					</textElement>
 					<text><![CDATA[CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.
-CONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO
 Assolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27.
-]]></text>
+CONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO]]></text>
 				</staticText>
 			</frame>
 		</band>
