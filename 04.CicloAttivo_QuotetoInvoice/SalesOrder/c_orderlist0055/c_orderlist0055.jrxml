@@ -24,10 +24,14 @@
 	<parameter name="RECORD_ID" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
+	<parameter name="DateFrom" class="java.util.Date"/>
+	<parameter name="DocumentNo" class="java.lang.String"/>
+	<parameter name="DateTo" class="java.util.Date"/>
 	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
 	<parameter name="ad_language" class="java.lang.String">
 		<defaultValueExpression><![CDATA["it_IT"]]></defaultValueExpression>
 	</parameter>
+	<parameter name="C_BPartner_ID" class="java.lang.Integer"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
 	</parameter>
@@ -37,8 +41,11 @@
 SELECT * 
 FROM lit_rep_order_v
 WHERE 
-c_orderline_qtyreserved>0 and 
-c_order_docstatus='CO' and c_order_issotrx = 'Y' and c_doctype_name='ORDINE STANDARD'
+(c_orderline_qtyreserved>0 and c_order_docstatus='CO' and c_order_issotrx = 'Y' and c_doctype_name='ORDINE STANDARD')
+AND(c_bpartner_c_bpartner_id=$P{C_BPartner_ID}) OR
+(c_order_dateacct=$P{DateTo} )OR
+(c_order_dateacct=$P{DateFrom} )OR
+c_order_documentno=$P{DocumentNo}
 ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 	</queryString>
 	<field name="ad_client_ad_client_id" class="java.math.BigDecimal">
