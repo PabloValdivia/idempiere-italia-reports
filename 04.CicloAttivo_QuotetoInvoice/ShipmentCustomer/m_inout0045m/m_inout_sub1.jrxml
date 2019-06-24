@@ -148,7 +148,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif" size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_order_documentno}!= null ? "RIF. NS ORDINE:"+$F{c_order_documentno}:"" +$F{c_order_poreference}!= null ? " RIF. VS. ORDINE: "+$F{c_order_poreference}:""]]></textFieldExpression>
+					<textFieldExpression><![CDATA[($F{c_order_documentno}!= null ? "RIF. NS ORDINE:"+$F{c_order_documentno}:"") +($F{c_order_poreference}!= null ? " RIF. VS. ORDINE: "+$F{c_order_poreference} :"")]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>

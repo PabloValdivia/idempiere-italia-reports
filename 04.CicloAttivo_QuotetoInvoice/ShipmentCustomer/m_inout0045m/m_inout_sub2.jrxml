@@ -150,7 +150,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif" size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_order_documentno}!= null ? "RIF. NS ORDINE:"+$F{c_order_documentno}:"" +$F{c_order_poreference}!= null ? " RIF. VS. ORDINE: "+$F{c_order_poreference}:""]]></textFieldExpression>
+					<textFieldExpression><![CDATA[($F{c_order_documentno}!= null ? "RIF. NS ORDINE:"+$F{c_order_documentno}:"") +($F{c_order_poreference}!= null ? " RIF. VS. ORDINE: "+$F{c_order_poreference} :"")]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement mode="Opaque" x="2676" y="-17" width="50" height="10" backcolor="#E5FF91" uuid="83f780fe-4773-4b88-b77e-9d939803d198">
