@@ -582,7 +582,7 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<staticText>
-						<reportElement x="0" y="0" width="629" height="18" uuid="2042aa10-875d-4e93-835e-a96e2a5e9721"/>
+						<reportElement x="0" y="0" width="627" height="18" uuid="2042aa10-875d-4e93-835e-a96e2a5e9721"/>
 						<box>
 							<pen lineWidth="0.5"/>
 						</box>
@@ -592,7 +592,7 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 						<text><![CDATA[PRODOTTO]]></text>
 					</staticText>
 					<staticText>
-						<reportElement x="629" y="0" width="105" height="18" uuid="fe61ab2b-2b06-4fce-9096-41a315113c4b"/>
+						<reportElement x="667" y="0" width="67" height="18" uuid="fe61ab2b-2b06-4fce-9096-41a315113c4b"/>
 						<box rightPadding="4">
 							<pen lineWidth="0.5"/>
 						</box>
@@ -610,6 +610,16 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 							<font fontName="SansSerif" size="14" isBold="true"/>
 						</textElement>
 						<text><![CDATA[PALLET]]></text>
+					</staticText>
+					<staticText>
+						<reportElement x="627" y="-1" width="40" height="18" uuid="a3d6c9ab-a643-4551-a4b6-4989a8a27ac0"/>
+						<box rightPadding="4">
+							<pen lineWidth="0.5"/>
+						</box>
+						<textElement textAlignment="Center" verticalAlignment="Middle">
+							<font fontName="SansSerif" size="14" isBold="true"/>
+						</textElement>
+						<text><![CDATA[U.M.]]></text>
 					</staticText>
 				</frame>
 			</band>
@@ -662,7 +672,7 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 					<pen lineWidth="0.5"/>
 				</box>
 				<textField isStretchWithOverflow="true">
-					<reportElement x="0" y="0" width="629" height="18" isRemoveLineWhenBlank="true" uuid="fe65f628-c22a-4000-bf2d-07f2c9058d35"/>
+					<reportElement x="0" y="0" width="627" height="18" isRemoveLineWhenBlank="true" uuid="fe65f628-c22a-4000-bf2d-07f2c9058d35"/>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
@@ -671,8 +681,15 @@ ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_orderline_name}]]></textFieldExpression>
 				</textField>
+				<textField>
+					<reportElement x="627" y="0" width="40" height="18" forecolor="#FFFFFF" uuid="de0c8fb4-5d46-476c-a850-70ce24df2941"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}]]></textFieldExpression>
+				</textField>
 				<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
-					<reportElement stretchType="ElementGroupHeight" x="629" y="0" width="105" height="18" isRemoveLineWhenBlank="true" uuid="1e21af30-bad0-4acd-b1b3-774da7fb4dfe"/>
+					<reportElement stretchType="ElementGroupHeight" x="667" y="0" width="67" height="18" isRemoveLineWhenBlank="true" uuid="1e21af30-bad0-4acd-b1b3-774da7fb4dfe"/>
 					<box rightPadding="4">
 						<pen lineWidth="0.5"/>
 					</box>
