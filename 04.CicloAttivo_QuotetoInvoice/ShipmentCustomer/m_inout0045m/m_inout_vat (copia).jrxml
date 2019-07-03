@@ -29,9 +29,8 @@ from m_inoutline m_inoutline
   LEFT JOIN c_orderline c_orderline ON c_orderline.c_orderline_id = m_inoutline.c_orderline_id
   LEFT JOIN c_tax c_tax on c_orderline.c_tax_id=c_tax.c_tax_id
 
-where m_inoutline.m_inout_id=$P{RECORD_ID}
-  group by taxindicator
-]]>
+where m_inoutline.m_inout_id=1000588
+  group by taxindicator]]>
 	</queryString>
 	<field name="taxbaseamt" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="taxbaseamt"/>
@@ -44,7 +43,7 @@ where m_inoutline.m_inout_id=$P{RECORD_ID}
 		<property name="com.jaspersoft.studio.field.tree.path" value="c_tax"/>
 	</field>
 	<variable name="taxamt1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
-		<variableExpression><![CDATA[$F{taxamt}]]></variableExpression>
+		<variableExpression><![CDATA[$F{taxbaseamt}]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
@@ -65,7 +64,7 @@ where m_inoutline.m_inout_id=$P{RECORD_ID}
 	</title>
 	<columnHeader>
 		<band height="8" splitType="Stretch">
-			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<staticText>
 				<reportElement x="0" y="0" width="84" height="8" uuid="ef0f1b6e-98e2-42f6-9910-0344e9ba490f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9007c237-8f08-40ee-9313-ccb685f26f65"/>
@@ -114,13 +113,19 @@ where m_inoutline.m_inout_id=$P{RECORD_ID}
 				</textElement>
 				<text><![CDATA[IVA]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="27" y="0" width="100" height="8" uuid="a448be7a-50f5-4be8-b123-0179c5db40f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c8d43021-ed85-4bc4-b87e-8e5f74a1e6ac"/>
+				</reportElement>
+				<text><![CDATA[taxindicator]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="12">
-			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+		<band height="22">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<textField>
-				<reportElement x="0" y="0" width="84" height="12" uuid="36fb7770-f5e6-4fd3-a1e0-2a06a9273efa">
+				<reportElement positionType="Float" x="0" y="0" width="84" height="22" uuid="36fb7770-f5e6-4fd3-a1e0-2a06a9273efa">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9007c237-8f08-40ee-9313-ccb685f26f65"/>
 				</reportElement>
 				<box leftPadding="5">
@@ -136,7 +141,7 @@ where m_inoutline.m_inout_id=$P{RECORD_ID}
 				<textFieldExpression><![CDATA[$F{taxindicator}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,###.00;¤-#,###.00">
-				<reportElement x="84" y="0" width="166" height="12" uuid="e1baf150-6912-429a-810c-0c12c467e01b">
+				<reportElement x="84" y="0" width="166" height="22" uuid="e1baf150-6912-429a-810c-0c12c467e01b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e8dd768f-0488-461d-b85b-820cb0e58892"/>
 				</reportElement>
 				<box>
@@ -152,7 +157,7 @@ where m_inoutline.m_inout_id=$P{RECORD_ID}
 				<textFieldExpression><![CDATA[$F{taxbaseamt}]]></textFieldExpression>
 			</textField>
 			<textField pattern="¤#,##0.00;¤-#,##0.00">
-				<reportElement x="250" y="0" width="68" height="12" uuid="266b6910-d15c-46c3-90fa-7285193f4659">
+				<reportElement x="250" y="0" width="68" height="22" uuid="266b6910-d15c-46c3-90fa-7285193f4659">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e519546f-64bb-4115-94bd-3440f41ddcbe"/>
 				</reportElement>
 				<box rightPadding="10">
@@ -168,5 +173,16 @@ where m_inoutline.m_inout_id=$P{RECORD_ID}
 				<textFieldExpression><![CDATA[$F{taxamt}]]></textFieldExpression>
 			</textField>
 		</band>
+		<band height="22">
+			<textField>
+				<reportElement x="27" y="0" width="100" height="22" uuid="411b67e5-4876-4999-98f5-b1333f2c7411">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c8d43021-ed85-4bc4-b87e-8e5f74a1e6ac"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{taxindicator}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
+	<pageFooter>
+		<band height="26"/>
+	</pageFooter>
 </jasperReport>
