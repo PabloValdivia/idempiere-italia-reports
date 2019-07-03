@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="266"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="729"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Multiservice"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
@@ -502,6 +502,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 	<variable name="m_inout_nopackages1" class="java.lang.Integer" resetType="Page" calculation="DistinctCount">
 		<variableExpression><![CDATA[$F{m_inout_nopackages}]]></variableExpression>
 	</variable>
+	<variable name="ddtlineamt1" class="java.math.BigDecimal"/>
+	<variable name="taxamt1" class="java.math.BigDecimal"/>
 	<title>
 		<band height="363">
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
@@ -1373,6 +1375,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<subreportParameterExpression><![CDATA[$F{c_bpartner_lit_bpreport_param}]]></subreportParameterExpression>
 					</subreportParameter>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<returnValue subreportVariable="ddtlineamt1" toVariable="ddtlineamt1"/>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "m_inout_sub1.jasper"]]></subreportExpression>
 				</subreport>
 			</frame>
@@ -1384,7 +1387,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<subreport overflowType="Stretch">
-					<reportElement positionType="Float" x="0" y="0" width="555" height="24" isRemoveLineWhenBlank="true" uuid="065df36e-4668-4a94-b051-41913c5bbcbf">
+					<reportElement positionType="Float" x="0" y="0" width="555" height="62" isRemoveLineWhenBlank="true" uuid="065df36e-4668-4a94-b051-41913c5bbcbf">
 						<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="SUBREPORT_DIR">
@@ -1412,17 +1415,18 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<subreportParameterExpression><![CDATA[$F{c_bpartner_lit_bpreport_param}]]></subreportParameterExpression>
 					</subreportParameter>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<returnValue subreportVariable="ddtlineamt1" toVariable="ddtlineamt1"/>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "m_inout_sub2.jasper"]]></subreportExpression>
 				</subreport>
 			</frame>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="11">
+		<band height="29">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 			<printWhenExpression><![CDATA[$V{PAGE_COUNT}  != $V{PAGE_NUMBER}]]></printWhenExpression>
 			<staticText>
-				<reportElement positionType="Float" x="0" y="0" width="555" height="11" forecolor="#E80400" uuid="e0eea2b8-7eca-4f8d-a74a-3de58bc37e54"/>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="29" forecolor="#E80400" uuid="e0eea2b8-7eca-4f8d-a74a-3de58bc37e54"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="9" isBold="true"/>
 				</textElement>
@@ -1454,7 +1458,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<subreportParameterExpression><![CDATA[$P{AD_ROLE_ID}]]></subreportParameterExpression>
 					</subreportParameter>
 					<subreportParameter name="RECORD_ID">
-						<subreportParameterExpression><![CDATA[$F{m_inout_c_order_id}]]></subreportParameterExpression>
+						<subreportParameterExpression><![CDATA[$F{m_inout_id}]]></subreportParameterExpression>
 					</subreportParameter>
 					<subreportParameter name="RESOURCE">
 						<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
@@ -1466,6 +1470,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<subreportParameterExpression><![CDATA[$P{AD_CLIENT_ID}]]></subreportParameterExpression>
 					</subreportParameter>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					<returnValue subreportVariable="taxamt1" toVariable="taxamt1"/>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "m_inout_vat.jasper"]]></subreportExpression>
 				</subreport>
 			</frame>
@@ -1512,9 +1517,9 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
 							<paragraph rightIndent="5"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$F{c_order_totallines}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{ddtlineamt1}]]></textFieldExpression>
 					</textField>
-					<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<textField evaluationTime="Report" pattern="¤#,##0.00;¤-#,##0.00">
 						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="26" width="118" height="25" isRemoveLineWhenBlank="true" forecolor="#0000FF" uuid="b4b07b6d-dbfa-435a-a41f-8ae66e17143e">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 						</reportElement>
@@ -1522,7 +1527,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<font size="12" isBold="true"/>
 							<paragraph rightIndent="5"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$F{c_order_grandtotal}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{taxamt1}.add($V{ddtlineamt1})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</frame>
