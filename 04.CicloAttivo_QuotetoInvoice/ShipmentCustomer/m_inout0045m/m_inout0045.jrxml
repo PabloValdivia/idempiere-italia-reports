@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="266"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="729"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>

@@ -469,7 +469,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif" size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{lit_attribute_v_lot}== null || $F{lit_attribute_v_lot}=="---" ? "": "LOTTO E SCADENZA:" +T($F{lit_attribute_v_lot})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{lit_attribute_v_lot}.equals("")?"":"LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>

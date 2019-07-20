@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_inout_sub1" pageWidth="555" pageHeight="810" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="c33fbd9b-fd01-4855-baf8-57a853bc8344">
 	<property name="ireport.zoom" value="1.6934217901613329"/>
 	<property name="ireport.x" value="0"/>
@@ -9,7 +9,7 @@
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="645"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="334"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="657"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Multiservice"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
@@ -111,6 +111,10 @@ ORDER BY m_inoutline_line ASC]]>
 	</field>
 	<field name="m_product_help" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_help"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+	</field>
+	<field name="m_product_weight" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_weight"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
 	</field>
 	<field name="m_inoutline_name" class="java.lang.String">
@@ -375,7 +379,7 @@ ORDER BY m_inoutline_line ASC]]>
 				</textField>
 			</frame>
 		</band>
-		<band height="49">
+		<band height="40">
 			<property name="com.jaspersoft.studio.layout"/>
 			<frame>
 				<reportElement positionType="Float" stretchType="ContainerHeight" x="80" y="0" width="298" height="40" isRemoveLineWhenBlank="true" uuid="8b9c926e-616d-49d3-860e-a74fe42127a4">
@@ -420,7 +424,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif" size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($F{lit_attribute_v_lot})!= null ? "LOTTO E SCADENZA: " + $F{lit_attribute_v_lot} : ""]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{lit_attribute_v_lot}.equals("")?"":"LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
