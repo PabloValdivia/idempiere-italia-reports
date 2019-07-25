@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DDT" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75fe2fe9-b984-4ca9-8696-8bc3bc03080e">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="266"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="729"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Multiservice"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
@@ -14,6 +13,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -1340,15 +1340,15 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 		</band>
 	</pageHeader>
 	<detail>
-		<band height="25">
+		<band height="13">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<frame>
-				<reportElement x="0" y="0" width="555" height="25" isRemoveLineWhenBlank="true" uuid="42693fee-aa23-48b1-9224-8850af79f364">
+				<reportElement x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" uuid="42693fee-aa23-48b1-9224-8850af79f364">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<subreport overflowType="Stretch">
-					<reportElement positionType="Float" x="0" y="0" width="555" height="25" isRemoveLineWhenBlank="true" uuid="619853f7-104a-4089-b7e1-bfcd4597e806">
-						<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'N')]]></printWhenExpression>
+					<reportElement positionType="Float" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" uuid="619853f7-104a-4089-b7e1-bfcd4597e806">
+						<printWhenExpression><![CDATA[($F{c_bpartner_lit_bpreport_param} ==null)]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="SUBREPORT_DIR">
 						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
@@ -1380,14 +1380,14 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</subreport>
 			</frame>
 		</band>
-		<band height="24">
+		<band height="10">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<frame>
-				<reportElement x="0" y="0" width="555" height="24" isRemoveLineWhenBlank="true" uuid="16fb6447-25ce-4dcf-9996-a4bd809356a6">
+				<reportElement x="0" y="0" width="555" height="10" isRemoveLineWhenBlank="true" uuid="16fb6447-25ce-4dcf-9996-a4bd809356a6">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<subreport overflowType="Stretch">
-					<reportElement positionType="Float" x="0" y="0" width="555" height="24" isRemoveLineWhenBlank="true" uuid="065df36e-4668-4a94-b051-41913c5bbcbf">
+					<reportElement positionType="Float" x="0" y="0" width="555" height="10" isRemoveLineWhenBlank="true" uuid="065df36e-4668-4a94-b051-41913c5bbcbf">
 						<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="SUBREPORT_DIR">
@@ -1422,11 +1422,11 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="29">
+		<band height="14">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 			<printWhenExpression><![CDATA[$V{PAGE_COUNT}  != $V{PAGE_NUMBER}]]></printWhenExpression>
 			<staticText>
-				<reportElement positionType="Float" x="0" y="0" width="555" height="29" forecolor="#E80400" uuid="e0eea2b8-7eca-4f8d-a74a-3de58bc37e54"/>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="14" forecolor="#E80400" uuid="e0eea2b8-7eca-4f8d-a74a-3de58bc37e54"/>
 				<textElement textAlignment="Center" verticalAlignment="Bottom">
 					<font size="9" isBold="true"/>
 				</textElement>
