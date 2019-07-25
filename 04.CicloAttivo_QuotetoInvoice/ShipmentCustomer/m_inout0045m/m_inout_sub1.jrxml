@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_inout_sub1" pageWidth="555" pageHeight="810" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="c33fbd9b-fd01-4855-baf8-57a853bc8344">
 	<property name="ireport.zoom" value="1.6934217901613329"/>
 	<property name="ireport.x" value="0"/>
@@ -9,7 +9,7 @@
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="645"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="334"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="657"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Multiservice"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
@@ -172,30 +172,6 @@ ORDER BY m_inoutline_line ASC]]>
 	<variable name="ddtlineamt1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
 		<variableExpression><![CDATA[$F{ddtlineamt}]]></variableExpression>
 	</variable>
-	<group name="Gruppo1" footerPosition="StackAtBottom" preventOrphanFooter="true">
-		<groupExpression><![CDATA[$F{c_order_documentno}]]></groupExpression>
-		<groupHeader>
-			<band height="12">
-				<property name="com.jaspersoft.studio.layout"/>
-				<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				<printWhenExpression><![CDATA[!($F{c_order_documentno}==null)]]></printWhenExpression>
-				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" x="80" y="0" width="298" height="12" isRemoveLineWhenBlank="true" forecolor="#000DFF" uuid="86406d88-f223-4b23-9b47-c6221a713048"/>
-					<box>
-						<topPen lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[($F{c_order_documentno}!= null ? "RIF. NS ORDINE:"+$F{c_order_documentno}:"") +($F{c_order_poreference}!= null ? " RIF. VS. ORDINE: "+$F{c_order_poreference} :"")]]></textFieldExpression>
-				</textField>
-			</band>
-		</groupHeader>
-		<groupFooter>
-			<band/>
-		</groupFooter>
-	</group>
 	<columnHeader>
 		<band height="12">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>

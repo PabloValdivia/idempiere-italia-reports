@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="266"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="729"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Multiservice"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
@@ -1348,7 +1348,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</reportElement>
 				<subreport overflowType="Stretch">
 					<reportElement positionType="Float" x="0" y="0" width="555" height="25" isRemoveLineWhenBlank="true" uuid="619853f7-104a-4089-b7e1-bfcd4597e806">
-						<printWhenExpression><![CDATA[($F{c_bpartner_lit_bpreport_param} ==null)]]></printWhenExpression>
+						<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'N')]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="SUBREPORT_DIR">
 						<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
