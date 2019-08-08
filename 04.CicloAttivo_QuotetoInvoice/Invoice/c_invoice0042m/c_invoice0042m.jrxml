@@ -62,7 +62,7 @@
 	</parameter>
 	<queryString>
 		<![CDATA[-- c_invoice
-SELECT  * from lit_rep_c_invoice_v     
+SELECT  * from lit_rep_c_invoice_v   
 WHERE
      (CASE
     WHEN $P{RECORD_ID} IS NOT NULL THEN lit_rep_c_invoice_v  ."c_invoice_c_invoice_id" = $P{RECORD_ID} 
@@ -540,7 +540,7 @@ WHERE
 		<variableExpression><![CDATA[$F{c_invoiceline_discount}]]></variableExpression>
 	</variable>
 	<title>
-		<band height="262" splitType="Stretch">
+		<band height="314" splitType="Stretch">
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
 				<reportElement x="0" y="0" width="555" height="63" uuid="993d5ca8-bc92-4e15-b6b3-8109207e9255"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
@@ -894,17 +894,12 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
 				</textField>
 			</frame>
-		</band>
-	</title>
-	<pageHeader>
-		<band height="262">
-			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > (1)]]></printWhenExpression>
 			<frame>
-				<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="-128" width="555" height="52" isRemoveLineWhenBlank="true" uuid="c2ae36cc-4dfd-48d4-9e3b-4ac83fbbdb32">
+				<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="262" width="555" height="52" isRemoveLineWhenBlank="true" uuid="6788eee0-1687-4205-ac5e-200ba0909574">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" uuid="6c2a6b60-443b-41cb-a57b-2b863e8fc0d2">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" uuid="c7021343-6c63-4f4d-9836-381ea824d1a5">
 						<printWhenExpression><![CDATA[$F{c_invoice_description}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -913,7 +908,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["DESCR. DOCUMENTO: "+$F{c_invoice_description}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="13" width="555" height="13" isRemoveLineWhenBlank="true" uuid="b206fe67-62cd-4096-bb9b-de929b0d4fd0">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="13" width="555" height="13" isRemoveLineWhenBlank="true" uuid="9f03370e-6d38-49c0-b5d4-9a75d0102e55">
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -922,7 +917,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="26" width="555" height="13" isRemoveLineWhenBlank="true" uuid="92f24c61-2e99-4438-9c4d-b57681bdc49c">
+					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="26" width="555" height="13" isRemoveLineWhenBlank="true" uuid="27f666ee-46e4-4716-b505-eb5ad8114b33">
 						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -931,7 +926,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{c_invoice_note}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="0" y="39" width="555" height="13" uuid="7cd6732d-7e25-4931-825d-4f1a76328d8f">
+					<reportElement x="0" y="39" width="555" height="13" uuid="41062fe5-0b03-4fdb-b1e2-02adb9e023f7">
 						<printWhenExpression><![CDATA[$F{bp_letterintentnrletter}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -940,6 +935,11 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["LETTERA DI INTENTO N°: " + $F{bp_letterintentnrletter}+" "+"DEL: "+(new SimpleDateFormat("dd/MM/yyyy").format($F{bp_letterintentdateletter}))]]></textFieldExpression>
 				</textField>
 			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="262">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > (1)]]></printWhenExpression>
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
 				<reportElement x="0" y="0" width="555" height="63" uuid="2702991c-dff0-4a1f-94e4-9ec7376de7eb"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
@@ -1293,47 +1293,6 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
 				</textField>
 			</frame>
-			<frame>
-				<reportElement positionType="Float" stretchType="ContainerBottom" x="5" y="-123" width="555" height="52" isRemoveLineWhenBlank="true" uuid="6788eee0-1687-4205-ac5e-200ba0909574">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
-				</reportElement>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" uuid="c7021343-6c63-4f4d-9836-381ea824d1a5">
-						<printWhenExpression><![CDATA[$F{c_invoice_description}!=null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA["DESCR. DOCUMENTO: "+$F{c_invoice_description}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="13" width="555" height="13" isRemoveLineWhenBlank="true" uuid="9f03370e-6d38-49c0-b5d4-9a75d0102e55">
-						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="26" width="555" height="13" isRemoveLineWhenBlank="true" uuid="27f666ee-46e4-4716-b505-eb5ad8114b33">
-						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{c_invoice_note}]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="0" y="39" width="555" height="13" uuid="41062fe5-0b03-4fdb-b1e2-02adb9e023f7">
-						<printWhenExpression><![CDATA[$F{bp_letterintentnrletter}!=null]]></printWhenExpression>
-					</reportElement>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font isBold="true"/>
-					</textElement>
-					<textFieldExpression><![CDATA["LETTERA DI INTENTO N°: " + $F{bp_letterintentnrletter}+" "+"DEL: "+(new SimpleDateFormat("dd/MM/yyyy").format($F{bp_letterintentdateletter}))]]></textFieldExpression>
-				</textField>
-			</frame>
 		</band>
 	</pageHeader>
 	<columnHeader>
@@ -1478,7 +1437,6 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 	<detail>
 		<band height="12" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
-			<printWhenExpression><![CDATA[$F{c_invoiceline_name}!=null]]></printWhenExpression>
 			<frame>
 				<reportElement x="0" y="0" width="555" height="12" uuid="229edee9-8f18-4bd5-972e-940a17784bb9">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
@@ -1491,7 +1449,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="80" height="12" isRemoveLineWhenBlank="true" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
+					<reportElement x="0" y="0" width="80" height="12" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 					</reportElement>
 					<box>
@@ -1506,7 +1464,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="80" y="0" width="220" height="12" isRemoveLineWhenBlank="true" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
+					<reportElement x="80" y="0" width="220" height="12" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 					</reportElement>
 					<box>
@@ -1518,10 +1476,10 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textElement verticalAlignment="Top" markup="html">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA[($F{c_invoiceline_name}!=null?$F{m_product_name}:$F{c_invoiceline_description})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[($F{c_invoiceline_name}!=null?$F{c_invoiceline_name}:$F{c_invoiceline_description})]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="300" y="0" width="30" height="12" isRemoveLineWhenBlank="true" uuid="771acd34-7ac4-41ae-9f87-691998a08a08">
+					<reportElement x="300" y="0" width="30" height="12" uuid="771acd34-7ac4-41ae-9f87-691998a08a08">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
@@ -1536,7 +1494,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,###.###" isBlankWhenNull="true">
-					<reportElement x="330" y="0" width="38" height="12" isRemoveLineWhenBlank="true" uuid="6fa1fa7c-011d-4f88-90f1-36b09c7de943">
+					<reportElement x="330" y="0" width="38" height="12" uuid="6fa1fa7c-011d-4f88-90f1-36b09c7de943">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_qtyentered}.intValue()!=0]]></printWhenExpression>
 					</reportElement>
@@ -1586,7 +1544,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_discount}]]></textFieldExpression>
 				</textField>
 				<textField pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement x="462" y="0" width="70" height="12" isRemoveLineWhenBlank="true" uuid="e3dfc067-5ad9-47c7-934a-efbf82f57033">
+					<reportElement x="462" y="0" width="70" height="12" uuid="e3dfc067-5ad9-47c7-934a-efbf82f57033">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_linenetamt}.intValue()!=0]]></printWhenExpression>
@@ -1603,7 +1561,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_linenetamt}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="532" y="0" width="23" height="12" isRemoveLineWhenBlank="true" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
+					<reportElement x="532" y="0" width="23" height="12" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 					</reportElement>
 					<box>
@@ -1672,7 +1630,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 						<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[($F{c_invoiceline_description}!=null?$F{c_invoiceline_description}:$F{m_product_description}!=null?$F{m_product_description}:"")]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>

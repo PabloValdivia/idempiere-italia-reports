@@ -7,7 +7,7 @@
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="231"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="764"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -41,7 +41,7 @@
 SELECT * 
 FROM lit_rep_order_v
 WHERE 
-(c_orderline_qtyreserved>0 and c_order_docstatus='CO' and c_order_issotrx = 'Y' and c_doctype_name='ORDINE STANDARD')
+(c_orderline_qtyreserved>0 and c_order_docstatus='CO' and c_order_issotrx = 'Y' and c_doctype_name='ORDINE STANDARD' and (c_order_dateordered BETWEEN $P{DateFrom} and $P{DateTo})) or (c_order_documentno=$P{DocumentNo})
 ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 	</queryString>
 	<field name="ad_client_ad_client_id" class="java.math.BigDecimal">
