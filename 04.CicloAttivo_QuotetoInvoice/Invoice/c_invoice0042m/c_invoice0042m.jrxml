@@ -1622,13 +1622,19 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 		<band height="12">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-			<textField>
-				<reportElement x="80" y="0" width="475" height="12" isRemoveLineWhenBlank="true" uuid="db30fb3b-5201-4658-be82-99ad0a10ac92">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="80" y="0" width="475" height="12" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="db30fb3b-5201-4658-be82-99ad0a10ac92">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="740a87a0-24c0-49c2-80c9-cc4a73d2279f"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null && $F{c_invoiceline_isdescription}.equals("N")]]></printWhenExpression>
 				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
 				<textElement textAlignment="Left">
-					<font size="9"/>
+					<font fontName="SansSerif" size="9" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
 			</textField>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="customer_statement_sub1" pageWidth="535" pageHeight="842" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Error" uuid="83d6d6e0-882a-49bf-bb2f-39115d487b43">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Mutliservice Test"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
@@ -35,9 +35,7 @@
 	</parameter>
 	<queryString>
 		<![CDATA[select inv.DATEINVOICED as DateTrx ,inv.DOCUMENTNO,doc.Name,
-	 CASE WHEN inv.DESCRIPTION is null THEN ( SELECT pro.NAME FROM M_PRODUCT pro,C_INVOICELINE il
-         	   WHERE inv.C_INVOICE_ID=il.C_INVOICE_ID
-         	  AND il.M_PRODUCT_ID=pro.M_PRODUCT_ID LIMIT 1)
+	 CASE WHEN inv.DESCRIPTION is null THEN ''
 	  ELSE inv.DESCRIPTION END AS DESCRIPTION,
 CASE WHEN doc.docbasetype IN ('ARC') THEN
 	inv.GRANDTOTAL*-1
@@ -73,11 +71,21 @@ AND pa.C_BPARTNER_ID = $P{C_BPartner_ID}
 AND (pa.DATETRX >= $P{DateAcctFrom} and pa.DATETRX <= $P{DateAcctTo} )
 ORDER BY DateTrx]]>
 	</queryString>
-	<field name="datetrx" class="java.sql.Timestamp"/>
-	<field name="documentno" class="java.lang.String"/>
-	<field name="name" class="java.lang.String"/>
-	<field name="description" class="java.lang.String"/>
-	<field name="GRANDTOTAL" class="java.math.BigDecimal"/>
+	<field name="datetrx" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="datetrx"/>
+	</field>
+	<field name="documentno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="documentno"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+	</field>
+	<field name="GRANDTOTAL" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="GRANDTOTAL"/>
+	</field>
 	<variable name="RUNNINGBAL" class="java.lang.Double" calculation="Sum">
 		<variableExpression><![CDATA[$F{GRANDTOTAL}]]></variableExpression>
 	</variable>

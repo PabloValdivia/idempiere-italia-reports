@@ -41,7 +41,10 @@
 SELECT * 
 FROM lit_rep_order_v
 WHERE 
-(c_orderline_qtyreserved>0 and c_order_docstatus='CO' and c_order_issotrx = 'Y' and c_doctype_name='ORDINE STANDARD' and (c_order_dateordered BETWEEN $P{DateFrom} and $P{DateTo})) or (c_order_documentno=$P{DocumentNo})
+(c_bpartner_c_bpartner_id=$P{C_BPartner_ID} AND (c_orderline_qtyreserved>0 and c_order_docstatus='CO' and c_order_issotrx = 'Y' AND c_doctype_name='ORDINE STANDARD'))
+OR (c_order_documentno=$P{DocumentNo} AND (c_orderline_qtyreserved>0 and c_order_docstatus='CO' and c_order_issotrx = 'Y' AND c_doctype_name='ORDINE STANDARD')) 
+OR(c_order_dateordered BETWEEN $P{DateFrom} and $P{DateTo} AND (c_orderline_qtyreserved>0 and c_order_docstatus='CO' and c_order_issotrx = 'Y' AND c_doctype_name='ORDINE STANDARD'))
+--OR(c_orderline_qtyreserved>0 and c_order_docstatus='CO' and c_order_issotrx = 'Y' AND c_doctype_name='ORDINE STANDARD') 
 ORDER BY c_bpartner_name,c_order_documentno,c_orderline_line]]>
 	</queryString>
 	<field name="ad_client_ad_client_id" class="java.math.BigDecimal">

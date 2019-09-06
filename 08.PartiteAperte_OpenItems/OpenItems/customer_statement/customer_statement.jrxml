@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CustomerStatement" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="30" rightMargin="30" topMargin="20" bottomMargin="20" uuid="3f9a3fdd-695b-4142-9a11-97cd12201c0d">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="197"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="alge idempiere"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<import value="java.util.*"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
@@ -78,7 +78,7 @@ Where bp.C_BPartner_ID=$P{C_BPartner_ID}]]>
 		<groupHeader>
 			<band height="19" splitType="Stretch">
 				<subreport isUsingCache="true">
-					<reportElement key="subreport-10" x="0" y="5" width="535" height="14" uuid="95697ed0-b1b4-4987-907f-f9989b5bf0d5"/>
+					<reportElement key="subreport-10" x="0" y="0" width="535" height="19" uuid="95697ed0-b1b4-4987-907f-f9989b5bf0d5"/>
 					<subreportParameter name="DateAcctFrom">
 						<subreportParameterExpression><![CDATA[$P{DateAcctFrom}]]></subreportParameterExpression>
 					</subreportParameter>
