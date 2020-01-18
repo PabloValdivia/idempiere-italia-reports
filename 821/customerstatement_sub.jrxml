@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ec_sub" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="85bd0489-8d99-4572-bbee-a7396eee256f">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BitraBi - 3380"/>
@@ -52,18 +52,18 @@ where i.c_bpartner_id= $P{C_BPartner_ID}  and DATEINVOICED <  $P{DateAcctFrom} )
 		<band height="21" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="400" y="0" width="140" height="20" uuid="997846bc-5cbe-416e-ad28-9fc6356f6e45">
+				<reportElement x="400" y="0" width="90" height="21" uuid="997846bc-5cbe-416e-ad28-9fc6356f6e45">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47369250-141a-45dc-8be3-6a22723dbae2"/>
 				</reportElement>
-				<textElement textAlignment="Right">
-					<font size="8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{openningbal}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="0" width="210" height="20" uuid="4e09708e-f7ff-4c98-9c82-abeb407e6a5a"/>
-				<textElement>
-					<font size="8"/>
+				<reportElement x="0" y="0" width="400" height="21" uuid="4e09708e-f7ff-4c98-9c82-abeb407e6a5a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
 				</textElement>
 				<text><![CDATA[Saldo alla data]]></text>
 			</staticText>
