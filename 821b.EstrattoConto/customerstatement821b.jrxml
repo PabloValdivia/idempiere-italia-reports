@@ -78,9 +78,9 @@ END AS "grandtotal",
 pay.payamt as payamt,
 --abb.amount - abb.overunderamt as payamt,
 CASE WHEN doc.docbasetype IN ('ARC','API') THEN
-  abb.Amount 
+  abb.Amount*-1
 ELSE
-  abb.Amount
+  abb.Amount*-1
 END as AllocationAmt,
 CASE WHEN doc.docbasetype IN ('ARC','API') THEN
   abb.overunderamt 
@@ -154,9 +154,9 @@ doc.docbasetype,
 p.description,
 0 as grandtotal,
 p.payamt as payamt,
-CASE WHEN sum(al.amount) IS NULL  THEN p.payamt 
+CASE WHEN sum(al.amount) IS NULL  THEN p.payamt *-1
 ELSE
-p.payamt-sum (al.amount) 
+p.payamt-sum (al.amount) *-1
 END 
 as AllocationAmt,
 0 as overunderAmt,
@@ -309,28 +309,29 @@ order by "BPARTNER",datetrx,documentno]]>
 	<sortField name="datetrx"/>
 	<sortField name="documentno"/>
 	<sortField name="paymentdate"/>
-	<variable name="Saldo_Progressivo" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
+	<variable name="GrandTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
 	</variable>
-	<variable name="Totale_Progressivo_Sistema" class="java.math.BigDecimal" calculation="System"/>
-	<variable name="Importo_Abbinato" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="Returnamt" class="java.math.BigDecimal" calculation="System"/>
+	<variable name="Pagamenti" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
 		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
 	</variable>
-	<variable name="Somma_Progressiva" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
-		<variableExpression><![CDATA[$V{Saldo_Progressivo}.add($V{Importo_Abbinato})]]></variableExpression>
-		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	<variable name="Saldo_Progressivo" class="java.math.BigDecimal" incrementType="Group" incrementGroup="BPartner" calculation="Sum">
+		<variableExpression><![CDATA[$V{GrandTotal}.add($V{Pagamenti}).add($V{Returnamt})]]></variableExpression>
+		<initialValueExpression><![CDATA[new BigDecimal(0)]]></initialValueExpression>
 	</variable>
 	<variable name="Totale_Documenti" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
 	</variable>
-	<variable name="Saldo_Finale" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
-		<variableExpression><![CDATA[$F{grandtotal}.subtract($F{allocationamt})]]></variableExpression>
-	</variable>
 	<variable name="Totale_Pagamenti" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
 		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Saldo_Finale" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
+		<variableExpression><![CDATA[$F{grandtotal}.add($F{allocationamt})]]></variableExpression>
 	</variable>
 	<group name="BPartner" isReprintHeaderOnEachPage="true" keepTogether="true">
 		<groupExpression><![CDATA[$F{c_bpartner_id}]]></groupExpression>
@@ -351,7 +352,7 @@ order by "BPARTNER",datetrx,documentno]]>
 						<subreportParameterExpression><![CDATA[$P{Dateopenamt}]]></subreportParameterExpression>
 					</subreportParameter>
 					<subreportParameter name="Returnamt">
-						<subreportParameterExpression><![CDATA[$V{Totale_Progressivo_Sistema}]]></subreportParameterExpression>
+						<subreportParameterExpression><![CDATA[$V{Returnamt}]]></subreportParameterExpression>
 					</subreportParameter>
 					<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 					<returnValue subreportVariable="openningbal1" toVariable="Returnamt"/>
@@ -554,10 +555,10 @@ order by "BPARTNER",datetrx,documentno]]>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="16">
+			<band height="30">
 				<frame>
-					<reportElement mode="Opaque" x="0" y="0" width="555" height="16" backcolor="#F7F7F7" uuid="19ba5377-2c59-4bff-9584-c0491b217ff9">
-						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+					<reportElement mode="Opaque" x="279" y="7" width="276" height="16" backcolor="#F7F7F7" uuid="b1a0c2af-b984-488a-9224-9435b3d65e00">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 						<pen lineWidth="0.5" lineColor="#FF0400"/>
@@ -567,7 +568,7 @@ order by "BPARTNER",datetrx,documentno]]>
 						<rightPen lineWidth="0.5"/>
 					</box>
 					<staticText>
-						<reportElement x="0" y="0" width="432" height="16" forecolor="#0000CC" uuid="55e27b0b-b432-434d-a112-a21a0720d70f"/>
+						<reportElement x="0" y="0" width="138" height="16" forecolor="#0000CC" uuid="7a244922-8aad-4c94-b348-fe6bf50bd1a7"/>
 						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -580,7 +581,7 @@ order by "BPARTNER",datetrx,documentno]]>
 						<text><![CDATA[SALDO PROGRESSIVO]]></text>
 					</staticText>
 					<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-						<reportElement x="433" y="0" width="122" height="16" forecolor="#0000CC" uuid="f6e9a124-9763-4d38-bb3c-0da1f73dc0ff"/>
+						<reportElement x="138" y="0" width="138" height="16" forecolor="#0000CC" uuid="a6a1d804-fb03-47ee-9e75-8b5b31b10a66"/>
 						<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="2">
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -590,7 +591,7 @@ order by "BPARTNER",datetrx,documentno]]>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
 							<font isBold="true"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$V{Somma_Progressiva}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{GrandTotal}.add($F{allocationamt})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -844,7 +845,7 @@ order by "BPARTNER",datetrx,documentno]]>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="10" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[//$V{Importo_Abbinato} == null ? 0 : $V{Importo_Abbinato}
+					<textFieldExpression><![CDATA[//$V{Pagamenti} == null ? 0 : $V{Pagamenti}
 $V{Totale_Pagamenti}]]></textFieldExpression>
 				</textField>
 				<staticText>
