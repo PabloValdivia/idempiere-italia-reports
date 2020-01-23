@@ -15,7 +15,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="mm"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
 	<parameter name="C_BPartner_ID" class="java.lang.Integer"/>
 	<parameter name="DateAcctFrom" class="java.util.Date"/>
 	<parameter name="DateAcctTo" class="java.util.Date">
@@ -71,14 +71,14 @@ doc.docbasetype,
 	  */
 inv.DESCRIPTION,
 CASE WHEN doc.docbasetype IN ('ARC','API') THEN
-	inv.GRANDTOTAL 
+	inv.GRANDTOTAL *-1
 ELSE
 	inv.GRANDTOTAL
 END AS "grandtotal",
 pay.payamt as payamt,
 --abb.amount - abb.overunderamt as payamt,
 CASE WHEN doc.docbasetype IN ('ARC','API') THEN
-  abb.Amount 
+  abb.Amount *-1
 ELSE
   abb.Amount*-1
 END as AllocationAmt,
@@ -312,21 +312,22 @@ order by "BPARTNER",datetrx,documentno]]>
 	<variable name="GrandTotal" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
 	</variable>
-	<variable name="Returnamt" class="java.math.BigDecimal" calculation="System"/>
-	<variable name="Pagamenti" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
-		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
-		<initialValueExpression><![CDATA[0]]></initialValueExpression>
-	</variable>
-	<variable name="Saldo_Progressivo" class="java.math.BigDecimal" incrementType="Group" incrementGroup="BPartner" calculation="Sum">
-		<variableExpression><![CDATA[$V{GrandTotal}.add($V{Pagamenti})]]></variableExpression>
-	</variable>
-	<variable name="Totale_Documenti" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
+	<variable name="GrandTotal_1" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
 	</variable>
-	<variable name="Totale_Pagamenti" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
+	<variable name="GrandTotal_1_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
+	</variable>
+	<variable name="Pagamenti_1_g_DocNum" class="java.math.BigDecimal" resetType="Group" resetGroup="Documentno" calculation="Sum">
+		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
+	</variable>
+	<variable name="Pagamenti_2_g_Report" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="Totale_Documenti" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
+		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
 	</variable>
 	<variable name="subtotal_totale_doc" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
@@ -335,6 +336,8 @@ order by "BPARTNER",datetrx,documentno]]>
 		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
 	</variable>
+	<variable name="Returnamt" class="java.math.BigDecimal" calculation="System"/>
+	<variable name="TOTAL" class="java.lang.Double" calculation="System"/>
 	<group name="BPartner" isReprintHeaderOnEachPage="true" keepTogether="true">
 		<groupExpression><![CDATA[$F{c_bpartner_id}]]></groupExpression>
 		<groupHeader>
@@ -388,7 +391,16 @@ order by "BPARTNER",datetrx,documentno]]>
 						<text><![CDATA[DESCRIZIONE]]></text>
 					</staticText>
 					<staticText>
-						<reportElement key="element-90" mode="Transparent" x="470" y="0" width="85" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="1d759ec0-6145-413b-903a-b7a945aa270a"/>
+						<reportElement key="element-90" mode="Transparent" x="405" y="0" width="149" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="c2e4e966-4f22-49f8-a151-00f3d88b572a"/>
+						<box rightPadding="2"/>
+						<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
+							<font fontName="SansSerif" size="7" isBold="true"/>
+							<paragraph lineSpacing="Single"/>
+						</textElement>
+						<text><![CDATA[SALDO]]></text>
+					</staticText>
+					<staticText>
+						<reportElement key="element-90" mode="Transparent" x="405" y="0" width="67" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="cf6cbebb-b675-4773-ad22-a26392fb576d"/>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
 							<font fontName="SansSerif" size="7" isBold="true"/>
@@ -484,17 +496,17 @@ order by "BPARTNER",datetrx,documentno]]>
 			</band>
 		</groupHeader>
 	</group>
-	<group name="Documentno">
+	<group name="Documentno" keepTogether="true" preventOrphanFooter="true">
 		<groupExpression><![CDATA[$F{documentno}]]></groupExpression>
 		<groupHeader>
 			<band height="16">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<printWhenExpression><![CDATA[!($F{name}.equals("prepaid" ))]]></printWhenExpression>
 				<frame>
-					<reportElement x="0" y="0" width="555" height="16" uuid="6609a290-659b-4a86-856a-c7e7610eeccc"/>
+					<reportElement x="0" y="0" width="555" height="16" forecolor="#A30303" uuid="6609a290-659b-4a86-856a-c7e7610eeccc"/>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
 					<textField textAdjust="ScaleFont" pattern="" isBlankWhenNull="true">
-						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="238" y="0" width="232" height="16" uuid="d45f386b-8ca9-4073-be26-3bc7c5f31286">
+						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="238" y="0" width="165" height="16" forecolor="#A30303" uuid="d45f386b-8ca9-4073-be26-3bc7c5f31286">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
@@ -510,7 +522,7 @@ order by "BPARTNER",datetrx,documentno]]>
 						<textFieldExpression><![CDATA[T($F{documentno})]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="470" y="0" width="83" height="16" uuid="c59d68b3-b52e-4651-adae-747ef87d7d85">
+						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="403" y="0" width="67" height="16" forecolor="#A30303" uuid="c59d68b3-b52e-4651-adae-747ef87d7d85">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						</reportElement>
@@ -527,7 +539,7 @@ order by "BPARTNER",datetrx,documentno]]>
 						<textFieldExpression><![CDATA[$F{grandtotal}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="ScaleFont">
-						<reportElement positionType="Float" x="68" y="0" width="170" height="16" uuid="e19b9249-8ba8-44db-8113-4987efa73a21">
+						<reportElement positionType="Float" x="68" y="0" width="170" height="16" forecolor="#A30303" uuid="e19b9249-8ba8-44db-8113-4987efa73a21">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
@@ -542,7 +554,7 @@ order by "BPARTNER",datetrx,documentno]]>
 						<textFieldExpression><![CDATA[$F{name}=="prepaid" ? $P{RESOURCE}.getString("Prepaid_"+$F{ad_language}) :$F{name}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="ScaleFont" pattern="dd-MM-yyyy" isBlankWhenNull="true">
-						<reportElement x="-2" y="0" width="70" height="16" uuid="e4aeff0d-383d-4858-bd2d-244b49b207ef"/>
+						<reportElement x="-2" y="0" width="70" height="16" forecolor="#A30303" uuid="e4aeff0d-383d-4858-bd2d-244b49b207ef"/>
 						<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -558,7 +570,7 @@ order by "BPARTNER",datetrx,documentno]]>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="16">
+			<band height="25">
 				<frame>
 					<reportElement mode="Transparent" x="0" y="0" width="555" height="16" backcolor="#F7F7F7" uuid="b1a0c2af-b984-488a-9224-9435b3d65e00">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
@@ -583,9 +595,9 @@ order by "BPARTNER",datetrx,documentno]]>
 						</textElement>
 						<text><![CDATA[SALDO PROGRESSIVO]]></text>
 					</staticText>
-					<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-						<reportElement x="417" y="0" width="138" height="16" forecolor="#0000CC" uuid="a6a1d804-fb03-47ee-9e75-8b5b31b10a66"/>
-						<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="2">
+					<textField pattern="¤#,##0.00;¤-#,##0.00">
+						<reportElement x="417" y="0" width="138" height="16" forecolor="#0000CC" uuid="c9e1ec8a-f482-4824-abbf-7168038b1aa0"/>
+						<box>
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -594,7 +606,7 @@ order by "BPARTNER",datetrx,documentno]]>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
 							<font isBold="true"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$V{Saldo_Progressivo}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{Pagamenti_2_g_Report} == null ? $V{GrandTotal} : $V{GrandTotal}.add($V{Pagamenti_2_g_Report})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
@@ -730,10 +742,10 @@ order by "BPARTNER",datetrx,documentno]]>
 		<band height="20" splitType="Stretch">
 			<printWhenExpression><![CDATA[$F{allocationamt}!=null]]></printWhenExpression>
 			<frame>
-				<reportElement x="0" y="0" width="555" height="20" uuid="a6ffe7f6-5454-4913-96d2-8c42a76a23ed"/>
+				<reportElement x="0" y="0" width="555" height="20" forecolor="#000000" uuid="a6ffe7f6-5454-4913-96d2-8c42a76a23ed"/>
 				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
 				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="470" y="0" width="83" height="20" uuid="eb3f8e93-9b96-4016-b69d-434f4eef630e">
+					<reportElement positionType="Float" x="403" y="0" width="67" height="20" forecolor="#000000" uuid="eb3f8e93-9b96-4016-b69d-434f4eef630e">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46f7af20-3217-48ff-8c73-9e211d64ce8d"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -749,7 +761,7 @@ order by "BPARTNER",datetrx,documentno]]>
 					<textFieldExpression><![CDATA[$F{allocationamt}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont">
-					<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="68" y="0" width="90" height="20" uuid="9a29f262-1c66-4609-9187-847c72ff5994">
+					<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="68" y="0" width="90" height="20" forecolor="#000000" uuid="9a29f262-1c66-4609-9187-847c72ff5994">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
@@ -760,13 +772,13 @@ order by "BPARTNER",datetrx,documentno]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10"/>
+						<font fontName="SansSerif" size="10" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdoc}== null ? "ABBINAMENTO" : 
  $P{RESOURCE}.getString("payschedule_dueamt_"+$F{ad_language})]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern="dd-MM-yyyy" isBlankWhenNull="true">
-					<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="-2" y="0" width="70" height="20" uuid="189afc3b-f8c6-4fde-8ea0-d7c6a2042b92">
+					<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="-2" y="0" width="70" height="20" forecolor="#000000" uuid="189afc3b-f8c6-4fde-8ea0-d7c6a2042b92">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
@@ -777,28 +789,44 @@ order by "BPARTNER",datetrx,documentno]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10"/>
+						<font fontName="SansSerif" size="10" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdate}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="158" y="0" width="312" height="20" uuid="402a05ac-5567-4a00-a72c-84d94875305d">
+					<reportElement positionType="Float" x="158" y="0" width="245" height="20" forecolor="#000000" uuid="402a05ac-5567-4a00-a72c-84d94875305d">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e280b7e5-6ab4-4a67-b318-8e99c7579be5"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2"/>
 					<textElement verticalAlignment="Middle" markup="none">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="SansSerif" size="8" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdoc}==null ? " RIF. (DOC,ASSEGNO)  " + T($F{inv2_documentno}) +" " +T($F{name}):
 "DOC. PAG. "+T($F{paymentdoc})+" - " +T($F{paymentdescription})  + ' ' + T($F{bank_name}) + "  " +$P{RESOURCE}.getString("payamount_" + T($F{ad_language})) +"  "+$F{payamt}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="470" y="0" width="83" height="20" forecolor="#000000" uuid="3129013c-6ee7-4415-974c-7877f3bc53b2">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46f7af20-3217-48ff-8c73-9e211d64ce8d"/>
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="SansSerif" size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grandtotal}.add($V{Pagamenti_1_g_DocNum})]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
 	</detail>
 	<summary>
-		<band height="61" splitType="Stretch">
+		<band height="51">
 			<frame>
-				<reportElement x="99" y="10" width="456" height="51" uuid="7e27e8dc-1f95-448b-8fc5-63208ea5815f"/>
+				<reportElement x="99" y="0" width="456" height="51" uuid="05f9d7f7-edfa-4a01-aa92-fdfb6b969d89"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -806,7 +834,7 @@ order by "BPARTNER",datetrx,documentno]]>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement key="textField" positionType="Float" mode="Opaque" x="180" y="0" width="154" height="25" forecolor="#FFFFFF" backcolor="#2147ED" uuid="9bf0e824-dd90-428c-be33-736875a0e8d5">
+					<reportElement key="textField" positionType="Float" mode="Opaque" x="180" y="0" width="154" height="25" forecolor="#FFFFFF" backcolor="#2147ED" uuid="318222ec-fb58-4a26-8e65-5af4c9cce41c">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box padding="4">
@@ -818,7 +846,7 @@ order by "BPARTNER",datetrx,documentno]]>
 					<text><![CDATA[PAGAMENTI	]]></text>
 				</staticText>
 				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement positionType="Float" x="0" y="25" width="180" height="26" uuid="9f1b2bc0-200f-46cf-a07f-b7eb5c31c376">
+					<reportElement positionType="Float" x="0" y="25" width="180" height="26" uuid="ac3bbd74-f891-447c-9401-740267c842eb">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -832,7 +860,7 @@ order by "BPARTNER",datetrx,documentno]]>
 					<textFieldExpression><![CDATA[$V{Totale_Documenti}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="textField" positionType="Float" mode="Opaque" x="0" y="0" width="180" height="25" forecolor="#FFFFFF" backcolor="#2147ED" uuid="5ce27e51-d8db-4c45-9d83-ba1bf9b1f5ef"/>
+					<reportElement key="textField" positionType="Float" mode="Opaque" x="0" y="0" width="180" height="25" forecolor="#FFFFFF" backcolor="#2147ED" uuid="b028e976-3a54-40e3-bcad-2fd6a5aba3e7"/>
 					<box padding="4">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
@@ -842,17 +870,17 @@ order by "BPARTNER",datetrx,documentno]]>
 					<text><![CDATA[TOTALE]]></text>
 				</staticText>
 				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement positionType="Float" x="180" y="25" width="154" height="26" uuid="87128d8e-7be6-48b0-98e0-01d6ac387d78"/>
+					<reportElement positionType="Float" x="180" y="25" width="154" height="26" uuid="025d1511-6397-4d9e-8c0e-5592103d8ffb"/>
 					<box padding="4">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="12" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{Totale_Pagamenti}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{Pagamenti_2_g_Report} == null ? 0 : $V{Pagamenti_2_g_Report}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement key="textField" positionType="Float" mode="Opaque" x="334" y="0" width="122" height="25" forecolor="#FFFFFF" backcolor="#2147ED" uuid="623925d1-a123-461f-8c29-0dd3388d84e1">
+					<reportElement key="textField" positionType="Float" mode="Opaque" x="334" y="0" width="122" height="25" forecolor="#FFFFFF" backcolor="#2147ED" uuid="19dd12fd-9339-44a8-a4ec-d5296fbb7c02">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -865,7 +893,7 @@ order by "BPARTNER",datetrx,documentno]]>
 					<text><![CDATA[SALDO FINALE]]></text>
 				</staticText>
 				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement positionType="Float" x="334" y="25" width="122" height="26" uuid="e70f471a-3a5e-4ba5-aceb-97772b5f3233">
+					<reportElement positionType="Float" x="334" y="25" width="122" height="26" uuid="f267a453-44eb-4c70-87dd-84480c3c2aff">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<box padding="4">
@@ -878,7 +906,7 @@ order by "BPARTNER",datetrx,documentno]]>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font fontName="SansSerif" size="12" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$V{subtotal_totale_doc}.add($V{subtotal_totale_pag}).add($V{Returnamt})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{GrandTotal}.add($V{Pagamenti_2_g_Report}).add($V{Returnamt})]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
