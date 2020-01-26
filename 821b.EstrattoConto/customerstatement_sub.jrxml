@@ -52,20 +52,20 @@ where i.c_bpartner_id= $P{C_BPartner_ID}  and DATEINVOICED <  $P{DateAcctFrom} )
 		<band height="21" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="400" y="0" width="90" height="21" uuid="997846bc-5cbe-416e-ad28-9fc6356f6e45">
+				<reportElement x="400" y="0" width="145" height="21" uuid="997846bc-5cbe-416e-ad28-9fc6356f6e45">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47369250-141a-45dc-8be3-6a22723dbae2"/>
 				</reportElement>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{openningbal}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="0" width="400" height="21" uuid="4e09708e-f7ff-4c98-9c82-abeb407e6a5a"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font fontName="SansSerif" size="10"/>
+				<textElement textAlignment="Right" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Saldo alla data]]></text>
+				<text><![CDATA[SALDO ALLA DATA]]></text>
 			</staticText>
 		</band>
 	</detail>

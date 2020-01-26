@@ -308,6 +308,7 @@ order by "BPARTNER",datetrx,documentno]]>
 		<property name="com.jaspersoft.studio.field.label" value="inv2_documentno"/>
 	</field>
 	<sortField name="datetrx"/>
+	<sortField name="documentno"/>
 	<sortField name="paymentdate"/>
 	<variable name="Totale_Documenti" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
@@ -340,7 +341,7 @@ order by "BPARTNER",datetrx,documentno]]>
 	<variable name="grandtotal1" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
 	</variable>
-	<variable name="allocationamt1" class="java.math.BigDecimal" calculation="Sum">
+	<variable name="allocationamt1" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" calculation="Sum">
 		<variableExpression><![CDATA[$F{allocationamt}==null?new BigDecimal(0):$F{allocationamt}]]></variableExpression>
 	</variable>
 	<variable name="Saldo_riga_doc_saldo_prec" class="java.math.BigDecimal" resetType="None" calculation="Sum">
@@ -350,9 +351,9 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 	<group name="BPartner" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{c_bpartner_id}]]></groupExpression>
 		<groupHeader>
-			<band height="69">
+			<band height="73" splitType="Stretch">
 				<subreport>
-					<reportElement key="" positionType="Float" x="0" y="35" width="555" height="21" uuid="1f9381aa-0d04-4852-8ab8-0ddeff7d0b9a">
+					<reportElement key="" positionType="Float" x="0" y="45" width="555" height="15" uuid="1f9381aa-0d04-4852-8ab8-0ddeff7d0b9a">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -373,7 +374,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 					<subreportExpression><![CDATA[$P{SUBREPORT_DIR} +"customerstatement_sub.jasper"]]></subreportExpression>
 				</subreport>
 				<frame>
-					<reportElement mode="Opaque" x="0" y="56" width="555" height="13" forecolor="#000000" backcolor="#6600CC" uuid="57c96904-c343-40b1-9d95-b4803df9c8bb"/>
+					<reportElement mode="Opaque" x="0" y="60" width="555" height="13" forecolor="#000000" backcolor="#6600CC" uuid="57c96904-c343-40b1-9d95-b4803df9c8bb"/>
 					<staticText>
 						<reportElement key="element-90" mode="Transparent" x="0" y="0" width="98" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="959d0ccd-ec00-4344-a402-739ef5bfa75b"/>
 						<box leftPadding="2"/>
@@ -419,43 +420,45 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 					</staticText>
 				</frame>
 				<frame>
-					<reportElement x="0" y="0" width="555" height="35" uuid="f5b27b7f-9c67-448f-9270-d7a8e868b021"/>
+					<reportElement x="0" y="0" width="555" height="45" uuid="f5b27b7f-9c67-448f-9270-d7a8e868b021"/>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Solid"/>
 					</box>
 					<textField pattern="" isBlankWhenNull="true">
-						<reportElement key="textField-1" positionType="Float" x="0" y="0" width="555" height="15" forecolor="#000000" uuid="b229a4dd-80d7-46e0-8cf7-66e2f9642805">
+						<reportElement key="textField-1" positionType="Float" x="0" y="0" width="555" height="20" forecolor="#6600CC" uuid="b229a4dd-80d7-46e0-8cf7-66e2f9642805">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
-						<box>
+						<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0">
 							<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 							<bottomPen lineWidth="0.0" lineColor="#000000"/>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
-							<font isBold="true"/>
+							<font size="13" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{BPARTNER}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement key="textField-3" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="15" width="229" height="10" uuid="0f7651d8-953d-4d85-a470-1df4fe2b812d"/>
+						<reportElement key="textField-3" positionType="Float" stretchType="RelativeToTallestObject" x="1" y="21" width="229" height="10" uuid="0f7651d8-953d-4d85-a470-1df4fe2b812d"/>
+						<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" size="7"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{address1}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement key="textField-6" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="25" width="70" height="10" uuid="dfc7ce01-a904-4077-87fe-5cbad83bfa5e">
+						<reportElement key="textField-6" positionType="Float" stretchType="RelativeToTallestObject" x="1" y="31" width="70" height="10" uuid="dfc7ce01-a904-4077-87fe-5cbad83bfa5e">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
+						<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans" size="7"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{postal}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement key="textField-7" positionType="Float" stretchType="RelativeToTallestObject" x="309" y="25" width="150" height="10" uuid="83b273ca-45b9-44e0-81e5-1bd7525f5344">
+						<reportElement key="textField-7" positionType="Float" stretchType="RelativeToTallestObject" x="310" y="31" width="150" height="10" uuid="83b273ca-45b9-44e0-81e5-1bd7525f5344">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<textElement verticalAlignment="Middle">
@@ -464,7 +467,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<textFieldExpression><![CDATA[T($F{phone}) + ' ' + T($F{phone2})]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement key="textField-5" positionType="Float" stretchType="RelativeToTallestObject" x="70" y="25" width="159" height="10" uuid="cdb9b1d1-05e1-45f0-ae73-5cd4bb6086da">
+						<reportElement key="textField-5" positionType="Float" stretchType="RelativeToTallestObject" x="71" y="31" width="159" height="10" uuid="cdb9b1d1-05e1-45f0-ae73-5cd4bb6086da">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<textElement verticalAlignment="Middle">
@@ -473,7 +476,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement key="staticText-2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="229" y="25" width="80" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="df9a440c-e54f-46ce-a9e1-459b8cd1883b">
+						<reportElement key="staticText-2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="230" y="31" width="80" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="df9a440c-e54f-46ce-a9e1-459b8cd1883b">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
@@ -483,7 +486,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<textFieldExpression><![CDATA[$P{RESOURCE}.getString("phonenumber_"+$F{ad_language})]]></textFieldExpression>
 					</textField>
 					<textField>
-						<reportElement key="staticText-2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="229" y="15" width="80" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="dc0b801c-de82-47fa-ab44-d77f00e64548">
+						<reportElement key="staticText-2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="230" y="21" width="80" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="dc0b801c-de82-47fa-ab44-d77f00e64548">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
@@ -493,7 +496,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<textFieldExpression><![CDATA[$P{RESOURCE}.getString("mail_"+$F{ad_language})]]></textFieldExpression>
 					</textField>
 					<textField isBlankWhenNull="true">
-						<reportElement positionType="Float" x="309" y="15" width="150" height="10" uuid="f44cec98-94c4-4708-8330-2c56535b6609">
+						<reportElement positionType="Float" x="310" y="21" width="150" height="10" uuid="f44cec98-94c4-4708-8330-2c56535b6609">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<textElement verticalAlignment="Middle">
@@ -777,52 +780,15 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="122" splitType="Stretch">
-			<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
-				<reportElement key="textField-2" positionType="Float" x="214" y="62" width="206" height="18" forecolor="#000000" uuid="c61b975d-92e4-4653-b250-7980bb9c65f4"/>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement textAlignment="Left" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($P{DateAcctFrom}) + "  al " + new SimpleDateFormat("dd/MM/yyyy").format($P{DateAcctTo})]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement positionType="Float" x="420" y="62" width="90" height="18" uuid="9c2c5650-f74e-494e-a82b-fd5159397000"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font size="7"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Pag "+$V{PAGE_NUMBER}+" / "]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report" isBlankWhenNull="false">
-				<reportElement positionType="Float" x="510" y="62" width="45" height="18" uuid="e3e8370e-a554-4689-b82a-aa8cbfecd1c0"/>
-				<textElement textAlignment="Left" verticalAlignment="Middle">
-					<font size="7"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="62" width="122" height="18" uuid="7ced9709-6f19-4231-8a0e-beec14c72135"/>
-				<textElement verticalAlignment="Middle">
-					<font size="12" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("accountbalance_"+$F{ad_language})]]></textFieldExpression>
-			</textField>
-			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="122" y="62" width="92" height="18" uuid="2370fec2-296c-4069-9122-6a742960e3a6"/>
-				<textElement textAlignment="Right" verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("selectionfrom_"+$F{ad_language})]]></textFieldExpression>
-			</textField>
+		<band height="95" splitType="Stretch">
 			<line>
-				<reportElement x="0" y="54" width="555" height="1" uuid="1623a50c-9def-403e-bb7a-91c0adfbffbb">
+				<reportElement x="0" y="54" width="555" height="1" isRemoveLineWhenBlank="true" uuid="1623a50c-9def-403e-bb7a-91c0adfbffbb">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 			</line>
 			<subreport isUsingCache="true">
-				<reportElement key="" positionType="Float" x="0" y="0" width="555" height="50" uuid="7b92dd38-e8e5-4301-9bbc-c52f984222cb"/>
+				<reportElement key="" positionType="Float" x="0" y="0" width="555" height="50" isRemoveLineWhenBlank="true" uuid="7b92dd38-e8e5-4301-9bbc-c52f984222cb"/>
 				<subreportParameter name="AD_LANGUAGE">
 					<subreportParameterExpression><![CDATA[$F{ad_language}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -839,7 +805,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "header_portrait.jasper"]]></subreportExpression>
 			</subreport>
 			<textField>
-				<reportElement x="0" y="90" width="554" height="30" printWhenGroupChanges="Documentno" forecolor="#000099" uuid="aaadda73-fb10-45af-93e2-ddbe215a535f">
+				<reportElement x="0" y="73" width="554" height="22" isRemoveLineWhenBlank="true" printWhenGroupChanges="Documentno" forecolor="#000099" uuid="aaadda73-fb10-45af-93e2-ddbe215a535f">
 					<printWhenExpression><![CDATA[$P{IsSOTrx}!=null]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -851,10 +817,50 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{IsSOTrx}.equals("Y") ? "ESTRATTO CONTO CLIENTE":"ESTRATTO CONTO FORNITORE"]]></textFieldExpression>
 			</textField>
+			<frame>
+				<reportElement x="0" y="55" width="555" height="18" isRemoveLineWhenBlank="true" uuid="86e25e38-feda-408a-abe7-12b97edde63d"/>
+				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+					<reportElement key="textField-2" positionType="Float" x="214" y="0" width="206" height="18" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="c61b975d-92e4-4653-b250-7980bb9c65f4"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($P{DateAcctFrom}) + "  al " + new SimpleDateFormat("dd/MM/yyyy").format($P{DateAcctTo})]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement positionType="Float" x="420" y="0" width="90" height="18" uuid="9c2c5650-f74e-494e-a82b-fd5159397000"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Pag "+$V{PAGE_NUMBER}+" / "]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report" isBlankWhenNull="false">
+					<reportElement positionType="Float" x="510" y="0" width="45" height="18" uuid="e3e8370e-a554-4689-b82a-aa8cbfecd1c0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="0" y="0" width="122" height="18" isRemoveLineWhenBlank="true" uuid="7ced9709-6f19-4231-8a0e-beec14c72135"/>
+					<textElement verticalAlignment="Middle">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("accountbalance_"+$F{ad_language})]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement positionType="Float" x="122" y="0" width="92" height="18" isRemoveLineWhenBlank="true" uuid="2370fec2-296c-4069-9122-6a742960e3a6"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[$P{RESOURCE}.getString("selectionfrom_"+$F{ad_language})]]></textFieldExpression>
+				</textField>
+			</frame>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="40">
+		<band height="40" splitType="Stretch">
 			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} != 1]]></printWhenExpression>
 			<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement key="textField-2" positionType="Float" x="214" y="22" width="206" height="18" forecolor="#000000" uuid="7ef834b7-1a02-4a6a-8ff1-a53e99a7d217"/>
@@ -894,7 +900,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("selectionfrom_"+$F{ad_language})]]></textFieldExpression>
 			</textField>
 			<subreport isUsingCache="true">
-				<reportElement key="" positionType="Float" x="0" y="0" width="555" height="20" uuid="f2433a1b-2e50-4958-8bc1-5cd86777e336"/>
+				<reportElement key="" positionType="Float" x="0" y="0" width="555" height="20" isRemoveLineWhenBlank="true" uuid="f2433a1b-2e50-4958-8bc1-5cd86777e336"/>
 				<subreportParameter name="AD_LANGUAGE">
 					<subreportParameterExpression><![CDATA[$F{ad_language}]]></subreportParameterExpression>
 				</subreportParameter>
