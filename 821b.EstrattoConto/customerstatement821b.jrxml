@@ -639,7 +639,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 			</band>
 		</groupFooter>
 	</group>
-	<group name="Documentno" keepTogether="true">
+	<group name="Documentno">
 		<groupExpression><![CDATA[$F{documentno}]]></groupExpression>
 		<groupHeader>
 			<band height="16">
