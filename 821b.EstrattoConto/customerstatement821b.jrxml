@@ -16,6 +16,7 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<style name="Style1"/>
 	<parameter name="C_BPartner_ID" class="java.lang.Integer"/>
 	<parameter name="DateAcctFrom" class="java.util.Date"/>
 	<parameter name="DateAcctTo" class="java.util.Date">
@@ -632,8 +633,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
 							<font fontName="SansSerif" size="10" isBold="true"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$V{Pagamenti_2_g_Report}==null?$V{GrandTotal_SaldoFinale}:$V{Totale_Documenti}.add($V{Pagamenti_2_g_Report})
-]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{Pagamenti_2_g_Report}==null?$V{GrandTotal_SaldoFinale}:$V{Totale_Documenti}.add($V{Pagamenti_2_g_Report})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
