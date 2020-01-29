@@ -308,8 +308,8 @@ order by "BPARTNER",datetrx,documentno]]>
 		<property name="com.jaspersoft.studio.field.label" value="inv2_documentno"/>
 	</field>
 	<sortField name="datetrx"/>
-	<sortField name="paymentdate"/>
 	<sortField name="documentno"/>
+	<sortField name="paymentdate"/>
 	<variable name="Totale_Documenti" class="java.math.BigDecimal" resetType="Group" resetGroup="BPartner" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
 	</variable>
@@ -320,23 +320,9 @@ order by "BPARTNER",datetrx,documentno]]>
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
 	</variable>
 	<variable name="Returnamt" class="java.math.BigDecimal" calculation="System"/>
-	<variable name="Saldo_riga_doc" class="java.math.BigDecimal" resetType="Group" resetGroup="Documentno" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
-		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
-		<initialValueExpression><![CDATA[$F{grandtotal}]]></initialValueExpression>
-	</variable>
 	<variable name="Saldo_riga_doc_detract_pag" class="java.math.BigDecimal" resetType="Group" resetGroup="Documentno" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
 		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
 		<initialValueExpression><![CDATA[$F{allocationamt}]]></initialValueExpression>
-	</variable>
-	<variable name="Saldo_riga_doc_1" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
-		<variableExpression><![CDATA[$V{Saldo_riga_doc_detract_pag}==null?$F{grandtotal}:new BigDecimal(0)]]></variableExpression>
-	</variable>
-	<variable name="Saldo_riga_pag_detract_pag" class="java.math.BigDecimal" resetType="Group" resetGroup="Documentno" calculation="Sum">
-		<variableExpression><![CDATA[$F{allocationamt}==null?0:$F{allocationamt}]]></variableExpression>
-		<initialValueExpression><![CDATA[$F{allocationamt}==null?0:$F{allocationamt}]]></initialValueExpression>
-	</variable>
-	<variable name="saldo_riga_pagamenti_presenti" class="java.math.BigDecimal" resetType="Group" resetGroup="Documentno" incrementType="Group" incrementGroup="Documentno" calculation="Count">
-		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
 	</variable>
 	<variable name="grandtotal1" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}==null?new BigDecimal(0):$F{grandtotal}]]></variableExpression>
@@ -348,27 +334,15 @@ order by "BPARTNER",datetrx,documentno]]>
 		<variableExpression><![CDATA[//$V{allocationamt1}==null? new BigDecimal(0):$V{grandtotal1}.add($V{allocationamt1})
 $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 	</variable>
-	<variable name="Saldo_riga_doc_saldo_prec_1" class="java.math.BigDecimal" resetType="Group" resetGroup="Documentno" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
-		<variableExpression><![CDATA[//$V{allocationamt1}==null? new BigDecimal(0):$V{grandtotal1}.add($V{allocationamt1})
-$V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
-	</variable>
-	<variable name="Saldo_riga_doc_1_1" class="java.math.BigDecimal" resetType="Group" resetGroup="Documentno" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
-		<variableExpression><![CDATA[$V{Saldo_riga_doc_detract_pag}==null?$F{grandtotal}:new BigDecimal(0)]]></variableExpression>
-	</variable>
-	<variable name="Variable_1" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{grandtotal}==null?new BigDecimal(0):$F{grandtotal}]]></variableExpression>
-	</variable>
-	<variable name="Variable_1_1" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{allocationamt}]]></variableExpression>
-	</variable>
-	<variable name="DocNum" class="java.math.BigDecimal" resetType="None" calculation="Count">
-		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
-	</variable>
 	<variable name="Variable_1_2" class="java.math.BigDecimal" incrementType="Group" incrementGroup="Documentno" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}==null?new BigDecimal(0):$F{grandtotal}]]></variableExpression>
 	</variable>
 	<variable name="Variable_1_2_1" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{name}.equals("prepaid")?$F{allocationamt}.abs():$F{allocationamt}]]></variableExpression>
+		<variableExpression><![CDATA[//$F{name}.equals("prepaid")?$F{allocationamt}.abs():$F{allocationamt}
+$F{name}=="prepaid"?$F{allocationamt}.abs():$F{allocationamt}]]></variableExpression>
+	</variable>
+	<variable name="Variable_1_2_1_1" class="java.math.BigDecimal" resetType="None" calculation="Sum">
+		<variableExpression><![CDATA[$F{payamt}]]></variableExpression>
 	</variable>
 	<group name="BPartner" isStartNewPage="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{c_bpartner_id}]]></groupExpression>
@@ -407,7 +381,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<text><![CDATA[DATA]]></text>
 					</staticText>
 					<staticText>
-						<reportElement key="element-90" mode="Transparent" x="279" y="0" width="191" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="4fbfa410-6a76-407c-8331-5b775c449c2e"/>
+						<reportElement key="element-90" mode="Transparent" x="240" y="0" width="125" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="4fbfa410-6a76-407c-8331-5b775c449c2e"/>
 						<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
 							<font fontName="SansSerif" size="7" isBold="true"/>
 							<paragraph lineSpacing="Single"/>
@@ -415,7 +389,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<text><![CDATA[NUM. DOC.]]></text>
 					</staticText>
 					<staticText>
-						<reportElement key="element-90" mode="Transparent" x="99" y="0" width="180" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="52fc601c-715e-415e-a31f-f9dcfbcec281"/>
+						<reportElement key="element-90" mode="Transparent" x="99" y="0" width="141" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="52fc601c-715e-415e-a31f-f9dcfbcec281"/>
 						<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
 							<font fontName="SansSerif" size="7" isBold="true"/>
 							<paragraph lineSpacing="Single"/>
@@ -423,7 +397,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<text><![CDATA[DESCRIZIONE]]></text>
 					</staticText>
 					<staticText>
-						<reportElement key="element-90" mode="Transparent" x="405" y="0" width="149" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="08444d8b-fb59-42e3-b634-409834659e0a"/>
+						<reportElement key="element-90" mode="Transparent" x="460" y="0" width="94" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="08444d8b-fb59-42e3-b634-409834659e0a"/>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
 							<font fontName="SansSerif" size="7" isBold="true"/>
@@ -432,7 +406,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<text><![CDATA[SALDO]]></text>
 					</staticText>
 					<staticText>
-						<reportElement key="element-90" mode="Transparent" x="405" y="0" width="67" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="ed95a1cb-72c9-4ede-b98a-a424aa67d5ef"/>
+						<reportElement key="element-90" mode="Transparent" x="365" y="0" width="95" height="13" forecolor="#FFFFFF" backcolor="#D1D1D1" uuid="ed95a1cb-72c9-4ede-b98a-a424aa67d5ef"/>
 						<box rightPadding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
 							<font fontName="SansSerif" size="7" isBold="true"/>
@@ -497,7 +471,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{city}]]></textFieldExpression>
 					</textField>
-					<textField>
+					<textField isBlankWhenNull="true">
 						<reportElement key="staticText-2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="230" y="31" width="80" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="ae343aee-f42e-4f3f-a2fd-9af0eddf4b87">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
@@ -507,7 +481,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						</textElement>
 						<textFieldExpression><![CDATA[$P{RESOURCE}.getString("phonenumber_"+$F{ad_language})]]></textFieldExpression>
 					</textField>
-					<textField>
+					<textField isBlankWhenNull="true">
 						<reportElement key="staticText-2" positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="230" y="21" width="80" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="d7fd421f-da79-4e19-92f5-2d364cfdc8a2">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
@@ -530,7 +504,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 			</band>
 		</groupHeader>
 		<groupFooter>
-			<band height="38">
+			<band height="71">
 				<frame>
 					<reportElement x="250" y="5" width="304" height="29" uuid="d54eafa3-395b-42f1-aa83-7d514bfc1916">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
@@ -559,7 +533,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						</textElement>
 						<text><![CDATA[TOTALE]]></text>
 					</staticText>
-					<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00">
+					<textField textAdjust="ScaleFont" pattern="¤ #,##0.00;¤ - #,##0.00">
 						<reportElement positionType="Float" x="0" y="15" width="102" height="14" uuid="50c8c993-43f6-42ea-a251-d8e8485cf045">
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 							<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -599,7 +573,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						</textElement>
 						<text><![CDATA[PAGAMENTI	]]></text>
 					</staticText>
-					<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00">
+					<textField textAdjust="ScaleFont" pattern="¤ #,##0.00;¤ - #,##0.00">
 						<reportElement positionType="Float" x="102" y="15" width="101" height="14" uuid="ba1e22fa-2e33-4b68-a93d-439a794452e0">
 							<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.y" value="2"/>
@@ -615,8 +589,8 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
 							<font fontName="SansSerif" size="10" isBold="true"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$V{Pagamenti_2_g_Report} == null ? 0 : $V{Variable_1_2_1}
-]]></textFieldExpression>
+						<textFieldExpression><![CDATA[//$V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}
+$V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></textFieldExpression>
 					</textField>
 					<staticText>
 						<reportElement key="textField" positionType="Float" mode="Opaque" x="203" y="1" width="101" height="14" forecolor="#FFFFFF" backcolor="#2147ED" uuid="1d3e891b-dd2d-49e9-abd9-582912d42b54">
@@ -638,7 +612,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						</textElement>
 						<text><![CDATA[SALDO FINALE]]></text>
 					</staticText>
-					<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00">
+					<textField textAdjust="ScaleFont" pattern="¤ #,##0.00;¤ - #,##0.00">
 						<reportElement positionType="Float" x="203" y="15" width="101" height="14" uuid="225516d5-2e6a-4332-8401-cc1b312d4220">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="-1"/>
@@ -659,10 +633,13 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
 							<font fontName="SansSerif" size="10" isBold="true"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$V{Pagamenti_2_g_Report}==null?$V{Totale_Documenti}:$V{Totale_Documenti}.add($V{Variable_1_2_1})
-]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$V{Pagamenti_2_g_Report}==null?$V{Totale_Documenti}:$V{Totale_Documenti}.add($V{Variable_1_2_1})]]></textFieldExpression>
 					</textField>
 				</frame>
+				<textField>
+					<reportElement x="15" y="35" width="100" height="30" uuid="d211c2f2-40d5-4d13-ab4d-079906eea784"/>
+					<textFieldExpression><![CDATA[$V{Variable_1_2_1_1}]]></textFieldExpression>
+				</textField>
 			</band>
 		</groupFooter>
 	</group>
@@ -672,12 +649,12 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 			<band height="16">
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
-				<printWhenExpression><![CDATA[$F{name}!="prepaid"]]></printWhenExpression>
+				<printWhenExpression><![CDATA[!$F{name}.equals("prepaid")]]></printWhenExpression>
 				<frame>
 					<reportElement x="0" y="0" width="555" height="16" forecolor="#A30303" uuid="72b06c80-13c1-4365-af5c-6577e99d18b0"/>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
 					<textField textAdjust="ScaleFont" pattern="" isBlankWhenNull="true">
-						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="238" y="0" width="165" height="16" forecolor="#A30303" uuid="fa04fc64-763b-4278-b262-f8548907f1de">
+						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="238" y="0" width="125" height="16" forecolor="#A30303" uuid="fa04fc64-763b-4278-b262-f8548907f1de">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
@@ -688,12 +665,12 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Left" verticalAlignment="Middle">
-							<font fontName="SansSerif" size="10" isBold="true"/>
+							<font fontName="SansSerif" size="8" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[T($F{documentno})]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="403" y="0" width="67" height="16" forecolor="#A30303" uuid="00fdfd03-bc9b-4126-bfbd-528d1de813a2">
+						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="363" y="0" width="95" height="16" forecolor="#A30303" uuid="00fdfd03-bc9b-4126-bfbd-528d1de813a2">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						</reportElement>
@@ -705,7 +682,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
-							<font fontName="SansSerif" size="10" isBold="true"/>
+							<font fontName="SansSerif" size="8" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{grandtotal}]]></textFieldExpression>
 					</textField>
@@ -720,9 +697,9 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement verticalAlignment="Middle">
-							<font fontName="SansSerif" size="10" isBold="true"/>
+							<font fontName="SansSerif" size="8" isBold="true"/>
 						</textElement>
-						<textFieldExpression><![CDATA[$F{name}.equals("prepaid") ?"PREPAGAMENTO" :$F{name}]]></textFieldExpression>
+						<textFieldExpression><![CDATA[$F{name}==("prepaid") ?T("SALDO RESIDUO") :$F{name}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="ScaleFont" pattern="dd-MM-yyyy" isBlankWhenNull="true">
 						<reportElement x="-2" y="0" width="70" height="16" forecolor="#A30303" uuid="d795050a-1aa9-4354-989a-f3aa6bdab1b9"/>
@@ -733,12 +710,12 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement verticalAlignment="Middle">
-							<font fontName="SansSerif" size="10" isBold="true"/>
+							<font fontName="SansSerif" size="8" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{datetrx}]]></textFieldExpression>
 					</textField>
 					<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="470" y="0" width="83" height="16" forecolor="#A30303" uuid="e1ba440a-116f-4633-aefc-41bf7d22839e">
+						<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="458" y="0" width="94" height="16" forecolor="#A30303" uuid="e1ba440a-116f-4633-aefc-41bf7d22839e">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						</reportElement>
@@ -750,7 +727,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
-							<font fontName="SansSerif" size="10" isBold="true"/>
+							<font fontName="SansSerif" size="8" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$V{Saldo_riga_doc_saldo_prec}==null?$F{grandtotal}:$F{grandtotal}.add($V{Saldo_riga_doc_saldo_prec})]]></textFieldExpression>
 					</textField>
@@ -949,7 +926,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 				<reportElement x="0" y="0" width="555" height="20" forecolor="#2B05FF" uuid="03f95c77-dc20-450a-a234-5f147aa7f065"/>
 				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
 				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="403" y="0" width="67" height="20" forecolor="#2B05FF" uuid="16d376c0-ce90-44df-abc9-64c65473ffea">
+					<reportElement positionType="Float" x="363" y="0" width="95" height="20" forecolor="#2B05FF" uuid="16d376c0-ce90-44df-abc9-64c65473ffea">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46f7af20-3217-48ff-8c73-9e211d64ce8d"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -960,9 +937,9 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10" isBold="true"/>
+						<font fontName="SansSerif" size="8" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{allocationamt}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{name}.equals("prepaid")?$F{allocationamt}.abs():$F{allocationamt}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont">
 					<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="68" y="0" width="90" height="20" forecolor="#2B05FF" uuid="ffc9aa24-a555-4801-89ce-c845525e5dd7">
@@ -976,9 +953,9 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10" isBold="true"/>
+						<font fontName="SansSerif" size="8" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{paymentdoc}== null ? "ABBINAMENTO" : $F{paymentdoc}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{paymentdoc}== null ? T("ABBINAMENTO") : $F{name}==("prepaid") ?T("PAGAMENTO NON ALLOCATO") : $F{paymentdoc}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern="dd-MM-yyyy" isBlankWhenNull="true">
 					<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="-2" y="0" width="70" height="20" forecolor="#2B05FF" uuid="69f8275c-3a01-416f-a02e-ca37417a1b3c">
@@ -992,12 +969,12 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10" isBold="true"/>
+						<font fontName="SansSerif" size="8" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdate}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="158" y="0" width="245" height="20" forecolor="#2B05FF" uuid="0294190b-9b9e-41b8-94ff-a954c0f29bb4">
+					<reportElement positionType="Float" x="158" y="0" width="205" height="20" forecolor="#2B05FF" uuid="0294190b-9b9e-41b8-94ff-a954c0f29bb4">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e280b7e5-6ab4-4a67-b318-8e99c7579be5"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2"/>
@@ -1009,7 +986,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 +T("IMPORTO PAGATO - ")+new java.text.DecimalFormat("€ #,##0.00").format($F{payamt}) /*" DEL" + (new SimpleDateFormat("dd/MM/yyyy").format($F{paymentdate}))*/]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="470" y="0" width="83" height="20" forecolor="#2B05FF" uuid="f45f6e58-74e4-49ca-9e2f-1a45a7c4c7fa">
+					<reportElement positionType="Float" x="458" y="0" width="94" height="20" forecolor="#2B05FF" uuid="f45f6e58-74e4-49ca-9e2f-1a45a7c4c7fa">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46f7af20-3217-48ff-8c73-9e211d64ce8d"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -1020,9 +997,9 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10" isBold="true"/>
+						<font fontName="SansSerif" size="8" isBold="true"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{name}.equals("prepaid")?$V{Variable_1_2}.add($V{Variable_1_2_1}):$V{Variable_1_2}.add($V{Variable_1_2_1})]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{name}==("prepaid")?$V{Variable_1_2}.add($V{Variable_1_2_1}):$V{Variable_1_2}.add($V{Variable_1_2_1})]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
