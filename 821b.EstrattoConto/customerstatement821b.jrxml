@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports5.1.0  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ec" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b17b5b8-d5a8-47a1-96a0-f5fb5ff0a427">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="544"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="446"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="123"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="872"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<style name="Style1"/>
 	<parameter name="C_BPartner_ID" class="java.lang.Integer"/>
 	<parameter name="DateAcctFrom" class="java.util.Date"/>
@@ -75,9 +75,9 @@ ELSE
   abb.Amount*-1
 END as AllocationAmt,
 CASE WHEN doc.docbasetype IN ('ARC','API') THEN
-  abb.overunderamt
+abb.overunderamt
 ELSE
-abb.overunderamt 
+abb.overunderamt
 END as overunderamt,
 pay.datetrx as PaymentDate,
 pay.documentno as paymentdoc,
@@ -639,7 +639,10 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 				<frame>
 					<reportElement positionType="Float" x="0" y="0" width="555" height="12" isRemoveLineWhenBlank="true" forecolor="#A30303" uuid="72b06c80-13c1-4365-af5c-6577e99d18b0"/>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0">
-						<bottomPen lineWidth="0.5"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 						<reportElement key="textField" positionType="Float" x="238" y="0" width="180" height="12" forecolor="#A30303" uuid="fa04fc64-763b-4278-b262-f8548907f1de">
@@ -653,7 +656,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Left" verticalAlignment="Middle">
-							<font fontName="SansSerif" size="8" isBold="true"/>
+							<font fontName="SansSerif" size="7" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[T($F{documentno})]]></textFieldExpression>
 					</textField>
@@ -670,7 +673,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
-							<font fontName="SansSerif" size="8" isBold="true"/>
+							<font fontName="SansSerif" size="7" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{grandtotal}]]></textFieldExpression>
 					</textField>
@@ -685,7 +688,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement verticalAlignment="Middle">
-							<font fontName="SansSerif" size="8" isBold="true"/>
+							<font fontName="SansSerif" size="7" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{name}.equals(("prepaid")) ?T("SALDO RESIDUO") :$F{name}]]></textFieldExpression>
 					</textField>
@@ -698,7 +701,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement verticalAlignment="Middle">
-							<font fontName="SansSerif" size="8" isBold="true"/>
+							<font fontName="SansSerif" size="7" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{datetrx}]]></textFieldExpression>
 					</textField>
@@ -715,13 +718,22 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
-							<font fontName="SansSerif" size="8" isBold="true"/>
+							<font fontName="SansSerif" size="7" isBold="true"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$V{Saldo_riga_doc_saldo_prec}==null?$F{grandtotal}:$F{grandtotal}.add($V{Saldo_riga_doc_saldo_prec})]]></textFieldExpression>
 					</textField>
 				</frame>
 			</band>
 		</groupHeader>
+		<groupFooter>
+			<band height="1">
+				<line>
+					<reportElement x="0" y="0" width="555" height="1" uuid="8846ea50-5d7e-4732-8064-c39976bd1331">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					</reportElement>
+				</line>
+			</band>
+		</groupFooter>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
@@ -881,7 +893,10 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 					<property name="ShowOutOfBoundContent" value="true"/>
 				</reportElement>
 				<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0">
-					<bottomPen lineWidth="0.5"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textField isStretchWithOverflow="true" pattern="dd-MM-yyyy" isBlankWhenNull="true">
 					<reportElement key="textField" positionType="Float" x="-2" y="0" width="60" height="12" forecolor="#2B05FF" uuid="69f8275c-3a01-416f-a02e-ca37417a1b3c">
@@ -895,7 +910,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="SansSerif" size="7" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdate}]]></textFieldExpression>
 				</textField>
@@ -909,7 +924,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="SansSerif" size="7" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdoc}== null ? T("ABBIN./COMPENS.") : $F{name}==("prepaid") ?T("PAGAMENTO NON ALLOCATO") : $F{paymentdoc}]]></textFieldExpression>
 				</textField>
@@ -923,7 +938,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 						<font fontName="SansSerif" size="7" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdoc}==null ? "RIF.: " + T($F{inv2_documentno})/*  +" " +T($F{name})*/:
-"DOC. PAG. "+T($F{paymentdoc})+" - " +T($F{paymentdescription})  + ' ' + T($F{bank_name}) /*+"\n"*/+" IMP. TOT. PAG. - "+ T(new java.text.DecimalFormat("€ #,##0.00").format($F{payamt})) /*" DEL" + (new SimpleDateFormat("dd/MM/yyyy").format($F{paymentdate}))*/]]></textFieldExpression>
+"DOC. PAG. "+T($F{paymentdoc})+" - " +T($F{paymentdescription})  + ' ' + T($F{bank_name}) /*+"\n"*/+" IMP. TOT. PAG.: "+ T(new java.text.DecimalFormat("€ #,##0.00").format($F{payamt})) /*" DEL" + (new SimpleDateFormat("dd/MM/yyyy").format($F{paymentdate}))*/]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="418" y="0" width="73" height="12" forecolor="#2B05FF" uuid="16d376c0-ce90-44df-abc9-64c65473ffea">
@@ -936,7 +951,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="SansSerif" size="7" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{name}.equals("prepaid")?$F{allocationamt}:$F{allocationamt}]]></textFieldExpression>
 				</textField>
@@ -951,7 +966,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="SansSerif" size="7" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{name}.equals(("prepaid"))?$V{Variable_1_2}.add($V{Variable_1_2_1}):$V{Variable_1_2}.add($V{Variable_1_2_1})]]></textFieldExpression>
 				</textField>

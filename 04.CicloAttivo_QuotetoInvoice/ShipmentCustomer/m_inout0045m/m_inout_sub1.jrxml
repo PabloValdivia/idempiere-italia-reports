@@ -176,7 +176,7 @@ ORDER BY m_inoutline_line ASC]]>
 		<groupExpression><![CDATA[($F{c_order_documentno}!= null ? "RIF. NS ORDINE:"+$F{c_order_documentno}:"") +($F{c_order_poreference}!= null ? " RIF. VS. ORDINE: "+$F{c_order_poreference} :"")]]></groupExpression>
 		<groupHeader>
 			<band height="12">
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement positionType="Float" x="80" y="0" width="298" height="12" isRemoveLineWhenBlank="true" forecolor="#000DFF" uuid="13eb2843-785c-4172-8f83-20dbda651107">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -298,7 +298,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 				</reportElement>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="0" width="80" height="12" uuid="4b052802-baaa-417b-9c6e-acc2fa9934ba">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d7e9fc9-7b59-4dc6-b9c7-ca6873f759f0"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -315,7 +315,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="80" y="0" width="298" height="12" uuid="fed77b28-93de-4074-9ef2-7de8fdb1256b">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad407ab-c715-4c2e-bb2f-7047aacdd74d"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -331,7 +331,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_name}!=null?$F{m_inoutline_name}:$F{m_product_name}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement positionType="Float" x="378" y="0" width="50" height="12" uuid="7ed35940-a07f-40fb-ab8e-1904ca2e9ba4">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a86d4b2d-6c4c-4f96-95ac-6b029c4b44dc"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -349,7 +349,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField pattern="#,##0.###;(#,##0.###-)">
+				<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="428" y="0" width="60" height="12" uuid="b62dbd27-67d2-4ea3-8a5e-6990c3480174">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba2cfe20-2175-4b31-8baf-0beb645f9c3f"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -361,7 +361,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_movementqty}]]></textFieldExpression>
 				</textField>
-				<textField pattern="#,##0.###;(#,##0.###-)">
+				<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="488" y="0" width="67" height="12" uuid="464b5c09-9c8e-40b4-a238-f6adcc7d1ebc">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f883e7f-cc62-46ec-ae69-e69dd0c98e00"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>

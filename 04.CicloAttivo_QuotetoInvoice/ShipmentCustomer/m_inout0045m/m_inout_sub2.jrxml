@@ -175,7 +175,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<property name="com.jaspersoft.studio.layout"/>
 				<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				<printWhenExpression><![CDATA[!($F{c_order_documentno}==null)]]></printWhenExpression>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement positionType="Float" x="80" y="0" width="260" height="12" isRemoveLineWhenBlank="true" forecolor="#000DFF" uuid="86406d88-f223-4b23-9b47-c6221a713048">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -339,7 +339,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<reportElement x="0" y="0" width="555" height="11" uuid="230082ee-54b0-4bf9-b568-77a2a594b43a">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 				</reportElement>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="0" width="80" height="11" uuid="4b052802-baaa-417b-9c6e-acc2fa9934ba">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d7e9fc9-7b59-4dc6-b9c7-ca6873f759f0"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -356,7 +356,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="80" y="0" width="260" height="11" uuid="fed77b28-93de-4074-9ef2-7de8fdb1256b">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad407ab-c715-4c2e-bb2f-7047aacdd74d"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -372,7 +372,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_name}!=null?$F{m_inoutline_name}:$F{m_product_name}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isBlankWhenNull="true">
 					<reportElement positionType="Float" x="340" y="0" width="38" height="11" uuid="7ed35940-a07f-40fb-ab8e-1904ca2e9ba4">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a86d4b2d-6c4c-4f96-95ac-6b029c4b44dc"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -390,7 +390,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField pattern="#,##0.###;(#,##0.###-)">
+				<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="378" y="0" width="48" height="11" uuid="b62dbd27-67d2-4ea3-8a5e-6990c3480174">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ba2cfe20-2175-4b31-8baf-0beb645f9c3f"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -402,7 +402,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_movementqty}]]></textFieldExpression>
 				</textField>
-				<textField pattern="#,##0.###;(#,##0.###-)">
+				<textField pattern="#,##0.###;(#,##0.###-)" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="426" y="0" width="50" height="11" uuid="464b5c09-9c8e-40b4-a238-f6adcc7d1ebc">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f883e7f-cc62-46ec-ae69-e69dd0c98e00"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -413,7 +413,7 @@ ORDER BY m_inoutline_line ASC]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_qtyentered}]]></textFieldExpression>
 				</textField>
-				<textField pattern="¤#,##0.0000;¤-#,##0.0000">
+				<textField pattern="¤#,##0.0000;¤-#,##0.0000" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="476" y="0" width="79" height="11" uuid="a25c3e83-def8-4eeb-bfdc-e0f92efcc457">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a93aa641-21a3-457a-a04f-cc7fae8a5afe"/>
 					</reportElement>
