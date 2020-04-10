@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports5.1.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="14" bottomMargin="10" uuid="b6e7cc4b-3786-4fed-87f2-9d03f79344e3">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
@@ -43,7 +43,7 @@
 		</box>
 		<paragraph lineSpacing="Single"/>
 	</style>
-	<style name="Crosstab Data Text" hTextAlign="Center" hImageAlign="Center">
+	<style name="Crosstab Data Text" hAlign="Center">
 		<paragraph lineSpacing="Single"/>
 	</style>
 	<style name="html" markup="html"/>
@@ -633,7 +633,7 @@ WHERE
 				</frame>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="64" width="295" height="136" isRemoveLineWhenBlank="true" uuid="24b898dc-c5a4-4dc4-8dec-b8e9ed8c2908">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="260" y="64" width="295" height="136" isRemoveLineWhenBlank="true" uuid="24b898dc-c5a4-4dc4-8dec-b8e9ed8c2908">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -778,7 +778,7 @@ WHERE
 					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="c1c750a1-7e13-428d-88fc-26560ec51939">
 						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000000]]></printWhenExpression>
 					</reportElement>
-					<box>
+					<box topPadding="3" leftPadding="3">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Top">
@@ -792,7 +792,7 @@ BIC: PASCITM1ME4]]></text>
 					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a89b8d67-63de-4009-aecd-e4a18dd84fef">
 						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000007]]></printWhenExpression>
 					</reportElement>
-					<box>
+					<box topPadding="3" leftPadding="3">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Top">
@@ -806,7 +806,7 @@ BIC: BAPPIT21P66]]></text>
 					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="2a1a330d-109c-4a69-8be0-4ee4311b90e0">
 						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000012]]></printWhenExpression>
 					</reportElement>
-					<box>
+					<box topPadding="3" leftPadding="3">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Top">
@@ -819,7 +819,7 @@ IBAN: IT 97 Y 03205 02000 000000000070]]></text>
 					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="47ef3aea-9ddb-40d8-8f55-56b4291eea38">
 						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000003]]></printWhenExpression>
 					</reportElement>
-					<box>
+					<box topPadding="3" leftPadding="3">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Top">
@@ -832,7 +832,7 @@ IBAN: IT 47 Q 05387 16900 000002397825]]></text>
 					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a0742acf-370c-48cc-95d1-81b61c7fb247">
 						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000008]]></printWhenExpression>
 					</reportElement>
-					<box>
+					<box topPadding="3" leftPadding="3">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Top">
@@ -845,7 +845,7 @@ IBAN: IT 81 Y 03205 04600 000002220086]]></text>
 					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="e771752b-21e8-493a-a248-2578c7736573">
 						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000016]]></printWhenExpression>
 					</reportElement>
-					<box>
+					<box topPadding="3" leftPadding="3">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Top">
@@ -858,7 +858,7 @@ IBAN: IT 22 E 02008 82620 000103213822]]></text>
 					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="3bdad98c-3e5c-4215-8083-faed17ed1cbf">
 						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000001]]></printWhenExpression>
 					</reportElement>
-					<box>
+					<box topPadding="3" leftPadding="3">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Top">
@@ -899,11 +899,11 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="262" width="555" height="52" isRemoveLineWhenBlank="true" uuid="6788eee0-1687-4205-ac5e-200ba0909574">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="262" width="555" height="52" isRemoveLineWhenBlank="true" uuid="6788eee0-1687-4205-ac5e-200ba0909574">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" uuid="c7021343-6c63-4f4d-9836-381ea824d1a5">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" uuid="c7021343-6c63-4f4d-9836-381ea824d1a5">
 						<printWhenExpression><![CDATA[$F{c_invoice_description}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -912,7 +912,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["DESCR. DOCUMENTO: "+$F{c_invoice_description}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="13" width="555" height="13" isRemoveLineWhenBlank="true" uuid="9f03370e-6d38-49c0-b5d4-9a75d0102e55">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="13" width="555" height="13" isRemoveLineWhenBlank="true" uuid="9f03370e-6d38-49c0-b5d4-9a75d0102e55">
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -921,7 +921,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="26" width="555" height="13" isRemoveLineWhenBlank="true" uuid="27f666ee-46e4-4716-b505-eb5ad8114b33">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="26" width="555" height="13" isRemoveLineWhenBlank="true" uuid="27f666ee-46e4-4716-b505-eb5ad8114b33">
 						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -1032,7 +1032,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 				</frame>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="64" width="295" height="136" isRemoveLineWhenBlank="true" uuid="c5978647-a8ce-45e3-8bc0-3b6b8f294bb6">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="260" y="64" width="295" height="136" isRemoveLineWhenBlank="true" uuid="c5978647-a8ce-45e3-8bc0-3b6b8f294bb6">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -1720,7 +1720,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<frame>
-					<reportElement stretchType="ElementGroupBottom" x="190" y="0" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
+					<reportElement stretchType="RelativeToTallestObject" x="190" y="0" width="190" height="60" uuid="dd4be382-17b4-4e05-a693-603cb89ed191">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -1728,7 +1728,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 						<pen lineWidth="0.5"/>
 					</box>
 					<subreport isUsingCache="true">
-						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="458aa8da-fce4-4602-a45e-1029d9b19b29"/>
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="458aa8da-fce4-4602-a45e-1029d9b19b29"/>
 						<subreportParameter name="AD_LANGUAGE">
 							<subreportParameterExpression><![CDATA[$F{ad_language}]]></subreportParameterExpression>
 						</subreportParameter>
@@ -1743,14 +1743,14 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					</subreport>
 				</frame>
 				<frame>
-					<reportElement stretchType="ElementGroupBottom" mode="Opaque" x="380" y="0" width="175" height="60" backcolor="#A8EB6E" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
+					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="380" y="0" width="175" height="60" backcolor="#A8EB6E" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
 					<staticText>
-						<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="175" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
+						<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="175" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
 						<box>
 							<pen lineWidth="0.5"/>
 						</box>
@@ -1760,7 +1760,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 						<text><![CDATA[TOTALE FATTURA]]></text>
 					</staticText>
 					<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-						<reportElement stretchType="ElementGroupBottom" x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
+						<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						</reportElement>
 						<box rightPadding="5"/>
@@ -1772,12 +1772,12 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					</textField>
 				</frame>
 				<frame>
-					<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="190" height="60" uuid="016094cb-125e-4c6b-934e-66f2910a6f12"/>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
 					<subreport>
-						<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
+						<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="190" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
 							<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						</reportElement>
 						<subreportParameter name="AD_LANGUAGE">
@@ -1798,7 +1798,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
 					<textField isStretchWithOverflow="true">
-						<reportElement stretchType="ElementGroupBottom" x="0" y="0" width="555" height="35" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
+						<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="35" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						</reportElement>
 						<box padding="2">

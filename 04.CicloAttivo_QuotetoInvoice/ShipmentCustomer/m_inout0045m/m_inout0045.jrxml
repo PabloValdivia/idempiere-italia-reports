@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports5.1.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DDT" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75fe2fe9-b984-4ca9-8696-8bc3bc03080e">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -13,7 +13,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
 	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -32,7 +32,7 @@
 		</box>
 		<paragraph lineSpacing="Single"/>
 	</style>
-	<style name="Crosstab Data Text" hTextAlign="Center" hImageAlign="Center">
+	<style name="Crosstab Data Text" hAlign="Center">
 		<paragraph lineSpacing="Single"/>
 	</style>
 	<style name="style1" markup="none"/>
@@ -594,7 +594,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</frame>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="265" y="63" width="290" height="134" uuid="7080a465-d514-42c4-a742-fde455a974e0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="265" y="63" width="290" height="134" uuid="7080a465-d514-42c4-a742-fde455a974e0">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -757,7 +757,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="265" y="197" width="290" height="119" forecolor="#999999" backcolor="#DFDFDF" uuid="39518268-5ed9-49a4-9354-99d3035ae8f4">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="265" y="197" width="290" height="119" forecolor="#999999" backcolor="#DFDFDF" uuid="39518268-5ed9-49a4-9354-99d3035ae8f4">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box padding="0">
@@ -1012,7 +1012,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</frame>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="265" y="63" width="290" height="134" uuid="d2363332-b7cf-472f-a556-6d495c898087">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="265" y="63" width="290" height="134" uuid="d2363332-b7cf-472f-a556-6d495c898087">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -1175,7 +1175,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="265" y="197" width="290" height="119" forecolor="#999999" backcolor="#DFDFDF" uuid="d45445b9-3246-4f3c-a0b3-6fe95fe87f4b">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="265" y="197" width="290" height="119" forecolor="#999999" backcolor="#DFDFDF" uuid="d45445b9-3246-4f3c-a0b3-6fe95fe87f4b">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box padding="0">
@@ -1441,7 +1441,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 	<lastPageFooter>
 		<band height="252">
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="0" y="0" width="318" height="51" uuid="6af11342-2155-4679-90ad-01fc2ac6a8a2">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="0" y="0" width="318" height="51" uuid="6af11342-2155-4679-90ad-01fc2ac6a8a2">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 				</reportElement>
@@ -1449,7 +1449,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<pen lineWidth="0.5"/>
 				</box>
 				<subreport isUsingCache="false" runToBottom="false">
-					<reportElement positionType="Float" stretchType="ContainerHeight" x="0" y="0" width="318" height="51" isRemoveLineWhenBlank="true" uuid="82f3d119-c810-4342-b508-e5472e43b00a">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="318" height="51" isRemoveLineWhenBlank="true" uuid="82f3d119-c810-4342-b508-e5472e43b00a">
 						<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="SUBREPORT_DIR">
@@ -1479,7 +1479,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</subreport>
 			</frame>
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" mode="Opaque" x="318" y="0" width="237" height="51" backcolor="#FFCC00" uuid="77f60ee5-7b5a-40ba-acf2-c8c6c7b4a16f">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" mode="Opaque" x="318" y="0" width="237" height="51" backcolor="#FFCC00" uuid="77f60ee5-7b5a-40ba-acf2-c8c6c7b4a16f">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 				</reportElement>
@@ -1491,7 +1491,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
 					<staticText>
-						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="119" height="26" isRemoveLineWhenBlank="true" uuid="cf0c14e5-52d0-4afb-9196-dd264b34336c"/>
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="119" height="26" isRemoveLineWhenBlank="true" uuid="cf0c14e5-52d0-4afb-9196-dd264b34336c"/>
 						<box padding="2">
 							<bottomPen lineWidth="0.5"/>
 						</box>
@@ -1499,7 +1499,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<text><![CDATA[TOTALE IMPONIBILE:]]></text>
 					</staticText>
 					<staticText>
-						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="26" width="119" height="25" isRemoveLineWhenBlank="true" forecolor="#0000FF" uuid="90a19b4c-97b6-4994-8a7c-294a1509fd29"/>
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="26" width="119" height="25" isRemoveLineWhenBlank="true" forecolor="#0000FF" uuid="90a19b4c-97b6-4994-8a7c-294a1509fd29"/>
 						<box padding="2"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
 							<font size="10" isBold="true"/>
@@ -1512,7 +1512,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
 					<textField pattern="¤#,##0.00;¤-#,##0.00">
-						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="118" height="26" isRemoveLineWhenBlank="true" uuid="d19bc82c-5d2a-482f-9d1d-8566fa4aa47e">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="118" height="26" isRemoveLineWhenBlank="true" uuid="d19bc82c-5d2a-482f-9d1d-8566fa4aa47e">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 						</reportElement>
 						<box>
@@ -1524,7 +1524,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<textFieldExpression><![CDATA[$V{ddtlineamt1}]]></textFieldExpression>
 					</textField>
 					<textField evaluationTime="Report" pattern="¤#,##0.00;¤-#,##0.00">
-						<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="26" width="118" height="25" isRemoveLineWhenBlank="true" forecolor="#0000FF" uuid="b4b07b6d-dbfa-435a-a41f-8ae66e17143e">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="26" width="118" height="25" isRemoveLineWhenBlank="true" forecolor="#0000FF" uuid="b4b07b6d-dbfa-435a-a41f-8ae66e17143e">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="cm"/>
 						</reportElement>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
@@ -1536,7 +1536,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</frame>
 			</frame>
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="0" y="51" width="318" height="57" uuid="b97059c9-6448-4748-afd3-bb8a5acda5f2">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="0" y="51" width="318" height="57" uuid="b97059c9-6448-4748-afd3-bb8a5acda5f2">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
@@ -1547,7 +1547,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Transparent" x="0" y="0" width="318" height="15" isRemoveLineWhenBlank="true" backcolor="#EDEDED" uuid="2d77aad9-b70c-4ecb-9c7a-672bcd7bbf11">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="0" width="318" height="15" isRemoveLineWhenBlank="true" backcolor="#EDEDED" uuid="2d77aad9-b70c-4ecb-9c7a-672bcd7bbf11">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -1564,7 +1564,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[VETTORE]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Transparent" x="0" y="15" width="318" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="014265fe-4b2c-4353-afb9-5dfd1aca8224">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="15" width="318" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="014265fe-4b2c-4353-afb9-5dfd1aca8224">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -1579,7 +1579,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{m_shipper_name}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Transparent" x="0" y="29" width="318" height="14" isRemoveLineWhenBlank="true" uuid="652f8838-cc28-4a27-839a-aa119ed87cef">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="29" width="318" height="14" isRemoveLineWhenBlank="true" uuid="652f8838-cc28-4a27-839a-aa119ed87cef">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -1594,7 +1594,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA[$F{c_location_b_address1}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Transparent" x="0" y="43" width="318" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="b7702dac-7d7a-420b-af66-4e8e46acb99b">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="43" width="318" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="b7702dac-7d7a-420b-af66-4e8e46acb99b">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -1611,14 +1611,14 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="318" y="51" width="237" height="38" uuid="c0be6f5f-5b6f-4c57-ba8c-b7eceba3e490">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="318" y="51" width="237" height="38" uuid="c0be6f5f-5b6f-4c57-ba8c-b7eceba3e490">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="0" y="0" width="237" height="19" isRemoveLineWhenBlank="true" backcolor="#EDEDED" uuid="c410f377-f758-43d3-9308-a2bcc0f0c6df"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="0" width="237" height="19" isRemoveLineWhenBlank="true" backcolor="#EDEDED" uuid="c410f377-f758-43d3-9308-a2bcc0f0c6df"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -1632,7 +1632,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[ASPETTO ESTERIORE DEI BENI]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Transparent" x="0" y="19" width="237" height="19" isRemoveLineWhenBlank="true" uuid="4001fe44-8d91-43b2-b201-f4d740831f95">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="19" width="237" height="19" isRemoveLineWhenBlank="true" uuid="4001fe44-8d91-43b2-b201-f4d740831f95">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
@@ -1645,11 +1645,11 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="318" y="89" width="237" height="19" uuid="36256295-d7cd-47f5-9d1f-cf92ff057d4c">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="318" y="89" width="237" height="19" uuid="36256295-d7cd-47f5-9d1f-cf92ff057d4c">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 				</reportElement>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Opaque" x="0" y="0" width="119" height="19" isRemoveLineWhenBlank="true" backcolor="#EDEDED" uuid="0d0d799c-cb15-4487-9079-fa6a3ae83f16"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Opaque" x="0" y="0" width="119" height="19" isRemoveLineWhenBlank="true" backcolor="#EDEDED" uuid="0d0d799c-cb15-4487-9079-fa6a3ae83f16"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -1663,7 +1663,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[NUMERO COLLI]]></text>
 				</staticText>
 				<textField isBlankWhenNull="true">
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" mode="Transparent" x="119" y="0" width="118" height="19" isRemoveLineWhenBlank="true" uuid="dd860412-cf82-485e-afc2-fe73133d0c4f"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="119" y="0" width="118" height="19" isRemoveLineWhenBlank="true" uuid="dd860412-cf82-485e-afc2-fe73133d0c4f"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
@@ -1678,12 +1678,12 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="0" y="108" width="555" height="34" uuid="fb6e30e5-ab10-4e0a-b5cd-29d31180b1fb">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="0" y="108" width="555" height="34" uuid="fb6e30e5-ab10-4e0a-b5cd-29d31180b1fb">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<property name="ShowOutOfBoundContent" value="true"/>
 				</reportElement>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="d04789ab-8e79-4b4a-8f09-3290dbc33442"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="d04789ab-8e79-4b4a-8f09-3290dbc33442"/>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
@@ -1693,7 +1693,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[IMBALLAGGI A RENDERE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="111" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="cc87e182-0525-4834-8742-7de00cb5f4f9"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="111" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="cc87e182-0525-4834-8742-7de00cb5f4f9"/>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
@@ -1703,7 +1703,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[INVIATI]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="222" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="460b69c7-4809-4904-b3fb-a91b754378e7"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="222" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="460b69c7-4809-4904-b3fb-a91b754378e7"/>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
@@ -1713,7 +1713,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[RESTITUITI]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="333" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="73ff106b-ebed-4eca-a52c-3e18b098139e"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="333" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="73ff106b-ebed-4eca-a52c-3e18b098139e"/>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
@@ -1723,7 +1723,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[SALDO]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="444" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="569a1c7c-15f6-4e54-b86e-3bc485093f3e"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="444" y="0" width="111" height="34" isRemoveLineWhenBlank="true" uuid="569a1c7c-15f6-4e54-b86e-3bc485093f3e"/>
 					<box>
 						<pen lineWidth="0.5"/>
 					</box>
@@ -1734,14 +1734,14 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="0" y="142" width="555" height="40" uuid="de750590-5575-4092-813e-9fa0b2df3a97">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="0" y="142" width="555" height="40" uuid="de750590-5575-4092-813e-9fa0b2df3a97">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="185" height="40" isRemoveLineWhenBlank="true" uuid="4e61414a-ff88-4ff9-bd67-04dea96bc0bb"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="185" height="40" isRemoveLineWhenBlank="true" uuid="4e61414a-ff88-4ff9-bd67-04dea96bc0bb"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1755,7 +1755,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[   FIRMA DEL CONDUCENTE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="185" y="0" width="185" height="40" isRemoveLineWhenBlank="true" uuid="0082c414-3f52-4820-a290-4685d669e869"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="185" y="0" width="185" height="40" isRemoveLineWhenBlank="true" uuid="0082c414-3f52-4820-a290-4685d669e869"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1769,7 +1769,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[   FIRMA DEL VETTORE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="370" y="0" width="185" height="40" isRemoveLineWhenBlank="true" uuid="fcb9a0eb-f203-4447-b80b-d3c8dabfbaef"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="370" y="0" width="185" height="40" isRemoveLineWhenBlank="true" uuid="fcb9a0eb-f203-4447-b80b-d3c8dabfbaef"/>
 					<box>
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1784,11 +1784,11 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</staticText>
 			</frame>
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="ContainerBottom" x="0" y="182" width="555" height="70" uuid="6ce32160-b545-4383-b728-8f7e4a677fe0">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" x="0" y="182" width="555" height="70" uuid="6ce32160-b545-4383-b728-8f7e4a677fe0">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
 				<staticText>
-					<reportElement positionType="Float" stretchType="ElementGroupBottom" x="0" y="0" width="555" height="70" isRemoveLineWhenBlank="true" uuid="212b995e-fe2c-4d05-8d07-782490eecbde"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="70" isRemoveLineWhenBlank="true" uuid="212b995e-fe2c-4d05-8d07-782490eecbde"/>
 					<textElement textAlignment="Justified" verticalAlignment="Top">
 						<font size="8"/>
 					</textElement>

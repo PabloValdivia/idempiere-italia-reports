@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports5.1.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="offerta" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6753fbd-fd71-4b38-a8f0-f778b245f3bf">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
@@ -863,7 +863,7 @@ ORDER BY
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="65" width="295" height="133" uuid="62a5fb87-0199-42e8-8197-ab328653fc9c">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="260" y="65" width="295" height="133" uuid="62a5fb87-0199-42e8-8197-ab328653fc9c">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -960,7 +960,7 @@ ORDER BY
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="260" y="198" width="295" height="132" forecolor="#999999" backcolor="#DFDFDF" uuid="4acb3eee-bb36-4eaf-9af6-2fa7ef2dab9a">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="260" y="198" width="295" height="132" forecolor="#999999" backcolor="#DFDFDF" uuid="4acb3eee-bb36-4eaf-9af6-2fa7ef2dab9a">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box padding="0">
@@ -1220,7 +1220,7 @@ ORDER BY
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="260" y="65" width="295" height="133" uuid="2820be37-cdb9-4490-9356-0ab1f94fa4a1">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="260" y="65" width="295" height="133" uuid="2820be37-cdb9-4490-9356-0ab1f94fa4a1">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -1317,7 +1317,7 @@ ORDER BY
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" mode="Transparent" x="260" y="198" width="295" height="132" forecolor="#999999" backcolor="#DFDFDF" uuid="171ce0e3-c990-4f4c-b7fc-209e3059d13e">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="260" y="198" width="295" height="132" forecolor="#999999" backcolor="#DFDFDF" uuid="171ce0e3-c990-4f4c-b7fc-209e3059d13e">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box padding="0">
