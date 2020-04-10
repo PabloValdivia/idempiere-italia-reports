@@ -133,6 +133,7 @@ SELECT ad_image.binarydata AS ad_image_binarydata,
     c_order.documentno AS c_order_documentno,
     c_order.poreference AS c_order_poreference,
     c_order.totallines AS c_order_totallines,
+    c_order.discount AS c_order_discount,
     c_order.grandtotal AS c_order_grandtotal,
     c_order.grandtotal * (c_paymentterm.discount / 100::numeric) AS c_order_netdiscount,
     c_order.grandtotal * (1::numeric - c_paymentterm.discount / 100::numeric) AS totalnetdiscount,
@@ -480,6 +481,9 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 		<property name="com.jaspersoft.studio.field.label" value="c_order_totallines"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="c_order"/>
 	</field>
+	<field name="c_order_discount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_discount"/>
+	</field>
 	<field name="c_order_grandtotal" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_order_grandtotal"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="c_order"/>
@@ -512,7 +516,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement positionType="Float" mode="Opaque" x="0" y="63" width="265" height="66" backcolor="#FFFF00" uuid="608ae32e-e0dc-43ad-a495-f08140ca4313"/>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="63" width="265" height="66" backcolor="#FFFFCC" uuid="608ae32e-e0dc-43ad-a495-f08140ca4313"/>
 				<box padding="0">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -907,7 +911,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement positionType="Float" mode="Opaque" x="0" y="63" width="265" height="66" backcolor="#FFFF00" uuid="7553384e-024a-4011-bb5d-00c1c249e75f"/>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="63" width="265" height="66" backcolor="#FFFFCC" uuid="7553384e-024a-4011-bb5d-00c1c249e75f"/>
 				<box padding="0">
 					<pen lineWidth="0.5"/>
 					<topPen lineWidth="0.5"/>
@@ -1345,7 +1349,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<subreport overflowType="Stretch">
-					<reportElement positionType="Float" x="0" y="0" width="555" height="15" uuid="065df36e-4668-4a94-b051-41913c5bbcbf">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="15" uuid="065df36e-4668-4a94-b051-41913c5bbcbf">
 						<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="SUBREPORT_DIR">
@@ -1433,7 +1437,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</subreport>
 			</frame>
 			<frame>
-				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" mode="Opaque" x="318" y="0" width="237" height="51" backcolor="#FFFF00" uuid="77f60ee5-7b5a-40ba-acf2-c8c6c7b4a16f">
+				<reportElement positionType="FixRelativeToBottom" stretchType="RelativeToBandHeight" mode="Opaque" x="318" y="0" width="237" height="51" backcolor="#FFFFCC" uuid="77f60ee5-7b5a-40ba-acf2-c8c6c7b4a16f">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 				</reportElement>
