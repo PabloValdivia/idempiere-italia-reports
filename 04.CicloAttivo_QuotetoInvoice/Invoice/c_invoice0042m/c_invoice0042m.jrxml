@@ -4,7 +4,6 @@
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="479"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="164"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="831"/>
@@ -19,6 +18,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -332,59 +332,12 @@ WHERE
 	</field>
 	<field name="c_bank_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
 	</field>
 	<field name="c_bank_routingno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_routingno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
 	</field>
 	<field name="c_bank_swiftcode" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bank_swiftcode"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bankaccount_accountno" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_accountno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bankaccount_name" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bankaccount_description" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_description"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bankaccount_iban" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_iban"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bp_bankaccount_banknamebp" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bp_bankaccount_banknamebp"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bp_bankaccount_iban" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bp_bankaccount_iban"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bp_bankaccount_isach" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bp_bankaccount_isach"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bank_bp_name" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bank_bp_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bank__bp_routingno" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bank__bp_routingno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bank_bp_swiftcode" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bank_bp_swiftcode"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
-	</field>
-	<field name="c_bankaccount_bp_iban" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_bp_iban"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
 	</field>
 	<field name="c_doctype_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_doctype_name"/>
@@ -449,6 +402,12 @@ WHERE
 	<field name="c_invoice_c_bankaccount_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_invoice_c_bankaccount_id"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_c_invoice_v1"/>
+	</field>
+	<field name="c_bankaccount_banca" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_banca"/>
+	</field>
+	<field name="c_bankaccount_iban" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_iban"/>
 	</field>
 	<field name="m_product_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_name"/>
@@ -550,11 +509,15 @@ WHERE
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="64" width="260" height="80" backcolor="#A8EB6E" uuid="90ae2723-1ca6-4fa4-9277-96f6a37054de">
+				<reportElement mode="Opaque" x="0" y="64" width="260" height="80" backcolor="#EFFFE3" uuid="90ae2723-1ca6-4fa4-9277-96f6a37054de">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textField>
 					<reportElement x="0" y="0" width="260" height="19" forecolor="#0022FF" uuid="a5ff943f-8e9a-473c-8f9f-bbac0c1c7653"/>
@@ -643,7 +606,7 @@ WHERE
 					<pen lineWidth="0.5" lineStyle="Solid"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="19" forecolor="#081080" backcolor="#BFBFBF" uuid="bc094150-b3e5-4a42-aad5-faee6705aac2"/>
+					<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="295" height="19" forecolor="#081080" backcolor="#EBEBEB" uuid="bc094150-b3e5-4a42-aad5-faee6705aac2"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
@@ -758,117 +721,6 @@ WHERE
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="0" y="200" width="260" height="62" isRemoveLineWhenBlank="true" uuid="604d6531-5a62-45ae-81f1-2852862e02b9"/>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<staticText>
-					<reportElement mode="Opaque" x="0" y="0" width="260" height="20" isRemoveLineWhenBlank="true" backcolor="#C9C9C9" uuid="7a3620b6-2cb9-4cd5-86b9-2ac1c48034b0">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id} != null]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="10" isBold="true"/>
-					</textElement>
-					<text><![CDATA[COORDINATE BANCARIE]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="c1c750a1-7e13-428d-88fc-26560ec51939">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000000]]></printWhenExpression>
-					</reportElement>
-					<box topPadding="3" leftPadding="3">
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: MONTE DEI PASCHI DI SIENA S.p.A. 
-IBAN: IT 87 N 01030 82490 000063277929
-BIC: PASCITM1ME4]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a89b8d67-63de-4009-aecd-e4a18dd84fef">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000007]]></printWhenExpression>
-					</reportElement>
-					<box topPadding="3" leftPadding="3">
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: BPM
-IBAN: IT 77 S 05034 82670 000000 704704
-BIC: BAPPIT21P66]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="2a1a330d-109c-4a69-8be0-4ee4311b90e0">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000012]]></printWhenExpression>
-					</reportElement>
-					<box topPadding="3" leftPadding="3">
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
-IBAN: IT 97 Y 03205 02000 000000000070]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="47ef3aea-9ddb-40d8-8f55-56b4291eea38">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000003]]></printWhenExpression>
-					</reportElement>
-					<box topPadding="3" leftPadding="3">
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: BANCA BPER S.p.A.
-IBAN: IT 47 Q 05387 16900 000002397825]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a0742acf-370c-48cc-95d1-81b61c7fb247">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000008]]></printWhenExpression>
-					</reportElement>
-					<box topPadding="3" leftPadding="3">
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
-IBAN: IT 81 Y 03205 04600 000002220086]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="e771752b-21e8-493a-a248-2578c7736573">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000016]]></printWhenExpression>
-					</reportElement>
-					<box topPadding="3" leftPadding="3">
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: UNICREDIT S.p.A.
-IBAN: IT 22 E 02008 82620 000103213822]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="3bdad98c-3e5c-4215-8083-faed17ed1cbf">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000001]]></printWhenExpression>
-					</reportElement>
-					<box topPadding="3" leftPadding="3">
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: UNICREDIT S.p.A.
-IBAN: IT 33 S 02008 82620 000103213759]]></text>
-				</staticText>
-			</frame>
-			<frame>
 				<reportElement x="260" y="200" width="295" height="62" uuid="e652e253-d861-4f91-a6ed-3d06a14051a4">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
@@ -896,6 +748,56 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 						<font fontName="DejaVu Serif Condensed" size="7"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<frame>
+				<reportElement x="0" y="200" width="260" height="62" isRemoveLineWhenBlank="true" uuid="604d6531-5a62-45ae-81f1-2852862e02b9">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}!=null]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FF0400"/>
+				</box>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="260" height="17" forecolor="#0000CC" backcolor="#EBEBEB" uuid="4c14f32d-41d1-4da5-bd46-93211ff05796"/>
+					<box>
+						<pen lineWidth="0.5" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="San Serif" isBold="true"/>
+					</textElement>
+					<text><![CDATA[COORDINATE BANCARIE]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="17" width="260" height="15" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="943c02a2-2ab4-4fb2-b849-ce338df315e8">
+						<printWhenExpression><![CDATA[$F{c_bank_name} !=null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["BANCA: " +$F{c_bank_name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="32" width="260" height="15" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="fe53fcfd-b2cc-4fff-833b-d1ccc20f4920">
+						<printWhenExpression><![CDATA[$F{c_bankaccount_iban}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["IBAN: " + $F{c_bankaccount_iban}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="0" y="47" width="260" height="15" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="48719d54-897b-470f-9393-94dcabf6e179">
+						<printWhenExpression><![CDATA[$F{c_bank_swiftcode}!=null]]></printWhenExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font fontName="SansSerif" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["SWIFT: "+$F{c_bank_swiftcode}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -930,7 +832,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{c_invoice_note}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="0" y="39" width="555" height="13" uuid="41062fe5-0b03-4fdb-b1e2-02adb9e023f7">
+					<reportElement x="0" y="39" width="555" height="13" isRemoveLineWhenBlank="true" uuid="41062fe5-0b03-4fdb-b1e2-02adb9e023f7">
 						<printWhenExpression><![CDATA[$F{bp_letterintentnrletter}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
@@ -942,18 +844,22 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="262">
+		<band height="200">
 			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > (1)]]></printWhenExpression>
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
 				<reportElement x="0" y="0" width="555" height="63" uuid="2702991c-dff0-4a1f-94e4-9ec7376de7eb"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
 			</image>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="64" width="260" height="80" backcolor="#A8EB6E" uuid="1aeaa5a1-ef3f-4e02-bfcc-c46e3a0a66dc">
+				<reportElement mode="Opaque" x="0" y="64" width="260" height="80" backcolor="#EFFFE3" uuid="1aeaa5a1-ef3f-4e02-bfcc-c46e3a0a66dc">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
 				</box>
 				<textField>
 					<reportElement x="0" y="0" width="260" height="19" forecolor="#0022FF" uuid="39ea3cb0-2aa5-45a5-a0c7-b64d34233812"/>
@@ -1156,154 +1062,13 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}.toUpperCase()]]></textFieldExpression>
 				</textField>
 			</frame>
-			<frame>
-				<reportElement x="0" y="200" width="260" height="62" isRemoveLineWhenBlank="true" uuid="b81cce50-22c0-4287-a68c-598b92b1e79a"/>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<staticText>
-					<reportElement mode="Opaque" x="0" y="0" width="260" height="20" isRemoveLineWhenBlank="true" backcolor="#C9C9C9" uuid="babb1e62-8466-48df-807d-508aa2b9b063">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id} != null]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="10" isBold="true"/>
-					</textElement>
-					<text><![CDATA[COORDINATE BANCARIE]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="83f572be-6a83-427d-b01f-41965d6d16c0">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000000]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: MONTE DEI PASCHI DI SIENA S.p.A. 
-IBAN: IT 87 N 01030 82490 000063277929
-BIC: PASCITM1ME4]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="4bb1953d-692a-4398-acff-007ccbe98529">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000007]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: BPM
-IBAN: IT 77 S 05034 82670 000000 704704
-BIC: BAPPIT21P66]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="a10dc64a-879b-4db5-9572-57d49eb5bc8c">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000012]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
-IBAN: IT 97 Y 03205 02000 000000000070]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="aacbe13f-567f-43cb-bc60-ea360144d6a8">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000003]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: BANCA BPER S.p.A.
-IBAN: IT 47 Q 05387 16900 000002397825]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="91cf65a2-045d-4f66-939a-75856fac647c">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000008]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: BANCA IFIS S.p.A.
-IBAN: IT 81 Y 03205 04600 000002220086]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="795ff11b-0b2c-40d6-ba26-d8181bbef25a">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==1000016]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: UNICREDIT S.p.A.
-IBAN: IT 22 E 02008 82620 000103213822]]></text>
-				</staticText>
-				<staticText>
-					<reportElement style="table" x="0" y="20" width="260" height="42" isRemoveLineWhenBlank="true" forecolor="#003CF0" uuid="0a128baf-1cd0-4717-b4dd-4f743b33d7d4">
-						<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}.intValue()==10000001]]></printWhenExpression>
-					</reportElement>
-					<box>
-						<pen lineWidth="0.5" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Top">
-						<font fontName="SansSerif" size="8" isBold="true"/>
-					</textElement>
-					<text><![CDATA[BANCA: UNICREDIT S.p.A.
-IBAN: IT 33 S 02008 82620 000103213759]]></text>
-				</staticText>
-			</frame>
-			<frame>
-				<reportElement x="260" y="200" width="295" height="62" uuid="a9106cc8-67c2-4fd9-b2fe-fc1c7675274e">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-				</reportElement>
-				<box>
-					<pen lineWidth="0.5"/>
-				</box>
-				<staticText>
-					<reportElement x="0" y="0" width="295" height="20" forecolor="#0000FF" uuid="2c308344-3817-4fe6-a144-d14af2bb8339"/>
-					<box>
-						<pen lineWidth="2.0" lineStyle="Dashed" lineColor="#FF9900"/>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="13" isBold="true"/>
-					</textElement>
-					<text><![CDATA[COPIA DI CORTESIA]]></text>
-				</staticText>
-				<textField>
-					<reportElement x="0" y="20" width="295" height="42" forecolor="#0000FF" uuid="d40d6592-8666-4892-9925-0c583256aea8"/>
-					<box padding="2"/>
-					<textElement textAlignment="Justified" verticalAlignment="Middle">
-						<font fontName="DejaVu Serif Condensed" size="7"/>
-					</textElement>
-					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
-				</textField>
-			</frame>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="17">
+		<band height="13">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<frame>
-				<reportElement x="0" y="0" width="555" height="17" uuid="154db630-4e85-4eb6-9140-83349c7649b2">
+				<reportElement x="0" y="0" width="555" height="13" uuid="154db630-4e85-4eb6-9140-83349c7649b2">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 				</reportElement>
 				<box>
@@ -1314,7 +1079,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement mode="Opaque" x="80" y="0" width="220" height="17" backcolor="#A8EB6E" uuid="0d45999c-f961-4356-9d79-2d80e058a718">
+					<reportElement mode="Opaque" x="80" y="0" width="220" height="13" backcolor="#A8EB6E" uuid="0d45999c-f961-4356-9d79-2d80e058a718">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 					</reportElement>
 					<box>
@@ -1329,7 +1094,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[DESCIZIONE DETTAGLIATA DEI BENI]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="300" y="0" width="30" height="17" backcolor="#A8EB6E" uuid="366c00f5-22ad-4faf-81bf-f0ef4de840b4">
+					<reportElement mode="Opaque" x="300" y="0" width="30" height="13" backcolor="#A8EB6E" uuid="366c00f5-22ad-4faf-81bf-f0ef4de840b4">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
@@ -1344,7 +1109,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[U.M.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="330" y="0" width="38" height="17" backcolor="#A8EB6E" uuid="1e45b5eb-3b3c-4edf-863b-59713c3275ed">
+					<reportElement mode="Opaque" x="330" y="0" width="38" height="13" backcolor="#A8EB6E" uuid="1e45b5eb-3b3c-4edf-863b-59713c3275ed">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 					</reportElement>
 					<box>
@@ -1359,7 +1124,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[Q.TA']]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="462" y="0" width="70" height="17" backcolor="#A8EB6E" uuid="0070bce4-dcb3-404c-9cb0-a1fd2369f439">
+					<reportElement mode="Opaque" x="462" y="0" width="70" height="13" backcolor="#A8EB6E" uuid="0070bce4-dcb3-404c-9cb0-a1fd2369f439">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -1375,7 +1140,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[TOTALE]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="532" y="0" width="23" height="17" backcolor="#A8EB6E" uuid="3f9b3cf5-73ac-4068-b1d8-9d5058e89f21">
+					<reportElement mode="Opaque" x="532" y="0" width="23" height="13" backcolor="#A8EB6E" uuid="3f9b3cf5-73ac-4068-b1d8-9d5058e89f21">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 					</reportElement>
 					<box>
@@ -1390,7 +1155,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[C.I.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="0" y="0" width="80" height="17" backcolor="#A8EB6E" uuid="afe23ffd-3b9b-4e1e-bb20-3d43a68008a4">
+					<reportElement mode="Opaque" x="0" y="0" width="80" height="13" backcolor="#A8EB6E" uuid="afe23ffd-3b9b-4e1e-bb20-3d43a68008a4">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 					</reportElement>
 					<box>
@@ -1405,7 +1170,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[COD. ART.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="438" y="0" width="24" height="17" backcolor="#A8EB6E" uuid="af994b40-89eb-42ad-983d-ce7fd6ecd2ac">
+					<reportElement mode="Opaque" x="438" y="0" width="24" height="13" backcolor="#A8EB6E" uuid="af994b40-89eb-42ad-983d-ce7fd6ecd2ac">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e477dd3-9937-4bbd-aad3-81de4a67bda5"/>
 					</reportElement>
 					<box>
@@ -1420,7 +1185,7 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					<text><![CDATA[SC %]]></text>
 				</staticText>
 				<staticText>
-					<reportElement mode="Opaque" x="368" y="0" width="70" height="17" backcolor="#A8EB6E" uuid="482261af-0579-4d06-9f56-0b24bdc20379">
+					<reportElement mode="Opaque" x="368" y="0" width="70" height="13" backcolor="#A8EB6E" uuid="482261af-0579-4d06-9f56-0b24bdc20379">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbb90318-0673-4966-beef-2d35743c2496"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
@@ -1743,11 +1508,15 @@ IBAN: IT 33 S 02008 82620 000103213759]]></text>
 					</subreport>
 				</frame>
 				<frame>
-					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="380" y="0" width="175" height="60" backcolor="#A8EB6E" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
+					<reportElement stretchType="RelativeToTallestObject" mode="Opaque" x="380" y="0" width="175" height="60" backcolor="#EFFFE3" uuid="d22451df-d9bf-425a-ad01-f04c0ac1f07d">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
 					<box>
 						<pen lineWidth="0.5"/>
+						<topPen lineWidth="0.5"/>
+						<leftPen lineWidth="0.5"/>
+						<bottomPen lineWidth="0.5"/>
+						<rightPen lineWidth="0.5"/>
 					</box>
 					<staticText>
 						<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="175" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
