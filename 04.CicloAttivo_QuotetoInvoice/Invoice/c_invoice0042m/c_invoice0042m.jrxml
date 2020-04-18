@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports5.1.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="14" bottomMargin="10" uuid="b6e7cc4b-3786-4fed-87f2-9d03f79344e3">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="14" bottomMargin="10" isSummaryWithPageHeaderAndFooter="true" uuid="b6e7cc4b-3786-4fed-87f2-9d03f79344e3">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="479"/>
@@ -503,7 +503,7 @@ WHERE
 		<variableExpression><![CDATA[$F{c_invoiceline_discount}]]></variableExpression>
 	</variable>
 	<title>
-		<band height="314" splitType="Stretch">
+		<band height="320" splitType="Stretch">
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
 				<reportElement x="0" y="0" width="555" height="63" uuid="993d5ca8-bc92-4e15-b6b3-8109207e9255"/>
 				<imageExpression><![CDATA[$F{ad_image_a_binarydata}]]></imageExpression>
@@ -705,7 +705,7 @@ WHERE
 				</box>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="260" height="28" uuid="f5586c04-5a6e-4a4b-b907-ff77f34e8fd7"/>
-					<box leftPadding="5"/>
+					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
@@ -713,7 +713,7 @@ WHERE
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="28" width="260" height="28" uuid="bd0eeee2-8a69-42d9-a150-392d3e6d576a"/>
-					<box leftPadding="5"/>
+					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
@@ -721,14 +721,14 @@ WHERE
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="260" y="200" width="295" height="62" uuid="e652e253-d861-4f91-a6ed-3d06a14051a4">
-					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+				<reportElement x="260" y="200" width="295" height="50" uuid="e652e253-d861-4f91-a6ed-3d06a14051a4">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement x="0" y="0" width="295" height="20" forecolor="#0000FF" uuid="8c249249-121f-4c8b-bd17-7af8b08dda55"/>
+					<reportElement x="0" y="0" width="295" height="25" forecolor="#0000FF" uuid="8c249249-121f-4c8b-bd17-7af8b08dda55"/>
 					<box>
 						<pen lineWidth="2.0" lineStyle="Dashed" lineColor="#FF9900"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -742,7 +742,7 @@ WHERE
 					<text><![CDATA[COPIA DI CORTESIA]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="0" y="20" width="295" height="42" forecolor="#0000FF" uuid="10f927f7-49ee-4755-bb11-ab05f635649a"/>
+					<reportElement x="0" y="25" width="295" height="25" forecolor="#0000FF" uuid="10f927f7-49ee-4755-bb11-ab05f635649a"/>
 					<box padding="2"/>
 					<textElement textAlignment="Justified" verticalAlignment="Middle">
 						<font fontName="DejaVu Serif Condensed" size="7"/>
@@ -751,7 +751,7 @@ WHERE
 				</textField>
 			</frame>
 			<frame>
-				<reportElement x="0" y="200" width="260" height="62" isRemoveLineWhenBlank="true" uuid="604d6531-5a62-45ae-81f1-2852862e02b9">
+				<reportElement x="0" y="200" width="260" height="50" isRemoveLineWhenBlank="true" uuid="604d6531-5a62-45ae-81f1-2852862e02b9">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					<printWhenExpression><![CDATA[$F{c_invoice_c_bankaccount_id}!=null]]></printWhenExpression>
 				</reportElement>
@@ -759,7 +759,7 @@ WHERE
 					<pen lineWidth="0.5" lineStyle="Solid" lineColor="#FF0400"/>
 				</box>
 				<staticText>
-					<reportElement mode="Opaque" x="0" y="0" width="260" height="17" forecolor="#0000CC" backcolor="#EBEBEB" uuid="4c14f32d-41d1-4da5-bd46-93211ff05796"/>
+					<reportElement mode="Opaque" x="0" y="0" width="260" height="14" isRemoveLineWhenBlank="true" forecolor="#0000CC" backcolor="#EBEBEB" uuid="4c14f32d-41d1-4da5-bd46-93211ff05796"/>
 					<box>
 						<pen lineWidth="0.5" lineColor="#000000"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -773,35 +773,41 @@ WHERE
 					<text><![CDATA[COORDINATE BANCARIE]]></text>
 				</staticText>
 				<textField>
-					<reportElement x="0" y="17" width="260" height="15" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="943c02a2-2ab4-4fb2-b849-ce338df315e8">
+					<reportElement x="0" y="14" width="260" height="12" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="943c02a2-2ab4-4fb2-b849-ce338df315e8">
 						<printWhenExpression><![CDATA[$F{c_bank_name} !=null]]></printWhenExpression>
 					</reportElement>
+					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif" size="8" isBold="true"/>
+						<paragraph leftIndent="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA["BANCA: " +$F{c_bank_name}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="0" y="32" width="260" height="15" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="fe53fcfd-b2cc-4fff-833b-d1ccc20f4920">
+					<reportElement x="0" y="26" width="260" height="12" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="fe53fcfd-b2cc-4fff-833b-d1ccc20f4920">
 						<printWhenExpression><![CDATA[$F{c_bankaccount_iban}!=null]]></printWhenExpression>
 					</reportElement>
+					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif" size="8" isBold="true"/>
+						<paragraph leftIndent="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA["IBAN: " + $F{c_bankaccount_iban}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="0" y="47" width="260" height="15" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="48719d54-897b-470f-9393-94dcabf6e179">
+					<reportElement x="0" y="38" width="260" height="12" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="48719d54-897b-470f-9393-94dcabf6e179">
 						<printWhenExpression><![CDATA[$F{c_bank_swiftcode}!=null]]></printWhenExpression>
 					</reportElement>
+					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
 						<font fontName="SansSerif" size="8" isBold="true"/>
+						<paragraph leftIndent="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA["SWIFT: "+$F{c_bank_swiftcode}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="262" width="555" height="52" isRemoveLineWhenBlank="true" uuid="6788eee0-1687-4205-ac5e-200ba0909574">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="250" width="555" height="52" isRemoveLineWhenBlank="true" uuid="6788eee0-1687-4205-ac5e-200ba0909574">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
@@ -841,10 +847,17 @@ WHERE
 					<textFieldExpression><![CDATA["LETTERA DI INTENTO N°: " + $F{bp_letterintentnrletter}+" "+"DEL: "+(new SimpleDateFormat("dd/MM/yyyy").format($F{bp_letterintentdateletter}))]]></textFieldExpression>
 				</textField>
 			</frame>
+			<textField isStretchWithOverflow="true" evaluationTime="Master">
+				<reportElement x="438" y="305" width="111" height="14" uuid="43d59647-d2ee-4c0e-b1d2-76cd2f6d7e59"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PAGINA "+$V{MASTER_CURRENT_PAGE}+ " DI "+$V{MASTER_TOTAL_PAGES}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="200">
+		<band height="220">
 			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} > (1)]]></printWhenExpression>
 			<image scaleImage="RetainShape" isUsingCache="true" onErrorType="Icon">
 				<reportElement x="0" y="0" width="555" height="63" uuid="2702991c-dff0-4a1f-94e4-9ec7376de7eb"/>
@@ -1062,6 +1075,13 @@ WHERE
 					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}.toUpperCase()]]></textFieldExpression>
 				</textField>
 			</frame>
+			<textField isStretchWithOverflow="true" evaluationTime="Master">
+				<reportElement x="442" y="204" width="110" height="14" uuid="bd7e18cd-9021-4050-b9b8-8d951afd815e"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PAGINA "+$V{MASTER_CURRENT_PAGE}+ " DI "+$V{MASTER_TOTAL_PAGES}]]></textFieldExpression>
+			</textField>
 		</band>
 	</pageHeader>
 	<columnHeader>
@@ -1217,11 +1237,11 @@ WHERE
 				<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="13" splitType="Stretch">
+		<band height="12" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<printWhenExpression><![CDATA[$F{c_invoiceline_name}!=null]]></printWhenExpression>
 			<frame>
-				<reportElement x="0" y="0" width="555" height="13" uuid="229edee9-8f18-4bd5-972e-940a17784bb9">
+				<reportElement x="0" y="0" width="555" height="12" uuid="229edee9-8f18-4bd5-972e-940a17784bb9">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_name}!= null]]></printWhenExpression>
 				</reportElement>
@@ -1232,7 +1252,7 @@ WHERE
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="0" y="0" width="80" height="13" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
+					<reportElement x="0" y="0" width="80" height="12" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 					</reportElement>
 					<box>
@@ -1247,7 +1267,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="80" y="0" width="220" height="13" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
+					<reportElement x="80" y="0" width="220" height="12" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 					</reportElement>
 					<box>
@@ -1262,7 +1282,7 @@ WHERE
 					<textFieldExpression><![CDATA[($F{c_invoiceline_name}!=null?$F{m_product_name}:$F{m_product_name}!=null?$F{m_product_name}:"")]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="300" y="0" width="30" height="13" uuid="771acd34-7ac4-41ae-9f87-691998a08a08">
+					<reportElement x="300" y="0" width="30" height="12" uuid="771acd34-7ac4-41ae-9f87-691998a08a08">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 					</reportElement>
 					<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0">
@@ -1277,7 +1297,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,###.###" isBlankWhenNull="true">
-					<reportElement x="330" y="0" width="38" height="13" uuid="6fa1fa7c-011d-4f88-90f1-36b09c7de943">
+					<reportElement x="330" y="0" width="38" height="12" uuid="6fa1fa7c-011d-4f88-90f1-36b09c7de943">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_qtyentered}.intValue()!=0]]></printWhenExpression>
 					</reportElement>
@@ -1293,7 +1313,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{c_invoiceline_qtyinvoiced}]]></textFieldExpression>
 				</textField>
 				<textField pattern="¤#,##0.000;¤-#,##0.000">
-					<reportElement x="368" y="0" width="70" height="13" uuid="b87ba9a1-a299-401f-8559-d0450409bcec">
+					<reportElement x="368" y="0" width="70" height="12" uuid="b87ba9a1-a299-401f-8559-d0450409bcec">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbb90318-0673-4966-beef-2d35743c2496"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_priceactual}.doubleValue() != 0.0]]></printWhenExpression>
@@ -1311,7 +1331,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{c_invoiceline_pricelist}.doubleValue()==0?$F{c_invoiceline_priceactual}:$F{c_invoiceline_pricelist}]]></textFieldExpression>
 				</textField>
 				<textField pattern="#,##0.0##">
-					<reportElement x="438" y="0" width="24" height="13" uuid="2814834e-6ec7-470c-b8dd-a3d187dbd0a7">
+					<reportElement x="438" y="0" width="24" height="12" uuid="2814834e-6ec7-470c-b8dd-a3d187dbd0a7">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e477dd3-9937-4bbd-aad3-81de4a67bda5"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_vdiscount}.doubleValue() != 0.0]]></printWhenExpression>
 					</reportElement>
@@ -1327,7 +1347,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{c_invoiceline_vdiscount}]]></textFieldExpression>
 				</textField>
 				<textField pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement x="462" y="0" width="70" height="13" uuid="e3dfc067-5ad9-47c7-934a-efbf82f57033">
+					<reportElement x="462" y="0" width="70" height="12" uuid="e3dfc067-5ad9-47c7-934a-efbf82f57033">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_invoiceline_linenetamt}.intValue()!=0]]></printWhenExpression>
@@ -1344,7 +1364,7 @@ WHERE
 					<textFieldExpression><![CDATA[$F{c_invoiceline_linenetamt}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
-					<reportElement x="532" y="0" width="23" height="13" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
+					<reportElement x="532" y="0" width="23" height="12" uuid="19fbce8c-f57b-4243-8029-686e7ab860b0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 					</reportElement>
 					<box>
@@ -1467,12 +1487,15 @@ WHERE
 			</frame>
 		</band>
 		<band height="2">
-			<line>
-				<reportElement x="0" y="1" width="555" height="1" uuid="a8bae708-5a5a-4b4d-a0d3-ee1182c14c59">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<printWhenExpression><![CDATA[$F{m_product_value}!= null]]></printWhenExpression>
-				</reportElement>
-			</line>
+			<frame>
+				<reportElement x="0" y="1" width="555" height="1" uuid="5f35adbf-12c6-47ea-9893-9495f8135bd5"/>
+				<line>
+					<reportElement x="0" y="0" width="555" height="1" uuid="a8bae708-5a5a-4b4d-a0d3-ee1182c14c59">
+						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<printWhenExpression><![CDATA[$F{m_product_value}!= null]]></printWhenExpression>
+					</reportElement>
+				</line>
+			</frame>
 		</band>
 	</detail>
 	<columnFooter>
