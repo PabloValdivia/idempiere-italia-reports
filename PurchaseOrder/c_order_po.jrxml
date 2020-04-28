@@ -1,0 +1,1344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports5.1.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_order_po" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isSummaryWithPageHeaderAndFooter="true" uuid="2e03aa4a-78f2-4014-adc8-1ab4143b4d6e">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="594"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="Detail" fontName="Arial" fontSize="12">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="Row" mode="Transparent">
+		<paragraph lineSpacing="Single"/>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3">
+				<paragraph lineSpacing="Single"/>
+			</style>
+		</conditionalStyle>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="46c7fbd6-04b9-4b9a-9109-0ec072e24632"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RECORD_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AD_USER_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="AD_ROLE_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="AD_CLIENT_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
+	<parameter name="AD_LANGUAGE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{AD_LANGUAGE}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[-- c_order
+SELECT
+     ad_image."binarydata" AS ad_image_binarydata,
+     c_bpartner."name" AS c_bpartner_name,
+     c_bpartner."taxid" AS c_bpartner_taxid,
+     c_currency."iso_code" AS c_currency_iso_code,
+     c_bpartner."value" AS c_bpartner_value,
+     m_product."name" AS m_product_name,
+     m_product."description" AS m_product_description,
+     m_product."help" AS m_product_help,
+     m_product."value" AS m_product_value,
+     c_location."address1" AS c_location_address1,
+     c_location."city" AS c_location_city,
+     c_location."postal" AS c_location_postal,
+     c_location."regionname" AS c_location_regionname,
+     c_bpartner_location."phone" AS c_bpartner_location_phone,
+     c_bpartner_location."fax" AS c_bpartner_location_fax,
+     c_order."c_order_id" AS c_order_c_order_id,
+     c_order."ad_client_id" AS c_order_ad_client_id,
+     c_order."documentno" AS c_order_documentno,
+     c_order."dateordered" AS c_order_dateordered,
+     c_orderline."description" AS c_orderline_description,
+     c_orderline."m_product_id" AS c_orderline_m_product_id,
+     c_orderline."linenetamt" AS c_orderline_linenetamt,
+     c_orderline."qtyentered" AS c_orderline_qtyentered,
+     c_order."datepromised" AS c_order_datepromised,
+     m_warehouse."name" AS m_warehouse_name,
+     c_location_A."city" AS c_location_A_city,
+     c_location_A."address1" AS c_location_A_address1,
+     c_location_A."postal" AS c_location_A_postal,
+     ad_client."name" AS ad_client_name,
+     ad_client."requestemail" AS ad_client_requestemail,
+     ad_user."name" AS ad_user_name,
+     c_paymentterm."value" AS c_paymentterm_value,
+     ad_ref_list_trl."name" AS c_order_deliveryrule,
+     ad_ref_list_trl_A."name" AS c_order_deliveryviarule,
+     ad_ref_list_trl_E."name" AS c_order_paymentrule,
+     c_orderline."discount" AS c_orderline_discount,
+     c_order."description" AS c_order_description,
+     c_doctype_trl."name" AS c_doctype_trl_name,
+     c_country_trl."name" AS c_country_trl_name,
+     c_country_trl_A."name" AS c_country_trl_A_name,
+     c_location_A."regionname" AS c_location_A_regionname,
+     c_bpartner_location."isbillto" AS c_bpartner_location_isbillto,
+     ad_org."description" AS ad_org_description,
+     ad_orginfo."email" AS ad_orginfo_email,
+     c_order."c_doctypetarget_id" AS c_order_c_doctypetarget_id,
+     c_tax."taxindicator" AS c_tax_taxindicator,
+     c_orderline."pricelist" AS c_orderline_pricelist,
+     c_uom_trl."uomsymbol" AS c_uom_trl_uomsymbol,
+     c_project."name" AS c_project_name,
+     c_orderline."name" AS c_orderline_name,
+     c_order."grandtotal" AS c_order_grandtotal,
+     lit_tables_A."description" AS c_order_lit_exclusion_id,
+     c_order."docstatus" AS c_order_docstatus,
+     c_doctype_trl."printname" AS c_doctype_trl_printname,
+     c_orderline."help" AS c_orderline_help,
+     c_bpartner."ad_language" AS ad_language,
+     c_bpartner_A."name" AS c_bpartner_A_name,
+     c_bpartner_location_A."fax" AS c_bpartner_location_A_fax,
+     c_location_B."address1" AS c_location_B_address1,
+     c_location_B."address2" AS c_location_B_address2,
+     c_location_B."city" AS c_location_B_city,
+     c_location_B."postal" AS c_location_B_postal,
+     c_location_B."regionname" AS c_location_B_regionname,
+     c_country_trl_B."name" AS c_country_trl_B_name,
+     c_order."isdropship" AS c_order_isdropship,
+     m_shipper."name" AS m_shipper_name,
+     lit_tables."name" AS lit_freightcost_name,
+     lit_c_bank_v."c_bank_name" AS c_bank_name,
+     lit_c_bank_v."c_bankaccount_accountno" AS c_bankaccount_accountno,
+     lit_c_bank_v."c_bankaccount_iban" AS c_bankaccount_iban,
+     lit_c_bank_v."c_bank_swiftcode" AS c_bank_swiftcode,
+     lit_c_bank_v."c_bankaccount_name" AS c_bankaccount_name,
+     c_order."title" AS c_order_title,
+     c_order."note" AS c_order_note,
+     c_project."value" AS c_project_value,
+     c_orderline."datepromised" AS c_orderline_datepromised,
+     m_product_po."vendorproductno" AS m_product_po_vendorproductno,
+     ad_orginfo."lit_report_param" AS ad_orginfo_lit_report_param
+FROM
+     "adempiere"."c_bpartner" c_bpartner LEFT OUTER JOIN "adempiere"."c_bpartner_location" c_bpartner_location ON c_bpartner."c_bpartner_id" = c_bpartner_location."c_bpartner_id"
+     RIGHT OUTER JOIN "adempiere"."c_order" c_order ON c_bpartner."c_bpartner_id" = c_order."c_bpartner_id"
+     LEFT OUTER JOIN "adempiere"."c_orderline" c_orderline ON c_order."c_order_id" = c_orderline."c_order_id"
+     LEFT OUTER JOIN "adempiere"."m_shipper" m_shipper ON c_order."m_shipper_id" = m_shipper."m_shipper_id"
+     LEFT OUTER JOIN "adempiere"."c_currency" c_currency ON c_order."c_currency_id" = c_currency."c_currency_id"
+     LEFT OUTER JOIN "adempiere"."m_warehouse" m_warehouse ON c_order."m_warehouse_id" = m_warehouse."m_warehouse_id"
+     LEFT OUTER JOIN "adempiere"."ad_client" ad_client ON c_order."ad_client_id" = ad_client."ad_client_id"
+     LEFT OUTER JOIN "adempiere"."ad_user" ad_user ON c_order."ad_user_id" = ad_user."ad_user_id"
+     LEFT OUTER JOIN "adempiere"."c_paymentterm" c_paymentterm ON c_order."c_paymentterm_id" = c_paymentterm."c_paymentterm_id"
+     LEFT OUTER JOIN "adempiere"."ad_ref_list" ad_ref_list ON c_order."deliveryrule" = ad_ref_list."value"
+     LEFT OUTER JOIN "adempiere"."ad_ref_list" ad_ref_list_A ON c_order."deliveryviarule" = ad_ref_list_A."value"
+     LEFT OUTER JOIN "adempiere"."ad_ref_list" ad_ref_list_E ON c_order."paymentrule" = ad_ref_list_E."value"
+     LEFT OUTER JOIN "adempiere"."ad_org" ad_org ON c_order."ad_org_id" = ad_org."ad_org_id"
+     LEFT OUTER JOIN "adempiere"."c_doctype_trl" c_doctype_trl ON c_order."c_doctypetarget_id" = c_doctype_trl."c_doctype_id"
+     LEFT OUTER JOIN "adempiere"."lit_tables" lit_tables ON c_order."lit_freightcost_id" = lit_tables."lit_tables_id"
+     LEFT OUTER JOIN "adempiere"."c_project" c_project ON c_order."c_project_id" = c_project."c_project_id"
+     LEFT OUTER JOIN "adempiere"."lit_tables" lit_tables_A ON c_order."lit_exclusion_id" = lit_tables_A."lit_tables_id"
+     LEFT OUTER JOIN "adempiere"."c_bpartner_location" c_bpartner_location_A ON c_order."dropship_location_id" = c_bpartner_location_A."c_bpartner_location_id"
+     LEFT OUTER JOIN "adempiere"."c_bpartner" c_bpartner_A ON c_order."dropship_bpartner_id" = c_bpartner_A."c_bpartner_id"
+     LEFT OUTER JOIN "adempiere"."lit_c_bank_v" lit_c_bank_v ON c_order."ad_client_id" = lit_c_bank_v."c_bank_ad_client_id"
+     AND lit_c_bank_v."c_bank_ad_org_id" = c_order."ad_org_id"
+     LEFT OUTER JOIN "adempiere"."c_location" c_location_B ON c_bpartner_location_A."c_location_id" = c_location_B."c_location_id"
+     LEFT OUTER JOIN "adempiere"."c_country_trl" c_country_trl_B ON c_location_B."c_country_id" = c_country_trl_B."c_country_id"
+     LEFT OUTER JOIN "adempiere"."ad_orginfo" ad_orginfo ON ad_org."ad_org_id" = ad_orginfo."ad_org_id"
+     LEFT OUTER JOIN "adempiere"."ad_image" ad_image ON ad_orginfo."lit_banner_id" = ad_image."ad_image_id"
+     LEFT OUTER JOIN "adempiere"."ad_ref_list_trl" ad_ref_list_trl_E ON ad_ref_list_E."ad_ref_list_id" = ad_ref_list_trl_E."ad_ref_list_id"
+     LEFT OUTER JOIN "adempiere"."ad_ref_list_trl" ad_ref_list_trl_A ON ad_ref_list_A."ad_ref_list_id" = ad_ref_list_trl_A."ad_ref_list_id"
+     LEFT OUTER JOIN "adempiere"."ad_ref_list_trl" ad_ref_list_trl ON ad_ref_list."ad_ref_list_id" = ad_ref_list_trl."ad_ref_list_id"
+     LEFT OUTER JOIN "adempiere"."c_location" c_location_A ON m_warehouse."c_location_id" = c_location_A."c_location_id"
+     LEFT OUTER JOIN "adempiere"."c_country_trl" c_country_trl_A ON c_location_A."c_country_id" = c_country_trl_A."c_country_id"
+     LEFT OUTER JOIN "adempiere"."m_product" m_product ON c_orderline."m_product_id" = m_product."m_product_id"
+     LEFT OUTER JOIN "adempiere"."c_tax" c_tax ON c_orderline."c_tax_id" = c_tax."c_tax_id"
+     LEFT OUTER JOIN "adempiere"."m_product_po" m_product_po ON c_orderline."c_bpartner_id" = m_product_po."c_bpartner_id"
+     AND m_product_po."m_product_id" = m_product."m_product_id"
+--     LEFT OUTER JOIN "adempiere"."c_uom_trl" c_uom_trl ON m_product."c_uom_id" = c_uom_trl."c_uom_id"
+     LEFT OUTER JOIN "adempiere"."c_uom_trl" c_uom_trl ON c_orderline."c_uom_id" = c_uom_trl."c_uom_id"
+     LEFT OUTER JOIN "adempiere"."c_location" c_location ON c_bpartner_location."c_location_id" = c_location."c_location_id"
+     LEFT OUTER JOIN "adempiere"."c_country_trl" c_country_trl ON c_location."c_country_id" = c_country_trl."c_country_id"
+WHERE
+     (CASE
+    WHEN $P{RECORD_ID} IS NOT NULL THEN c_order."c_order_id" = $P{RECORD_ID}
+    ELSE 1=1
+  END)
+ AND (ad_ref_list."ad_reference_id" = 151
+     or ad_ref_list."ad_reference_id" IS null)
+ AND (ad_ref_list_A."ad_reference_id" = 152
+     or ad_ref_list_A."ad_reference_id" IS null)
+ AND (ad_ref_list_trl."ad_language" = c_bpartner."ad_language"
+     or ad_ref_list_trl."ad_language" IS null)
+ AND (ad_ref_list_trl_A."ad_language" = c_bpartner."ad_language"
+     or ad_ref_list_trl_A."ad_language" IS null)
+ AND (ad_ref_list_trl_E."ad_language" = c_bpartner."ad_language"
+     or ad_ref_list_trl_E."ad_language" IS null)
+ AND (ad_ref_list_E."ad_reference_id" = 195
+     or ad_ref_list_E."ad_reference_id" IS null)
+ AND (c_doctype_trl."ad_language" = c_bpartner."ad_language"
+     or c_doctype_trl."ad_language" IS null)
+ AND (c_country_trl."ad_language" = c_bpartner."ad_language"
+     or c_country_trl."ad_language" IS null)
+ AND (c_country_trl_A."ad_language" = c_bpartner."ad_language"
+     or c_country_trl_A."ad_language" IS null)
+ AND (c_bpartner_location."isbillto" = 'Y'
+     or c_bpartner_location."isbillto" IS null)
+ AND (c_uom_trl."ad_language" = c_bpartner."ad_language"
+     or c_uom_trl."ad_language" IS null)
+ AND (c_bpartner_location_A."isbillto" = 'Y'
+     or c_bpartner_location_A."isbillto" IS null)
+ AND (c_country_trl_B."ad_language" = c_bpartner."ad_language"
+     or c_country_trl_B."ad_language" IS null)
+ORDER BY
+     c_orderline."line" ASC]]>
+	</queryString>
+	<field name="ad_image_binarydata" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="ad_image_binarydata"/>
+	</field>
+	<field name="c_bpartner_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_name"/>
+	</field>
+	<field name="c_bpartner_taxid" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_taxid"/>
+	</field>
+	<field name="c_currency_iso_code" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_currency_iso_code"/>
+	</field>
+	<field name="c_bpartner_value" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_value"/>
+	</field>
+	<field name="m_product_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_name"/>
+	</field>
+	<field name="m_product_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_description"/>
+	</field>
+	<field name="m_product_help" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_help"/>
+	</field>
+	<field name="m_product_value" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_value"/>
+	</field>
+	<field name="c_location_address1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_address1"/>
+	</field>
+	<field name="c_location_city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_city"/>
+	</field>
+	<field name="c_location_postal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_postal"/>
+	</field>
+	<field name="c_location_regionname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_regionname"/>
+	</field>
+	<field name="c_bpartner_location_phone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_phone"/>
+	</field>
+	<field name="c_bpartner_location_fax" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_fax"/>
+	</field>
+	<field name="c_order_c_order_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_c_order_id"/>
+	</field>
+	<field name="c_order_ad_client_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_ad_client_id"/>
+	</field>
+	<field name="c_order_documentno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_documentno"/>
+	</field>
+	<field name="c_order_dateordered" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_dateordered"/>
+	</field>
+	<field name="c_orderline_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_description"/>
+	</field>
+	<field name="c_orderline_m_product_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_m_product_id"/>
+	</field>
+	<field name="c_orderline_linenetamt" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_linenetamt"/>
+	</field>
+	<field name="c_orderline_qtyentered" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_qtyentered"/>
+	</field>
+	<field name="c_order_datepromised" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_datepromised"/>
+	</field>
+	<field name="m_warehouse_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_warehouse_name"/>
+	</field>
+	<field name="c_location_a_city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_city"/>
+	</field>
+	<field name="c_location_a_address1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_address1"/>
+	</field>
+	<field name="c_location_a_postal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_postal"/>
+	</field>
+	<field name="ad_client_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_client_name"/>
+	</field>
+	<field name="ad_client_requestemail" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_client_requestemail"/>
+	</field>
+	<field name="ad_user_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_user_name"/>
+	</field>
+	<field name="c_paymentterm_value" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_paymentterm_value"/>
+	</field>
+	<field name="c_order_deliveryrule" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_deliveryrule"/>
+	</field>
+	<field name="c_order_deliveryviarule" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_deliveryviarule"/>
+	</field>
+	<field name="c_order_paymentrule" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_paymentrule"/>
+	</field>
+	<field name="c_orderline_discount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_discount"/>
+	</field>
+	<field name="c_order_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_description"/>
+	</field>
+	<field name="c_doctype_trl_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_doctype_trl_name"/>
+	</field>
+	<field name="c_country_trl_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_country_trl_name"/>
+	</field>
+	<field name="c_country_trl_a_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_country_trl_a_name"/>
+	</field>
+	<field name="c_location_a_regionname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_a_regionname"/>
+	</field>
+	<field name="c_bpartner_location_isbillto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_isbillto"/>
+	</field>
+	<field name="ad_org_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_org_description"/>
+	</field>
+	<field name="ad_orginfo_email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_email"/>
+	</field>
+	<field name="c_order_c_doctypetarget_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_c_doctypetarget_id"/>
+	</field>
+	<field name="c_tax_taxindicator" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_tax_taxindicator"/>
+	</field>
+	<field name="c_orderline_pricelist" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_pricelist"/>
+	</field>
+	<field name="c_uom_trl_uomsymbol" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_uom_trl_uomsymbol"/>
+	</field>
+	<field name="c_project_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_project_name"/>
+	</field>
+	<field name="c_orderline_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_name"/>
+	</field>
+	<field name="c_order_grandtotal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_grandtotal"/>
+	</field>
+	<field name="c_order_lit_exclusion_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_lit_exclusion_id"/>
+	</field>
+	<field name="c_order_docstatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_docstatus"/>
+	</field>
+	<field name="c_doctype_trl_printname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_doctype_trl_printname"/>
+	</field>
+	<field name="c_orderline_help" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_help"/>
+	</field>
+	<field name="ad_language" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_language"/>
+	</field>
+	<field name="c_bpartner_a_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_a_name"/>
+	</field>
+	<field name="c_bpartner_location_a_fax" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_location_a_fax"/>
+	</field>
+	<field name="c_location_b_address1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_b_address1"/>
+	</field>
+	<field name="c_location_b_address2" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_b_address2"/>
+	</field>
+	<field name="c_location_b_city" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_b_city"/>
+	</field>
+	<field name="c_location_b_postal" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_b_postal"/>
+	</field>
+	<field name="c_location_b_regionname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_location_b_regionname"/>
+	</field>
+	<field name="c_country_trl_b_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_country_trl_b_name"/>
+	</field>
+	<field name="c_order_isdropship" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_isdropship"/>
+	</field>
+	<field name="m_shipper_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_shipper_name"/>
+	</field>
+	<field name="lit_freightcost_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="lit_freightcost_name"/>
+	</field>
+	<field name="c_bank_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bank_name"/>
+	</field>
+	<field name="c_bankaccount_accountno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_accountno"/>
+	</field>
+	<field name="c_bankaccount_iban" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_iban"/>
+	</field>
+	<field name="c_bank_swiftcode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bank_swiftcode"/>
+	</field>
+	<field name="c_bankaccount_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_bankaccount_name"/>
+	</field>
+	<field name="c_order_title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_title"/>
+	</field>
+	<field name="c_order_note" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_note"/>
+	</field>
+	<field name="c_project_value" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="c_project_value"/>
+	</field>
+	<field name="c_orderline_datepromised" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderline_datepromised"/>
+	</field>
+	<field name="m_product_po_vendorproductno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="m_product_po_vendorproductno"/>
+	</field>
+	<field name="ad_orginfo_lit_report_param" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_lit_report_param"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="371" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="3" y="249" width="197" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="78fd5576-8741-46bb-83ad-5d49f5c6678b"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="200" y="249" width="353" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="c008b40b-2ab6-429d-ad7e-156594016ad5"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="3" y="273" width="549" height="65" forecolor="#999999" backcolor="#DFDFDF" uuid="3a2603c3-c2c9-4bd0-be79-6f93ade827ba"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="332" y="177" width="210" height="45" forecolor="#999999" backcolor="#DFDFDF" uuid="3bd78c71-ff66-4763-bded-10bd3d348a9a"/>
+			</rectangle>
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="332" y="96" width="210" height="45" forecolor="#999999" backcolor="#DFDFDF" uuid="08e59bbd-0634-45eb-a4b1-02b33500b503"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="343" y="252" width="55" height="14" forecolor="#333333" uuid="df42a8ec-8f87-43be-9f79-333310948856"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("dateordered_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="460" y="252" width="30" height="14" forecolor="#333333" uuid="a39bae06-0202-4cbf-b51c-6dcada57972a"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("page_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="259" y="177" width="70" height="13" isRemoveLineWhenBlank="true" forecolor="#333333" uuid="796fae16-f63f-4dbf-b7e3-528d6682f777"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="Dialog" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("ship_to_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="8" y="298" width="100" height="12" forecolor="#333333" uuid="7b7a8a51-3692-47cd-8fcd-aa53e2a1bb79"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("paymentrule_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="8" y="274" width="100" height="12" forecolor="#333333" uuid="a7679a5d-0701-4444-97ba-616b320ffa6e"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("datepromised_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="9" y="324" width="105" height="12" forecolor="#333333" uuid="058fcaa6-2d37-4acb-bf59-ee70507b5335"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("bank_references_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="108" y="274" width="115" height="12" forecolor="#333333" uuid="0ec114ec-fcce-47cd-b3b5-c4ce74c74201"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("internal_ref_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="247" y="298" width="104" height="12" forecolor="#333333" uuid="fc0afc52-8608-4966-b446-a895bd3f5174"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("deliveryviarule_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="246" y="274" width="105" height="12" forecolor="#333333" uuid="aeff2a68-95e4-41d5-86a6-835d1ff68aec"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("lit_freightcost_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="108" y="298" width="115" height="12" forecolor="#333333" uuid="f93e3590-58c4-4ee0-a5b4-965f4f65abb9"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("paymentterm_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<image onErrorType="Icon">
+				<reportElement x="2" y="0" width="549" height="85" uuid="c5bf79b6-cf2e-4044-bc46-b34fb0997ee4"/>
+				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="118" y="324" width="415" height="12" isRemoveLineWhenBlank="true" uuid="6cf1fce4-225c-4cf2-9ee5-ab72101f8d9f"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("bank_name_"+$F{ad_language}) +" : "+ ($F{c_bank_name} == null ? "" : $F{c_bank_name}) + "     " + $P{RESOURCE}.getString("iban_"+$F{ad_language})+" : "+($F{c_bankaccount_iban} == null ? "" : $F{c_bankaccount_iban}) +"     "+ $P{RESOURCE}.getString("swift_"+$F{ad_language}) +" : "+ ($F{c_bank_swiftcode} == null ? "" : $F{c_bank_swiftcode})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="336" y="98" width="205" height="14" isRemoveLineWhenBlank="true" uuid="8c9f7429-3620-4a47-870f-04cacc39cdce"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="336" y="112" width="205" height="14" uuid="d3e0a320-615a-4456-b58c-b30b5e036126"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="398" y="252" width="62" height="14" uuid="a55bec81-63b9-461c-82ef-6a44f3949e52"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_dateordered}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="242" y="252" width="100" height="14" uuid="a2a97b55-e309-4843-980d-d607bedd4fa5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_documentno}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="8" y="286" width="100" height="12" uuid="35fcdf72-858f-49d0-98f3-77646c26b358"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_datepromised}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="336" y="193" width="205" height="14" uuid="0d95ac9a-e00d-4e2a-b396-8bf338844204">
+					<printWhenExpression><![CDATA[$F{c_order_isdropship}.equals("N")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_location_a_address1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="108" y="286" width="115" height="12" uuid="863ac699-7ff2-407c-8f17-09b1f046b91f"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ad_user_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="108" y="311" width="115" height="12" isRemoveLineWhenBlank="true" uuid="b78c29cf-54d8-4fdd-a061-281953d38d7f"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_paymentterm_value}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="247" y="310" width="91" height="12" isRemoveLineWhenBlank="true" uuid="101eb2e6-283c-4d52-9be4-02f7697c08c5"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_deliveryviarule}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="8" y="311" width="100" height="12" isRemoveLineWhenBlank="true" uuid="3861fe40-c06c-4e50-b92d-935062b002a8"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_paymentrule}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="336" y="126" width="205" height="14" uuid="79436a82-7a0c-447c-8c73-d62dbd1572da"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{c_location_postal} == null ? " " : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? " " : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? " " : $F{c_location_regionname})+" " +($F{c_country_trl_name} == null ? " " : $F{c_country_trl_name})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="336" y="206" width="205" height="14" uuid="cfebc33a-701f-4696-8e74-a7a1de31c93a">
+					<printWhenExpression><![CDATA[$F{c_order_isdropship}.equals("N")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}) +" "+($F{c_location_a_regionname} == null ? "" : $F{c_location_a_regionname})+" " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="9" y="234" width="285" height="12" isRemoveLineWhenBlank="true" uuid="64223721-49f2-4251-bad6-d425f9156296">
+					<printWhenExpression><![CDATA[$F{ad_user_name}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="10"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("attention_"+$F{ad_language}) + " " + ($F{ad_user_name} == null ? " " : $F{ad_user_name})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="3" y="350" width="548" height="12" isRemoveLineWhenBlank="true" uuid="56627e1a-7996-4c77-8e45-1bd6beedb5fc"/>
+				<textElement>
+					<font size="10"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_description}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="9" y="249" width="191" height="20" uuid="5bbfb8b2-7bb1-41a0-b274-ebb01bd1d56a"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="11" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{c_order_docstatus}.equals("CO")?" "+$F{c_doctype_trl_printname}:$F{c_doctype_trl_name})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="491" y="252" width="23" height="14" uuid="a87a6381-b029-4bf9-84f1-2eab418906da"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+" di"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="513" y="252" width="19" height="14" uuid="e708560a-95f8-4e3f-9180-149451995945"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="336" y="180" width="205" height="14" uuid="ab36b8e6-ec35-43bc-870e-10ca35471a15">
+					<printWhenExpression><![CDATA[$F{c_order_isdropship}.equals("N")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_warehouse_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="337" y="225" width="205" height="14" isRemoveLineWhenBlank="true" uuid="d44efb66-878e-4f72-ae08-bb53875e7ef9">
+					<printWhenExpression><![CDATA[$F{ad_orginfo_email} !=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Email:"+" "+($F{ad_orginfo_email} == null ? " " : $F{ad_orginfo_email})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="246" y="286" width="105" height="12" uuid="65e2cf6a-cd47-4e30-ab86-7c4bd5984ffe"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lit_freightcost_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="437" y="275" width="100" height="12" forecolor="#333333" uuid="3d3c4b87-8e06-4e9c-b024-5ce602fe2724"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("project_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="437" y="286" width="100" height="12" uuid="ba72f25b-ec54-423f-a0e3-cf1e6a0106d5"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_project_value}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="337" y="144" width="204" height="12" isRemoveLineWhenBlank="true" uuid="9a76dfc2-88e1-4459-a6ec-ab097a3be03d">
+					<printWhenExpression><![CDATA[$F{c_bpartner_location_phone} !=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tel:" + " " + ($F{c_bpartner_location_phone} == null ? " " : $F{c_bpartner_location_phone})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="337" y="156" width="204" height="12" isRemoveLineWhenBlank="true" uuid="769118de-d654-42ff-bb4f-6061eb4353ce">
+					<printWhenExpression><![CDATA[$F{c_bpartner_location_fax} !=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fax:" + " " + ($F{c_bpartner_location_fax} == null ? " " : $F{c_bpartner_location_fax})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="374" y="286" width="40" height="12" uuid="f9b8dfab-24b2-4f54-a584-3d359688c806"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_currency_iso_code}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="374" y="275" width="40" height="12" forecolor="#333333" uuid="088e07cf-1ebc-4e36-ae21-ae515aab6a00"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("iso_code_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="209" y="252" width="32" height="14" uuid="686d9458-8253-4a38-ad2b-376ee7248f92"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("documentno_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="336" y="193" width="205" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="bb20571d-05b4-43e2-929b-c9f623b60284">
+					<printWhenExpression><![CDATA[$F{c_order_isdropship}.equals("Y")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_location_b_address1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="336" y="206" width="205" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="e485abdd-9f8a-48af-9ef2-2b75bc1087ff">
+					<printWhenExpression><![CDATA[$F{c_order_isdropship}.equals("Y")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{c_location_b_postal} == null ? " " : $F{c_location_b_postal}) + " "+ ($F{c_location_b_city} == null ? " " : $F{c_location_b_city}) +" "+($F{c_location_b_regionname} == null ? " " : $F{c_location_b_regionname})+" " +($F{c_country_trl_b_name} == null ? " " : $F{c_country_trl_b_name})]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="336" y="180" width="205" height="13" forecolor="#000000" backcolor="#FFFFFF" uuid="b9494ad4-4bd0-4066-951a-13b00b87f478">
+					<printWhenExpression><![CDATA[$F{c_order_isdropship}.equals("Y")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_bpartner_a_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="437" y="298" width="100" height="12" forecolor="#333333" uuid="fe9e364c-7292-4686-b9ee-137a93f3de6a"/>
+				<textElement markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("shippername_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="437" y="311" width="100" height="12" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="085bd351-b535-465a-8118-4b2e50ba994b"/>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_shipper_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="258" y="99" width="70" height="13" isRemoveLineWhenBlank="true" forecolor="#333333" uuid="7ed848a9-28fe-442e-ba11-fb1f228e3cbe"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="Dialog" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("TitleFirm_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="194">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}!=1]]></printWhenExpression>
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="0" y="169" width="197" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="d492e157-846c-433f-96e3-6977d83a661e"/>
+			</rectangle>
+			<image onErrorType="Icon">
+				<reportElement x="3" y="0" width="549" height="85" uuid="784a506e-d8ca-49e8-a7e4-b40bb33bf7ae"/>
+				<imageExpression><![CDATA[$F{ad_image_binarydata}]]></imageExpression>
+			</image>
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="334" y="89" width="210" height="45" forecolor="#999999" backcolor="#DFDFDF" uuid="74d15ddb-ecad-4bdc-8d39-20694f4eea4c"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="339" y="137" width="204" height="12" isRemoveLineWhenBlank="true" uuid="b7f73e9a-4519-40dc-985d-1cbfc765f9e1">
+					<printWhenExpression><![CDATA[$F{c_bpartner_location_phone} !=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tel:" + " " + ($F{c_bpartner_location_phone} == null ? " " : $F{c_bpartner_location_phone})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="338" y="119" width="205" height="14" uuid="6828aa25-9a7e-4a4b-bac5-25ef129dd2d3"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{c_location_postal} == null ? " " : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? " " : $F{c_location_city}) +" "+($F{c_location_regionname} == null ? " " : $F{c_location_regionname})+" " +($F{c_country_trl_name} == null ? " " : $F{c_country_trl_name})]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="338" y="91" width="205" height="14" isRemoveLineWhenBlank="true" uuid="3ff43593-c8c6-4f8c-a384-ae51a5a8d825"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_bpartner_name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="338" y="105" width="205" height="14" uuid="af437ede-561d-475c-a75d-17e8d9872042"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_location_address1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="339" y="149" width="204" height="12" isRemoveLineWhenBlank="true" uuid="99bc563f-35cb-4138-ac8e-0e4ab3981b33">
+					<printWhenExpression><![CDATA[$F{c_bpartner_location_fax} !=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Fax:" + " " + ($F{c_bpartner_location_fax} == null ? " " : $F{c_bpartner_location_fax})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="169" width="191" height="20" uuid="08725422-85b8-4fd9-becd-bcf7ba1d93d8"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{c_order_docstatus}.equals("CO")?" "+$F{c_doctype_trl_printname}:$F{c_doctype_trl_name})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="257" y="92" width="70" height="13" isRemoveLineWhenBlank="true" forecolor="#333333" uuid="7df3df33-0b99-4f06-81df-c0e98b5af4b3"/>
+				<textElement textAlignment="Right" markup="none">
+					<font fontName="Dialog" size="10" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("TitleFirm_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="512" y="172" width="19" height="14" uuid="dd0cd62a-98c6-4e36-b497-e2b1ec3bad9b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="490" y="172" width="23" height="14" uuid="18c20f2f-98a8-4710-9f6e-3c4242c17e45"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+" di"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="459" y="172" width="30" height="14" forecolor="#333333" uuid="b54c42ba-a81f-45fc-9b2a-d11d1f98ce96"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("page_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="342" y="172" width="55" height="14" forecolor="#333333" uuid="f37c32c4-af51-4244-b7d5-0712628762fc"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("dateordered_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="230" y="172" width="32" height="14" uuid="c75535fb-1af9-4956-a957-242fecb49d0f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("documentno_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="263" y="172" width="79" height="14" uuid="1c5d3f84-2780-4765-9034-7f10bd073070"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_documentno}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="201" y="169" width="351" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="250ada52-85e6-4087-bc05-d57fb33e62d0"/>
+			</rectangle>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="401" y="173" width="62" height="14" uuid="27bd9568-dc3b-44c4-801a-4461c5bb5f63"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_dateordered}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="212" y="173" width="32" height="14" uuid="a0643129-41a7-4af5-88fa-733ced34bd2d"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("documentno_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="516" y="173" width="19" height="14" uuid="4d118fb4-fcea-430c-869f-b7e297f25938"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="346" y="173" width="55" height="14" forecolor="#333333" uuid="5a2bf1da-efc5-493c-bf61-ba574b03f0ac"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("dateordered_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="494" y="173" width="23" height="14" uuid="027cf626-a952-40b0-9c9d-9670b7c6a438"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}+" di"]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="245" y="173" width="100" height="14" uuid="6dbc3f81-6c70-4c92-a262-75a315973318"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_documentno}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="463" y="173" width="30" height="14" forecolor="#333333" uuid="6ca06e3c-496b-46c3-9895-3f10c298def4"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="7" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("page_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26">
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="0" y="1" width="555" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="57d5978d-4dec-4a92-b5e4-554c4a7b4aea"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="260" y="4" width="35" height="12" forecolor="#333333" uuid="72addf92-3a6e-4510-9706-e521b4ce7664"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("qtyentered_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="301" y="4" width="55" height="12" forecolor="#333333" uuid="a84fff71-2f32-4394-8b7e-bcf3011c7919"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("pricelist_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="8" y="4" width="55" height="12" forecolor="#333333" uuid="e3a5abfc-4cd9-43db-8f28-5d46ac215dab"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("product_value_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="230" y="4" width="24" height="12" forecolor="#333333" uuid="a737f196-aaa2-4acd-aad5-84166237c96e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Dialog" size="8" isBold="false" isItalic="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[U.M.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="460" y="4" width="42" height="12" forecolor="#333333" uuid="9e803e2c-92f3-4023-8091-50e3d677ae91"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("taxindicator_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="66" y="4" width="164" height="12" forecolor="#333333" uuid="727fa98c-418a-4902-b12f-c9bb17d37461"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("prodact_description_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="358" y="4" width="40" height="12" forecolor="#333333" uuid="952ed4cd-68f8-4794-b149-3f61a100cd7c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("discount_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="398" y="4" width="62" height="12" forecolor="#333333" uuid="dbd34ff9-94c6-4784-acf3-e3dda87df72e"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("amount_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="501" y="4" width="50" height="12" forecolor="#333333" uuid="93c23aae-a09c-4513-96d0-981c163207ed"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("datepromised_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<rectangle>
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="20" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" forecolor="#FFFFFF" backcolor="#EEEEEE" uuid="0698e24b-c56e-4889-8fbf-9e22be40a190">
+					<printWhenExpression><![CDATA[new java.lang.Boolean(($V{REPORT_COUNT}.intValue() % 2)==0)]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField pattern="#,##0.###" isBlankWhenNull="false">
+				<reportElement positionType="Float" x="254" y="0" width="46" height="12" uuid="4a0c4a8d-5563-4086-829d-445f8bd3c969"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_qtyentered}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="398" y="0" width="62" height="12" uuid="fe815644-679b-4e2d-a3bc-c3d6f5a94724"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_linenetamt}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="2" y="0" width="63" height="12" uuid="96234978-e078-4cdf-b4df-afd010431d83"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{m_product_po_vendorproductno} != null ? $F{ad_orginfo_lit_report_param}.charAt(3) + $F{m_product_po_vendorproductno} : $F{m_product_value}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="501" y="0" width="50" height="12" uuid="28ea2ea2-a176-46cb-bd58-04d22b766f1d"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_datepromised}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="357" y="0" width="41" height="12" uuid="39b64db7-09a5-47e0-84a7-e3e92ddfbb27"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_discount} + "" + "%"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="66" y="0" width="165" height="12" uuid="11cd1b76-c367-46d9-a42c-cbe6611695f5"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_name} != null ? $F{c_orderline_name} :$F{m_product_name}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="66" y="13" width="164" height="2" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="53d69db2-0536-4736-baf5-c6d8631cafa5">
+					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(4)) == 'Y')]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_description} != null ?$F{c_orderline_description} : $F{m_product_description}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="460" y="0" width="42" height="12" uuid="751800dd-4cd0-4fe3-9a7a-5a7f0be707b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_tax_taxindicator}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="302" y="0" width="55" height="12" uuid="aec5dd7f-1f13-46e3-8dd2-4f908288cd50"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_pricelist}.doubleValue() > 10 ?
+new DecimalFormat("#,##0.00").format($F{c_orderline_pricelist}):
+new DecimalFormat("#,##0.00000").format($F{c_orderline_pricelist})]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="230" y="0" width="24" height="12" uuid="df6fd7d9-5b8b-41d5-b81d-483c36ec3c94"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="66" y="17" width="480" height="2" isRemoveLineWhenBlank="true" uuid="38611a82-8089-4277-81c4-0ab4173753e2">
+					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(5)) == 'Y')]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_orderline_help} != null ? $F{c_orderline_help} : $F{m_product_help}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="15">
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="395" y="0" width="160" height="12" forecolor="#999999" backcolor="#FFFFFF" uuid="5fba7d70-94e5-4823-a5c7-ae4e2161f4b7"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Dialog" size="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[ver_1.70705]]></text>
+			</staticText>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="197" y="0" width="160" height="12" forecolor="#999999" backcolor="#FFFFFF" uuid="27d4abca-1bdc-4a8e-a855-53376ab544f5"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Dialog" size="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("desc_0402_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="160" height="12" forecolor="#999999" backcolor="#FFFFFF" uuid="93e01f76-00b9-4592-9200-4d677b23d4b4"/>
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Dialog" size="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("lq_0402_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="66">
+			<rectangle radius="10">
+				<reportElement positionType="Float" x="397" y="3" width="156" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="52ba05db-18e1-411a-8a56-a40f079eb58a"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="400" y="7" width="38" height="12" forecolor="#333333" uuid="fd36f05d-2c35-47eb-adf6-079c6f586d47"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" markup="none">
+					<font fontName="Dialog" size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("grandtotal_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true" runToBottom="false">
+				<reportElement positionType="Float" x="0" y="3" width="200" height="47" uuid="2a6d515b-d905-4183-9370-993f02b5b33c"/>
+				<subreportParameter name="AD_LANGUAGE">
+					<subreportParameterExpression><![CDATA[$F{ad_language}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RECORD_ID">
+					<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RESOURCE">
+					<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_order_po_sub_vat.jasper"]]></subreportExpression>
+			</subreport>
+			<textField pattern="#,##0.00" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="463" y="7" width="82" height="12" uuid="61b839da-ca99-4664-bcb2-7cc76d83a8b2"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_grandtotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="438" y="7" width="26" height="12" forecolor="#333333" backcolor="#FFFFFF" uuid="7a3fdde8-58f0-4275-ae52-eddd8c8c4bbf"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom" rotation="None" markup="none">
+					<font fontName="Dialog" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_currency_iso_code}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="0" y="54" width="160" height="12" forecolor="#999999" backcolor="#FFFFFF" uuid="71e4fa79-8962-438b-96e7-d86a651dcf3a"/>
+				<textElement verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Dialog" size="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("lq_0402_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="197" y="54" width="160" height="12" forecolor="#999999" backcolor="#FFFFFF" uuid="24b23395-a75f-4e32-acec-08f8e0293f5b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Dialog" size="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("desc_0402_"+$F{ad_language})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" mode="Transparent" x="395" y="54" width="160" height="12" forecolor="#999999" backcolor="#FFFFFF" uuid="5ebd4d8b-02b0-4d59-bb82-a4f80a2ec86a"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Dialog" size="5" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[ver_1.70705]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="15">
+			<subreport>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="2" width="555" height="12" isRemoveLineWhenBlank="true" uuid="4699b786-9634-4ea3-bf2e-c956bc47a815"/>
+				<subreportParameter name="AD_LANGUAGE">
+					<subreportParameterExpression><![CDATA[$F{ad_language}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RECORD_ID">
+					<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RESOURCE">
+					<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "c_order_po_sub_term_exclusion.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="2" isRemoveLineWhenBlank="true" uuid="2f3fa029-f7b1-416e-bb6d-82b99c592a98"/>
+				<textElement>
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_order_note}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
