@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports5.1.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ec" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b17b5b8-d5a8-47a1-96a0-f5fb5ff0a427">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="544"/>
+	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="446"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="123"/>
+	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="872"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Style1"/>
+	<parameter name="C_BPartner_ID" class="java.lang.Integer"/>
+	<parameter name="DateAcctFrom" class="java.util.Date"/>
+	<parameter name="DateAcctTo" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date()]]></defaultValueExpression>
+	</parameter>
+	<parameter name="TOTALS" class="java.util.HashMap" isForPrompting="false"/>
+	<parameter name="AD_CLIENT_ID" class="java.lang.Integer"/>
+	<parameter name="AD_Org_ID" class="java.lang.Integer"/>
+	<parameter name="image_file_name" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="RESOURCE_DIR" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AD_LANGUAGE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{AD_LANGUAGE}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
+	<parameter name="RECORD_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="IsCustomer" class="java.lang.String"/>
+	<parameter name="IsVendor" class="java.lang.String"/>
+	<parameter name="IsSOTrx" class="java.lang.String"/>
+	<parameter name="Dateopenamt" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+      inv.ad_org_id,
+      inv.ad_client_id,
+      bp.c_bpartner_id,
+      bp.name AS BPartner,
+      inv.c_invoice_id,
+      inv.dateinvoiced AS data,
+      inv.documentno,
+      inv.issotrx AS a_p,
+      doctrl.name AS tipodoc,
+      inv.docstatus,
+      '' AS bank,
+      doc.docbasetype,
+      orgimg.binarydata,
+      inv.description,
+      CASE
+          WHEN doc.docbasetype NOT IN ('ARC', 'API')
+          THEN Abs(inv.grandtotal)
+          ELSE inv.grandtotal * -1
+      END AS grandtotal,
+      '' as inv2_documentno
+FROM
+    c_bpartner bp INNER JOIN
+    c_invoice inv ON bp.c_bpartner_id = inv.c_bpartner_id INNER JOIN
+    c_doctype doc ON inv.c_doctype_id = doc.c_doctype_id INNER JOIN
+    ad_orginfo orginf ON inv.ad_org_id = orginf.ad_org_id INNER JOIN
+    ad_image orgimg ON orginf.logo_id = orgimg.ad_image_id INNER JOIN
+    c_doctype_trl doctrl ON doc.c_doctype_id = doctrl.c_doctype_id
+WHERE
+     doctrl.ad_language = 'it_IT' AND
+     inv.docstatus = 'CO' and
+CASE WHEN $P{IsCustomer} = 'Y' THEN bp.iscustomer = $P{IsCustomer}  ELSE 1=1 
+END
+AND
+	CASE WHEN $P{IsVendor} ='Y' THEN bp.isvendor=  $P{IsVendor} ELSE 1=1
+END
+AND
+	CASE WHEN  $P{IsSOTrx} IS NOT NULL THEN inv.issotrx = $P{IsSOTrx} ELSE 1=1
+END
+AND doc.docbasetype IN ('ARI','ARC','API','APC')
+AND inv.ad_client_id=  $P{AD_CLIENT_ID} 
+AND inv.ad_org_id= $P{AD_Org_ID} 
+AND 
+CASE WHEN  $P{DateAcctFrom}::character <>'0' THEN inv.dateinvoiced >=   $P{DateAcctFrom} ELSE 1=1
+END
+AND  inv.DATEINVOICED <=  $P{DateAcctTo} 
+AND 
+  CASE
+    WHEN  $P{C_BPartner_ID}  <>0 THEN bp.c_bpartner_id = $P{C_BPartner_ID} ELSE 1=1
+  End
+
+UNION
+SELECT
+      p.ad_org_id,
+      p.ad_client_id,
+      bp.c_bpartner_id,
+      bp.name AS BPartner,
+      p.c_payment_id,
+      p.datetrx AS data,
+      p.documentno,
+      p.isreceipt AS a_p,
+      doctrl.name AS tipodoc,
+      p.docstatus,
+      bank.name,
+      doc.docbasetype,
+      orgimg.binarydata,
+      p.description,
+      CASE
+          WHEN doc.docbasetype NOT IN ('ARR')
+          THEN Abs(p.payamt)
+          ELSE p.payamt * -1
+      END AS payamt,
+      '' as inv2_documentno
+FROM
+    c_bpartner bp INNER JOIN
+    c_payment p ON bp.c_bpartner_id = p.c_bpartner_id INNER JOIN
+    c_bankaccount bank ON p.c_bankaccount_id = bank.c_bankaccount_id INNER JOIN
+    c_doctype doc ON p.c_doctype_id = doc.c_doctype_id INNER JOIN
+    ad_orginfo orginf ON p.ad_org_id = orginf.ad_org_id INNER JOIN
+    ad_image orgimg ON orginf.logo_id = orgimg.ad_image_id INNER JOIN
+    c_doctype_trl doctrl ON doc.c_doctype_id = doctrl.c_doctype_id
+WHERE
+     p.docstatus = 'CO' AND
+     doctrl.ad_language = 'it_IT' and 
+     
+CASE WHEN $P{IsCustomer} = 'Y' THEN bp.iscustomer = $P{IsCustomer}   else 1=1
+END
+and 
+case when $P{IsVendor} ='Y' then bp.isvendor=  $P{IsVendor} else 1=1
+end
+AND p.ad_client_id= $P{AD_CLIENT_ID} 
+and
+   CASE
+    WHEN  $P{C_BPartner_ID}  <>0 then bp.c_bpartner_id = $P{C_BPartner_ID} 
+  END
+  AND
+	CASE WHEN  $P{IsSOTrx} IS NOT NULL THEN p.isreceipt = $P{IsSOTrx} ELSE 1=1
+END
+AND 
+CASE WHEN  $P{DateAcctFrom}::character <>'0' THEN p.datetrx >=   $P{DateAcctFrom} ELSE 1=1
+END
+AND  p.datetrx<=  $P{DateAcctTo} 
+
+     
+UNION
+SELECT
+      alline.ad_org_id,
+      alline.ad_client_id,
+      bp.c_bpartner_id,
+      bp.name AS BPartner,
+      allhdr.c_allocationhdr_id,
+      allhdr.datetrx,
+      allhdr.documentno,
+      allinv.issotrx AS a_p,
+      doctrl.name AS tipodoc,
+      allhdr.docstatus,
+      '' AS bank,
+      doc.docbasetype,
+      orgimg.binarydata,
+      allhdr.description,
+      alline.amount *- 1,
+(select inv2.documentno  
+from c_allocationhdr allhdr LEFT JOIN c_allocationline al2 on allhdr.c_allocationhdr_id=al2.c_allocationhdr_id 
+LEFT JOIN c_invoice inv2 on al2.c_invoice_id=inv2.c_invoice_id 
+where alline.c_allocationhdr_id=allhdr.c_allocationhdr_id and inv.c_invoice_id<>al2.c_invoice_id limit 1)
+as inv2_documentno
+
+FROM
+    c_bpartner bp INNER JOIN
+    c_allocationline alline ON bp.c_bpartner_id = alline.c_bpartner_id INNER JOIN
+    c_allocationhdr allhdr ON alline.c_allocationhdr_id = allhdr.c_allocationhdr_id INNER JOIN
+    c_invoice allinv ON alline.c_invoice_id = allinv.c_invoice_id INNER JOIN
+    ad_orginfo orginf ON alline.ad_org_id = orginf.ad_org_id INNER JOIN
+    ad_image orgimg ON orginf.logo_id = orgimg.ad_image_id INNER JOIN
+    c_doctype doc ON allhdr.c_doctype_id = doc.c_doctype_id INNER JOIN
+    c_doctype_trl doctrl ON doc.c_doctype_id = doctrl.c_doctype_id LEFT JOIN
+    c_invoice inv ON inv.c_invoice_id = alline.c_invoice_id
+WHERE
+     doctrl.ad_language = 'it_IT' AND
+     allhdr.docstatus = 'CO' AND
+     doctrl.c_doctype_id = 1000064 and
+  
+CASE WHEN $P{IsCustomer} = 'Y' THEN bp.iscustomer = $P{IsCustomer}   else 1=1
+END
+and 
+case when $P{IsVendor} ='Y' then bp.isvendor=  $P{IsVendor} else 1=1
+end
+AND alline.ad_client_id= $P{AD_CLIENT_ID}
+and
+CASE WHEN  $P{DateAcctFrom}::character <>'0' THEN allhdr.datetrx >=   $P{DateAcctFrom} ELSE 1=1
+END
+AND  allhdr.datetrx <=  $P{DateAcctTo} and
+
+   CASE
+    WHEN  $P{C_BPartner_ID}  <>0 then bp.c_bpartner_id = $P{C_BPartner_ID} 
+  END  
+  AND
+	CASE WHEN  $P{IsSOTrx} IS NOT NULL THEN inv.issotrx = $P{IsSOTrx} ELSE 1=1
+END
+   
+ ORDER BY
+        data]]>
+	</queryString>
+	<field name="ad_org_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ad_org_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_invoice"/>
+	</field>
+	<field name="ad_client_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="ad_client_id"/>
+	</field>
+	<field name="c_bpartner_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_bpartner"/>
+	</field>
+	<field name="bpartner" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bpartner"/>
+	</field>
+	<field name="c_invoice_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_invoice_id"/>
+	</field>
+	<field name="data" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="data"/>
+	</field>
+	<field name="documentno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="documentno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_invoice"/>
+	</field>
+	<field name="a_p" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="a_p"/>
+	</field>
+	<field name="tipodoc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipodoc"/>
+	</field>
+	<field name="docstatus" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="docstatus"/>
+	</field>
+	<field name="bank" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bank"/>
+	</field>
+	<field name="docbasetype" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="docbasetype"/>
+	</field>
+	<field name="binarydata" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="binarydata"/>
+	</field>
+	<field name="description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="description"/>
+	</field>
+	<field name="grandtotal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="grandtotal"/>
+	</field>
+	<field name="inv2_documentno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="inv2_documentno"/>
+	</field>
+	<sortField name="c_bpartner_id"/>
+	<variable name="Returnamt" class="java.math.BigDecimal" calculation="System"/>
+	<variable name="SommaProgressiva" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<group name="Gruppo1">
+		<groupExpression><![CDATA[$F{c_bpartner_id}]]></groupExpression>
+	</group>
+	<title>
+		<band height="60">
+			<image scaleImage="FillFrame">
+				<reportElement x="0" y="0" width="555" height="60" uuid="ca1af736-ea11-4318-9f0a-7c4fbbdffb6b"/>
+				<imageExpression><![CDATA[$F{binarydata}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="80">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+			<textField>
+				<reportElement x="0" y="30" width="555" height="24" uuid="ee295163-cecb-4be1-ab2b-c75e4c93c27e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="eb2027a3-9943-45b2-bf5a-6140b18973be"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="SansSerif" size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bpartner}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="555" height="30" uuid="b23837da-628f-49e2-ac50-1e2a74016bc9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{IsSOTrx}.equals("Y") ? "ESTRATTO CONTO CLIENTE":"ESTRATTO CONTO FORNITORE"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="60" width="555" height="20" uuid="3c05b95c-ecf4-406a-b31b-206fc949898a"/>
+				<subreportParameter name="C_BPartner_ID">
+					<subreportParameterExpression><![CDATA[$P{C_BPartner_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="DateAcctFrom">
+					<subreportParameterExpression><![CDATA[$P{DateAcctFrom}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Dateopenamt">
+					<subreportParameterExpression><![CDATA[$P{Dateopenamt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Returnamt">
+					<subreportParameterExpression><![CDATA[$V{Returnamt}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<returnValue subreportVariable="openningbal1" toVariable="Returnamt"/>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} +"customerstatement_sub.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="14">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="14" backcolor="#DBDBDB" uuid="609f299e-598c-407c-98e5-36cf4a8bf132">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<staticText>
+					<reportElement x="0" y="0" width="55" height="14" uuid="62209489-a9ed-4222-aa40-203a6523df97">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce43a2e8-12d2-41c5-bc72-2e5e4a9cfb86"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="0.6"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Monospaced" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DATA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="55" y="0" width="91" height="14" uuid="60e47ac1-b452-4230-bc35-e0750eb2308a">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="874edd6a-436f-463d-9ef6-908c3cdb75b4"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Monospaced" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NUM. DOC.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="146" y="0" width="228" height="14" uuid="14874157-0253-4974-955d-5dc937580a03">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9069d2df-1283-48e0-b303-9e9f3e60af74"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="2.5"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Monospaced" isBold="true"/>
+					</textElement>
+					<text><![CDATA[DESCRIZIONE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="374" y="0" width="91" height="14" uuid="b559ea70-f919-42a7-913b-381098d01035">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1400367-6e02-4a06-9e49-caf1b01f4a51"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Monospaced" isBold="true"/>
+					</textElement>
+					<text><![CDATA[	IMPORTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="465" y="0" width="90" height="14" forecolor="#0000CC" uuid="2cf1d7e2-da62-42b4-839b-7efba808b3ed">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1400367-6e02-4a06-9e49-caf1b01f4a51"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box rightPadding="2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Monospaced" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SALDO]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="14">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="14" uuid="787f1971-234b-49de-b74e-aff77aaa810c">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+					<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="0.5"/>
+				</box>
+				<textField pattern="dd.MM.yyy">
+					<reportElement x="0" y="0" width="55" height="14" uuid="486134f3-2957-4c5b-8861-0dee678a986f">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce43a2e8-12d2-41c5-bc72-2e5e4a9cfb86"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="0.6"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Monospaced" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="55" y="0" width="91" height="14" uuid="ea836467-8429-4a78-ad3a-4c974fa226f7">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="874edd6a-436f-463d-9ef6-908c3cdb75b4"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="2"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Monospaced" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{documentno}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+					<reportElement x="146" y="0" width="228" height="14" uuid="32a2889f-0b99-48e2-a2df-d1081c31b5ef">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9069d2df-1283-48e0-b303-9e9f3e60af74"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="2.5"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box leftPadding="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Monospaced" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tipodoc} +" - "+$F{inv2_documentno}+" "+$F{bank}]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="374" y="0" width="91" height="14" uuid="3fd831d2-515d-46c6-bb4e-06b74a477ab0">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1400367-6e02-4a06-9e49-caf1b01f4a51"/>
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Monospaced" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grandtotal}]]></textFieldExpression>
+				</textField>
+				<textField pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement x="465" y="0" width="90" height="14" forecolor="#0000CC" uuid="fae651ce-760c-4443-b3ab-b77544182df7">
+						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
+						<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
+						<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
+						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
+					</reportElement>
+					<box rightPadding="2"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Monospaced" size="8" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{SommaProgressiva}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="222" y="5" width="333" height="20" forecolor="#0000CC" uuid="46a62b68-1a51-43ab-a997-e01d83e88fb2"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Monospaced" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SALDO AL: " + new SimpleDateFormat("dd.MM.yyyy").format(new Date()) +"     "+ new java.text.DecimalFormat("€ #,##0.00").format($V{SommaProgressiva})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

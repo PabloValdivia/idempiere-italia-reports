@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports5.1.0  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports5.1.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ec" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b17b5b8-d5a8-47a1-96a0-f5fb5ff0a427">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="544"/>
@@ -146,7 +146,7 @@ doc.docbasetype,
 p.description,
 0 as grandtotal,
 p.payamt*-1 as payamt,
-CASE WHEN sum(al.amount) IS NULL  THEN p.payamt
+CASE WHEN sum(al.amount) IS NULL  THEN p.payamt *-1
 ELSE
 p.payamt-sum (al.amount) 
 END 
@@ -913,7 +913,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 					<textFieldExpression><![CDATA[$F{paymentdate}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true">
-					<reportElement key="textField" positionType="Float" x="58" y="0" width="100" height="12" forecolor="#2B05FF" uuid="ffc9aa24-a555-4801-89ce-c845525e5dd7"/>
+					<reportElement key="textField" positionType="Float" x="58" y="0" width="100" height="12" isRemoveLineWhenBlank="true" forecolor="#2B05FF" uuid="ffc9aa24-a555-4801-89ce-c845525e5dd7"/>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 						<pen lineWidth="0.25"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>

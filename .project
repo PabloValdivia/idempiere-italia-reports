@@ -8,4 +8,21 @@
 	</buildSpec>
 	<natures>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>customerstatement821b.jasper</name>
+			<type>1</type>
+			<location>D:/Users/Andrea/Desktop/customerstatement821b.jasper</location>
+		</link>
+		<link>
+			<name>customerstatement821b_1.jasper</name>
+			<type>1</type>
+			<location>D:/Users/Andrea/Desktop/customerstatement821b.jasper</location>
+		</link>
+		<link>
+			<name>customerstatement_sub.jasper</name>
+			<type>1</type>
+			<location>D:/Users/Andrea/Desktop/customerstatement_sub.jasper</location>
+		</link>
+	</linkedResources>
 </projectDescription>

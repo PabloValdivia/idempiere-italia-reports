@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.8.0.final utlizzo versione della libreria JasperReports6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="invoices_and_payments_and_opening_bal_cust" pageWidth="535" pageHeight="842" whenNoDataType="NoPages" columnWidth="535" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" whenResourceMissingType="Empty" uuid="83d6d6e0-882a-49bf-bb2f-39115d487b43">
 	<property name="ireport.scriptlethandling" value="0"/>
 	<property name="ireport.encoding" value="UTF-8"/>
@@ -7,8 +7,8 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<import value="net.sf.jasperreports.engine.data.*"/>
 	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
 	<import value="net.sf.jasperreports.engine.*"/>
 	<parameter name="C_BPartner_ID" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[new Integer (1000000)]]></defaultValueExpression>
@@ -178,7 +178,7 @@ ORDER BY DateTrx]]>
 					<pen lineWidth="0.25" lineStyle="Solid"/>
 				</graphicElement>
 			</line>
-			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="1" width="77" height="22" uuid="74ed189b-69aa-4bed-968b-41d298fbf8e4"/>
 				<box leftPadding="2" rightPadding="2">
 					<pen lineWidth="0.25"/>
@@ -192,7 +192,7 @@ ORDER BY DateTrx]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DATETRX}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="77" y="1" width="66" height="22" uuid="d4c24fec-1a98-49a5-abc6-e0038f649de9"/>
 				<box leftPadding="2" rightPadding="2">
 					<pen lineWidth="0.25"/>
@@ -206,7 +206,7 @@ ORDER BY DateTrx]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DOCUMENTNO}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="143" y="1" width="64" height="22" uuid="52b024d9-521e-47d0-ae9a-6273f18eab66"/>
 				<box leftPadding="2" rightPadding="2">
 					<pen lineWidth="0.25"/>
@@ -220,7 +220,7 @@ ORDER BY DateTrx]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 				<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="207" y="1" width="165" height="22" uuid="680cf4eb-0cde-4c8f-9ed5-96339476304d"/>
 				<box leftPadding="2" rightPadding="2">
 					<pen lineWidth="0.25"/>
@@ -234,7 +234,7 @@ ORDER BY DateTrx]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{DESCRIPTION}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField" positionType="Float" stretchType="RelativeToTallestObject" x="372" y="1" width="81" height="22" uuid="133cd741-4ae1-4882-abc6-592f5564520b"/>
 				<box leftPadding="2" rightPadding="2">
 					<pen lineWidth="0.25"/>
@@ -248,7 +248,7 @@ ORDER BY DateTrx]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{GRANDTOTAL}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.00" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="#,##0.00" isBlankWhenNull="true">
 				<reportElement key="textField-1" positionType="Float" stretchType="RelativeToTallestObject" x="453" y="1" width="82" height="22" uuid="ac1bc838-bd40-497a-a05a-0091ea56e11b"/>
 				<box leftPadding="2" rightPadding="2">
 					<pen lineWidth="0.25"/>

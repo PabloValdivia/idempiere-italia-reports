@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports5.1.0  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DDT" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75fe2fe9-b984-4ca9-8696-8bc3bc03080e">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
@@ -32,7 +32,7 @@
 		</box>
 		<paragraph lineSpacing="Single"/>
 	</style>
-	<style name="Crosstab Data Text" hAlign="Center">
+	<style name="Crosstab Data Text" hTextAlign="Center" hImageAlign="Center">
 		<paragraph lineSpacing="Single"/>
 	</style>
 	<style name="style1" markup="none"/>
@@ -692,7 +692,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<text><![CDATA[CLIENTE / CESSIONARIO]]></text>
 				</staticText>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="18" width="290" height="12" isRemoveLineWhenBlank="true" uuid="50e021f1-f8da-48b7-b4cc-ac9f39de99c3"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -701,7 +701,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="30" width="290" height="12" isRemoveLineWhenBlank="true" uuid="2d84eb70-3776-404f-85fb-0dbe186c36c6">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_name2}!= null]]></printWhenExpression>
@@ -712,7 +712,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="42" width="290" height="12" isRemoveLineWhenBlank="true" uuid="1c267beb-677c-4655-8a23-33075e303cfb"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -721,7 +721,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="54" width="290" height="12" isRemoveLineWhenBlank="true" uuid="14ac9ed6-04dd-4ec2-83ae-88ed2d40f5ed">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -731,7 +731,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="66" width="290" height="12" isRemoveLineWhenBlank="true" uuid="2acd9451-7273-4963-86d1-951862918d08">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -741,7 +741,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="78" width="290" height="12" isRemoveLineWhenBlank="true" uuid="821da2c5-de07-47e2-9e77-1defc58196d5"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -750,7 +750,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="90" width="290" height="12" isRemoveLineWhenBlank="true" uuid="1908b7a3-0fcc-41d4-8340-1a679875fa83">
 						<printWhenExpression><![CDATA[$F{c_bpartner_taxid} != null]]></printWhenExpression>
 					</reportElement>
@@ -760,7 +760,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA["P.IVA: " +$F{c_bpartner_taxid}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="102" width="290" height="12" isRemoveLineWhenBlank="true" uuid="6490c703-8ecd-4dd5-8835-5aaf0871305e">
 						<printWhenExpression><![CDATA[$F{c_bpartner_location_phone}!= null]]></printWhenExpression>
 					</reportElement>
@@ -789,7 +789,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<text><![CDATA[DESTINAZIONE DELLA MERCE]]></text>
 				</staticText>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="14" width="290" height="13" isRemoveLineWhenBlank="true" uuid="b6746d21-1627-4fda-a460-da24f1aece41">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -799,7 +799,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_name}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="27" width="290" height="13" isRemoveLineWhenBlank="true" uuid="14b875ef-4a00-4921-982a-ea636802ba58">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -809,7 +809,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_a_address1}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="40" width="290" height="13" isRemoveLineWhenBlank="true" uuid="2a2a4745-5a1e-4991-b9f4-1afd54e072f5">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -829,7 +829,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_a_address3}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="66" width="290" height="13" isRemoveLineWhenBlank="true" uuid="5d12f962-b71c-4e86-8a35-5ca25d108df8">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -839,7 +839,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}.toUpperCase()) +" "+($F{c_location_a_regionname} == null ? "" : $F{c_location_a_regionname}.toUpperCase())+" " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name}.toUpperCase())]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="79" width="290" height="13" isRemoveLineWhenBlank="true" uuid="d123bbe7-3302-4262-ac49-39bd9640b34b">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null]]></printWhenExpression>
@@ -856,7 +856,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box leftPadding="2"/>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="0" width="553" height="17" isRemoveLineWhenBlank="true" uuid="b7cec890-4cda-48d2-a23f-14e130bf24ec">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{m_inout_description}!= null]]></printWhenExpression>
@@ -876,7 +876,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA["NOTE: "+$F{m_inout_note}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="32" width="553" height="15" isRemoveLineWhenBlank="true" uuid="9e9dd909-0fa8-4475-8ed8-2517fc1f6a28">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
@@ -887,7 +887,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
 				</textField>
 			</frame>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="60" y="225" width="132" height="22" uuid="53963185-4c10-4427-9617-925cb8fd201d"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1087,7 +1087,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<text><![CDATA[CLIENTE / CESSIONARIO]]></text>
 				</staticText>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="18" width="290" height="12" isRemoveLineWhenBlank="true" uuid="22b38015-460b-4168-8edf-704e498433ed"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -1096,7 +1096,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="30" width="290" height="12" isRemoveLineWhenBlank="true" uuid="9eeb0f07-aa66-40bc-96d7-889b753c37a9">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_name2}!= null]]></printWhenExpression>
@@ -1107,7 +1107,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="42" width="290" height="12" isRemoveLineWhenBlank="true" uuid="e8a6709d-bfde-45d4-bc71-a384f4610afd"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -1116,7 +1116,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="54" width="290" height="12" isRemoveLineWhenBlank="true" uuid="8fe711bc-0dcb-4438-a491-696f48f4c4b7">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -1126,7 +1126,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="66" width="290" height="12" isRemoveLineWhenBlank="true" uuid="6d083b5d-83a9-4d6b-b3cf-f7e74614f37e">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -1136,7 +1136,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="78" width="290" height="12" isRemoveLineWhenBlank="true" uuid="e83f1ebd-d664-4e49-b535-8c6b90dfe497"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -1145,7 +1145,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="90" width="290" height="12" isRemoveLineWhenBlank="true" uuid="e90950a2-540a-4dc8-b208-684149913df9">
 						<printWhenExpression><![CDATA[$F{c_bpartner_taxid} != null]]></printWhenExpression>
 					</reportElement>
@@ -1155,7 +1155,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA["P.IVA: " +$F{c_bpartner_taxid}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="102" width="290" height="12" isRemoveLineWhenBlank="true" uuid="18ff2e70-00cb-484a-b510-66ee8713c1a3">
 						<printWhenExpression><![CDATA[$F{c_bpartner_location_phone}!= null]]></printWhenExpression>
 					</reportElement>
@@ -1184,7 +1184,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<text><![CDATA[DESTINAZIONE DELLA MERCE]]></text>
 				</staticText>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="14" width="290" height="13" isRemoveLineWhenBlank="true" uuid="d0ebcb71-9502-4a5e-86fb-f8cbc9750547">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -1194,7 +1194,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_name}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="27" width="290" height="13" isRemoveLineWhenBlank="true" uuid="64e0359d-8e72-47af-bb54-d16adeb09047">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -1204,7 +1204,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_a_address1}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="40" width="290" height="13" isRemoveLineWhenBlank="true" uuid="f22137a1-a4c8-43c0-bec7-e434e62f5ce7">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -1224,7 +1224,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_a_address3}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="66" width="290" height="13" isRemoveLineWhenBlank="true" uuid="0a5acf95-e249-4736-9951-90dd642bd72a">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 					</reportElement>
@@ -1234,7 +1234,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}.toUpperCase()) +" "+($F{c_location_a_regionname} == null ? "" : $F{c_location_a_regionname}.toUpperCase())+" " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name}.toUpperCase())]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="79" width="290" height="13" isRemoveLineWhenBlank="true" uuid="bd02250a-3763-4277-9f61-abd23c5a3a46">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="cm"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null]]></printWhenExpression>
@@ -1251,7 +1251,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<box leftPadding="2"/>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="0" width="553" height="17" isRemoveLineWhenBlank="true" uuid="dd458d01-f41b-4cdb-9cfe-faa23b3fc4f4">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{m_inout_description}!= null]]></printWhenExpression>
@@ -1271,7 +1271,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA["NOTE: "+$F{m_inout_note}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="32" width="553" height="15" isRemoveLineWhenBlank="true" uuid="2f8a876e-d041-4a80-b9f6-129867a4364f">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
@@ -1282,7 +1282,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
 				</textField>
 			</frame>
-			<textField isStretchWithOverflow="true">
+			<textField textAdjust="StretchHeight">
 				<reportElement positionType="Float" x="65" y="219" width="132" height="22" uuid="fd39b5bc-c35c-42c6-91af-0c319bcc9fe6"/>
 				<box>
 					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="header" pageWidth="550" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="550" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4c63e4e9-028d-4f3f-827b-690cf7fb698b">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<parameter name="RECORD_ID" class="java.lang.Integer" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AD_ORG_ID" class="java.math.BigDecimal">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AD_LANGUAGE" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT
+     ad_org."name" AS ad_org_name,
+     ad_orginfo."taxid" AS ad_orginfo_taxid,
+     c_location."postal" AS c_location_postal,
+     c_location."city" AS c_location_city,
+     c_location."address1" AS c_location_address1,
+     ad_org."ad_org_id" AS ad_org_ad_org_id,
+     c_location."regionname" AS c_location_regionname
+FROM
+     "adempiere"."ad_org" ad_org LEFT OUTER JOIN "adempiere"."ad_orginfo" ad_orginfo ON ad_org."ad_org_id" = ad_orginfo."ad_org_id"
+     LEFT OUTER JOIN "adempiere"."c_location" c_location ON ad_orginfo."c_location_id" = c_location."c_location_id"
+     LEFT OUTER JOIN "adempiere"."c_city" c_city ON c_location."c_city_id" = c_city."c_city_id"
+WHERE
+     ad_org."ad_org_id" = $P{AD_ORG_ID}]]>
+	</queryString>
+	<field name="ad_org_name" class="java.lang.String"/>
+	<field name="ad_orginfo_taxid" class="java.lang.String"/>
+	<field name="c_location_postal" class="java.lang.String"/>
+	<field name="c_location_city" class="java.lang.String"/>
+	<field name="c_location_address1" class="java.lang.String"/>
+	<field name="ad_org_ad_org_id" class="java.math.BigDecimal"/>
+	<field name="c_location_regionname" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="33" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="550" height="27" uuid="d25146c9-e443-409f-aac3-c3ce24f13202">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="18" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ad_org_name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="30" width="550" height="1" uuid="012c2a30-02e0-4000-9753-6801c58b5f4d">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
