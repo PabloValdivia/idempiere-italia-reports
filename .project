@@ -24,5 +24,25 @@
 			<type>1</type>
 			<location>D:/Users/Andrea/Desktop/customerstatement_sub.jasper</location>
 		</link>
+		<link>
+			<name>m_inout_sub1.jasper</name>
+			<type>1</type>
+			<location>D:/Users/Andrea/Desktop/m_inout_sub1.jasper</location>
+		</link>
+		<link>
+			<name>m_inout_sub2_1.jasper</name>
+			<type>1</type>
+			<location>D:/Users/Andrea/Desktop/m_inout_sub2.jasper</location>
+		</link>
+		<link>
+			<name>m_inout_sub2_2.jasper</name>
+			<type>1</type>
+			<location>D:/Users/Andrea/Desktop/m_inout_sub2.jasper</location>
+		</link>
+		<link>
+			<name>m_inout_sub2_3.jasper</name>
+			<type>1</type>
+			<location>D:/idempiere-reports/04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m/m_inout_sub2.jasper</location>
+		</link>
 	</linkedResources>
 </projectDescription>
