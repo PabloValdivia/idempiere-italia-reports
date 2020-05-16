@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports5.1.0  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ec" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b17b5b8-d5a8-47a1-96a0-f5fb5ff0a427">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="544"/>
@@ -16,7 +16,12 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<style name="Style1"/>
+	<style name="txt_black" mode="Transparent" forecolor="#000000" radius="3">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{docbasetype}.equals("ARR")]]></conditionExpression>
+			<style mode="Transparent" forecolor="#FF0400" backcolor="#FBFFA6"/>
+		</conditionalStyle>
+	</style>
 	<parameter name="C_BPartner_ID" class="java.lang.Integer"/>
 	<parameter name="DateAcctFrom" class="java.util.Date"/>
 	<parameter name="DateAcctTo" class="java.util.Date">
@@ -112,11 +117,11 @@ SELECT
       doc.docbasetype,
       orgimg.binarydata,
       p.description,
-      CASE
+     CASE
           WHEN doc.docbasetype NOT IN ('ARR')
-          THEN Abs(p.payamt)
+         THEN p.payamt
           ELSE p.payamt * -1
-      END AS payamt,
+     END AS payamt,
       '' as inv2_documentno
 FROM
     c_bpartner bp INNER JOIN
@@ -261,9 +266,15 @@ END
 	</field>
 	<sortField name="c_bpartner_id"/>
 	<variable name="Returnamt" class="java.math.BigDecimal" calculation="System"/>
-	<variable name="SommaProgressiva" class="java.math.BigDecimal" resetType="Column" calculation="Sum">
+	<variable name="SommaProgressiva" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<variable name="SommaProgressiva_pag" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{grandtotal}]]></variableExpression>
+	</variable>
+	<variable name="Pagine" class="java.math.BigDecimal" calculation="Count">
+		<variableExpression><![CDATA[$V{PAGE_NUMBER}]]></variableExpression>
 	</variable>
 	<group name="Gruppo1">
 		<groupExpression><![CDATA[$F{c_bpartner_id}]]></groupExpression>
@@ -444,7 +455,7 @@ END
 					<pen lineWidth="0.5"/>
 				</box>
 				<textField pattern="dd.MM.yyy">
-					<reportElement x="0" y="0" width="55" height="14" uuid="486134f3-2957-4c5b-8861-0dee678a986f">
+					<reportElement style="txt_black" x="0" y="0" width="55" height="14" uuid="486134f3-2957-4c5b-8861-0dee678a986f">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ce43a2e8-12d2-41c5-bc72-2e5e4a9cfb86"/>
 						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -461,7 +472,7 @@ END
 					<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="55" y="0" width="91" height="14" uuid="ea836467-8429-4a78-ad3a-4c974fa226f7">
+					<reportElement style="txt_black" x="55" y="0" width="91" height="14" uuid="ea836467-8429-4a78-ad3a-4c974fa226f7">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="874edd6a-436f-463d-9ef6-908c3cdb75b4"/>
 						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -477,8 +488,8 @@ END
 					</textElement>
 					<textFieldExpression><![CDATA[$F{documentno}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement x="146" y="0" width="228" height="14" uuid="32a2889f-0b99-48e2-a2df-d1081c31b5ef">
+				<textField textAdjust="StretchHeight" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+					<reportElement style="txt_black" x="146" y="0" width="228" height="14" uuid="32a2889f-0b99-48e2-a2df-d1081c31b5ef">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9069d2df-1283-48e0-b303-9e9f3e60af74"/>
 						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -494,8 +505,8 @@ END
 					</textElement>
 					<textFieldExpression><![CDATA[$F{tipodoc} +" - "+$F{inv2_documentno}+" "+$F{bank}]]></textFieldExpression>
 				</textField>
-				<textField pattern="¤#,##0.00;¤-#,##0.00">
-					<reportElement x="374" y="0" width="91" height="14" uuid="3fd831d2-515d-46c6-bb4e-06b74a477ab0">
+				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00">
+					<reportElement style="txt_black" x="374" y="0" width="91" height="14" uuid="3fd831d2-515d-46c6-bb4e-06b74a477ab0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a1400367-6e02-4a06-9e49-caf1b01f4a51"/>
 						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -505,12 +516,12 @@ END
 						<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
 						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
 					</reportElement>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 						<font fontName="Monospaced" size="8" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{grandtotal}]]></textFieldExpression>
 				</textField>
-				<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<textField textAdjust="ScaleFont" pattern="¤#,##0.00;¤-#,##0.00">
 					<reportElement x="465" y="0" width="90" height="14" forecolor="#0000CC" uuid="fae651ce-760c-4443-b3ab-b77544182df7">
 						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 						<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -521,7 +532,7 @@ END
 						<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
 					</reportElement>
 					<box rightPadding="2"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle">
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 						<font fontName="Monospaced" size="8" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$V{SommaProgressiva}]]></textFieldExpression>
@@ -529,15 +540,15 @@ END
 			</frame>
 		</band>
 	</detail>
-	<pageFooter>
+	<lastPageFooter>
 		<band height="25">
 			<textField pattern="¤#,##0.00;¤-#,##0.00">
 				<reportElement x="222" y="5" width="333" height="20" forecolor="#0000CC" uuid="46a62b68-1a51-43ab-a997-e01d83e88fb2"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font fontName="Monospaced" size="14" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA["SALDO AL: " + new SimpleDateFormat("dd.MM.yyyy").format(new Date()) +"     "+ new java.text.DecimalFormat("€ #,##0.00").format($V{SommaProgressiva})]]></textFieldExpression>
+				<textFieldExpression><![CDATA["SALDO AL: " + new SimpleDateFormat("dd.MM.yyyy").format(new Date()) +"     "+ new java.text.DecimalFormat("€ #,##0.00").format($V{SommaProgressiva_pag})]]></textFieldExpression>
 			</textField>
 		</band>
-	</pageFooter>
+	</lastPageFooter>
 </jasperReport>
