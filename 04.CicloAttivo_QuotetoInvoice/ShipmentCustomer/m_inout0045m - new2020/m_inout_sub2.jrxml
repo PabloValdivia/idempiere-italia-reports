@@ -204,7 +204,7 @@ ORDER BY m_inoutline_line ASC]]>
 							<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						</box>
 						<textElement verticalAlignment="Middle">
-							<font fontName="SansSerif" size="8"/>
+							<font fontName="DejaVu Sans Mono" size="8"/>
 							<paragraph leftIndent="2"/>
 						</textElement>
 						<textFieldExpression><![CDATA[($F{c_order_documentno}!= null ? "RIF. NS ORDINE:"+$F{c_order_documentno}:"") +($F{c_order_poreference}!= null ? " RIF. VS. ORDINE: "+$F{c_order_poreference} :"")]]></textFieldExpression>
@@ -217,7 +217,7 @@ ORDER BY m_inoutline_line ASC]]>
 		<band height="12">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<frame>
-				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="555" height="12" isRemoveLineWhenBlank="true" backcolor="#E5FF91" uuid="1045db44-9225-48ef-a53f-e905c7130150">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="0" width="555" height="12" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="1045db44-9225-48ef-a53f-e905c7130150">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 				</reportElement>
 				<box>
@@ -241,8 +241,8 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="6" isBold="true"/>
-						<paragraph leftIndent="2" rightIndent="2"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
+						<paragraph leftIndent="2" rightIndent="0"/>
 					</textElement>
 					<text><![CDATA[DESCRIZIONE DETTAGLIATA ARTICOLO]]></text>
 				</staticText>
@@ -259,7 +259,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="6" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 						<paragraph leftIndent="2" rightIndent="2"/>
 					</textElement>
 					<text><![CDATA[U.M.]]></text>
@@ -267,6 +267,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<staticText>
 					<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Transparent" x="0" y="0" width="80" height="12" isRemoveLineWhenBlank="true" backcolor="#E5FF91" uuid="830237e8-ae96-4e61-b6b1-9edd9506ee74">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d7e9fc9-7b59-4dc6-b9c7-ca6873f759f0"/>
+						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					</reportElement>
 					<box>
 						<pen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
@@ -275,9 +276,9 @@ ORDER BY m_inoutline_line ASC]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="6" isBold="true"/>
-						<paragraph leftIndent="2" rightIndent="2"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
+						<paragraph leftIndent="2" rightIndent="0"/>
 					</textElement>
 					<text><![CDATA[COD. ART.]]></text>
 				</staticText>
@@ -293,7 +294,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="6" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 						<paragraph leftIndent="2" rightIndent="2"/>
 					</textElement>
 					<text><![CDATA[Q.TA']]></text>
@@ -310,7 +311,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="6" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 						<paragraph leftIndent="2" rightIndent="2"/>
 					</textElement>
 					<text><![CDATA[COLLI]]></text>
@@ -327,7 +328,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="6" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 						<paragraph leftIndent="2" rightIndent="2"/>
 					</textElement>
 					<text><![CDATA[PR. UN.]]></text>
@@ -344,7 +345,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="6" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 						<paragraph leftIndent="2" rightIndent="2"/>
 					</textElement>
 					<text><![CDATA[SC%]]></text>
@@ -361,7 +362,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="6" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 						<paragraph leftIndent="2" rightIndent="2"/>
 					</textElement>
 					<text><![CDATA[TOT. RIGA]]></text>
@@ -399,7 +400,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
@@ -417,7 +418,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_name}!=null?$F{m_inoutline_name}:$F{m_product_name}]]></textFieldExpression>
@@ -436,7 +437,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph leftIndent="10"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
@@ -455,7 +456,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph rightIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_movementqty}]]></textFieldExpression>
@@ -473,7 +474,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph rightIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_movementqty}.equals( $F{m_inoutline_qtyentered} )?"":$F{m_inoutline_qtyentered}]]></textFieldExpression>
@@ -490,7 +491,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph rightIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_orderine_priceactual}]]></textFieldExpression>
@@ -507,7 +508,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_orderine_discount}.longValue()!=0?$F{c_orderine_discount}:""]]></textFieldExpression>
 				</textField>
@@ -523,7 +524,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph rightIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_orderine_linenetamt}]]></textFieldExpression>
@@ -555,7 +556,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="false"/>
+						<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_description}!=null?$F{m_inoutline_description}:$F{m_product_description}]]></textFieldExpression>
@@ -586,7 +587,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="false"/>
+						<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_inoutline_help}!=null?$F{m_inoutline_help}:$F{m_product_help}]]></textFieldExpression>
@@ -617,7 +618,7 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{lit_attribute_v_lot}.equals("")?"":"LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}]]></textFieldExpression>

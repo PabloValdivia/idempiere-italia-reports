@@ -179,6 +179,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<textField isBlankWhenNull="true">
 					<reportElement x="80" y="0" width="298" height="12" isRemoveLineWhenBlank="true" forecolor="#000DFF" uuid="13eb2843-785c-4172-8f83-20dbda651107">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
 						<pen lineWidth="0.25"/>
@@ -188,7 +189,8 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_order_documentno}!= null ? "RIF. NS ORDINE:"+$F{c_order_documentno}:"") +($F{c_order_poreference}!= null ? " RIF. VS. ORDINE: "+$F{c_order_poreference} :"")]]></textFieldExpression>
 				</textField>
@@ -210,6 +212,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<staticText>
 					<reportElement positionType="Float" mode="Transparent" x="80" y="0" width="298" height="12" backcolor="#E5FF91" uuid="9cad1106-c250-49f2-9a59-c37b9f04642b">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad407ab-c715-4c2e-bb2f-7047aacdd74d"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
 						<pen lineWidth="0.25"/>
@@ -219,9 +222,10 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
-					<text><![CDATA[DESCRIZIONE ARTICOLO / DESCRIPTION OF THE GOOD]]></text>
+					<text><![CDATA[DESCRIZIONE ARTICOLO/DESCRIPTION OF THE GOOD]]></text>
 				</staticText>
 				<staticText>
 					<reportElement positionType="Float" mode="Transparent" x="378" y="0" width="50" height="12" backcolor="#E5FF91" uuid="4928d68a-07eb-43d7-ad9d-7f5feea6eb78">
@@ -236,14 +240,15 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 						<paragraph leftIndent="0"/>
 					</textElement>
-					<text><![CDATA[U.M. / UoM]]></text>
+					<text><![CDATA[U.M./UoM]]></text>
 				</staticText>
 				<staticText>
 					<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="80" height="12" backcolor="#E5FF91" uuid="830237e8-ae96-4e61-b6b1-9edd9506ee74">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4d7e9fc9-7b59-4dc6-b9c7-ca6873f759f0"/>
+						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<box>
 						<pen lineWidth="0.25"/>
@@ -252,10 +257,11 @@ ORDER BY m_inoutline_line ASC]]>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8" isBold="true"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
+						<paragraph leftIndent="2"/>
 					</textElement>
-					<text><![CDATA[COD. ART. / SKU]]></text>
+					<text><![CDATA[COD. ART./SKU]]></text>
 				</staticText>
 				<staticText>
 					<reportElement positionType="Float" mode="Transparent" x="428" y="0" width="60" height="12" backcolor="#E5FF91" uuid="e6bd286e-3493-47ad-813b-d502ce559cf4">
@@ -269,9 +275,9 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 					</textElement>
-					<text><![CDATA[Q.TA' / QTY]]></text>
+					<text><![CDATA[Q.TA'/QTY]]></text>
 				</staticText>
 				<staticText>
 					<reportElement positionType="Float" mode="Transparent" x="488" y="0" width="67" height="12" backcolor="#E5FF91" uuid="b16680d6-77fe-470c-bd4e-d3952c5cc5dc">
@@ -285,9 +291,9 @@ ORDER BY m_inoutline_line ASC]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="6" isBold="true"/>
 					</textElement>
-					<text><![CDATA[COLLI / PACKS]]></text>
+					<text><![CDATA[COLLI/PACKS]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -311,7 +317,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="SansSerif" size="8"/>
+					<font fontName="DejaVu Sans Mono" size="8"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
@@ -320,6 +326,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<reportElement x="80" y="0" width="298" height="11" uuid="fed77b28-93de-4074-9ef2-7de8fdb1256b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad407ab-c715-4c2e-bb2f-7047aacdd74d"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>
@@ -329,7 +336,8 @@ ORDER BY m_inoutline_line ASC]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="SansSerif" size="8"/>
+					<font fontName="DejaVu Sans Mono" size="8"/>
+					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{m_inoutline_name}!=null?$F{m_inoutline_name}:$F{m_product_name}]]></textFieldExpression>
 			</textField>
@@ -347,7 +355,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Top">
-					<font fontName="SansSerif" size="8"/>
+					<font fontName="DejaVu Sans Mono" size="8"/>
 					<paragraph leftIndent="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
@@ -366,7 +374,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top">
-					<font fontName="SansSerif" size="8"/>
+					<font fontName="DejaVu Sans Mono" size="8"/>
 					<paragraph rightIndent="10"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{m_inoutline_movementqty}]]></textFieldExpression>
@@ -385,7 +393,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Right" verticalAlignment="Top">
-					<font fontName="SansSerif" size="8"/>
+					<font fontName="DejaVu Sans Mono" size="8"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{m_inoutline_qtyentered}]]></textFieldExpression>
 			</textField>
@@ -393,7 +401,6 @@ ORDER BY m_inoutline_line ASC]]>
 		<band height="11">
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="3ab079f2-f181-49b7-9ef1-7de24c1bead3">
-					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(6)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -404,8 +411,8 @@ ORDER BY m_inoutline_line ASC]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="SansSerif" size="8" isBold="false"/>
-					<paragraph lineSpacing="Single" leftIndent="0"/>
+					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{m_inoutline_description}!=null?$F{m_inoutline_description}:$F{m_product_description}]]></textFieldExpression>
 			</textField>
@@ -413,6 +420,7 @@ ORDER BY m_inoutline_line ASC]]>
 		<band height="11">
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="5d9106d4-ce93-4095-9025-794077560dda">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(7)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -423,8 +431,8 @@ ORDER BY m_inoutline_line ASC]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="SansSerif" size="8" isBold="false"/>
-					<paragraph lineSpacing="Single" leftIndent="0"/>
+					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{m_inoutline_help}!=null?$F{m_inoutline_help}:$F{m_product_help}]]></textFieldExpression>
 			</textField>
@@ -432,6 +440,7 @@ ORDER BY m_inoutline_line ASC]]>
 		<band height="11">
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="e74a78a8-5825-4e65-b92d-7c03ee301148">
+					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<printWhenExpression><![CDATA[$F{ad_orginfo_lit_report_param}.charAt(13) =='Y' ? 1==1 :  $F{ad_orginfo_lit_report_param}.charAt(13) =='N' ? 1==2 :  $F{c_bpartner_lit_bpreportparam}.length()<1 ? 1==2 :$F{c_bpartner_lit_bpreportparam}.charAt(1)=='Y' ? 1==1 :1==2]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -442,8 +451,8 @@ ORDER BY m_inoutline_line ASC]]>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="SansSerif" size="8"/>
-					<paragraph leftIndent="0"/>
+					<font fontName="DejaVu Sans Mono" size="8"/>
+					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lit_attribute_v_lot}.equals("")?"":"LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}]]></textFieldExpression>
 			</textField>
