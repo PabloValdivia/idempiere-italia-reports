@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding_sub_vat" pageWidth="220" pageHeight="58" whenNoDataType="AllSectionsNoDetail" columnWidth="220" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="4c8f36cd-baba-4cde-91f5-8934be944fd3">
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="RECORD_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
+	<parameter name="AD_LANGUAGE" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT
+     lit_c_order_tax."c_ordertax_c_order_id" AS lit_c_order_tax_c_order_id,
+     lit_c_order_tax."c_tax_taxindicator" AS lit_c_order_tax_c_tax_taxindicator,
+     lit_c_order_tax."c_ordertax_taxbaseamt" AS lit_c_order_tax_c_ordertax_taxbaseamt,
+     lit_c_order_tax."c_ordertax_taxamt" AS lit_c_order_tax_c_ordertax_taxamt
+FROM
+     "adempiere"."lit_c_order_tax" lit_c_order_tax
+WHERE
+lit_c_order_tax."c_ordertax_c_order_id" = $P{RECORD_ID}]]>
+	</queryString>
+	<field name="lit_c_order_tax_c_order_id" class="java.math.BigDecimal"/>
+	<field name="lit_c_order_tax_c_tax_taxindicator" class="java.lang.String"/>
+	<field name="lit_c_order_tax_c_ordertax_taxbaseamt" class="java.math.BigDecimal"/>
+	<field name="lit_c_order_tax_c_ordertax_taxamt" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="220" height="20" forecolor="#999999" backcolor="#DFDFDF" uuid="742db18c-d7b1-4588-8bbd-a9872f2a92aa"/>
+			</frame>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" mode="Transparent" x="44" y="4" width="100" height="12" forecolor="#333333" uuid="339e76cf-7a99-4656-8abf-b52cb18a1ef0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("taxbaseamt_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="144" y="4" width="66" height="12" forecolor="#333333" uuid="47d7a1ad-224c-40d0-88e9-2bcd57a73a0c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("taxamt_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="10" y="4" width="34" height="12" forecolor="#333333" uuid="fe3db95f-abb8-4823-b95b-e049b95860e8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Dialog" size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{RESOURCE}.getString("taxindicator_"+$P{AD_LANGUAGE})]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12">
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="144" y="0" width="70" height="12" forecolor="#000000" backcolor="#FFFFFF" uuid="33ff8d5a-c952-4398-a5c4-a4acf0e0f938"/>
+				<textElement textAlignment="Right" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="SansSerif" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lit_c_order_tax_c_ordertax_taxamt}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤ #,##0.00" isBlankWhenNull="true">
+				<reportElement x="44" y="0" width="100" height="12" uuid="ef692da6-169e-4b4c-be20-c47092dd4ba5"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lit_c_order_tax_c_ordertax_taxbaseamt}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="6" y="0" width="38" height="12" uuid="6f726e6b-1e8d-43e4-9258-830cd263b8aa"/>
+				<textElement>
+					<font size="8"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{lit_c_order_tax_c_tax_taxindicator}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
