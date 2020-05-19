@@ -2447,6 +2447,7 @@ WHERE
 			</frame>
 		</band>
 		<band height="10">
+			<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null && $F{c_invoiceline_isdescription}.equals("N")]]></printWhenExpression>
 			<frame>
 				<reportElement stretchType="ContainerHeight" x="0" y="0" width="556" height="10" isRemoveLineWhenBlank="true" uuid="e6e7b0dc-fed7-4603-9a20-c6a079970bbc"/>
 				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
@@ -2553,6 +2554,7 @@ WHERE
 			</frame>
 		</band>
 		<band height="10">
+			<printWhenExpression><![CDATA[$F{lit_attribute_v_lot}!=null]]></printWhenExpression>
 			<frame>
 				<reportElement stretchType="ContainerHeight" x="0" y="0" width="556" height="10" isRemoveLineWhenBlank="true" uuid="7d98388d-ffeb-4caf-a7d0-5fb6a10cfdf7"/>
 				<textField isBlankWhenNull="true">
@@ -2657,6 +2659,16 @@ WHERE
 					</graphicElement>
 				</line>
 			</frame>
+		</band>
+		<band height="1">
+			<line>
+				<reportElement x="0" y="0" width="555" height="1" uuid="d3312e10-9a32-4002-b444-cd6d0dd168e2">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
 		</band>
 	</detail>
 	<columnFooter>
