@@ -2667,7 +2667,11 @@ WHERE
 		</band>
 		<band height="1">
 			<line>
+<<<<<<< HEAD
 				<reportElement x="0" y="0" width="555" height="1" uuid="7a3f837c-28cd-4c08-90db-c989c1b2de5b">
+=======
+				<reportElement x="0" y="0" width="555" height="1" uuid="d3312e10-9a32-4002-b444-cd6d0dd168e2">
+>>>>>>> aeeff675790ab8b7c8d0dd7d04f91d3204b8f43e
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
