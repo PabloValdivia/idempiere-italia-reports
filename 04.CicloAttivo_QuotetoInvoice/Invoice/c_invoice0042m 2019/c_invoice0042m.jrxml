@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports5.1.0  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="14" bottomMargin="10" isSummaryWithPageHeaderAndFooter="true" uuid="b6e7cc4b-3786-4fed-87f2-9d03f79344e3">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
@@ -43,7 +43,7 @@
 		</box>
 		<paragraph lineSpacing="Single"/>
 	</style>
-	<style name="Crosstab Data Text" hAlign="Center">
+	<style name="Crosstab Data Text" hTextAlign="Center" hImageAlign="Center">
 		<paragraph lineSpacing="Single"/>
 	</style>
 	<style name="html" markup="html"/>
@@ -529,7 +529,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="13" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_doctype_trl_printname}]]></textFieldExpression>
 				</textField>
@@ -556,14 +556,14 @@ WHERE
 								<pen lineWidth="0.5"/>
 							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
-								<font fontName="SansSerif" isBold="true"/>
+								<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							</textElement>
 							<text><![CDATA[DATA DOCUMENTO]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
 							<reportElement mode="Opaque" x="0" y="31" width="130" height="30" forecolor="#0022FF" uuid="5b8f55f1-73c1-4673-b33e-c556995c7368"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
-								<font fontName="SansSerif" size="14" isBold="true"/>
+								<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{c_invoice_dateacct}]]></textFieldExpression>
 						</textField>
@@ -581,14 +581,14 @@ WHERE
 								<pen lineWidth="0.5"/>
 							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
-								<font fontName="SansSerif" isBold="true"/>
+								<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							</textElement>
 							<text><![CDATA[NUMERO DOC.]]></text>
 						</staticText>
 						<textField>
 							<reportElement mode="Opaque" x="0" y="31" width="130" height="30" forecolor="#0022FF" uuid="fed1cb84-b27a-496d-b679-b2eb2010fb3a"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
-								<font fontName="SansSerif" size="14" isBold="true"/>
+								<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{c_invoice_documentno}]]></textFieldExpression>
 						</textField>
@@ -611,7 +611,7 @@ WHERE
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-						<font fontName="SansSerif" size="13" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<text><![CDATA[CLIENTE]]></text>
@@ -620,7 +620,7 @@ WHERE
 					<reportElement x="0" y="19" width="295" height="13" isRemoveLineWhenBlank="true" uuid="e7493a2a-c189-4aba-990d-1ccfe6985f23"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
@@ -630,7 +630,7 @@ WHERE
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
@@ -639,7 +639,7 @@ WHERE
 					<reportElement x="0" y="45" width="295" height="13" isRemoveLineWhenBlank="true" uuid="b8525fff-7077-4de3-9b04-1a399f41aefb"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="false"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
@@ -647,7 +647,7 @@ WHERE
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="58" width="295" height="13" isRemoveLineWhenBlank="true" uuid="2f9bdfea-da26-4579-94a2-2499894466b0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
@@ -655,7 +655,7 @@ WHERE
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="71" width="295" height="13" isRemoveLineWhenBlank="true" uuid="fcc811e7-9e12-438a-b64e-3a078be5e499"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
@@ -664,7 +664,7 @@ WHERE
 					<reportElement x="0" y="84" width="295" height="13" isRemoveLineWhenBlank="true" uuid="c20fe141-70df-4081-9c8b-f3730fec4595"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="false"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
@@ -679,7 +679,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA["P.IVA: "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
@@ -687,7 +687,7 @@ WHERE
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="110" width="295" height="13" isRemoveLineWhenBlank="true" uuid="96a783d4-969f-4187-8968-09940e6f0916"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null ? "TELEFONO: "+$F{c_bpartner_location_a_phone}:""]]></textFieldExpression>
@@ -695,7 +695,7 @@ WHERE
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="123" width="295" height="13" isRemoveLineWhenBlank="true" uuid="1ef54389-f109-4338-aaf3-abd2e5cb779d"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_email}!= null ? "eMail: "+$F{c_bpartner_location_email}:""]]></textFieldExpression>
@@ -708,11 +708,11 @@ WHERE
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="260" height="28" uuid="f5586c04-5a6e-4a4b-b907-ff77f34e8fd7"/>
 					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA["TERMINE DI PAGAM.:"+$F{c_paymentterm_value}]]></textFieldExpression>
 				</textField>
@@ -720,7 +720,7 @@ WHERE
 					<reportElement x="0" y="28" width="260" height="28" uuid="bd0eeee2-8a69-42d9-a150-392d3e6d576a"/>
 					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}.toUpperCase()]]></textFieldExpression>
 				</textField>
@@ -742,7 +742,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="13" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[COPIA DI CORTESIA]]></text>
 				</staticText>
@@ -750,7 +750,7 @@ WHERE
 					<reportElement x="0" y="25" width="295" height="25" forecolor="#0000FF" uuid="10f927f7-49ee-4755-bb11-ab05f635649a"/>
 					<box padding="2"/>
 					<textElement textAlignment="Justified" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="7"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA["Il presente documento non costituisce documento fiscale ai fini del DpR 633 26/10/1972 e successive modifiche. Saranno fiscalmente rilevanti solo quelli trasmessi in modalità elettronica obbligatoria ex Legge, 27/12/2017 n° 205, G.U. 29/12/2017"]]></textFieldExpression>
 				</textField>
@@ -773,7 +773,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[COORDINATE BANCARIE]]></text>
 				</staticText>
@@ -783,7 +783,7 @@ WHERE
 					</reportElement>
 					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 						<paragraph leftIndent="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA["BANCA: " +$F{c_bank_name}]]></textFieldExpression>
@@ -794,7 +794,7 @@ WHERE
 					</reportElement>
 					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 						<paragraph leftIndent="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA["IBAN: " + $F{c_bankaccount_iban}]]></textFieldExpression>
@@ -805,7 +805,7 @@ WHERE
 					</reportElement>
 					<box leftPadding="3"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 						<paragraph leftIndent="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA["SWIFT: "+$F{c_bank_swiftcode}]]></textFieldExpression>
@@ -815,30 +815,30 @@ WHERE
 				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="250" width="555" height="52" isRemoveLineWhenBlank="true" uuid="6788eee0-1687-4205-ac5e-200ba0909574">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="13" isRemoveLineWhenBlank="true" uuid="c7021343-6c63-4f4d-9836-381ea824d1a5">
 						<printWhenExpression><![CDATA[$F{c_invoice_description}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA["DESCR. DOCUMENTO: "+$F{c_invoice_description}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="13" width="555" height="13" isRemoveLineWhenBlank="true" uuid="9f03370e-6d38-49c0-b5d4-9a75d0102e55">
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA["NOTE CLIENTE: "+$F{c_bpartner_note}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="26" width="555" height="13" isRemoveLineWhenBlank="true" uuid="27f666ee-46e4-4716-b505-eb5ad8114b33">
 						<printWhenExpression><![CDATA[$F{c_invoice_note}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA["NOTE DOCUMENTO: "+$F{c_invoice_note}]]></textFieldExpression>
 				</textField>
@@ -847,15 +847,15 @@ WHERE
 						<printWhenExpression><![CDATA[$F{bp_letterintentnrletter}!=null]]></printWhenExpression>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA["LETTERA DI INTENTO N°: " + $F{bp_letterintentnrletter}+" "+"DEL: "+(new SimpleDateFormat("dd/MM/yyyy").format($F{bp_letterintentdateletter}))]]></textFieldExpression>
 				</textField>
 			</frame>
-			<textField isStretchWithOverflow="true" evaluationTime="Master">
+			<textField textAdjust="StretchHeight" evaluationTime="Master">
 				<reportElement x="438" y="305" width="111" height="14" uuid="43d59647-d2ee-4c0e-b1d2-76cd2f6d7e59"/>
 				<textElement textAlignment="Right">
-					<font fontName="SansSerif" isBold="true"/>
+					<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["PAGINA "+$V{MASTER_CURRENT_PAGE}+ " DI "+$V{MASTER_TOTAL_PAGES}]]></textFieldExpression>
 			</textField>
@@ -889,7 +889,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="13" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_doctype_trl_printname}]]></textFieldExpression>
 				</textField>
@@ -916,14 +916,14 @@ WHERE
 								<pen lineWidth="0.5"/>
 							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
-								<font fontName="SansSerif" isBold="true"/>
+								<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							</textElement>
 							<text><![CDATA[DATA DOCUMENTO]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
 							<reportElement mode="Opaque" x="0" y="31" width="130" height="30" forecolor="#0022FF" uuid="ddd2eaa8-d290-4a82-bee0-b6dcdf51afd8"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
-								<font fontName="SansSerif" size="14" isBold="true"/>
+								<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{c_invoice_dateacct}]]></textFieldExpression>
 						</textField>
@@ -941,14 +941,14 @@ WHERE
 								<pen lineWidth="0.5"/>
 							</box>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
-								<font fontName="SansSerif" isBold="true"/>
+								<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							</textElement>
 							<text><![CDATA[NUMERO DOC.]]></text>
 						</staticText>
 						<textField>
 							<reportElement mode="Opaque" x="0" y="31" width="130" height="30" forecolor="#0022FF" uuid="69e8b639-a0dd-47da-95b3-74d21e633c5d"/>
 							<textElement textAlignment="Center" verticalAlignment="Middle">
-								<font fontName="SansSerif" size="14" isBold="true"/>
+								<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							</textElement>
 							<textFieldExpression><![CDATA[$F{c_invoice_documentno}]]></textFieldExpression>
 						</textField>
@@ -971,7 +971,7 @@ WHERE
 						<pen lineWidth="0.5" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
-						<font fontName="SansSerif" size="13" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<text><![CDATA[CLIENTE]]></text>
@@ -980,7 +980,7 @@ WHERE
 					<reportElement x="0" y="19" width="295" height="13" isRemoveLineWhenBlank="true" uuid="eff6b14d-abc1-4042-8741-5c5ef4d7f013"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
@@ -990,7 +990,7 @@ WHERE
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
@@ -999,7 +999,7 @@ WHERE
 					<reportElement x="0" y="45" width="295" height="13" isRemoveLineWhenBlank="true" uuid="1803454c-f8d6-4860-94ac-952b166bbfa9"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="false"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
@@ -1007,7 +1007,7 @@ WHERE
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="58" width="295" height="13" isRemoveLineWhenBlank="true" uuid="e99df91d-ed04-4868-8cdf-2840c68faa0f"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
@@ -1015,7 +1015,7 @@ WHERE
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="71" width="295" height="13" isRemoveLineWhenBlank="true" uuid="934d2e22-99c2-4142-a1b6-780d43abbd01"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
@@ -1024,7 +1024,7 @@ WHERE
 					<reportElement x="0" y="84" width="295" height="13" isRemoveLineWhenBlank="true" uuid="586fd5a7-0713-456e-844c-480233f6464c"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" isBold="false"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="false"/>
 						<paragraph lineSpacing="Single" leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
@@ -1039,7 +1039,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="10"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA["P.IVA: "+$F{c_bpartner_lit_taxid}]]></textFieldExpression>
@@ -1047,7 +1047,7 @@ WHERE
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="110" width="295" height="13" isRemoveLineWhenBlank="true" uuid="185f44a2-b5c2-4d0b-9ea8-2462d7e0c7da"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_a_phone}!= null ? "TELEFONO: "+$F{c_bpartner_location_a_phone}:""]]></textFieldExpression>
@@ -1055,7 +1055,7 @@ WHERE
 				<textField isBlankWhenNull="true">
 					<reportElement x="0" y="123" width="295" height="13" isRemoveLineWhenBlank="true" uuid="70a3bbbc-87a6-4cf4-94a0-8b3f728eb905"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 						<paragraph leftIndent="5"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_bpartner_location_email}!= null ? "eMail: "+$F{c_bpartner_location_email}:""]]></textFieldExpression>
@@ -1068,11 +1068,11 @@ WHERE
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="260" height="28" uuid="3bc4aca9-d730-4289-994e-273063a7243a"/>
 					<box leftPadding="5"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA["TERMINE DI PAGAM.:"+$F{c_paymentterm_value}]]></textFieldExpression>
 				</textField>
@@ -1080,15 +1080,15 @@ WHERE
 					<reportElement x="0" y="28" width="260" height="28" uuid="07ae3274-f232-4867-8ef8-0364323484dc"/>
 					<box leftPadding="5"/>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="9"/>
 					</textElement>
 					<textFieldExpression><![CDATA["PAGAMENTO A MEZZO: "+$F{c_invoice_paymentrule}.toUpperCase()]]></textFieldExpression>
 				</textField>
 			</frame>
-			<textField isStretchWithOverflow="true" evaluationTime="Master">
+			<textField textAdjust="StretchHeight" evaluationTime="Master">
 				<reportElement x="442" y="204" width="110" height="14" uuid="bd7e18cd-9021-4050-b9b8-8d951afd815e"/>
 				<textElement textAlignment="Right">
-					<font fontName="SansSerif" isBold="true"/>
+					<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA["PAGINA "+$V{MASTER_CURRENT_PAGE}+ " DI "+$V{MASTER_TOTAL_PAGES}]]></textFieldExpression>
 			</textField>
@@ -1119,7 +1119,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[DESCIZIONE DETTAGLIATA DEI BENI]]></text>
 				</staticText>
@@ -1134,7 +1134,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[U.M.]]></text>
 				</staticText>
@@ -1149,7 +1149,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Q.TA']]></text>
 				</staticText>
@@ -1165,7 +1165,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[TOTALE]]></text>
 				</staticText>
@@ -1180,7 +1180,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[C.I.]]></text>
 				</staticText>
@@ -1195,7 +1195,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="9" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[COD. ART.]]></text>
 				</staticText>
@@ -1210,7 +1210,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[SC %]]></text>
 				</staticText>
@@ -1226,7 +1226,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 					</textElement>
 					<text><![CDATA[PREZZO]]></text>
 				</staticText>
@@ -1242,7 +1242,7 @@ WHERE
 					<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null && $F{c_invoiceline_isdescription}.equals("Y")]]></printWhenExpression>
 				</reportElement>
 				<textElement>
-					<font fontName="SansSerif" size="8" isBold="true"/>
+					<font fontName="DejaVu Sans Mono" size="8" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
 			</textField>
@@ -1261,7 +1261,7 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="80" height="12" uuid="05f3509d-6ffc-4e5a-afe5-6162ddf190e2">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 					</reportElement>
@@ -1272,11 +1272,11 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Top">
-						<font fontName="SansSerif" size="9"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement x="80" y="0" width="220" height="12" uuid="edb95f87-9b28-490f-beba-7e73f37925d0">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 					</reportElement>
@@ -1287,7 +1287,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Top" markup="html">
-						<font fontName="SansSerif" size="9"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[($F{c_invoiceline_name}!=null?$F{m_product_name}:$F{m_product_name}!=null?$F{m_product_name}:"")]]></textFieldExpression>
 				</textField>
@@ -1302,7 +1302,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Top" markup="styled">
-						<font fontName="SansSerif" size="9"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 				</textField>
@@ -1318,7 +1318,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
-						<font fontName="SansSerif" size="9"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_qtyinvoiced}]]></textFieldExpression>
 				</textField>
@@ -1335,7 +1335,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top">
-						<font fontName="SansSerif" size="9"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph rightIndent="0"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_pricelist}.doubleValue()==0?$F{c_invoiceline_priceactual}:$F{c_invoiceline_pricelist}]]></textFieldExpression>
@@ -1352,7 +1352,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top">
-						<font fontName="SansSerif" size="9"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_vdiscount}]]></textFieldExpression>
 				</textField>
@@ -1369,7 +1369,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
-						<font fontName="SansSerif" size="9"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoiceline_linenetamt}]]></textFieldExpression>
 				</textField>
@@ -1384,7 +1384,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
-						<font fontName="SansSerif" size="9"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_tax_taxindicator}]]></textFieldExpression>
 				</textField>
@@ -1402,7 +1402,7 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 					<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="475" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="ea711447-a730-40e5-8065-0c556b2cd38d">
 						<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y')]]></printWhenExpression>
 					</reportElement>
@@ -1413,7 +1413,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-						<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						<font fontName="DejaVu Sans Mono" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_product_description}]]></textFieldExpression>
@@ -1422,8 +1422,8 @@ WHERE
 		</band>
 		<band height="12">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="80" y="0" width="475" height="12" isRemoveLineWhenBlank="true" backcolor="#FFFFFF" uuid="db30fb3b-5201-4658-be82-99ad0a10ac92">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement x="80" y="0" width="475" height="12" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="db30fb3b-5201-4658-be82-99ad0a10ac92">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="740a87a0-24c0-49c2-80c9-cc4a73d2279f"/>
 					<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null && $F{c_invoiceline_isdescription}.equals("N")]]></printWhenExpression>
 				</reportElement>
@@ -1434,7 +1434,7 @@ WHERE
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<textElement textAlignment="Left">
-					<font fontName="SansSerif" size="9" isBold="false"/>
+					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
 			</textField>
@@ -1451,7 +1451,7 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
 					<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="475" height="14" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="bd1231be-2c9e-4933-a8b7-84edc14c244d">
 						<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(8)) == 'Y') || $F{c_invoiceline_help}!=null]]></printWhenExpression>
 					</reportElement>
@@ -1462,7 +1462,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-						<font fontName="SansSerif" size="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+						<font fontName="DejaVu Sans Mono" size="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<textFieldExpression><![CDATA[T($F{c_invoiceline_help}) + ($F{ad_orginfo_lit_report_param}.charAt(17)== 'Y' &&  !($F{c_order2_documentno}==null)?  "Rif.Ordine : " + T($F{c_order2_documentno}) + "Vs Rif :"+T($F{c_order2_poreference}) : "")]]></textFieldExpression>
@@ -1490,7 +1490,7 @@ WHERE
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement verticalAlignment="Middle">
-						<font fontName="SansSerif" size="9" isBold="false"/>
+						<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 					</textElement>
 					<textFieldExpression><![CDATA["LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}]]></textFieldExpression>
 				</textField>
@@ -1512,9 +1512,9 @@ WHERE
 		<band/>
 	</columnFooter>
 	<lastPageFooter>
-		<band height="180">
+		<band height="95">
 			<frame>
-				<reportElement x="0" y="85" width="555" height="95" uuid="fb784cbd-846f-4a76-8484-621d35fba5e3">
+				<reportElement x="0" y="0" width="555" height="95" uuid="fb784cbd-846f-4a76-8484-621d35fba5e3">
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<frame>
@@ -1557,17 +1557,17 @@ WHERE
 							<pen lineWidth="0.5"/>
 						</box>
 						<textElement textAlignment="Center" verticalAlignment="Middle">
-							<font fontName="SansSerif" size="12" isBold="true"/>
+							<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 						</textElement>
 						<text><![CDATA[TOTALE FATTURA]]></text>
 					</staticText>
-					<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+					<textField textAdjust="StretchHeight" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
 						<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="175" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						</reportElement>
 						<box rightPadding="5"/>
 						<textElement textAlignment="Right" verticalAlignment="Middle">
-							<font fontName="SansSerif" size="14" isBold="true"/>
+							<font fontName="DejaVu Sans Mono" size="9" isBold="true"/>
 							<paragraph rightIndent="5"/>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_invoice_grandtotal}]]></textFieldExpression>
@@ -1599,7 +1599,7 @@ WHERE
 					<reportElement x="0" y="60" width="555" height="35" uuid="b9c1d4b9-6cad-4097-b1f2-64b2d9dc90d4">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
-					<textField isStretchWithOverflow="true">
+					<textField textAdjust="StretchHeight">
 						<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="35" uuid="342470e2-7614-4ae4-aeb1-c21b12985524">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						</reportElement>
@@ -1607,24 +1607,12 @@ WHERE
 							<pen lineWidth="0.5"/>
 						</box>
 						<textElement textAlignment="Justified" verticalAlignment="Top">
-							<font fontName="SansSerif" size="6"/>
+							<font fontName="DejaVu Sans Mono" size="9"/>
 						</textElement>
 						<textFieldExpression><![CDATA["CONDIZIONI DI VENDITA: 1) La merce viaggia a rischio e pericolo del Committente anche se venduta franco destino. - 2) Prima di ritirare la merce verificare il peso, il quantitativo ed il perfetto stato dei colli. - 3) Non si accettano reclami dopo otto giorni dal ricevimento della merce. - 4) Per ogni contestazione si intende competente il Foro di Patti. - 6) Sui ritardati pagamenti decorrono gli interessi bancari per legge. - 7) Non si accettano sconti o arrotondamenti.\nCONTRIBUOTO CONOE - CONAI ASSOLTO OVE DOVUTO.\nAssolve gli obblighi di cui all'art. 62, comma 1, del decreto legge 24 gennaio 2012, n. 1, convertito, con modificazioni, della legge 24 marzo 2012, n. 27."]]></textFieldExpression>
 					</textField>
 				</frame>
 			</frame>
-			<textField>
-				<reportElement x="173" y="19" width="100" height="30" uuid="f060fced-b763-4305-8411-e59d35de0bd5"/>
-				<textFieldExpression><![CDATA[$F{c_order_nopackages}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="73" y="19" width="100" height="30" uuid="fa612b51-da3c-463c-91ee-c60d9ae901f6"/>
-				<textFieldExpression><![CDATA[$F{c_order_shipdate}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="73" y="49" width="100" height="30" uuid="08033c71-0cb6-4850-b242-0ba437c5c23d"/>
-				<textFieldExpression><![CDATA[$F{m_shipper_name}]]></textFieldExpression>
-			</textField>
 		</band>
 	</lastPageFooter>
 </jasperReport>
