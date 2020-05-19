@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.6.0.final utlizzo versione della libreria JasperReports6.6.0  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding_sub_payschedule" pageWidth="190" pageHeight="60" whenNoDataType="AllSectionsNoDetail" columnWidth="190" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="670eec42-47d1-4fbf-9e15-577428c8c829">
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding_sub_payschedule" pageWidth="185" pageHeight="60" whenNoDataType="AllSectionsNoDetail" columnWidth="185" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="670eec42-47d1-4fbf-9e15-577428c8c829">
 	<property name="ireport.zoom" value="4.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="RECORD_ID" class="java.lang.Integer">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
@@ -34,12 +43,12 @@ order by  c_invoicepayschedule."duedate"]]>
 		<band height="15">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 			<frame>
-				<reportElement x="0" y="0" width="190" height="15" uuid="2a101049-8bda-491c-91c7-1c647a2b9d98"/>
+				<reportElement x="0" y="0" width="185" height="15" uuid="2a101049-8bda-491c-91c7-1c647a2b9d98"/>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement mode="Opaque" x="0" y="0" width="190" height="15" forecolor="#000000" backcolor="#FF9933" uuid="9fafb163-cb5a-4f23-9b10-72bfbed18d08"/>
+					<reportElement mode="Opaque" x="0" y="0" width="185" height="15" forecolor="#000000" backcolor="#FCEAD7" uuid="9fafb163-cb5a-4f23-9b10-72bfbed18d08"/>
 					<box>
 						<pen lineWidth="0.5" lineColor="#000000"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -48,9 +57,9 @@ order by  c_invoicepayschedule."duedate"]]>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8" isBold="true"/>
+						<font fontName="DejaVu Sans Mono" size="8" isBold="true"/>
 					</textElement>
-					<text><![CDATA[SCADENZE]]></text>
+					<text><![CDATA[Scadenze/Due]]></text>
 				</staticText>
 			</frame>
 		</band>
@@ -59,24 +68,26 @@ order by  c_invoicepayschedule."duedate"]]>
 		<band height="15" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<frame>
-				<reportElement mode="Opaque" x="0" y="0" width="190" height="15" backcolor="#BDBDBD" uuid="642bdf47-63bf-46b0-bec9-85a49eb68bba"/>
+				<reportElement mode="Opaque" x="0" y="0" width="185" height="15" backcolor="#FCEAD7" uuid="642bdf47-63bf-46b0-bec9-85a49eb68bba">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<staticText>
-					<reportElement positionType="Float" mode="Transparent" x="95" y="0" width="95" height="15" forecolor="#333333" backcolor="#FFFFFF" uuid="8bfc9c7e-6bc9-4aaf-90c3-c30fa6593e24"/>
-					<box rightPadding="5"/>
-					<textElement textAlignment="Right" verticalAlignment="Middle" rotation="None" markup="none">
-						<font fontName="SansSerif" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<reportElement positionType="Float" mode="Transparent" x="0" y="0" width="93" height="15" forecolor="#333333" backcolor="#FFFFFF" uuid="8bfc9c7e-6bc9-4aaf-90c3-c30fa6593e24"/>
+					<box leftPadding="5" rightPadding="0"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
+						<font fontName="DejaVu Sans Mono" size="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<text><![CDATA[SCADENZA]]></text>
 				</staticText>
 				<staticText>
-					<reportElement positionType="Float" x="0" y="0" width="95" height="15" forecolor="#333333" uuid="43f3e675-43dd-4746-8521-9facdbee5eaf"/>
-					<box leftPadding="5"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
-						<font fontName="SansSerif" size="8" isBold="true"/>
+					<reportElement positionType="Float" x="93" y="0" width="92" height="15" forecolor="#333333" uuid="43f3e675-43dd-4746-8521-9facdbee5eaf"/>
+					<box leftPadding="0" rightPadding="5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+						<font fontName="DejaVu Sans Mono" size="8" isBold="true"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<text><![CDATA[IMPORTO]]></text>
@@ -88,24 +99,26 @@ order by  c_invoicepayschedule."duedate"]]>
 		<band height="15" splitType="Stretch">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
 			<frame>
-				<reportElement x="0" y="0" width="190" height="15" uuid="a120e8cc-f002-44db-b289-3fcb45486d8e"/>
+				<reportElement x="0" y="0" width="185" height="15" uuid="a120e8cc-f002-44db-b289-3fcb45486d8e">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+				</reportElement>
 				<box>
 					<pen lineWidth="0.5"/>
 				</box>
 				<textField pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="0" y="0" width="95" height="15" uuid="c27120cc-da36-4c16-b05e-d845b2f7a393"/>
+					<reportElement positionType="Float" x="0" y="0" width="93" height="15" uuid="c27120cc-da36-4c16-b05e-d845b2f7a393"/>
 					<box leftPadding="5"/>
 					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoicepayschedule_dueamt}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true" pattern="dd-MM-yyyy" isBlankWhenNull="true">
-					<reportElement positionType="Float" x="95" y="0" width="95" height="15" uuid="a7f5fb6d-c9d1-4360-9719-fe5ac03508a7"/>
+				<textField textAdjust="StretchHeight" pattern="dd-MM-yyyy" isBlankWhenNull="true">
+					<reportElement positionType="Float" x="93" y="0" width="92" height="15" uuid="a7f5fb6d-c9d1-4360-9719-fe5ac03508a7"/>
 					<box rightPadding="5"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
-						<font fontName="SansSerif" size="8"/>
+						<font fontName="DejaVu Sans Mono" size="8"/>
 						<paragraph lineSpacing="Single"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoicepayschedule_duedate}]]></textFieldExpression>
