@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports5.2.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_inout_sub1" pageWidth="555" pageHeight="810" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="c33fbd9b-fd01-4855-baf8-57a853bc8344">
 	<property name="ireport.zoom" value="1.6934217901613329"/>
 	<property name="ireport.x" value="0"/>
@@ -322,7 +322,7 @@ ORDER BY m_inoutline_line ASC]]>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" uuid="fed77b28-93de-4074-9ef2-7de8fdb1256b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad407ab-c715-4c2e-bb2f-7047aacdd74d"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -399,7 +399,7 @@ ORDER BY m_inoutline_line ASC]]>
 			</textField>
 		</band>
 		<band height="11">
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="3ab079f2-f181-49b7-9ef1-7de24c1bead3">
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(6)) == 'Y')]]></printWhenExpression>
 				</reportElement>
@@ -418,7 +418,7 @@ ORDER BY m_inoutline_line ASC]]>
 			</textField>
 		</band>
 		<band height="11">
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="5d9106d4-ce93-4095-9025-794077560dda">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(7)) == 'Y')]]></printWhenExpression>
@@ -438,7 +438,7 @@ ORDER BY m_inoutline_line ASC]]>
 			</textField>
 		</band>
 		<band height="11">
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="e74a78a8-5825-4e65-b92d-7c03ee301148">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<printWhenExpression><![CDATA[$F{ad_orginfo_lit_report_param}.charAt(13) =='Y' ? 1==1 :  $F{ad_orginfo_lit_report_param}.charAt(13) =='N' ? 1==2 :  $F{c_bpartner_lit_bpreportparam}.length()<1 ? 1==2 :$F{c_bpartner_lit_bpreportparam}.charAt(1)=='Y' ? 1==1 :1==2]]></printWhenExpression>

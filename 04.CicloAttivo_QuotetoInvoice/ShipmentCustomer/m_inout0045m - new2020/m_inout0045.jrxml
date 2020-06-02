@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports5.2.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DDT" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="75fe2fe9-b984-4ca9-8696-8bc3bc03080e">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="266"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="729"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -32,7 +32,7 @@
 		</box>
 		<paragraph lineSpacing="Single"/>
 	</style>
-	<style name="Crosstab Data Text" hTextAlign="Center" hImageAlign="Center">
+	<style name="Crosstab Data Text" hAlign="Center">
 		<paragraph lineSpacing="Single"/>
 	</style>
 	<style name="style1" markup="none"/>
@@ -669,7 +669,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="112" width="555" height="118" isRemoveLineWhenBlank="true" uuid="e868029d-2b63-47fe-a852-91f66fdbd51a">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="112" width="555" height="118" isRemoveLineWhenBlank="true" uuid="e868029d-2b63-47fe-a852-91f66fdbd51a">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
 				</reportElement>
 				<staticText>
@@ -696,7 +696,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[Cliente/Customer]]></text>
 				</staticText>
 				<frame>
-					<reportElement positionType="Float" stretchType="ContainerHeight" mode="Opaque" x="0" y="16" width="278" height="102" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="f2710bd5-41dc-4034-9421-0d804ffb92c6">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="16" width="278" height="102" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="f2710bd5-41dc-4034-9421-0d804ffb92c6">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -713,8 +713,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<box padding="0">
 						<pen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="278" height="18" isRemoveLineWhenBlank="true" uuid="15ab4694-f90e-4adf-92a3-f790cb764037">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="278" height="18" isRemoveLineWhenBlank="true" uuid="15ab4694-f90e-4adf-92a3-f790cb764037">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -731,8 +731,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="18" width="278" height="12" isRemoveLineWhenBlank="true" uuid="df659950-e289-4474-99e1-d7820c601ca8">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="18" width="278" height="12" isRemoveLineWhenBlank="true" uuid="df659950-e289-4474-99e1-d7820c601ca8">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -749,8 +749,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="30" width="278" height="12" isRemoveLineWhenBlank="true" uuid="24ca6d70-d046-4a6d-8521-68d46a9a6970">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="30" width="278" height="12" isRemoveLineWhenBlank="true" uuid="24ca6d70-d046-4a6d-8521-68d46a9a6970">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -767,8 +767,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="42" width="278" height="12" isRemoveLineWhenBlank="true" uuid="3073d242-702d-4d9f-9ef2-cfa2112dfe5d">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="42" width="278" height="12" isRemoveLineWhenBlank="true" uuid="3073d242-702d-4d9f-9ef2-cfa2112dfe5d">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -784,8 +784,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="54" width="278" height="12" isRemoveLineWhenBlank="true" uuid="dd8e6b33-29cd-4a9a-a332-79954ffc75f5">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="54" width="278" height="12" isRemoveLineWhenBlank="true" uuid="dd8e6b33-29cd-4a9a-a332-79954ffc75f5">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -801,8 +801,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="66" width="278" height="12" isRemoveLineWhenBlank="true" uuid="c988213a-4a30-41b8-a8af-f37ff8007861">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="66" width="278" height="12" isRemoveLineWhenBlank="true" uuid="c988213a-4a30-41b8-a8af-f37ff8007861">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -819,8 +819,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="78" width="278" height="12" isRemoveLineWhenBlank="true" uuid="a300a1ae-3cf7-4bed-a2e4-2bbe6c8e7a7f">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="78" width="278" height="12" isRemoveLineWhenBlank="true" uuid="a300a1ae-3cf7-4bed-a2e4-2bbe6c8e7a7f">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -837,7 +837,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_location_phone}!= null?"TELEFONO: "+$F{c_bpartner_location_phone}:""]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="ScaleFont" isBlankWhenNull="false">
+					<textField isBlankWhenNull="false">
 						<reportElement x="0" y="90" width="278" height="12" forecolor="#000000" uuid="35784479-781c-40a6-a2a9-9d5d0e83c0fd">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						</reportElement>
@@ -875,7 +875,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[Destinazione merce/Consignee]]></text>
 				</staticText>
 				<frame>
-					<reportElement positionType="Float" stretchType="ContainerHeight" mode="Opaque" x="278" y="16" width="277" height="102" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="0f8269c4-a1f5-4144-9be6-9b6512bbdeb1">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="278" y="16" width="277" height="102" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="0f8269c4-a1f5-4144-9be6-9b6512bbdeb1">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
 						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 						<property name="com.jaspersoft.layout.grid.y" value="1"/>
@@ -892,8 +892,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
 						<rightPen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="277" height="15" isRemoveLineWhenBlank="true" uuid="0fa74ee0-9a53-45eb-932c-a97db00ccb25">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="277" height="15" isRemoveLineWhenBlank="true" uuid="0fa74ee0-9a53-45eb-932c-a97db00ccb25">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -910,7 +910,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="15" width="277" height="15" isRemoveLineWhenBlank="true" uuid="9e49ac6f-9a07-42a3-927d-22b6357db8ff">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
@@ -927,7 +927,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_location_a_name}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="30" width="277" height="15" isRemoveLineWhenBlank="true" uuid="51bce520-8dec-4e8f-aa97-6dd817246fd9">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
@@ -944,7 +944,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_a_address1}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="45" width="277" height="15" isRemoveLineWhenBlank="true" uuid="81b82cd4-c529-47c8-8d5c-6671b89e55a6">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
@@ -978,7 +978,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_a_address3}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="74" width="277" height="14" isRemoveLineWhenBlank="true" uuid="ee0487d4-caf3-49e3-8db0-c080a87c3ab3">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -995,7 +995,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}.toUpperCase()) +" "+($F{c_location_a_regionname} == null ? "" : "("+$F{c_location_a_regionname}.toUpperCase())+") " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name}.toUpperCase())]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="88" width="277" height="14" isRemoveLineWhenBlank="true" uuid="1181ca75-32d8-47d0-bf4f-69468ff3b123">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
@@ -1441,7 +1441,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</textField>
 			</frame>
 			<frame>
-				<reportElement positionType="Float" stretchType="ContainerBottom" x="0" y="112" width="555" height="118" isRemoveLineWhenBlank="true" uuid="6778ed3e-d880-48af-af3e-dff7fa204f6f">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="112" width="555" height="118" isRemoveLineWhenBlank="true" uuid="6778ed3e-d880-48af-af3e-dff7fa204f6f">
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
 				</reportElement>
 				<staticText>
@@ -1468,7 +1468,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[Cliente/Customer]]></text>
 				</staticText>
 				<frame>
-					<reportElement positionType="Float" stretchType="ContainerHeight" mode="Opaque" x="0" y="16" width="278" height="102" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="97ce600b-4923-4e37-b3e0-1a84e9f292e3">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="0" y="16" width="278" height="102" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="97ce600b-4923-4e37-b3e0-1a84e9f292e3">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -1485,8 +1485,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<box padding="0">
 						<pen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="278" height="18" isRemoveLineWhenBlank="true" uuid="27abd1e5-bb8f-4d47-9498-e50037965bec">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="278" height="18" isRemoveLineWhenBlank="true" uuid="27abd1e5-bb8f-4d47-9498-e50037965bec">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -1503,8 +1503,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="18" width="278" height="12" isRemoveLineWhenBlank="true" uuid="4941da27-a5ce-4b8c-8054-45bcbb549708">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="18" width="278" height="12" isRemoveLineWhenBlank="true" uuid="4941da27-a5ce-4b8c-8054-45bcbb549708">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -1521,8 +1521,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_name2}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="30" width="278" height="12" isRemoveLineWhenBlank="true" uuid="31c7dec4-5dfb-48fb-8643-594b86c50c2d">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="30" width="278" height="12" isRemoveLineWhenBlank="true" uuid="31c7dec4-5dfb-48fb-8643-594b86c50c2d">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -1539,8 +1539,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_address1}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="42" width="278" height="12" isRemoveLineWhenBlank="true" uuid="da46c152-162f-4b67-94bc-c0f46ab17683">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="42" width="278" height="12" isRemoveLineWhenBlank="true" uuid="da46c152-162f-4b67-94bc-c0f46ab17683">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -1556,8 +1556,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_address2}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="54" width="278" height="12" isRemoveLineWhenBlank="true" uuid="617a3f79-9e0c-4458-9c67-3a684809fc05">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="54" width="278" height="12" isRemoveLineWhenBlank="true" uuid="617a3f79-9e0c-4458-9c67-3a684809fc05">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -1573,8 +1573,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_address3}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="66" width="278" height="12" isRemoveLineWhenBlank="true" uuid="ca4e057f-38ae-4f27-beb7-03024e1ae1ed">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="66" width="278" height="12" isRemoveLineWhenBlank="true" uuid="ca4e057f-38ae-4f27-beb7-03024e1ae1ed">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -1591,8 +1591,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[($F{c_location_postal} == null ? "" : $F{c_location_postal}) + " "+ ($F{c_location_city} == null ? "" : $F{c_location_city}.toUpperCase()) +" "+($F{c_location_regionname} == null ? "" : "("+$F{c_location_regionname}.toUpperCase())+") " +($F{c_country_trl_name} == null ? "" : $F{c_country_trl_name}.toUpperCase())]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="78" width="278" height="12" isRemoveLineWhenBlank="true" uuid="c14c28ec-ec7c-4de6-bbeb-5aaa2c273fb0">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="78" width="278" height="12" isRemoveLineWhenBlank="true" uuid="c14c28ec-ec7c-4de6-bbeb-5aaa2c273fb0">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -1609,7 +1609,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_location_phone}!= null?"TELEFONO: "+$F{c_bpartner_location_phone}:""]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="ScaleFont" isBlankWhenNull="false">
+					<textField isBlankWhenNull="false">
 						<reportElement x="0" y="90" width="278" height="12" forecolor="#000000" uuid="29315b19-c7e6-4ead-b96f-b9ae1d1f89ec">
 							<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						</reportElement>
@@ -1647,7 +1647,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					<text><![CDATA[Destinazione merce/Consignee]]></text>
 				</staticText>
 				<frame>
-					<reportElement positionType="Float" stretchType="ContainerHeight" mode="Opaque" x="278" y="16" width="277" height="102" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="ec49c7f3-b730-439d-8c78-3b5882ea423b">
+					<reportElement positionType="Float" stretchType="RelativeToBandHeight" mode="Opaque" x="278" y="16" width="277" height="102" isRemoveLineWhenBlank="true" backcolor="#F5F5F5" uuid="ec49c7f3-b730-439d-8c78-3b5882ea423b">
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
 						<property name="com.jaspersoft.layout.grid.x" value="-1"/>
 						<property name="com.jaspersoft.layout.grid.y" value="1"/>
@@ -1664,8 +1664,8 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						<bottomPen lineWidth="0.25" lineStyle="Solid"/>
 						<rightPen lineWidth="0.25" lineStyle="Solid"/>
 					</box>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-						<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="277" height="15" isRemoveLineWhenBlank="true" uuid="686f4415-eccb-46f2-827c-2364b8405081">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+						<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="277" height="15" isRemoveLineWhenBlank="true" uuid="686f4415-eccb-46f2-827c-2364b8405081">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 							<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
@@ -1682,7 +1682,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_name}.toUpperCase()]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="15" width="277" height="15" isRemoveLineWhenBlank="true" uuid="fed19819-61c8-4202-8edf-7965d37328e0">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
@@ -1699,7 +1699,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_bpartner_location_a_name}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="30" width="277" height="15" isRemoveLineWhenBlank="true" uuid="3f01fe5d-dd0f-4f02-90cf-a71e8c55de89">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
@@ -1716,7 +1716,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_a_address1}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="45" width="277" height="15" isRemoveLineWhenBlank="true" uuid="bc06530e-bf2a-491c-8284-32c080bc0f07">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
@@ -1750,7 +1750,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_a_address3}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="74" width="277" height="14" isRemoveLineWhenBlank="true" uuid="159439bb-5571-4d4c-b026-65b68d5d4f19">
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
 							<property name="com.jaspersoft.layout.grid.y" value="-1"/>
@@ -1767,7 +1767,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[($F{c_location_a_postal} == null ? "" : $F{c_location_a_postal}) + " "+ ($F{c_location_a_city} == null ? "" : $F{c_location_a_city}.toUpperCase()) +" "+($F{c_location_a_regionname} == null ? "" : "("+$F{c_location_a_regionname}.toUpperCase())+") " +($F{c_country_trl_a_name} == null ? "" : $F{c_country_trl_a_name}.toUpperCase())]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement positionType="Float" x="0" y="88" width="277" height="14" isRemoveLineWhenBlank="true" uuid="6da60434-8d00-40fb-a168-b58e7a7d52bb">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							<property name="com.jaspersoft.layout.grid.x" value="0"/>
@@ -2077,7 +2077,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<box leftPadding="0">
 					<pen lineWidth="0.25"/>
 				</box>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="0" width="555" height="14" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="1fc96cd1-e2bb-4a04-a50c-0192778c545a">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -2092,7 +2092,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA["Annotazioni doc./Document annotation: "+$F{m_inout_description}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="14" width="555" height="14" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="998b1feb-9370-48ee-a9a5-351769a50bc4">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{m_inout_note}!= null]]></printWhenExpression>
@@ -2106,7 +2106,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA["Note/Notes "+$F{m_inout_note}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="28" width="555" height="14" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="61a4f842-c809-4c4c-b063-9d298fa15d58">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
@@ -2129,7 +2129,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[($F{c_bpartner_lit_bpreport_param} ==null)]]></printWhenExpression>
 			<subreport overflowType="Stretch">
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" uuid="619853f7-104a-4089-b7e1-bfcd4597e806">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" uuid="619853f7-104a-4089-b7e1-bfcd4597e806">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[($F{c_bpartner_lit_bpreport_param} ==null)]]></printWhenExpression>
 				</reportElement>
@@ -2162,7 +2162,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "m_inout_sub1.jasper"]]></subreportExpression>
 			</subreport>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="80" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="0598bedb-8513-4df7-8df2-a8cef9108baf">
+				<reportElement stretchType="RelativeToBandHeight" x="80" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="0598bedb-8513-4df7-8df2-a8cef9108baf">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2172,7 +2172,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="0" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="a7de9ccc-e1ba-4948-aad7-bbe0b70aae2f">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="a7de9ccc-e1ba-4948-aad7-bbe0b70aae2f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -2182,18 +2182,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="378" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="76c3dff7-c3bc-4adf-aca6-d3c29dcef9fe">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="ContainerHeight" x="428" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="cff936c2-0cf0-4115-8b2c-29f75784ba6c">
+				<reportElement stretchType="RelativeToBandHeight" x="378" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="76c3dff7-c3bc-4adf-aca6-d3c29dcef9fe">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -2204,7 +2193,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="488" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="68b987cb-3920-427e-a323-62dc46d8c5f3">
+				<reportElement stretchType="RelativeToBandHeight" x="428" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="cff936c2-0cf0-4115-8b2c-29f75784ba6c">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -2215,7 +2204,18 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="555" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="a1ddd776-2886-4150-99c6-f29c2b2222bb">
+				<reportElement stretchType="RelativeToBandHeight" x="488" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="68b987cb-3920-427e-a323-62dc46d8c5f3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="a1ddd776-2886-4150-99c6-f29c2b2222bb">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -2226,12 +2226,12 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 		</band>
-		<band height="15">
+		<band height="15" splitType="Prevent">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 			<subreport overflowType="Stretch">
-				<reportElement positionType="Float" stretchType="ElementGroupHeight" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" uuid="065df36e-4668-4a94-b051-41913c5bbcbf">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" uuid="065df36e-4668-4a94-b051-41913c5bbcbf">
 					<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<subreportParameter name="SUBREPORT_DIR">
@@ -2263,7 +2263,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "m_inout_sub2.jasper"]]></subreportExpression>
 			</subreport>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="80" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="97d04cad-4117-45cd-8f04-992ba2d8eb40">
+				<reportElement stretchType="RelativeToBandHeight" x="80" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="97d04cad-4117-45cd-8f04-992ba2d8eb40">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2273,51 +2273,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="342" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="e208bf5b-81a8-45c2-abdf-a5c3b7cab1d0">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="ContainerHeight" x="370" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="153a7725-1b32-4bba-8dd1-12c58c92ed5d">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="ContainerHeight" x="410" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="c87e17f2-c8a6-4514-936e-1c34f93e3d5f">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="ContainerHeight" x="434" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="6be314bf-6051-49de-89c7-78a2d63c5bfe">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="ContainerHeight" x="454" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="9be0f40b-cf9b-47e6-9acd-b079911bffcc">
+				<reportElement stretchType="RelativeToBandHeight" x="320" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="e208bf5b-81a8-45c2-abdf-a5c3b7cab1d0">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -2328,7 +2284,18 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="490" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="3167450c-5660-42fb-9a10-90028d657df0">
+				<reportElement stretchType="RelativeToBandHeight" x="348" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="153a7725-1b32-4bba-8dd1-12c58c92ed5d">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="410" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="c87e17f2-c8a6-4514-936e-1c34f93e3d5f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -2339,7 +2306,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="555" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="874149b0-8c09-47fb-b05f-20e9a8bb280e">
+				<reportElement stretchType="RelativeToBandHeight" x="434" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="6be314bf-6051-49de-89c7-78a2d63c5bfe">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -2350,7 +2317,40 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="ContainerHeight" x="0" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="4b1db102-2ab0-4058-8803-a33abb04b0d2">
+				<reportElement stretchType="RelativeToBandHeight" x="454" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="9be0f40b-cf9b-47e6-9acd-b079911bffcc">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="490" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="3167450c-5660-42fb-9a10-90028d657df0">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="874149b0-8c09-47fb-b05f-20e9a8bb280e">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="15" isRemoveLineWhenBlank="true" uuid="4b1db102-2ab0-4058-8803-a33abb04b0d2">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -2557,7 +2557,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<text><![CDATA[Vettore/Carrier]]></text>
 					</staticText>
-					<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+					<textField isBlankWhenNull="true">
 						<reportElement positionType="Float" mode="Transparent" x="0" y="11" width="261" height="11" forecolor="#000000" uuid="f87f8b1d-8f05-4979-8368-bc1bcf5537f8">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						</reportElement>
@@ -2573,7 +2573,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{m_shipper_name}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+					<textField isBlankWhenNull="true">
 						<reportElement positionType="Float" mode="Transparent" x="0" y="22" width="261" height="11" uuid="18c6ecf1-08a3-4d0f-9f99-791d8bae179b">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						</reportElement>
@@ -2589,7 +2589,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{c_location_b_address1}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="ScaleFont" isBlankWhenNull="true">
+					<textField isBlankWhenNull="true">
 						<reportElement positionType="Float" mode="Transparent" x="0" y="33" width="261" height="11" forecolor="#000000" uuid="10dac1c8-772a-474f-a8fb-0fd91558830b">
 							<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						</reportElement>

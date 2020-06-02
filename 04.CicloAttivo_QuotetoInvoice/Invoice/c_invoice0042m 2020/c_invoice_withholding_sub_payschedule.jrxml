@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports5.2.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding_sub_payschedule" pageWidth="185" pageHeight="60" whenNoDataType="AllSectionsNoDetail" columnWidth="185" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="670eec42-47d1-4fbf-9e15-577428c8c829">
 	<property name="ireport.zoom" value="4.0"/>
 	<property name="ireport.x" value="0"/>
@@ -114,7 +114,7 @@ order by  c_invoicepayschedule."duedate"]]>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{c_invoicepayschedule_dueamt}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" pattern="dd-MM-yyyy" isBlankWhenNull="true">
+				<textField pattern="dd-MM-yyyy" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="93" y="0" width="92" height="15" uuid="a7f5fb6d-c9d1-4360-9719-fe5ac03508a7"/>
 					<box rightPadding="5"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
