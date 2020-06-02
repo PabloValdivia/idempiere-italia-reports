@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports5.2.0  -->
+<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="14" bottomMargin="10" isSummaryWithPageHeaderAndFooter="true" uuid="b6e7cc4b-3786-4fed-87f2-9d03f79344e3">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
@@ -18,7 +18,7 @@
 	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -43,7 +43,7 @@
 		</box>
 		<paragraph lineSpacing="Single"/>
 	</style>
-	<style name="Crosstab Data Text" hAlign="Center">
+	<style name="Crosstab Data Text" hTextAlign="Center" hImageAlign="Center">
 		<paragraph lineSpacing="Single"/>
 	</style>
 	<style name="html" markup="html"/>
@@ -2643,8 +2643,7 @@ WHERE
 				<textElement verticalAlignment="Top">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{lot}!=null?"LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}:""
-]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{lot}!=null?"LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}:""]]></textFieldExpression>
 			</textField>
 			<line>
 				<reportElement stretchType="RelativeToBandHeight" x="79" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="d05a28fa-65a2-4d44-8f76-2f3e3daf584f">
@@ -2733,9 +2732,6 @@ WHERE
 			</line>
 		</band>
 	</detail>
-	<columnFooter>
-		<band/>
-	</columnFooter>
 	<lastPageFooter>
 		<band height="60">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
@@ -2792,7 +2788,7 @@ WHERE
 					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<subreport>
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="185" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="185" height="60" isRemoveLineWhenBlank="true" uuid="6c565a08-2ed9-40aa-af90-bf4304944be7">
 						<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					</reportElement>
 					<subreportParameter name="AD_LANGUAGE">
@@ -2815,7 +2811,7 @@ WHERE
 					<property name="com.jaspersoft.layout.grid.y" value="-1"/>
 					<property name="com.jaspersoft.layout.grid.weight.x" value="1.0"/>
 					<property name="com.jaspersoft.layout.grid.weight.y" value="1.0"/>
-					<property name="com.jaspersoft.layout.grid.rowspan" value="2"/>
+					<property name="com.jaspersoft.layout.grid.rowspan" value="1"/>
 					<property name="com.jaspersoft.layout.grid.colspan" value="1"/>
 					<property name="com.jaspersoft.layout.grid.weight.fixed" value="false"/>
 				</reportElement>
@@ -2827,7 +2823,7 @@ WHERE
 					<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
 				</box>
 				<staticText>
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="185" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="185" height="30" uuid="defb19f6-34f2-4608-ae3e-1cc4c1fd46bb"/>
 					<box rightPadding="7">
 						<pen lineWidth="0.5"/>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -2841,7 +2837,7 @@ WHERE
 					<text><![CDATA[TOTALE FATTURA]]></text>
 				</staticText>
 				<textField pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
-					<reportElement stretchType="RelativeToTallestObject" x="0" y="30" width="185" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
+					<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="30" width="185" height="30" uuid="4deab5f5-ac7a-4a27-a53d-ab1a840bdda9">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 					</reportElement>
 					<box rightPadding="7"/>
