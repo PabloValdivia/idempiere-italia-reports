@@ -53,121 +53,185 @@
 	</parameter>
 	<queryString>
 		<![CDATA[-- lit_rep_m_inout_line_v
-SELECT * FROM lit_rep_m_inout_line_v
+SELECT * FROM lit_rep_m_inout_line_v1
 WHERE      m_inoutline_m_inout_id = $P{RECORD_ID}
 ORDER BY m_inoutline_line ASC]]>
 	</queryString>
 	<field name="m_inoutline_description" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_description"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_inoutline_qtyentered" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_qtyentered"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_inoutline_movementqty" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_movementqty"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="ddtlineamt" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ddtlineamt"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_inoutline_m_inout_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_m_inout_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_uom_uomsymbol" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_uom_uomsymbol"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_bpartner_lit_bpreportparam" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_bpartner_lit_bpreportparam"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
-	</field>
-	<field name="m_product_name" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="m_product_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_product_producttype" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_producttype"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_inoutline_m_inoutline_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_m_inoutline_id"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_inoutline_line" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_line"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_product_value" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_value"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
-	</field>
-	<field name="m_product_description" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="m_product_description"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
-	</field>
-	<field name="m_product_help" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="m_product_help"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_product_weight" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="m_product_weight"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_inoutline_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="m_inoutline_help" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="m_inoutline_help"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="ad_orginfo_lit_report_param" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_lit_report_param"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="ad_orginfo_lit_report_param1" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ad_orginfo_lit_report_param1"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_orderline_qtyentered" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_orderline_qtyentered"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_orderine_priceactual" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_orderine_priceactual"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_orderine_pricelist" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="c_orderine_pricelist"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="c_orderine_discount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderine_discount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="c_orderine_linenetamt" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_orderine_linenetamt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_uom_trl_uomsymbol" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_uom_trl_uomsymbol"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_uom_trl_name" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_uom_trl_name"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_order_documentno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_order_documentno"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="c_order_poreference" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="c_order_poreference"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="lit_attribute_v_lot" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="lit_attribute_v_lot"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<field name="ad_language" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="ad_language"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="prd_trl_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prd_trl_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="prd_trl_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prd_trl_description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="prd_trl_help" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prd_trl_help"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="prd_trl_docnote" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prd_trl_docnote"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="uomsymb1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uomsymb1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="uom_name_1" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uom_name_1"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="dividerate" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="dividerate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="shelfdepth" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="shelfdepth"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="shelfheight" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="shelfheight"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="shelfwidth" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="shelfwidth"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="sku" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sku"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="unitsperpack" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="unitsperpack"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="unitsperpallet" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="unitsperpallet"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="upc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="upc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="volume" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="volume"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="charge_trl_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="charge_trl_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
+	</field>
+	<field name="charge_trl_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="charge_trl_description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lit_rep_m_inout_line_v1"/>
 	</field>
 	<variable name="ddtlineamt1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
 		<variableExpression><![CDATA[$F{ddtlineamt}]]></variableExpression>
@@ -339,7 +403,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<font fontName="DejaVu Sans Mono" size="8"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{m_inoutline_name}!=null?$F{m_inoutline_name}:$F{m_product_name}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{m_inoutline_name}!=null?$F{m_inoutline_name}:$F{prd_trl_name}==null?$F{charge_trl_name}:$F{prd_trl_name}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement x="378" y="0" width="50" height="11" uuid="7ed35940-a07f-40fb-ab8e-1904ca2e9ba4">
@@ -414,7 +478,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{m_inoutline_description}!=null?$F{m_inoutline_description}:$F{m_product_description}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{m_inoutline_description}!=null?$F{m_inoutline_description}:$F{prd_trl_description}]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="11">
@@ -434,7 +498,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{m_inoutline_help}!=null?$F{m_inoutline_help}:$F{m_product_help}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{m_inoutline_help}!=null?$F{m_inoutline_help}:$F{prd_trl_help}]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="11">
