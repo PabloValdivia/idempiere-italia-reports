@@ -385,7 +385,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="80" y="0" width="240" height="11" forecolor="#000000" uuid="fed77b28-93de-4074-9ef2-7de8fdb1256b">
+				<reportElement positionType="Float" x="80" y="0" width="240" height="11" forecolor="#000000" uuid="fed77b28-93de-4074-9ef2-7de8fdb1256b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad407ab-c715-4c2e-bb2f-7047aacdd74d"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -513,7 +513,7 @@ ORDER BY m_inoutline_line ASC]]>
 			<property name="com.jaspersoft.studio.layout"/>
 			<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(6)) == 'Y')]]></printWhenExpression>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="80" y="0" width="240" height="11" isRemoveLineWhenBlank="true" uuid="76bf83b5-50a4-4881-a43d-e06794e1d42d">
+				<reportElement positionType="Float" x="80" y="0" width="240" height="11" isRemoveLineWhenBlank="true" uuid="76bf83b5-50a4-4881-a43d-e06794e1d42d">
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(6)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -533,7 +533,7 @@ ORDER BY m_inoutline_line ASC]]>
 		<band height="11">
 			<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(7)) == 'Y')]]></printWhenExpression>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="80" y="0" width="240" height="11" isRemoveLineWhenBlank="true" uuid="2ce98b15-b62c-4485-9dfc-239b5807fdfb">
+				<reportElement positionType="Float" x="80" y="0" width="240" height="11" isRemoveLineWhenBlank="true" uuid="2ce98b15-b62c-4485-9dfc-239b5807fdfb">
 					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(7)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<box>
@@ -553,7 +553,7 @@ ORDER BY m_inoutline_line ASC]]>
 		<band height="11">
 			<printWhenExpression><![CDATA[$F{ad_orginfo_lit_report_param}.charAt(13) =='Y' ? 1==1 :  $F{ad_orginfo_lit_report_param}.charAt(13) =='N' ? 1==2 :  $F{c_bpartner_lit_bpreportparam}.length()<1 ? 1==2 :$F{c_bpartner_lit_bpreportparam}.charAt(1)=='Y' ? 1==1 :1==2]]></printWhenExpression>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="80" y="0" width="240" height="11" isRemoveLineWhenBlank="true" uuid="d0659c16-fb4e-41af-bff5-ed2bcf529a21">
+				<reportElement positionType="Float" x="80" y="0" width="240" height="11" isRemoveLineWhenBlank="true" uuid="d0659c16-fb4e-41af-bff5-ed2bcf529a21">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="pixel"/>
 					<printWhenExpression><![CDATA[$F{ad_orginfo_lit_report_param}.charAt(13) =='Y' ? 1==1 :  $F{ad_orginfo_lit_report_param}.charAt(13) =='N' ? 1==2 :  $F{c_bpartner_lit_bpreportparam}.length()<1 ? 1==2 :$F{c_bpartner_lit_bpreportparam}.charAt(1)=='Y' ? 1==1 :1==2]]></printWhenExpression>
 				</reportElement>
