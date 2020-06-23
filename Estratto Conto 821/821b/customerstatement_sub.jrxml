@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ec_sub" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="85bd0489-8d99-4572-bbee-a7396eee256f">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BitraBi - 3380"/>
+	<property name="com.jaspersoft.studio.report.description" value=""/>
+	<parameter name="C_BPartner_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[new Integer (1000000)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="DateAcctFrom" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date(100,0,1)]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Dateopenamt" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new Date(100,0,1)]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select (
+	select (
+		select coalesce ( sum(invoiceopentodate(i.c_invoice_id,ps.c_invoicepayschedule_id,$P{Dateopenamt} )),0) as Openamt
+from C_INVOICE I 
+left join c_invoicepayschedule ps on i.c_invoice_id=ps.c_invoice_id
+where i.c_bpartner_id= $P{C_BPartner_ID}  and DATEINVOICED <  $P{DateAcctFrom} )-
+
+           (Select (
+              (select COALESCE(SUM(par.PAYAMT) + SUM(par.discountamt),0) as ARPayments
+	      from C_PAYMENT  par, C_DOCTYPE doc  where doc.NAME ='AR Receipt'
+              AND par.DOCSTATUS IN ('CO','CL')
+	      AND  par.C_BPARTNER_ID =$P{C_BPartner_ID} AND par.C_DOCTYPE_ID=doc.C_DOCTYPE_ID
+	      AND par.DATETRX < $P{DateAcctFrom} and par.isallocated='N' )
+              ) as Payments)
+     ) as OpenningBal]]>
+	</queryString>
+	<field name="openningbal" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="openningbal"/>
+	</field>
+	<variable name="openningbal1" class="java.math.BigDecimal" resetType="Page" calculation="Sum">
+		<variableExpression><![CDATA[$F{openningbal}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField pattern="¤#,##0.00;¤-#,##0.00">
+				<reportElement x="400" y="0" width="150" height="21" uuid="997846bc-5cbe-416e-ad28-9fc6356f6e45">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="47369250-141a-45dc-8be3-6a22723dbae2"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{openningbal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="400" height="21" uuid="4e09708e-f7ff-4c98-9c82-abeb407e6a5a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALDO ALLA DATA]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

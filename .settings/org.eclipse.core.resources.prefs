@@ -3,6 +3,7 @@ encoding//04.CicloAttivo_QuotetoInvoice/Invoice/c_invoice0042m\ 2020/c_invoice00
 encoding//04.CicloAttivo_QuotetoInvoice/Invoice/c_invoice0042m\ 2020/c_invoice_withholding_sub_payschedule.jrxml=UTF-8
 encoding//04.CicloAttivo_QuotetoInvoice/Invoice/c_invoice0042m\ 2020/c_invoice_withholding_sub_vat.jrxml=UTF-8
 encoding//04.CicloAttivo_QuotetoInvoice/Invoice/c_invoice0042m/c_invoice0042m.jrxml=UTF-8
+encoding//04.CicloAttivo_QuotetoInvoice/Order-offer/0043\ -\ 2020/c_order.jrxml=UTF-8
 encoding//04.CicloAttivo_QuotetoInvoice/OrderOffer0043/c_order.jrxml=UTF-8
 encoding//04.CicloAttivo_QuotetoInvoice/SalesOrder/c_orderlist0055/c_orderlist0055.jrxml=UTF-8
 encoding//04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m\ -\ new2020/m_inout0045.jrxml=UTF-8
@@ -17,9 +18,6 @@ encoding//08.PartiteAperte_OpenItems/0314/open_items.jrxml=UTF-8
 encoding//08.PartiteAperte_OpenItems/821/customerstatement821.jrxml=UTF-8
 encoding//08.PartiteAperte_OpenItems/OpenItems/customer_statement/customer_statement.jrxml=UTF-8
 encoding//08.PartiteAperte_OpenItems/OpenItems/customer_statement/customer_statement_sub1.jrxml=UTF-8
-encoding//Estratto\ Conto\ 821/customerstatement821b.jrxml=UTF-8
-encoding//Estratto\ Conto\ 821/customerstatement_sub.jrxml=UTF-8
-encoding//Estratto\ Conto\ 822_conologico/customerstatement821b.jrxml=UTF-8
 encoding//Estratto\ Conto\ 822_conologico/customerstatement_sub.jrxml=UTF-8
 encoding//OLD/821b.EstrattoConto\ -\ Copia/customerstatement821b.jrxml=UTF-8
 encoding//PurchaseOrder/c_order_po.jrxml=UTF-8
