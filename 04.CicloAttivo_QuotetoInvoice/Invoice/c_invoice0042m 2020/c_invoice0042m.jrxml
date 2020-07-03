@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports5.2.0  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_invoice_withholding" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="14" bottomMargin="10" isSummaryWithPageHeaderAndFooter="true" uuid="b6e7cc4b-3786-4fed-87f2-9d03f79344e3">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
@@ -43,7 +43,7 @@
 		</box>
 		<paragraph lineSpacing="Single"/>
 	</style>
-	<style name="Crosstab Data Text" hAlign="Center">
+	<style name="Crosstab Data Text" hTextAlign="Center" hImageAlign="Center">
 		<paragraph lineSpacing="Single"/>
 	</style>
 	<style name="html" markup="html"/>
@@ -2131,19 +2131,8 @@ WHERE
 		<band height="10">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null && $F{c_invoiceline_isdescription}.equals("Y")]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="80" y="0" width="198" height="10" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="effe85f6-ca53-4bb6-971a-2669897be719">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2d216d04-b1c4-468f-8ce3-2cf247137d7f"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null && $F{c_invoiceline_isdescription}.equals("Y")]]></printWhenExpression>
-				</reportElement>
-				<textElement verticalAlignment="Top">
-					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
-			</textField>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="79" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="26bfc5be-fb5a-4e86-8da6-5336e228315d">
+				<reportElement stretchType="ElementGroupHeight" x="79" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="26bfc5be-fb5a-4e86-8da6-5336e228315d">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -2152,7 +2141,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="278" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="1195ba78-bd89-46b6-8dea-4a47f7249d24">
+				<reportElement stretchType="ElementGroupHeight" x="278" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="1195ba78-bd89-46b6-8dea-4a47f7249d24">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2160,7 +2149,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="308" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="b6c45782-f576-46a1-913a-7c97b6738a35">
+				<reportElement stretchType="ElementGroupHeight" x="308" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="b6c45782-f576-46a1-913a-7c97b6738a35">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2168,7 +2157,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="369" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="219a0070-031a-4257-b533-652d3cd643f8">
+				<reportElement stretchType="ElementGroupHeight" x="369" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="219a0070-031a-4257-b533-652d3cd643f8">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2176,7 +2165,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="439" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="e4121ce9-3d38-4b8b-beed-aeef582e55ba">
+				<reportElement stretchType="ElementGroupHeight" x="439" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="e4121ce9-3d38-4b8b-beed-aeef582e55ba">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2184,7 +2173,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="462" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="d7e54967-2298-4a58-bb2a-b2ca5aa2e6a4">
+				<reportElement stretchType="ElementGroupHeight" x="462" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="d7e54967-2298-4a58-bb2a-b2ca5aa2e6a4">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2192,7 +2181,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="532" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="0f86dd7b-dda5-4df1-ba4c-8064d3fe3628">
+				<reportElement stretchType="ElementGroupHeight" x="532" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="0f86dd7b-dda5-4df1-ba4c-8064d3fe3628">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2200,7 +2189,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="e5a015b2-b519-4222-b063-b920c8ea102b">
+				<reportElement stretchType="ElementGroupHeight" x="555" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="e5a015b2-b519-4222-b063-b920c8ea102b">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2208,7 +2197,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="f6130717-f6ad-4506-aa33-5557b06e46a9">
+				<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="f6130717-f6ad-4506-aa33-5557b06e46a9">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
@@ -2217,9 +2206,20 @@ WHERE
 					<pen lineWidth="0.25"/>
 				</graphicElement>
 			</line>
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="80" y="0" width="198" height="10" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="effe85f6-ca53-4bb6-971a-2669897be719">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2d216d04-b1c4-468f-8ce3-2cf247137d7f"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null && $F{c_invoiceline_isdescription}.equals("Y")]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
+			</textField>
 		</band>
 		<band height="10">
-			<textField isStretchWithOverflow="true" pattern="¤#,##0.000;¤-#,##0.000" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="¤#,##0.000;¤-#,##0.000" isBlankWhenNull="true">
 				<reportElement x="368" y="0" width="70" height="10" isRemoveLineWhenBlank="true" uuid="0d1bcb62-b4f7-4ecf-aadd-6ff747e6fe7e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fbb90318-0673-4966-beef-2d35743c2496"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -2232,13 +2232,13 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Top">
+				<textElement textAlignment="Right" verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 					<paragraph rightIndent="0"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_pricelist}.doubleValue()==0?$F{c_invoiceline_priceactual}:$F{c_invoiceline_pricelist}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,##0.0##" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="#,##0.0##" isBlankWhenNull="true">
 				<reportElement x="438" y="0" width="24" height="10" isRemoveLineWhenBlank="true" uuid="6842607c-2ef0-495e-af7a-a192208c4e33">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e477dd3-9937-4bbd-aad3-81de4a67bda5"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2250,12 +2250,12 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Top">
+				<textElement textAlignment="Right" verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_vdiscount}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
 				<reportElement x="462" y="0" width="70" height="10" isRemoveLineWhenBlank="true" uuid="b02d7e8f-afb0-40f4-84ca-1b2da70bf2b5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5fdc33e4-d580-4789-8516-43f10c11cd8a"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -2268,12 +2268,12 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
+				<textElement textAlignment="Right" verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_linenetamt}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="532" y="0" width="23" height="10" isRemoveLineWhenBlank="true" uuid="291fb1f7-0467-4265-b851-fa4216cc249f">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d6719251-32f2-423f-918f-3c80e4f9f71a"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2284,12 +2284,12 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
+				<textElement textAlignment="Right" verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_tax_taxindicator}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" pattern="#,###.###" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" pattern="#,###.###" isBlankWhenNull="true">
 				<reportElement x="308" y="0" width="60" height="10" isRemoveLineWhenBlank="true" uuid="4bd453a6-ae7c-4d8f-8f58-5af51851bc06">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3cc56325-4fad-4011-8e95-04e2df52590c"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2301,12 +2301,12 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Right" verticalAlignment="Top" markup="styled">
+				<textElement textAlignment="Right" verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_qtyinvoiced}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="278" y="0" width="30" height="10" isRemoveLineWhenBlank="true" uuid="b95c3d59-d260-4e54-8a50-0bc8bb52a8a5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2f206b16-a729-48fb-985c-ee977534bb23"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2317,12 +2317,12 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_uom_trl_uomsymbol}.toUpperCase()]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="0" y="0" width="80" height="10" isRemoveLineWhenBlank="true" uuid="8ca34689-898f-4e2e-a336-c64ccc72af13">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="73e4182e-cf3a-4fd1-8a37-75617e963333"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2333,13 +2333,13 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement verticalAlignment="Top">
+				<textElement verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 			</textField>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement x="80" y="0" width="198" height="10" isRemoveLineWhenBlank="true" uuid="124d33ef-e535-4254-96fc-8221cae79e04">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<reportElement positionType="Float" x="80" y="0" width="198" height="10" isRemoveLineWhenBlank="true" uuid="124d33ef-e535-4254-96fc-8221cae79e04">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -2349,13 +2349,22 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement verticalAlignment="Top" markup="html">
+				<textElement verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_m_product_id}!=null?$F{prdtrl}:$F{c_invoiceline_name}]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="79" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="fc5de265-eba9-4111-b0cf-fa0b9c39aef9">
+				<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="fc488140-75ed-4d4e-a1ea-7d933b8a7588">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement stretchType="ElementGroupHeight" x="79" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="fc5de265-eba9-4111-b0cf-fa0b9c39aef9">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -2364,7 +2373,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="278" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="b980ecb5-eb32-4e6b-bd26-e29d57efce53">
+				<reportElement stretchType="ElementGroupHeight" x="278" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="b980ecb5-eb32-4e6b-bd26-e29d57efce53">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
@@ -2373,7 +2382,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="308" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="9890302d-992e-4eff-9b53-09364b48287c">
+				<reportElement stretchType="ElementGroupHeight" x="308" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="9890302d-992e-4eff-9b53-09364b48287c">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2381,7 +2390,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="369" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="b42276f6-8480-4d2b-b028-54f93bf939cf">
+				<reportElement stretchType="ElementGroupHeight" x="369" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="b42276f6-8480-4d2b-b028-54f93bf939cf">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2389,7 +2398,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="439" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="bac72c7e-aff3-4e1b-b54d-a5a374554b34">
+				<reportElement stretchType="ElementGroupHeight" x="439" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="bac72c7e-aff3-4e1b-b54d-a5a374554b34">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2397,7 +2406,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="462" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="35dec33e-4ff3-47b8-bc13-65fde51e99fa">
+				<reportElement stretchType="ElementGroupHeight" x="462" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="35dec33e-4ff3-47b8-bc13-65fde51e99fa">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
@@ -2406,7 +2415,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="532" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="6cfecbd5-7813-49cc-925e-48f4166df395">
+				<reportElement stretchType="ElementGroupHeight" x="532" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="6cfecbd5-7813-49cc-925e-48f4166df395">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2414,114 +2423,8 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="78e10277-5fa2-4b55-8ae4-bb442dd4eef7">
+				<reportElement stretchType="ElementGroupHeight" x="555" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="78e10277-5fa2-4b55-8ae4-bb442dd4eef7">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="fc488140-75ed-4d4e-a1ea-7d933b8a7588">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-		</band>
-		<band height="10">
-			<printWhenExpression><![CDATA[$F{prddescrtrl}!=null]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement positionType="Float" x="80" y="0" width="198" height="10" isRemoveLineWhenBlank="true" uuid="77707464-f6ee-4080-866c-32971a13d1f4">
-					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5b677dd9-3a4a-44e3-aebb-f097a8cfc1a1"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<box>
-					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-				</box>
-				<textElement verticalAlignment="Top" markup="html">
-					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{prddescrtrl}]]></textFieldExpression>
-			</textField>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="79" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="ecef5992-f413-4c39-b485-a26d8a9710d4">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="278" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="5e1ecf9a-7c51-4309-8d0a-43509f89ea54">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="308" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="e7bf22bf-2d75-4087-bb72-dd4f4dc49c3f">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="369" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="b25288f9-4b35-4962-8b3a-58dccd346765">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="439" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="cd2bf21c-42a9-4bef-931d-538c3b1b7b19">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="462" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="c2448848-cab2-4089-9794-eb76a015a45d">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="532" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="36aabf00-c018-44ad-ac65-9a76a0ed90d4">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="79b686c3-c7ff-41ad-8951-cc3ced1dd67d">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-				</reportElement>
-				<graphicElement>
-					<pen lineWidth="0.25"/>
-				</graphicElement>
-			</line>
-			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="b2679f82-3d89-4dbf-9ed7-cd95405ecd78">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<graphicElement>
 					<pen lineWidth="0.25"/>
@@ -2530,7 +2433,7 @@ WHERE
 		</band>
 		<band height="10">
 			<printWhenExpression><![CDATA[$F{c_invoiceline_description}!=null && $F{c_invoiceline_isdescription}.equals("N")]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="80" y="0" width="198" height="10" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="2ab67100-029f-44eb-851a-b8c78e39e18e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="740a87a0-24c0-49c2-80c9-cc4a73d2279f"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2542,7 +2445,7 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement textAlignment="Left" verticalAlignment="Top">
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{c_invoiceline_description}]]></textFieldExpression>
@@ -2629,7 +2532,7 @@ WHERE
 		</band>
 		<band height="10">
 			<printWhenExpression><![CDATA[$F{lot}!=null]]></printWhenExpression>
-			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement positionType="Float" x="80" y="0" width="198" height="10" isRemoveLineWhenBlank="true" forecolor="#000000" backcolor="#FFFFFF" uuid="0a3e023a-6173-41e2-8c45-cdefb89d134d">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3885e6b9-9e2e-471c-be47-ab6450b99885"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -2640,13 +2543,13 @@ WHERE
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textElement verticalAlignment="Top">
+				<textElement verticalAlignment="Top" markup="none">
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{lot}!=null?"LOTTO E SCADENZA: " +$F{lit_attribute_v_lot}:""]]></textFieldExpression>
 			</textField>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="79" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="d05a28fa-65a2-4d44-8f76-2f3e3daf584f">
+				<reportElement stretchType="ElementGroupHeight" x="79" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="d05a28fa-65a2-4d44-8f76-2f3e3daf584f">
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
@@ -2655,7 +2558,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="278" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="be3cc4f3-d151-401f-9f08-56ec7d46c6f3">
+				<reportElement stretchType="ElementGroupHeight" x="278" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="be3cc4f3-d151-401f-9f08-56ec7d46c6f3">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 				</reportElement>
@@ -2664,7 +2567,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="308" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="545c3f16-7247-48e8-b4ce-12a40cafaf69">
+				<reportElement stretchType="ElementGroupHeight" x="308" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="545c3f16-7247-48e8-b4ce-12a40cafaf69">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2672,7 +2575,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="369" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="58e33113-4483-473e-9368-86a184f3986a">
+				<reportElement stretchType="ElementGroupHeight" x="369" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="58e33113-4483-473e-9368-86a184f3986a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2680,7 +2583,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="439" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="e2ad8e5f-1e1e-4647-92e3-6f1f0e69def1">
+				<reportElement stretchType="ElementGroupHeight" x="439" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="e2ad8e5f-1e1e-4647-92e3-6f1f0e69def1">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2688,7 +2591,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="462" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="d7f2ce44-784f-453c-8cb5-c4ca32957fc3">
+				<reportElement stretchType="ElementGroupHeight" x="462" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="d7f2ce44-784f-453c-8cb5-c4ca32957fc3">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2696,7 +2599,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="532" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="a470b593-dff8-4167-904c-f564355aaace">
+				<reportElement stretchType="ElementGroupHeight" x="532" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="a470b593-dff8-4167-904c-f564355aaace">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2704,7 +2607,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="555" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="98f0ca79-49bd-4364-955d-cdc469078551">
+				<reportElement stretchType="ElementGroupHeight" x="555" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="98f0ca79-49bd-4364-955d-cdc469078551">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
@@ -2712,7 +2615,7 @@ WHERE
 				</graphicElement>
 			</line>
 			<line>
-				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="3ebb11d9-461a-496b-847e-ce776568c4de">
+				<reportElement stretchType="ElementGroupHeight" x="0" y="0" width="1" height="10" isRemoveLineWhenBlank="true" uuid="3ebb11d9-461a-496b-847e-ce776568c4de">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
@@ -2723,7 +2626,7 @@ WHERE
 		</band>
 		<band height="1">
 			<line>
-				<reportElement x="0" y="0" width="555" height="1" uuid="7a3f837c-28cd-4c08-90db-c989c1b2de5b">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="1" uuid="7a3f837c-28cd-4c08-90db-c989c1b2de5b">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<graphicElement>
