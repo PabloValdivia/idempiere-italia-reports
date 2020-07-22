@@ -594,7 +594,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<text><![CDATA[N° Documento/Document No.]]></text>
 						</staticText>
 						<textField>
-							<reportElement positionType="Float" mode="Opaque" x="0" y="14" width="139" height="13" forecolor="#0000CC" backcolor="#FFFFFF" uuid="4fbb0b32-2eca-4bac-8cb9-63350ae8b203">
+							<reportElement positionType="Float" mode="Transparent" x="0" y="14" width="139" height="13" forecolor="#0000CC" backcolor="#FFFFFF" uuid="4fbb0b32-2eca-4bac-8cb9-63350ae8b203">
 								<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							</reportElement>
 							<box padding="0">
@@ -641,7 +641,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<text><![CDATA[Data doc./Doc. Date]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
-							<reportElement positionType="Float" mode="Opaque" x="0" y="14" width="139" height="13" forecolor="#0000CC" backcolor="#FFFFFF" uuid="443d66ae-5845-498f-b267-84940cbd6f07">
+							<reportElement positionType="Float" mode="Transparent" x="0" y="14" width="139" height="13" forecolor="#0000CC" backcolor="#FFFFFF" uuid="443d66ae-5845-498f-b267-84940cbd6f07">
 								<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 								<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 							</reportElement>
@@ -1366,7 +1366,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<text><![CDATA[N° Documento/Document No.]]></text>
 						</staticText>
 						<textField>
-							<reportElement positionType="Float" mode="Opaque" x="0" y="14" width="139" height="13" forecolor="#0000CC" backcolor="#FFFFFF" uuid="ea09a4a9-8506-486a-9cd6-c3e25ff693b9">
+							<reportElement positionType="Float" mode="Transparent" x="0" y="14" width="139" height="13" forecolor="#0000CC" backcolor="#FFFFFF" uuid="ea09a4a9-8506-486a-9cd6-c3e25ff693b9">
 								<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 							</reportElement>
 							<box padding="0">
@@ -1413,7 +1413,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 							<text><![CDATA[Data doc./Doc. Date]]></text>
 						</staticText>
 						<textField pattern="dd-MM-yyyy">
-							<reportElement positionType="Float" mode="Opaque" x="0" y="14" width="139" height="13" forecolor="#0000CC" backcolor="#FFFFFF" uuid="b9804504-f9d3-4d14-981d-de601fd81c1a">
+							<reportElement positionType="Float" mode="Transparent" x="0" y="14" width="139" height="13" forecolor="#0000CC" backcolor="#FFFFFF" uuid="b9804504-f9d3-4d14-981d-de601fd81c1a">
 								<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 								<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 							</reportElement>
@@ -2077,7 +2077,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				<box leftPadding="0">
 					<pen lineWidth="0.25"/>
 				</box>
-				<textField isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="0" width="555" height="14" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="1fc96cd1-e2bb-4a04-a50c-0192778c545a">
 						<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
@@ -2092,7 +2092,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA["Annotazioni doc./Document annotation: "+$F{m_inout_description}]]></textFieldExpression>
 				</textField>
-				<textField isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="14" width="555" height="14" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="998b1feb-9370-48ee-a9a5-351769a50bc4">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{m_inout_note}!= null]]></printWhenExpression>
@@ -2106,7 +2106,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 					</textElement>
 					<textFieldExpression><![CDATA["Note/Notes "+$F{m_inout_note}]]></textFieldExpression>
 				</textField>
-				<textField isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="0" y="28" width="555" height="14" isRemoveLineWhenBlank="true" forecolor="#0000CC" uuid="61a4f842-c809-4c4c-b063-9d298fa15d58">
 						<property name="com.jaspersoft.studio.unit.rightIndent" value="px"/>
 						<printWhenExpression><![CDATA[$F{c_bpartner_note}!= null]]></printWhenExpression>
