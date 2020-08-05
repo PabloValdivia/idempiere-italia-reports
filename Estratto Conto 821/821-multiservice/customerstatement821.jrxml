@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports5.1.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ec" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8b17b5b8-d5a8-47a1-96a0-f5fb5ff0a427">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="544"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="446"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="123"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="872"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
 	<style name="Style1"/>
 	<parameter name="C_BPartner_ID" class="java.lang.Integer"/>
 	<parameter name="DateAcctFrom" class="java.util.Date"/>
@@ -36,74 +36,71 @@
 	<parameter name="IsSOTrx" class="java.lang.String"/>
 	<parameter name="Dateopenamt" class="java.util.Date"/>
 	<queryString>
-		<![CDATA[SELECT
-    inv.ad_org_id AS ad_org_id,
-    inv.dateinvoiced AS DateTrx,
-    inv.documentno,
-    inv.issotrx,
-    doctrl.name AS name,
-    bpl.phone,
-    bpl.phone2,
-    bpl.fax,
-    bpl.email,
-    l.address1,
-    l.address2,
-    l.city,
-    bp.c_bpartner_id,
-    bp.name AS "BPARTNER",
-    bp.ad_language AS ad_language,
-    l.postal,
-    l.postal_add,
-    doc.docbasetype,
-    inv.description,
-    CASE
-        WHEN doc.docbasetype IN ('ARC', 'API')
-        THEN inv.grandtotal *- 1
-        ELSE Abs(inv.grandtotal)
-    END AS grandtotal,
-    pay.payamt AS payamt,
-    CASE
-        WHEN doc.docbasetype IN ('ARC', 'API')
-        THEN Abs(abb.amount)
-        ELSE abb.amount *- 1
-    END AS AllocationAmt,
-    CASE
-        WHEN doc.docbasetype IN ('ARC', 'API')
-        THEN abb.overunderamt
-        ELSE abb.overunderamt
-    END AS overunderamt,
-    pay.datetrx AS PaymentDate,
-    pay.documentno AS paymentdoc,
-    pay.description AS paymentdescription,
-    bank.name AS bank_name,
-    bank.iban AS bank_iban,
-    (SELECT
-         inv2.documentno
-     FROM
-         c_allocationhdr allhdr LEFT JOIN
-         c_allocationline al2 ON allhdr.c_allocationhdr_id = al2.c_allocationhdr_id LEFT JOIN
-         c_invoice inv2 ON al2.c_invoice_id = inv2.c_invoice_id
-     WHERE
-         abb.c_allocationhdr_id = allhdr.c_allocationhdr_id AND
-         inv.c_invoice_id <> al2.c_invoice_id
-     LIMIT 1) AS inv2_documentno
-FROM
-    c_invoice inv INNER JOIN
-    c_doctype doc ON inv.c_doctype_id = doc.c_doctype_id INNER JOIN
-    c_bpartner bp ON inv.c_bpartner_id = bp.c_bpartner_id LEFT JOIN
-    c_bpartner_location bpl ON bp.c_bpartner_id = bpl.c_bpartner_id AND
-            bpl.isbillto = 'Y' LEFT JOIN
-    c_location l ON bpl.c_location_id = l.c_location_id LEFT JOIN
-    c_doctype_trl doctrl ON inv.c_doctype_id = doctrl.c_doctype_id AND
-            doctrl.ad_language = 'it_IT' LEFT JOIN
-    c_allocationline abb ON inv.c_invoice_id = abb.c_invoice_id LEFT JOIN
-    c_payment pay ON abb.c_payment_id = pay.c_payment_id LEFT JOIN
-    c_bankaccount bank ON pay.c_bankaccount_id = bank.c_bankaccount_id
-WHERE
-    inv.c_doctype_id = doc.c_doctype_id AND
-    inv.docstatus IN ('CO', 'CL') AND
-    pay.docstatus IN ('CO', 'CL')
-AND
+		<![CDATA[select 
+inv.ad_org_id as ad_org_id,
+inv.DATEINVOICED as DateTrx ,
+inv.DOCUMENTNO,
+inv.issotrx,
+doctrl.NAME as name,
+bpl.phone,
+bpl.phone2,
+bpl.fax,
+bpl.email,
+l.address1,
+l.address2,
+l.city,
+bp.c_bpartner_id,
+bp.NAME as "BPARTNER",
+bp."ad_language"as ad_language,
+l.postal,
+l.postal_add,
+doc.docbasetype,
+/*
+	 CASE WHEN inv.DESCRIPTION is null THEN ( SELECT pro.NAME FROM M_PRODUCT pro,C_INVOICELINE il
+         	   WHERE inv.C_INVOICE_ID=il.C_INVOICE_ID
+         	  AND il.M_PRODUCT_ID=pro.M_PRODUCT_ID LIMIT 1)
+	  ELSE left(inv.DESCRIPTION,30) END AS
+	  */
+inv.DESCRIPTION,
+CASE WHEN doc.docbasetype IN ('ARC','API') THEN
+	 inv.GRANDTOTAL*-1
+ELSE
+	ABS(inv.GRANDTOTAL)
+END AS "grandtotal",
+pay.payamt as payamt,
+--abb.amount - abb.overunderamt as payamt,
+CASE WHEN doc.docbasetype IN ('ARC','API') THEN
+ ABS(abb.Amount)
+ELSE
+  abb.Amount*-1
+END as AllocationAmt,
+CASE WHEN doc.docbasetype IN ('ARC','API') THEN
+  abb.overunderamt
+ELSE
+abb.overunderamt 
+END as overunderamt,
+pay.datetrx as PaymentDate,
+pay.documentno as paymentdoc,
+pay.description as paymentdescription,
+bank.name as bank_name,
+bank.iban as bank_iban,
+ps.payschedule AS payschedule,
+(select inv2.documentno  from c_allocationhdr allhdr LEFT JOIN c_allocationline al2 on allhdr.c_allocationhdr_id=al2.c_allocationhdr_id 
+	LEFT JOIN c_invoice inv2 on al2.c_invoice_id=inv2.c_invoice_id where abb.c_allocationhdr_id=allhdr.c_allocationhdr_id and inv.c_invoice_id<>al2.c_invoice_id limit 1
+) as inv2_documentno
+
+from C_INVOICE inv
+INNER JOIN c_doctype doc ON inv.c_doctype_id=doc.c_doctype_id
+INNER JOIN C_BPartner bp ON inv.c_bpartner_id=bp.c_bpartner_id 
+LEFT JOIN C_BPARTNER_LOCATION bpl ON bp.C_BPARTNER_ID  = bpl.C_BPARTNER_ID AND bpl.isbillto='Y'
+LEFT JOIN C_LOCATION l ON bpl.C_LOCATION_ID = l.C_LOCATION_ID
+LEFT JOIN C_DOCTYPE_TRL doctrl ON inv.c_doctype_id = doctrl.c_doctype_id and doctrl.ad_language='it_IT'
+LEFT JOIN C_AllocationLine abb ON inv.c_invoice_id=abb.c_invoice_id 
+LEFT JOIN C_Payment pay ON abb.c_payment_id=pay.c_payment_id
+LEFT JOIN C_BANKaccount bank ON pay.c_bankaccount_id=bank.c_bankaccount_id
+LEFT JOIN lit_rep_payschedule_v ps ON inv.c_invoice_id = ps.c_invoice_id
+WHERE inv.C_DOCTYPE_ID=doc.C_DOCTYPE_ID AND inv.DOCSTATUS IN ('CO','CL')
+and 
 	CASE WHEN $P{IsCustomer} = 'Y' THEN bp.iscustomer = $P{IsCustomer}  ELSE 1=1
 END
 AND
@@ -126,57 +123,52 @@ AND
     ELSE
     1=1
   END
-UNION
-SELECT
-    p.ad_org_id AS ad_org_id,
-    p.datetrx AS DateTrx,
-    p.documentno,
-    p.isreceipt,
-    'prepaid' AS name,
-    bpl.phone,
-    bpl.phone2,
-    bpl.fax,
-    bpl.email,
-    l.address1,
-    l.address2,
-    l.city,
-    bp.c_bpartner_id,
-    bp.name AS "BPARTNER",
-    bp.ad_language AS ad_language,
-    l.postal,
-    l.postal_add,
-    doc.docbasetype,
-    p.description,
-    0 AS grandtotal,
-    p.payamt AS payamt,
-    CASE
-        WHEN Sum(al.amount) IS NULL
-        THEN p.payamt*-1
-        ELSE p.payamt - Sum(al.amount)
-    END AS AllocationAmt,
-    0 AS overunderAmt,
-    p.datetrx AS PaymentDate,
-    p.documentno AS paymentdoc,
-    p.description AS paymentdescription,
-    bank.name AS bank_name,
-    bank.iban AS bank_iban,
-    '' AS inv2_documentno
-FROM
-    c_payment_v p INNER JOIN
-    c_doctype doc ON p.c_doctype_id = doc.c_doctype_id INNER JOIN
-    c_bpartner bp ON p.c_bpartner_id = bp.c_bpartner_id LEFT OUTER JOIN
-    c_bpartner_location bpl ON bp.c_bpartner_id = bpl.c_bpartner_id AND
-            bpl.isbillto = 'Y' LEFT OUTER JOIN
-    c_location l ON bpl.c_location_id = l.c_location_id LEFT OUTER JOIN
-    c_doctype_trl doctrl ON p.c_doctype_id = doctrl.c_doctype_id AND
-            doctrl.ad_language = 'it_IT' LEFT OUTER JOIN
-    c_bankaccount bank ON p.c_bankaccount_id = bank.c_bankaccount_id LEFT OUTER JOIN
-    c_allocationline al ON p.c_payment_id = al.c_payment_id
-WHERE
-    p.isallocated = 'N' AND
-    p.docstatus IN ('CO', 'CL')
-
-AND
+  union 
+select 
+p.ad_org_id as ad_org_id,
+p.datetrx as DateTrx ,
+p.DOCUMENTNO,
+p.isreceipt,
+'prepaid' as name,
+bpl.phone,
+bpl.phone2,
+bpl.fax,
+bpl.email,
+l.address1,
+l.address2,
+l.city,
+bp.c_bpartner_id,
+bp.NAME as "BPARTNER",
+bp."ad_language"as ad_language,
+l.postal,
+l.postal_add,
+doc.docbasetype,
+p.description,
+0 as grandtotal,
+p.payamt*-1 as payamt,
+CASE WHEN sum(al.amount) IS NULL  THEN p.payamt *-1
+ELSE
+p.payamt-sum (al.amount) 
+END 
+as AllocationAmt,
+0 as overunderAmt,
+p.datetrx as PaymentDate,
+p.documentno as paymentdoc,
+p.description as paymentdescription,
+bank.name as bank_name,
+bank.iban as bank_iban,
+''as payschedule,
+'' as inv2_documentno
+from c_payment_v p 
+INNER JOIN c_doctype doc ON p.c_doctype_id=doc.c_doctype_id
+INNER JOIN C_BPartner bp ON p.c_bpartner_id=bp.c_bpartner_id 
+LEFT OUTER JOIN C_BPARTNER_LOCATION bpl ON bp.C_BPARTNER_ID  = bpl.C_BPARTNER_ID AND bpl.isbillto='Y'
+LEFT OUTER JOIN C_LOCATION l ON bpl.C_LOCATION_ID = l.C_LOCATION_ID
+LEFT OUTER JOIN C_DOCTYPE_TRL doctrl ON p.c_doctype_id = doctrl.c_doctype_id and doctrl.ad_language='it_IT'
+LEFT OUTER JOIN C_BANKaccount bank on p.c_bankaccount_id=bank.c_bankaccount_id
+LEFT OUTER JOIN c_allocationline al on p.c_payment_id=al.c_payment_id
+where p.isallocated='N' 
+and 
 CASE WHEN $P{IsCustomer} = 'Y' THEN bp.iscustomer = $P{IsCustomer}   else 1=1
 END
 and 
@@ -187,32 +179,9 @@ and
    CASE
     WHEN  $P{C_BPartner_ID}  <>0 then bp.c_bpartner_id = $P{C_BPartner_ID} 
   END
-GROUP BY
-    p.ad_org_id,
-    p.datetrx,
-    p.documentno,
-    p.isreceipt,
-    bpl.phone,
-    bpl.phone2,
-    bpl.fax,
-    bpl.email,
-    l.address1,
-    l.address2,
-    l.city,
-    bp.c_bpartner_id,
-    bp.name,
-    bp.ad_language,
-    l.postal,
-    l.postal_add,
-    doc.docbasetype,
-    p.description,
-    p.payamt,
-    bank.name,
-    bank.iban
-ORDER BY
-    "BPARTNER",
-    DateTrx,
-    documentno]]>
+group by p.datetrx,p.DOCUMENTNO,p.isreceipt,bp.c_bpartner_id,bp.NAME,bpl.phone,bpl.phone2,bpl.fax,bpl.email,l.address1,l.address2,l.city,l.postal,l.postal_add,doc.docbasetype,p.description,
+p.payamt,p.datetrx ,p.documentno,p.description,bank.name,bank.iban,bp.ad_language,p.ad_org_id
+order by "BPARTNER",datetrx,documentno]]>
 	</queryString>
 	<field name="ad_org_id" class="java.math.BigDecimal">
 		<property name="com.jaspersoft.studio.field.label" value="ad_org_id"/>
@@ -322,6 +291,9 @@ ORDER BY
 	<field name="bank_iban" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="bank_iban"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="c_bankaccount"/>
+	</field>
+	<field name="payschedule" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="payschedule"/>
 	</field>
 	<field name="inv2_documentno" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="inv2_documentno"/>
@@ -438,7 +410,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 					<box>
 						<pen lineWidth="0.5" lineStyle="Solid"/>
 					</box>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement key="textField-3" positionType="Float" stretchType="RelativeToTallestObject" x="1" y="21" width="229" height="10" uuid="61580903-6cd9-4291-8069-446e92dfa2fb"/>
 						<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="0"/>
 						<textElement verticalAlignment="Middle">
@@ -446,7 +418,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{address1}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement key="textField-6" positionType="Float" stretchType="RelativeToTallestObject" x="1" y="31" width="70" height="10" uuid="538f1248-f49d-4261-ac2e-780c3e8fa0f8">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
@@ -456,7 +428,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						</textElement>
 						<textFieldExpression><![CDATA[$F{postal}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement key="textField-7" positionType="Float" stretchType="RelativeToTallestObject" x="310" y="31" width="150" height="10" uuid="73d7c820-d606-4ffe-980e-1138d4e5106e">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
@@ -465,7 +437,7 @@ $V{grandtotal1}.add($V{allocationamt1})]]></variableExpression>
 						</textElement>
 						<textFieldExpression><![CDATA[T($F{phone}) + ' ' + T($F{phone2})]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 						<reportElement key="textField-5" positionType="Float" stretchType="RelativeToTallestObject" x="71" y="31" width="159" height="10" uuid="19119d53-03ee-43d4-bcac-050ba8e7df88">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
@@ -672,7 +644,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textField textAdjust="StretchHeight" pattern="" isBlankWhenNull="true">
+					<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
 						<reportElement key="textField" positionType="Float" x="238" y="0" width="180" height="12" forecolor="#A30303" uuid="fa04fc64-763b-4278-b262-f8548907f1de">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
@@ -705,7 +677,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 						</textElement>
 						<textFieldExpression><![CDATA[$F{grandtotal}]]></textFieldExpression>
 					</textField>
-					<textField textAdjust="StretchHeight">
+					<textField isStretchWithOverflow="true">
 						<reportElement positionType="Float" x="58" y="0" width="180" height="12" forecolor="#A30303" uuid="fa49bc50-5017-4373-a5e4-37efaa99d322">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
@@ -804,7 +776,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 			</textField>
 			<frame>
 				<reportElement x="0" y="55" width="555" height="18" isRemoveLineWhenBlank="true" uuid="4f874855-8e3e-4899-93ed-a6ae3de1bbaa"/>
-				<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
 					<reportElement key="textField-2" positionType="Float" x="214" y="0" width="206" height="18" isRemoveLineWhenBlank="true" forecolor="#000000" uuid="6897e674-0fbb-4638-ab21-83bc5d59da07"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -851,7 +823,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 	<pageHeader>
 		<band height="40" splitType="Stretch">
 			<printWhenExpression><![CDATA[$V{PAGE_NUMBER} != 1]]></printWhenExpression>
-			<textField textAdjust="StretchHeight" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
 				<reportElement key="textField-2" positionType="Float" x="214" y="22" width="206" height="18" forecolor="#000000" uuid="f919881b-5f31-4f67-915c-df0b340f92ba"/>
 				<box>
 					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
@@ -924,7 +896,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textField textAdjust="StretchHeight" pattern="dd-MM-yyyy" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" pattern="dd-MM-yyyy" isBlankWhenNull="true">
 					<reportElement key="textField" positionType="Float" x="-2" y="0" width="60" height="12" forecolor="#2B05FF" uuid="69f8275c-3a01-416f-a02e-ca37417a1b3c">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -940,7 +912,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdate}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight">
+				<textField isStretchWithOverflow="true">
 					<reportElement key="textField" positionType="Float" x="58" y="0" width="100" height="12" isRemoveLineWhenBlank="true" forecolor="#2B05FF" uuid="ffc9aa24-a555-4801-89ce-c845525e5dd7"/>
 					<box topPadding="0" leftPadding="2" bottomPadding="0" rightPadding="2">
 						<pen lineWidth="0.25"/>
@@ -954,7 +926,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 					</textElement>
 					<textFieldExpression><![CDATA[$F{paymentdoc}== null ? T("ABBIN./COMPENS."):$F{docbasetype}.equals("APP")?T("ANTICIPO FORNITORE"):$F{docbasetype}.equals("ARR")?T("ANTICIPO CLIENTE"):$F{paymentdoc}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="158" y="0" width="260" height="12" forecolor="#2B05FF" uuid="0294190b-9b9e-41b8-94ff-a954c0f29bb4">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e280b7e5-6ab4-4a67-b318-8e99c7579be5"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -966,7 +938,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 					<textFieldExpression><![CDATA[$F{paymentdoc}==null ? "RIF.: " + T($F{inv2_documentno})/*  +" " +T($F{name})*/:
 "DOC. PAG. "+T($F{paymentdoc})+" - " +T($F{paymentdescription})  + ' ' + T($F{bank_name}) /*+"\n"*/+" IMP. PAGATO: "+ T(new java.text.DecimalFormat("€ #,##0.00").format($F{payamt})) /*" DEL" + (new SimpleDateFormat("dd/MM/yyyy").format($F{paymentdate}))*/]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="418" y="0" width="73" height="12" forecolor="#2B05FF" uuid="16d376c0-ce90-44df-abc9-64c65473ffea">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46f7af20-3217-48ff-8c73-9e211d64ce8d"/>
 					</reportElement>
@@ -981,7 +953,7 @@ $V{Pagamenti_2_g_Report} == null ? new BigDecimal(0) : $V{Variable_1_2_1}]]></te
 					</textElement>
 					<textFieldExpression><![CDATA[$F{name}.equals("prepaid")?$F{allocationamt}:$F{allocationamt}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
+				<textField isStretchWithOverflow="true" pattern="¤#,##0.00;¤-#,##0.00" isBlankWhenNull="true">
 					<reportElement positionType="Float" x="491" y="0" width="62" height="12" forecolor="#2B05FF" uuid="f45f6e58-74e4-49ca-9e2f-1a45a7c4c7fa">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="46f7af20-3217-48ff-8c73-9e211d64ce8d"/>
 					</reportElement>
