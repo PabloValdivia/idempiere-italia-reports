@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="c_order_line" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="1218fb23-b746-4e2c-8bbb-5a9a151e2426">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="AD_CLIENT_ID" class="java.lang.Integer" isForPrompting="false"/>
+	<parameter name="AD_ROLE_ID" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="AD_USER_ID" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="RECORD_ID" class="java.lang.Integer"/>
+	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
+	<parameter name="AD_LANGUAGE" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[$P{AD_LANGUAGE}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT
+    c_orderline.c_order_id,
+    m_product.value AS cod_art,
+    c_orderline.name AS order_line_desc,
+    m_product.description AS prd_descr,
+    m_product.documentnote AS prd_doc_note,
+    m_product.help AS prd_help,
+    m_product.upc,
+    m_product.sku,
+    c_orderline.qtyordered,
+    c_orderline.priceactual,
+    c_orderline.discount,
+    c_orderline.pricelist,
+    c_orderline.linenetamt,
+    c_orderline.qtyentered,
+    c_orderline.priceentered,
+    c_orderline.help AS order_help,
+    c_uom_trl.uomsymbol AS um,
+    c_uom_trl.name AS um_name,
+    c_uom_trl.description AS um_descr,
+    c_orderline."line",
+    ad_language.ad_language
+FROM
+    c_orderline INNER JOIN
+    m_product ON c_orderline.m_product_id = m_product.m_product_id INNER JOIN
+    c_bpartner ON c_orderline.c_bpartner_id = c_bpartner.c_bpartner_id INNER JOIN
+    c_uom ON m_product.c_uom_id = c_uom.c_uom_id INNER JOIN
+    c_uom_trl ON c_uom_trl.c_uom_id = c_uom.c_uom_id INNER JOIN
+    ad_language ON c_bpartner.ad_language = ad_language.ad_language AND
+            c_uom_trl.ad_language = ad_language.ad_language
+WHERE
+    c_orderline."c_order_id"=$P{RECORD_ID}
+ORDER BY
+    c_orderline."line"]]>
+	</queryString>
+	<field name="c_order_id" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="c_order_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="cod_art" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cod_art"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="m_product"/>
+	</field>
+	<field name="order_line_desc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="order_line_desc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="prd_descr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prd_descr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="m_product"/>
+	</field>
+	<field name="prd_doc_note" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prd_doc_note"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="m_product"/>
+	</field>
+	<field name="prd_help" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="prd_help"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="m_product"/>
+	</field>
+	<field name="upc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="upc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="m_product"/>
+	</field>
+	<field name="sku" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sku"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="m_product"/>
+	</field>
+	<field name="qtyordered" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="qtyordered"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="priceactual" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="priceactual"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="discount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="discount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="pricelist" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="pricelist"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="linenetamt" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="linenetamt"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="qtyentered" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="qtyentered"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="priceentered" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="priceentered"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="order_help" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="order_help"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="um" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="um"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_uom_trl"/>
+	</field>
+	<field name="um_name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="um_name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_uom_trl"/>
+	</field>
+	<field name="um_descr" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="um_descr"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_uom_trl"/>
+	</field>
+	<field name="line" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="line"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="c_orderline"/>
+	</field>
+	<field name="ad_language" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ad_language"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ad_language"/>
+	</field>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="555" height="10" uuid="050dcf05-479d-40c2-abbe-4b4342dd207a">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.spreadsheet.SpreadsheetLayout"/>
+				</reportElement>
+				<textField>
+					<reportElement x="0" y="0" width="100" height="10" uuid="da38ab86-a69d-4449-a4ee-c12159d3173f"/>
+					<textElement>
+						<font fontName="Monospaced" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cod_art}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="100" y="0" width="240" height="10" uuid="0277c87a-113d-4753-911d-5c1f5dba921e"/>
+					<textElement>
+						<font fontName="Monospaced" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{order_line_desc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="340" y="0" width="30" height="10" uuid="f81725ff-0991-4583-b44d-27caba492449"/>
+					<textElement>
+						<font fontName="Monospaced" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{um}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###;#,-##0.###">
+					<reportElement x="370" y="0" width="30" height="10" uuid="3b85b788-6c57-44bc-b9bb-46b5d589335e"/>
+					<textElement textAlignment="Right">
+						<font fontName="Monospaced" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pricelist}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="400" y="0" width="30" height="10" uuid="46159a81-20b4-4127-a52b-6390e4789efe"/>
+					<textElement textAlignment="Right">
+						<font fontName="Monospaced" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{discount}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###;#,-##0.###">
+					<reportElement x="430" y="0" width="60" height="10" uuid="a4c184cc-bd4d-4ed0-8267-7ab99a9fd553"/>
+					<textElement textAlignment="Right">
+						<font fontName="Monospaced" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{priceactual}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###;#,-##0.###">
+					<reportElement x="490" y="0" width="50" height="10" uuid="8ea39469-2148-4c91-8f62-07d27ce7255b"/>
+					<textElement textAlignment="Right">
+						<font fontName="Monospaced" size="8" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{linenetamt}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>
