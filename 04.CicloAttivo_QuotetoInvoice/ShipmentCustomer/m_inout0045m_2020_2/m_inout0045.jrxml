@@ -2226,7 +2226,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 				</graphicElement>
 			</line>
 		</band>
-		<band height="15" splitType="Prevent">
+		<band height="15">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[(($F{c_bpartner_lit_bpreport_param}.charAt(0)) == 'Y')]]></printWhenExpression>

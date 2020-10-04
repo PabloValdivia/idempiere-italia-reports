@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.9.0.final utlizzo versione della libreria JasperReports5.2.0  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="offerta" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a6753fbd-fd71-4b38-a8f0-f778b245f3bf">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="968"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="556"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="434"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="252"/>
@@ -36,9 +36,7 @@ SELECT
      ad_orginfo."lit_banner_id" AS ad_orginfo_lit_banner_id,
      ad_orginfo."logo_id" AS ad_orginfo_logo_id,
      ad_sysconfig."name" AS ad_sysconfig_name,
-
      ad_image."binarydata" AS ad_image_binarydata,
-
      c_order."c_order_id" AS c_order_c_order_id,
      c_order."dateordered" AS c_order_dateordered,
      c_order."documentno" AS c_order_documentno,
@@ -51,14 +49,11 @@ SELECT
      c_order."ad_user_id" AS c_order_ad_user_id,
      c_order."note" AS c_order_note,
      c_order."poreference" AS c_order_poreference,
-
      c_order."docstatus" AS c_order_docstatus,
-
      c_order."description" AS c_order_description,
      c_order."lit_revision_date" AS c_order_lit_revision_date,
      c_order."revision" AS c_order_revision,
      c_order."c_order_id" AS c_order_c_order_id,
-
      c_orderline."c_orderline_id" AS c_orderline_c_orderline_id,
      c_orderline."pricelist" AS c_orderline_pricelist,
      c_orderline."qtyordered" AS c_orderline_qtyordered,
@@ -71,8 +66,7 @@ SELECT
      c_orderline."line" AS c_orderline_line,
      c_orderline."description" AS c_orderline_description,
      c_orderline."name" AS c_orderline_name,
-    c_orderline.datepromised AS c_orderline_datepromised,
-
+	 c_orderline.datepromised AS c_orderline_datepromised,
      c_bpartner."c_bpartner_id" AS c_bpartner_c_bpartner_id,
      c_bpartner."name" AS c_bpartner_name,
      c_bpartner."name2" AS c_bpartner_name2,
@@ -85,14 +79,10 @@ WHEN c_bpartner.ad_language ='en_US'  THEN
 ELSE
  ad_ref_list_trl_E."name"
 END AS c_order_paymentrule,
-
-
      ad_user_A."email" AS ad_user_A_email,
      ad_user_A."phone" AS ad_user_A_phone,
      ad_user_A."name" AS ad_user_A_name,
-
      m_product."value" AS m_product_value,
-
      ad_reference_E."name" AS ad_reference_E_name,
 --*
 CASE
@@ -1821,7 +1811,7 @@ ORDER BY
 					</textElement>
 					<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="true">
+				<textField textAdjust="StretchHeight">
 					<reportElement stretchType="RelativeToBandHeight" x="60" y="0" width="220" height="10" uuid="11afaf87-983c-4f07-8fbe-b7b28e884e11">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="22952df3-d261-4e81-a86c-ba2f66f69fdd"/>
 					</reportElement>
@@ -1950,7 +1940,7 @@ ORDER BY
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="495" height="10" isRemoveLineWhenBlank="true" uuid="7f0100c9-2b8e-4075-9957-930f53022682">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4b2156f4-5dc2-4eaa-887e-35b8897f2a71"/>
 					</reportElement>
@@ -1975,7 +1965,7 @@ ORDER BY
 					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement x="0" y="0" width="495" height="10" isRemoveLineWhenBlank="true" uuid="be0dd8c9-11c2-49c0-b8ad-05969b37db25">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7b8a6035-6158-48ad-a632-1c79a657a69b"/>
 					</reportElement>
