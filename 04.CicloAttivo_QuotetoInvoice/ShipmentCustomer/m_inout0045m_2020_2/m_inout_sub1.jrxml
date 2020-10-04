@@ -331,7 +331,7 @@ ORDER BY m_inoutline_line ASC]]>
 				<textFieldExpression><![CDATA[$F{m_product_value}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
-				<reportElement x="80" y="0" width="298" height="11" uuid="fed77b28-93de-4074-9ef2-7de8fdb1256b">
+				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="fed77b28-93de-4074-9ef2-7de8fdb1256b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5ad407ab-c715-4c2e-bb2f-7047aacdd74d"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
@@ -391,7 +391,6 @@ ORDER BY m_inoutline_line ASC]]>
 				<reportElement x="488" y="0" width="67" height="11" uuid="464b5c09-9c8e-40b4-a238-f6adcc7d1ebc">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f883e7f-cc62-46ec-ae69-e69dd0c98e00"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<printWhenExpression><![CDATA[$F{c_uom_trl_uomsymbol}.equals( "NR" )]]></printWhenExpression>
 				</reportElement>
 				<box rightPadding="5">
 					<pen lineWidth="0.25"/>
@@ -462,7 +461,7 @@ ORDER BY m_inoutline_line ASC]]>
 					<font fontName="DejaVu Sans Mono" size="8"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Lotto e scadenza/Lot and expiry: "]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{lot}.equals("")?"":"Lotto e scadenza/Lot and expiry: " +$F{lot}+" | "+new SimpleDateFormat("dd-MM-yyyy").format($F{guaranteedate})]]></textFieldExpression>
 			</textField>
 		</band>
 		<band height="10"/>
