@@ -95,6 +95,9 @@ WHERE 	m_inoutline_m_inout_id = $P{RECORD_ID}]]>
 				<reportElement x="0" y="0" width="240" height="1" uuid="a836e776-d831-4015-bf97-208ca544e953">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
+				<graphicElement>
+					<pen lineWidth="0.25"/>
+				</graphicElement>
 			</line>
 		</band>
 	</detail>
