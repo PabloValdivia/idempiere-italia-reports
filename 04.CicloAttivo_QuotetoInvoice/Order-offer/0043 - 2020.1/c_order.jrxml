@@ -5,7 +5,11 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="968"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+<<<<<<< HEAD
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+=======
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+>>>>>>> master
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="556"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="434"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="252"/>
@@ -1285,16 +1289,28 @@ WHERE
 		</band>
 	</pageHeader>
 	<columnHeader>
+<<<<<<< HEAD
 		<band height="32">
 			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<frame>
 				<reportElement x="0" y="0" width="555" height="32" uuid="917c164e-7a17-4968-a740-8a105800b0be">
+=======
+		<band height="30">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<frame>
+				<reportElement x="0" y="0" width="555" height="30" uuid="917c164e-7a17-4968-a740-8a105800b0be">
+>>>>>>> master
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 				</reportElement>
 				<frame>
+<<<<<<< HEAD
 					<reportElement x="0" y="0" width="278" height="32" uuid="394aff27-e832-4646-a2a6-7a4b8c9d7279">
+=======
+					<reportElement x="0" y="0" width="278" height="30" uuid="394aff27-e832-4646-a2a6-7a4b8c9d7279">
+>>>>>>> master
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -1302,44 +1318,78 @@ WHERE
 						<pen lineWidth="0.25"/>
 					</box>
 					<staticText>
+<<<<<<< HEAD
 						<reportElement x="0" y="0" width="278" height="16" uuid="ac08244a-aafb-4928-a894-b7e6d3a03f2b">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans Mono" size="8" isBold="true"/>
+=======
+						<reportElement x="0" y="0" width="278" height="15" uuid="ac08244a-aafb-4928-a894-b7e6d3a03f2b">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Monospaced" size="8" isBold="true"/>
+>>>>>>> master
 						</textElement>
 						<text><![CDATA[RIF. ORDINE / P.O. REF.]]></text>
 					</staticText>
 					<textField>
+<<<<<<< HEAD
 						<reportElement x="0" y="16" width="278" height="16" uuid="4ca3c16e-7aee-47a8-9e56-5f9a7def0f35">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans Mono" size="8"/>
+=======
+						<reportElement x="0" y="15" width="278" height="15" uuid="4ca3c16e-7aee-47a8-9e56-5f9a7def0f35">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<textElement>
+							<font fontName="Monospaced" size="8"/>
+>>>>>>> master
 						</textElement>
 						<textFieldExpression><![CDATA[$F{poreference}]]></textFieldExpression>
 					</textField>
 				</frame>
 				<frame>
+<<<<<<< HEAD
 					<reportElement x="278" y="0" width="277" height="32" uuid="04304fcc-1f16-47dd-801c-434f34657837">
+=======
+					<reportElement x="278" y="0" width="277" height="30" uuid="04304fcc-1f16-47dd-801c-434f34657837">
+>>>>>>> master
 						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 					</reportElement>
 					<box>
 						<pen lineWidth="0.25"/>
 					</box>
 					<staticText>
+<<<<<<< HEAD
 						<reportElement x="0" y="0" width="277" height="16" uuid="8318658e-ad39-4c0f-9a4d-f1704937970f">
 							<property name="com.jaspersoft.studio.unit.height" value="px"/>
 						</reportElement>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans Mono" size="8" isBold="true"/>
+=======
+						<reportElement x="0" y="0" width="277" height="15" uuid="8318658e-ad39-4c0f-9a4d-f1704937970f">
+							<property name="com.jaspersoft.studio.unit.height" value="px"/>
+						</reportElement>
+						<textElement verticalAlignment="Middle">
+							<font fontName="Monospaced" size="8" isBold="true"/>
+>>>>>>> master
 						</textElement>
 						<text><![CDATA[TERMINI DI PAGAMENTO / PAYMENT TERMS]]></text>
 					</staticText>
 					<textField>
+<<<<<<< HEAD
 						<reportElement x="0" y="16" width="277" height="16" uuid="3a5d5cd5-deb9-43ee-ad6c-d49a682f16bc"/>
 						<textElement verticalAlignment="Middle">
 							<font fontName="DejaVu Sans Mono" size="8"/>
+=======
+						<reportElement x="0" y="15" width="277" height="15" uuid="3a5d5cd5-deb9-43ee-ad6c-d49a682f16bc"/>
+						<textElement>
+							<font fontName="Monospaced" size="8"/>
+>>>>>>> master
 						</textElement>
 						<textFieldExpression><![CDATA[$F{termine_pagamento}]]></textFieldExpression>
 					</textField>
@@ -1354,7 +1404,11 @@ WHERE
 					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
 				</reportElement>
 				<subreport isUsingCache="true">
+<<<<<<< HEAD
 					<reportElement x="0" y="0" width="555" height="22" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="89cb0018-0835-48ba-8ff5-8d179b8f9bc9">
+=======
+					<reportElement positionType="Float" x="0" y="0" width="555" height="22" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true" uuid="89cb0018-0835-48ba-8ff5-8d179b8f9bc9">
+>>>>>>> master
 						<printWhenExpression><![CDATA[new Boolean($V{REPORT_COUNT}.intValue()==1)]]></printWhenExpression>
 					</reportElement>
 					<subreportParameter name="AD_LANGUAGE">
