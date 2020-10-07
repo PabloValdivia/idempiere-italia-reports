@@ -10,7 +10,7 @@
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="334"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="657"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere_test"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -448,7 +448,7 @@ ORDER BY m_inoutline_line ASC]]>
 			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="e74a78a8-5825-4e65-b92d-7c03ee301148">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
-					<printWhenExpression><![CDATA[$F{ad_orginfo_lit_report_param}.charAt(13) =='Y' ? 1==1 :  $F{ad_orginfo_lit_report_param}.charAt(13) =='N' ? 1==2 :  $F{c_bpartner_lit_bpreport_param}.length()<1 ? 1==2 :$F{c_bpartner_lit_bpreport_param}.charAt(1)=='Y' ? 1==1 :1==2]]></printWhenExpression>
+					<printWhenExpression><![CDATA[(($F{ad_orginfo_lit_report_param}.charAt(7)) == 'Y')]]></printWhenExpression>
 				</reportElement>
 				<box>
 					<pen lineWidth="0.25"/>

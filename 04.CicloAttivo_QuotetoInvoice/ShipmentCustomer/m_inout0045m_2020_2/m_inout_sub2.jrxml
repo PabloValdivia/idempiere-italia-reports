@@ -10,7 +10,7 @@
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="334"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="657"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere_test"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
