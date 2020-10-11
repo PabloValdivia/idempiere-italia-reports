@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
+<!-- Created with Jaspersoft Studio version 6.15.0.final utlizzo versione della libreria JasperReports6.15.0-dd49bfb94918336b8321d5507193f0169ead4e95  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_inout_sub1" pageWidth="555" pageHeight="810" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="c33fbd9b-fd01-4855-baf8-57a853bc8344">
 	<property name="ireport.zoom" value="1.6934217901613329"/>
 	<property name="ireport.x" value="0"/>
@@ -10,7 +10,7 @@
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="334"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="657"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiereProduzione"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -50,6 +50,9 @@
 	<parameter name="RESOURCE" class="java.util.PropertyResourceBundle" isForPrompting="false"/>
 	<parameter name="lit_bpreport_param" class="java.lang.String">
 		<defaultValueExpression><![CDATA[$F{c_bpartner_lit_bpreport_param}.charAt(1)=='Y']]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["./"]]></defaultValueExpression>
 	</parameter>
 	<queryString>
 		<![CDATA[-- lit_rep_m_inout_line_v
@@ -461,10 +464,40 @@ ORDER BY m_inoutline_line ASC]]>
 					<font fontName="DejaVu Sans Mono" size="8"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{lot}.equals("")?"":"Lotto e scadenza/Lot and expiry: " +$F{lot}+" | "+new SimpleDateFormat("dd-MM-yyyy").format($F{guaranteedate})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{guaranteedate}==null?"Lotto/Batch: " +$F{lot}:"Lotto/Batch: " +$F{lot} +" | Scadenza/Expiry: "+new SimpleDateFormat("dd-MM-yyyy").format($F{guaranteedate})]]></textFieldExpression>
 			</textField>
 		</band>
-		<band height="10"/>
+		<band height="10">
+			<subreport>
+				<reportElement x="80" y="0" width="298" height="10" isRemoveLineWhenBlank="true" uuid="c28979b4-4da4-456e-961e-2a9dfbfe008d"/>
+				<subreportParameter name="SUBREPORT_DIR">
+					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RECORD_ID">
+					<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="AD_USER_ID">
+					<subreportParameterExpression><![CDATA[$P{AD_USER_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="AD_ROLE_ID">
+					<subreportParameterExpression><![CDATA[$P{AD_ROLE_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="AD_CLIENT_ID">
+					<subreportParameterExpression><![CDATA[$P{AD_CLIENT_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="AD_LANGUAGE">
+					<subreportParameterExpression><![CDATA[$P{AD_LANGUAGE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RESOURCE">
+					<subreportParameterExpression><![CDATA[$P{RESOURCE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="lit_bpreport_param">
+					<subreportParameterExpression><![CDATA[$P{lit_bpreport_param}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "lit_rep_m_inout_lot_multiple.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
 		<band height="1">
 			<line>
 				<reportElement x="0" y="0" width="555" height="1" uuid="0d047ee6-07e5-4be6-8d69-f04dcae8f3c1">
