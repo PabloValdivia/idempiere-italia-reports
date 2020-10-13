@@ -2129,7 +2129,7 @@ WHERE m_inout."m_inout_id" = $P{RECORD_ID}]]>
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<printWhenExpression><![CDATA[($F{c_bpartner_lit_bpreport_param} ==null)]]></printWhenExpression>
 			<subreport overflowType="Stretch">
-				<reportElement positionType="Float" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" uuid="619853f7-104a-4089-b7e1-bfcd4597e806">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="555" height="15" isRemoveLineWhenBlank="true" uuid="619853f7-104a-4089-b7e1-bfcd4597e806">
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[($F{c_bpartner_lit_bpreport_param} ==null)]]></printWhenExpression>
 				</reportElement>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final utlizzo versione della libreria JasperReports6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<!-- Created with Jaspersoft Studio version 6.11.0.final utlizzo versione della libreria JasperReports6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="m_inout_sub1" pageWidth="555" pageHeight="810" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isIgnorePagination="true" uuid="c33fbd9b-fd01-4855-baf8-57a853bc8344">
 	<property name="ireport.zoom" value="1.6934217901613329"/>
 	<property name="ireport.x" value="0"/>
@@ -10,7 +10,7 @@
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w1" value="334"/>
 	<property name="com.jaspersoft.studio.property.dataset.dialog.DatasetDialog.sash.w2" value="657"/>
 	<property name="com.jaspersoft.studio.report.description" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="iDempiere Produzione"/>
 	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
 		<box>
 			<pen lineWidth="0.5" lineColor="#000000"/>
@@ -446,7 +446,7 @@ ORDER BY m_inoutline_line ASC]]>
 			</textField>
 		</band>
 		<band height="11">
-			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement x="80" y="0" width="298" height="11" isRemoveLineWhenBlank="true" uuid="e74a78a8-5825-4e65-b92d-7c03ee301148">
 					<property name="com.jaspersoft.studio.unit.leftIndent" value="px"/>
 					<printWhenExpression><![CDATA[$F{ad_orginfo_lit_report_param}.charAt(13) =='Y' ? 1==1 :  $F{ad_orginfo_lit_report_param}.charAt(13) =='N' ? 1==2 :  $F{c_bpartner_lit_bpreportparam}.length()<1 ? 1==2 :$F{c_bpartner_lit_bpreportparam}.charAt(1)=='Y' ? 1==1 :1==2]]></printWhenExpression>

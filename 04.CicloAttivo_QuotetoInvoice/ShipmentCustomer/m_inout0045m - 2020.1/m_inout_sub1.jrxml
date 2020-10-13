@@ -464,12 +464,20 @@ ORDER BY m_inoutline_line ASC]]>
 					<font fontName="DejaVu Sans Mono" size="8"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
+<<<<<<< Updated upstream:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub1.jrxml
 				<textFieldExpression><![CDATA[$F{guaranteedate}==null?"Lotto/Batch: " +$F{lot}:"Lotto/Batch: " +$F{lot} +" | Scadenza/Expiry: "+new SimpleDateFormat("dd-MM-yyyy").format($F{guaranteedate})]]></textFieldExpression>
+=======
+				<textFieldExpression><![CDATA["Lotto e scadenza/Lot and expiry: " +$F{lot} +" | " + $F{guaranteedate}]]></textFieldExpression>
+>>>>>>> Stashed changes:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m_2020_2/m_inout_sub1.jrxml
 			</textField>
 		</band>
 		<band height="10">
 			<subreport>
+<<<<<<< Updated upstream:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub1.jrxml
 				<reportElement x="80" y="0" width="298" height="10" isRemoveLineWhenBlank="true" uuid="c28979b4-4da4-456e-961e-2a9dfbfe008d"/>
+=======
+				<reportElement x="80" y="0" width="298" height="10" isRemoveLineWhenBlank="true" uuid="83854172-4621-43f2-b966-ffb6393d4de3"/>
+>>>>>>> Stashed changes:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m_2020_2/m_inout_sub1.jrxml
 				<subreportParameter name="SUBREPORT_DIR">
 					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
