@@ -461,7 +461,10 @@ ORDER BY m_inoutline_line ASC]]>
 					<font fontName="DejaVu Sans Mono" size="8"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
+<<<<<<< HEAD:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m_2020_2/m_inout_sub1.jrxml
 <<<<<<< HEAD:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub1.jrxml
+=======
+>>>>>>> master:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub1.jrxml
 <<<<<<< Updated upstream:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub1.jrxml
 				<textFieldExpression><![CDATA[$F{guaranteedate}==null?"Lotto/Batch: " +$F{lot}:"Lotto/Batch: " +$F{lot} +" | Scadenza/Expiry: "+new SimpleDateFormat("dd-MM-yyyy").format($F{guaranteedate})]]></textFieldExpression>
 =======

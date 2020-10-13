@@ -741,15 +741,21 @@ ORDER BY lit_rep_m_inout_line_v2.m_inoutline_line ASC]]>
 					<font fontName="DejaVu Sans Mono" size="8" isBold="false"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
+<<<<<<< HEAD:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m_2020_2/m_inout_sub2.jrxml
 <<<<<<< HEAD:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub2.jrxml
+=======
+>>>>>>> master:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub2.jrxml
 <<<<<<< Updated upstream:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub2.jrxml
 				<textFieldExpression><![CDATA[$F{guaranteedate}==null?"Lotto/Batch: " +$F{lot}:"Lotto/Batch: " +$F{lot} +" | Scadenza/Expiry: "+new SimpleDateFormat("dd-MM-yyyy").format($F{guaranteedate})]]></textFieldExpression>
 =======
 				<textFieldExpression><![CDATA["Lotto e scadenza/Lot and expiry: " +$F{lot}+" | "+ $F{guaranteedate}]]></textFieldExpression>
 >>>>>>> Stashed changes:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m_2020_2/m_inout_sub2.jrxml
+<<<<<<< HEAD:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m_2020_2/m_inout_sub2.jrxml
 =======
 				<textFieldExpression><![CDATA[$F{lot}.equals("")?"":"Lotto e scadenza/Lot and expiry: " +$F{lot}+" | "+new SimpleDateFormat("dd-MM-yyyy").format($F{guaranteedate})]]></textFieldExpression>
 >>>>>>> parent of e8c8eba... new test ddr multiplelot:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m_2020_2/m_inout_sub2.jrxml
+=======
+>>>>>>> master:04.CicloAttivo_QuotetoInvoice/ShipmentCustomer/m_inout0045m - 2020.1/m_inout_sub2.jrxml
 			</textField>
 		</band>
 		<band height="10">
